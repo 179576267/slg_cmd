@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_arena"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wzf.slgtest.ArenaActivity">
+    <TextView
+        android:id="@+id/tv_object_index"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_gm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GM"/>
+            <Button
+                android:id="@+id/btn_red"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="红点请求"/>
+            <Button
+                android:id="@+id/btn_base_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="用户基础信息"/>
+            <Button
+                android:id="@+id/btn_setting_board"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="用户面板"/>
+
+            <Button
+                android:id="@+id/btn_edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="修改姓名"/>
+
+            <Button
+                android:id="@+id/btn_edit_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="修改头像"/>
+
+            <Button
+                android:id="@+id/btn_change_consume_remind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="改变消费提醒状态"/>
+            <Button
+                android:id="@+id/btn_change_equip_skill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="改变上阵技能"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </ScrollView>
+
+</LinearLayout>

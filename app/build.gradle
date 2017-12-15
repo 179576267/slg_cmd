@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        multiDexEnabled true
+        applicationId "com.wzf.slgtest"
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    compile "io.netty:netty-all:4.1.8.Final"
+    compile 'com.google.code.gson:gson:2.7'
+    // eventBus 替代广播
+    compile 'org.greenrobot:eventbus:3.0.0'
+
+    //控件助手
+    compile 'com.jakewharton:butterknife:7.0.1'
+}

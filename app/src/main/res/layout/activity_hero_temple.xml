@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_arena"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wzf.slgtest.ArenaActivity">
+    <TextView
+        android:id="@+id/tv_object_index"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_init"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="英雄圣殿初始化"/>
+            <Button
+                android:id="@+id/btn_challenge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="英雄圣殿挑战"/>
+            <Button
+                android:id="@+id/btn_sweep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="英雄圣殿扫荡"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </ScrollView>
+
+</LinearLayout>

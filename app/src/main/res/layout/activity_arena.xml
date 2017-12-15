@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_arena"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wzf.slgtest.ArenaActivity">
+    <TextView
+        android:id="@+id/tv_object_index"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_getRank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取自己排名信息"/>
+            <Button
+                android:id="@+id/btn_getTopRank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取前100名排名信息"/>
+
+            <Button
+                android:id="@+id/btn_sweep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="扫荡某个位置"/>
+
+            <Button
+                android:id="@+id/btn_arenaChallenge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="挑战某个位置"/>
+            <Button
+                android:id="@+id/btn_getEveryDayReward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取每日奖励"/>
+
+            <Button
+                android:id="@+id/btn_reward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="兑换奖励"/>
+
+            <Button
+                android:id="@+id/btn_rewardRecord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="兑换奖励经记录"/>
+            <Button
+                android:id="@+id/btn_buy_challenge_times"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="购买挑战次数"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </ScrollView>
+
+</LinearLayout>

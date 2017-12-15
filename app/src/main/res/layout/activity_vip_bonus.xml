@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_arena"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wzf.slgtest.ArenaActivity">
+
+    <TextView
+        android:id="@+id/tv_object_index"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_recharge_init"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="充值初始化信息" />
+
+            <Button
+                android:id="@+id/btn_recharge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="充值" />
+
+            <Button
+                android:id="@+id/btn_vip_gift"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="vip特权礼包购买" />
+
+            <Button
+                android:id="@+id/btn_bonus_init"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="福利系统初始化面板" />
+
+            <Button
+                android:id="@+id/btn_receive_first_recharge_reward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="首冲礼包领取" />
+
+
+            <Button
+                android:id="@+id/btn_sign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="每日签到" />
+
+            <Button
+                android:id="@+id/btn_mouth_card_reward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="月卡每日奖励领取" />
+
+            <Button
+                android:id="@+id/btn_buy_open_fund"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="开服基金购买" />
+
+            <Button
+                android:id="@+id/btn_open_fund_reward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="开服基金奖励领取" />
+
+            <Button
+                android:id="@+id/btn_login_times_init"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="累计登录奖励初始化面板" />
+
+            <Button
+                android:id="@+id/btn_receive_login_times"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="累计登录奖励领取" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </ScrollView>
+
+</LinearLayout>

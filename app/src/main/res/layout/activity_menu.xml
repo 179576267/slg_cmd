@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wzf.slgtest.MenuActivity">
+
+    <Button
+        android:id="@+id/playerinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="玩家信息"/>
+
+    <Button
+        android:id="@+id/vip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="vip福利"/>
+    <Button
+        android:id="@+id/instance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="副本"/>
+
+    <Button
+        android:id="@+id/arena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="竞技场"/>
+
+    <Button
+        android:id="@+id/official"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="官阶战"/>
+
+    <Button
+        android:id="@+id/goblin_store"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="地精商店"/>
+    <Button
+        android:id="@+id/goblin_bag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="背包"/>
+
+    <Button
+        android:id="@+id/resolve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="分解和重生"/>
+
+    <Button
+        android:id="@+id/hero_temple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="英雄圣殿"/>
+
+    <Button
+        android:id="@+id/hero_altar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="祭祀"/>
+
+</LinearLayout>

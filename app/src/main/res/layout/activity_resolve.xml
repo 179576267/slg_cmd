@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_arena"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wzf.slgtest.ArenaActivity">
+    <TextView
+        android:id="@+id/tv_object_index"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_card_rebirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="卡片重生"/>
+
+            <Button
+                android:id="@+id/btn_preview_resolve_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="可分解卡片预览"/>
+
+            <Button
+                android:id="@+id/btn_card_fragment_resolve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="英魂分解（碎片）"/>
+
+            <Button
+                android:id="@+id/btn_card_resolve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="英魂分解（卡片）"/>
+
+            <Button
+                android:id="@+id/btn_equip_resolve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="装备碎片分解"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </ScrollView>
+
+</LinearLayout>
