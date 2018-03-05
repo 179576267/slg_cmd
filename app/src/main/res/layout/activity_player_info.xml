@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.wzf.slgtest.ArenaActivity">
+    tools:context="com.wzf.slgtest.ui.ArenaActivity">
     <TextView
         android:id="@+id/tv_object_index"
         android:layout_width="match_parent"
@@ -24,6 +24,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="GM"/>
+
+
+            <Button
+                android:id="@+id/btn_cdk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CDK"/>
+
             <Button
                 android:id="@+id/btn_red"
                 android:layout_width="match_parent"
@@ -62,6 +70,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="改变上阵技能"/>
+
+            <Button
+                android:id="@+id/btn_get_instance_challenge_times"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取各个副本剩余挑战次数"/>
+
+            <Button
+                android:id="@+id/btn_get_task_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取任务列表"/>
+            <Button
+                android:id="@+id/btn_rank_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取排行榜信息"/>
 
         </LinearLayout>
 

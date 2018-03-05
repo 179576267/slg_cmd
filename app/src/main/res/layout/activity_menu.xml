@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.wzf.slgtest.MenuActivity">
+    tools:context="com.wzf.slgtest.ui.MenuActivity">
 
     <Button
         android:id="@+id/playerinfo"
@@ -37,6 +37,17 @@
         android:text="官阶战"/>
 
     <Button
+        android:id="@+id/hero_temple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="英雄圣殿"/>
+    <Button
+        android:id="@+id/hero_expedition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="远征副本"/>
+
+    <Button
         android:id="@+id/goblin_store"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,7 +56,7 @@
         android:id="@+id/goblin_bag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="背包"/>
+        android:text="背包和卡牌"/>
 
     <Button
         android:id="@+id/resolve"
@@ -53,16 +64,18 @@
         android:layout_height="wrap_content"
         android:text="分解和重生"/>
 
-    <Button
-        android:id="@+id/hero_temple"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="英雄圣殿"/>
+
 
     <Button
         android:id="@+id/hero_altar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="祭祀"/>
+        android:text="祭祀和酒馆"/>
+
+    <Button
+        android:id="@+id/hero_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="任务相关"/>
 
 </LinearLayout>

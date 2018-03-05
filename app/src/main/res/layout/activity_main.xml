@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.wzf.slgtest.MainActivity">
+    tools:context="com.wzf.slgtest.ui.MainActivity">
 
     <EditText
         android:id="@+id/et_account"
@@ -15,22 +15,23 @@
         android:text="10005"/>
 
     <Button
-        android:id="@+id/btn_zhenfei"
+        android:id="@+id/btn_single_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="振飞" />
+        android:text="单个账号功能测试" />
+
+    <Button
+        android:id="@+id/btn_mult_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="多个账号功能测试" />
+
 
 
     <Button
-        android:id="@+id/btn_sanshao"
+        android:id="@+id/btn_force_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="三少" />
-
-    <Button
-        android:id="@+id/btn_pengyu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="彭宇" />
+        android:text="多账号战斗压力测试" />
 
 </LinearLayout>

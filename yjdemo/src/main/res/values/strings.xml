@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GangaDemo</string>
+    <string name="loginimage_contentdes">登入</string>
+    <string name="welcome_info">易接SDK功能展示Demo，详细说明见文档</string>
+	<string name="yijie_recharge">充值</string>
+	<string name="yijiepay">定额支付</string>
+	<string name="yijie_changeaccount">切换帐号</string>
+	<string name="daibi">金币</string>
+	<string name="goldenum">0个</string>
+	<string name="yijie_accountname">帐号123456778990</string>
+	<string name="recharge_tip">代币充值方式，具体含义及使用请参考【易接网游SDK中间件接入使用说明.pdf】</string>
+	<string name="pay_tip">代币充值方式，具体含义及使用请参考【易接网游SDK中间件接入使用说明.pdf】</string>
+	<string name="recharge_title">充值提示</string>
+	<string name="yijie_pay_title">定额支付提示</string>
+	<string name="recharge_info">非定额方式：请输入价格（单位：分）</string>
+	<string name="yijie_pay_info">定额方式：请输入价格（单位：分）</string>
+	<string name="yijie_name_info">请输入商品名称：</string>
+	<string name="yijie_name">请输入商品名称：</string>
+	<string name="yijie_confirm">确定</string>
+	<string name="yijie_cancel">取消</string>
+	<string name="yijie_hint"></string>
+	<string name="yijie_extend_pay_title">扩展支付接口</string>
+	<string name="yijie_extend_waresid">请输入商品编码：</string>
+	<string name="yijie_extend_remain">请输入用户自定义参数：</string>
+        <string name="yijie_role_title">角色接口</string>
+        <string name="yijie_role_set_data_title">setData接口</string>
+        <string name="yijie_role_set_data_key">键值：请输入setData键值</string>
+</resources>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.wzf.slgtest.ArenaActivity">
+    tools:context="com.wzf.slgtest.ui.ArenaActivity">
     <TextView
         android:id="@+id/tv_object_index"
         android:layout_width="match_parent"

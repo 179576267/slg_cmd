@@ -48,16 +48,16 @@ public abstract class NettyTCPClient implements Runnable{
                 }
             });
             // 发起异步连接操作
-            ChannelFuture future = bootstrap.connect(Config.IP, 11111).sync();
+            ChannelFuture future = bootstrap.connect(Config.IP, 28540).sync();
 
             if(future.isSuccess())
             {
-                Log.i("NettyTCPClient","TCP Client Start Success------Port---【" + 11111 + "】");
+                Log.i("TCP Client","TCP Client Start Success------Port---【" + 11111 + "】");
                 startSuccess();
             }
             else
             {
-                Log.i("NettyTCPClient","TCP Client Start Failed------Port---【" + 11111 + "】");
+                Log.i("TCP Client","TCP Client Start Failed------Port---【" + 11111 + "】");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -67,7 +67,7 @@ public abstract class NettyTCPClient implements Runnable{
 
     public synchronized void stop()
     {
-        Log.i("NettyTCPClient","Close TCPServer..................");
+        Log.i("TCP Client","Close TCPServer..................");
         workerGroup.shutdownGracefully();
     }
 

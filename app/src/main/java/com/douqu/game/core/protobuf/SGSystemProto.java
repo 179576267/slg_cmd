@@ -55,21 +55,21 @@ public final class SGSystemProto {
 
     /**
      * <pre>
-     *验证码,非第三方的时候是从服务器获取的，第三方可以不发
+     *手机号登录时这里是验证码,微信登录时这里是access_token
      * </pre>
      *
-     * <code>string captcha = 3;</code>
+     * <code>string password = 3;</code>
      */
-    java.lang.String getCaptcha();
+    java.lang.String getPassword();
     /**
      * <pre>
-     *验证码,非第三方的时候是从服务器获取的，第三方可以不发
+     *手机号登录时这里是验证码,微信登录时这里是access_token
      * </pre>
      *
-     * <code>string captcha = 3;</code>
+     * <code>string password = 3;</code>
      */
     com.google.protobuf.ByteString
-        getCaptchaBytes();
+        getPasswordBytes();
 
     /**
      * <pre>
@@ -106,6 +106,32 @@ public final class SGSystemProto {
      */
     com.google.protobuf.ByteString
         getNickNameBytes();
+
+    /**
+     * <pre>
+     *阵营
+     * </pre>
+     *
+     * <code>.E_CAMP_TYPE camp = 6;</code>
+     */
+    int getCampValue();
+    /**
+     * <pre>
+     *阵营
+     * </pre>
+     *
+     * <code>.E_CAMP_TYPE camp = 6;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE getCamp();
+
+    /**
+     * <pre>
+     *是否是随机角色 ture表示随机
+     * </pre>
+     *
+     * <code>bool isRandomRole = 7;</code>
+     */
+    boolean getIsRandomRole();
   }
   /**
    * <pre>
@@ -125,9 +151,11 @@ public final class SGSystemProto {
     private C2S_Regist() {
       channel_ = 0;
       account_ = "";
-      captcha_ = "";
+      password_ = "";
       avatarUrl_ = "";
       nickName_ = "";
+      camp_ = 0;
+      isRandomRole_ = false;
     }
 
     @java.lang.Override
@@ -170,7 +198,7 @@ public final class SGSystemProto {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              captcha_ = s;
+              password_ = s;
               break;
             }
             case 34: {
@@ -183,6 +211,17 @@ public final class SGSystemProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               nickName_ = s;
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              camp_ = rawValue;
+              break;
+            }
+            case 56: {
+
+              isRandomRole_ = input.readBool();
               break;
             }
           }
@@ -274,42 +313,42 @@ public final class SGSystemProto {
       }
     }
 
-    public static final int CAPTCHA_FIELD_NUMBER = 3;
-    private volatile java.lang.Object captcha_;
+    public static final int PASSWORD_FIELD_NUMBER = 3;
+    private volatile java.lang.Object password_;
     /**
      * <pre>
-     *验证码,非第三方的时候是从服务器获取的，第三方可以不发
+     *手机号登录时这里是验证码,微信登录时这里是access_token
      * </pre>
      *
-     * <code>string captcha = 3;</code>
+     * <code>string password = 3;</code>
      */
-    public java.lang.String getCaptcha() {
-      java.lang.Object ref = captcha_;
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        captcha_ = s;
+        password_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     *验证码,非第三方的时候是从服务器获取的，第三方可以不发
+     *手机号登录时这里是验证码,微信登录时这里是access_token
      * </pre>
      *
-     * <code>string captcha = 3;</code>
+     * <code>string password = 3;</code>
      */
     public com.google.protobuf.ByteString
-        getCaptchaBytes() {
-      java.lang.Object ref = captcha_;
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        captcha_ = b;
+        password_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -400,6 +439,43 @@ public final class SGSystemProto {
       }
     }
 
+    public static final int CAMP_FIELD_NUMBER = 6;
+    private int camp_;
+    /**
+     * <pre>
+     *阵营
+     * </pre>
+     *
+     * <code>.E_CAMP_TYPE camp = 6;</code>
+     */
+    public int getCampValue() {
+      return camp_;
+    }
+    /**
+     * <pre>
+     *阵营
+     * </pre>
+     *
+     * <code>.E_CAMP_TYPE camp = 6;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE getCamp() {
+      com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.valueOf(camp_);
+      return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.UNRECOGNIZED : result;
+    }
+
+    public static final int ISRANDOMROLE_FIELD_NUMBER = 7;
+    private boolean isRandomRole_;
+    /**
+     * <pre>
+     *是否是随机角色 ture表示随机
+     * </pre>
+     *
+     * <code>bool isRandomRole = 7;</code>
+     */
+    public boolean getIsRandomRole() {
+      return isRandomRole_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -418,14 +494,20 @@ public final class SGSystemProto {
       if (!getAccountBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, account_);
       }
-      if (!getCaptchaBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, captcha_);
+      if (!getPasswordBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, password_);
       }
       if (!getAvatarUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, avatarUrl_);
       }
       if (!getNickNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, nickName_);
+      }
+      if (camp_ != com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.CAMP_TYPE_UNKNOWN.getNumber()) {
+        output.writeEnum(6, camp_);
+      }
+      if (isRandomRole_ != false) {
+        output.writeBool(7, isRandomRole_);
       }
     }
 
@@ -441,14 +523,22 @@ public final class SGSystemProto {
       if (!getAccountBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, account_);
       }
-      if (!getCaptchaBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, captcha_);
+      if (!getPasswordBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, password_);
       }
       if (!getAvatarUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, avatarUrl_);
       }
       if (!getNickNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, nickName_);
+      }
+      if (camp_ != com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.CAMP_TYPE_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, camp_);
+      }
+      if (isRandomRole_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, isRandomRole_);
       }
       memoizedSize = size;
       return size;
@@ -469,12 +559,15 @@ public final class SGSystemProto {
       result = result && channel_ == other.channel_;
       result = result && getAccount()
           .equals(other.getAccount());
-      result = result && getCaptcha()
-          .equals(other.getCaptcha());
+      result = result && getPassword()
+          .equals(other.getPassword());
       result = result && getAvatarUrl()
           .equals(other.getAvatarUrl());
       result = result && getNickName()
           .equals(other.getNickName());
+      result = result && camp_ == other.camp_;
+      result = result && (getIsRandomRole()
+          == other.getIsRandomRole());
       return result;
     }
 
@@ -489,12 +582,17 @@ public final class SGSystemProto {
       hash = (53 * hash) + channel_;
       hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getAccount().hashCode();
-      hash = (37 * hash) + CAPTCHA_FIELD_NUMBER;
-      hash = (53 * hash) + getCaptcha().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
       hash = (37 * hash) + AVATARURL_FIELD_NUMBER;
       hash = (53 * hash) + getAvatarUrl().hashCode();
       hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
       hash = (53 * hash) + getNickName().hashCode();
+      hash = (37 * hash) + CAMP_FIELD_NUMBER;
+      hash = (53 * hash) + camp_;
+      hash = (37 * hash) + ISRANDOMROLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsRandomRole());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -621,11 +719,15 @@ public final class SGSystemProto {
 
         account_ = "";
 
-        captcha_ = "";
+        password_ = "";
 
         avatarUrl_ = "";
 
         nickName_ = "";
+
+        camp_ = 0;
+
+        isRandomRole_ = false;
 
         return this;
       }
@@ -651,9 +753,11 @@ public final class SGSystemProto {
         com.douqu.game.core.protobuf.SGSystemProto.C2S_Regist result = new com.douqu.game.core.protobuf.SGSystemProto.C2S_Regist(this);
         result.channel_ = channel_;
         result.account_ = account_;
-        result.captcha_ = captcha_;
+        result.password_ = password_;
         result.avatarUrl_ = avatarUrl_;
         result.nickName_ = nickName_;
+        result.camp_ = camp_;
+        result.isRandomRole_ = isRandomRole_;
         onBuilt();
         return result;
       }
@@ -702,8 +806,8 @@ public final class SGSystemProto {
           account_ = other.account_;
           onChanged();
         }
-        if (!other.getCaptcha().isEmpty()) {
-          captcha_ = other.captcha_;
+        if (!other.getPassword().isEmpty()) {
+          password_ = other.password_;
           onChanged();
         }
         if (!other.getAvatarUrl().isEmpty()) {
@@ -713,6 +817,12 @@ public final class SGSystemProto {
         if (!other.getNickName().isEmpty()) {
           nickName_ = other.nickName_;
           onChanged();
+        }
+        if (other.camp_ != 0) {
+          setCampValue(other.getCampValue());
+        }
+        if (other.getIsRandomRole() != false) {
+          setIsRandomRole(other.getIsRandomRole());
         }
         onChanged();
         return this;
@@ -893,21 +1003,21 @@ public final class SGSystemProto {
         return this;
       }
 
-      private java.lang.Object captcha_ = "";
+      private java.lang.Object password_ = "";
       /**
        * <pre>
-       *验证码,非第三方的时候是从服务器获取的，第三方可以不发
+       *手机号登录时这里是验证码,微信登录时这里是access_token
        * </pre>
        *
-       * <code>string captcha = 3;</code>
+       * <code>string password = 3;</code>
        */
-      public java.lang.String getCaptcha() {
-        java.lang.Object ref = captcha_;
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          captcha_ = s;
+          password_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -915,19 +1025,19 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *验证码,非第三方的时候是从服务器获取的，第三方可以不发
+       *手机号登录时这里是验证码,微信登录时这里是access_token
        * </pre>
        *
-       * <code>string captcha = 3;</code>
+       * <code>string password = 3;</code>
        */
       public com.google.protobuf.ByteString
-          getCaptchaBytes() {
-        java.lang.Object ref = captcha_;
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          captcha_ = b;
+          password_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -935,49 +1045,49 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *验证码,非第三方的时候是从服务器获取的，第三方可以不发
+       *手机号登录时这里是验证码,微信登录时这里是access_token
        * </pre>
        *
-       * <code>string captcha = 3;</code>
+       * <code>string password = 3;</code>
        */
-      public Builder setCaptcha(
+      public Builder setPassword(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        captcha_ = value;
+        password_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       *验证码,非第三方的时候是从服务器获取的，第三方可以不发
+       *手机号登录时这里是验证码,微信登录时这里是access_token
        * </pre>
        *
-       * <code>string captcha = 3;</code>
+       * <code>string password = 3;</code>
        */
-      public Builder clearCaptcha() {
+      public Builder clearPassword() {
         
-        captcha_ = getDefaultInstance().getCaptcha();
+        password_ = getDefaultInstance().getPassword();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       *验证码,非第三方的时候是从服务器获取的，第三方可以不发
+       *手机号登录时这里是验证码,微信登录时这里是access_token
        * </pre>
        *
-       * <code>string captcha = 3;</code>
+       * <code>string password = 3;</code>
        */
-      public Builder setCaptchaBytes(
+      public Builder setPasswordBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        captcha_ = value;
+        password_ = value;
         onChanged();
         return this;
       }
@@ -1156,6 +1266,108 @@ public final class SGSystemProto {
   checkByteStringIsUtf8(value);
         
         nickName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int camp_ = 0;
+      /**
+       * <pre>
+       *阵营
+       * </pre>
+       *
+       * <code>.E_CAMP_TYPE camp = 6;</code>
+       */
+      public int getCampValue() {
+        return camp_;
+      }
+      /**
+       * <pre>
+       *阵营
+       * </pre>
+       *
+       * <code>.E_CAMP_TYPE camp = 6;</code>
+       */
+      public Builder setCampValue(int value) {
+        camp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *阵营
+       * </pre>
+       *
+       * <code>.E_CAMP_TYPE camp = 6;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE getCamp() {
+        com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.valueOf(camp_);
+        return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       *阵营
+       * </pre>
+       *
+       * <code>.E_CAMP_TYPE camp = 6;</code>
+       */
+      public Builder setCamp(com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        camp_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *阵营
+       * </pre>
+       *
+       * <code>.E_CAMP_TYPE camp = 6;</code>
+       */
+      public Builder clearCamp() {
+        
+        camp_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isRandomRole_ ;
+      /**
+       * <pre>
+       *是否是随机角色 ture表示随机
+       * </pre>
+       *
+       * <code>bool isRandomRole = 7;</code>
+       */
+      public boolean getIsRandomRole() {
+        return isRandomRole_;
+      }
+      /**
+       * <pre>
+       *是否是随机角色 ture表示随机
+       * </pre>
+       *
+       * <code>bool isRandomRole = 7;</code>
+       */
+      public Builder setIsRandomRole(boolean value) {
+        
+        isRandomRole_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *是否是随机角色 ture表示随机
+       * </pre>
+       *
+       * <code>bool isRandomRole = 7;</code>
+       */
+      public Builder clearIsRandomRole() {
+        
+        isRandomRole_ = false;
         onChanged();
         return this;
       }
@@ -2071,7 +2283,7 @@ public final class SGSystemProto {
 
     /**
      * <pre>
-     *账号
+     *账号 若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
      * </pre>
      *
      * <code>string account = 2;</code>
@@ -2079,7 +2291,7 @@ public final class SGSystemProto {
     java.lang.String getAccount();
     /**
      * <pre>
-     *账号
+     *账号 若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
      * </pre>
      *
      * <code>string account = 2;</code>
@@ -2113,6 +2325,23 @@ public final class SGSystemProto {
      * <code>bool normal = 4;</code>
      */
     boolean getNormal();
+
+    /**
+     * <pre>
+     *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+     * </pre>
+     *
+     * <code>.E_LOGIN_TYPE loginType = 5;</code>
+     */
+    int getLoginTypeValue();
+    /**
+     * <pre>
+     *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+     * </pre>
+     *
+     * <code>.E_LOGIN_TYPE loginType = 5;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE getLoginType();
   }
   /**
    * <pre>
@@ -2134,6 +2363,7 @@ public final class SGSystemProto {
       account_ = "";
       password_ = "";
       normal_ = false;
+      loginType_ = 0;
     }
 
     @java.lang.Override
@@ -2182,6 +2412,12 @@ public final class SGSystemProto {
             case 32: {
 
               normal_ = input.readBool();
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              loginType_ = rawValue;
               break;
             }
           }
@@ -2235,7 +2471,7 @@ public final class SGSystemProto {
     private volatile java.lang.Object account_;
     /**
      * <pre>
-     *账号
+     *账号 若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
      * </pre>
      *
      * <code>string account = 2;</code>
@@ -2254,7 +2490,7 @@ public final class SGSystemProto {
     }
     /**
      * <pre>
-     *账号
+     *账号 若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
      * </pre>
      *
      * <code>string account = 2;</code>
@@ -2328,6 +2564,30 @@ public final class SGSystemProto {
       return normal_;
     }
 
+    public static final int LOGINTYPE_FIELD_NUMBER = 5;
+    private int loginType_;
+    /**
+     * <pre>
+     *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+     * </pre>
+     *
+     * <code>.E_LOGIN_TYPE loginType = 5;</code>
+     */
+    public int getLoginTypeValue() {
+      return loginType_;
+    }
+    /**
+     * <pre>
+     *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+     * </pre>
+     *
+     * <code>.E_LOGIN_TYPE loginType = 5;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE getLoginType() {
+      com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE.valueOf(loginType_);
+      return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -2352,6 +2612,9 @@ public final class SGSystemProto {
       if (normal_ != false) {
         output.writeBool(4, normal_);
       }
+      if (loginType_ != com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE.LOGIN_TYPE_UNKNOWN.getNumber()) {
+        output.writeEnum(5, loginType_);
+      }
     }
 
     public int getSerializedSize() {
@@ -2372,6 +2635,10 @@ public final class SGSystemProto {
       if (normal_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, normal_);
+      }
+      if (loginType_ != com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE.LOGIN_TYPE_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, loginType_);
       }
       memoizedSize = size;
       return size;
@@ -2396,6 +2663,7 @@ public final class SGSystemProto {
           .equals(other.getPassword());
       result = result && (getNormal()
           == other.getNormal());
+      result = result && loginType_ == other.loginType_;
       return result;
     }
 
@@ -2415,6 +2683,8 @@ public final class SGSystemProto {
       hash = (37 * hash) + NORMAL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getNormal());
+      hash = (37 * hash) + LOGINTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + loginType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2545,6 +2815,8 @@ public final class SGSystemProto {
 
         normal_ = false;
 
+        loginType_ = 0;
+
         return this;
       }
 
@@ -2571,6 +2843,7 @@ public final class SGSystemProto {
         result.account_ = account_;
         result.password_ = password_;
         result.normal_ = normal_;
+        result.loginType_ = loginType_;
         onBuilt();
         return result;
       }
@@ -2625,6 +2898,9 @@ public final class SGSystemProto {
         }
         if (other.getNormal() != false) {
           setNormal(other.getNormal());
+        }
+        if (other.loginType_ != 0) {
+          setLoginTypeValue(other.getLoginTypeValue());
         }
         onChanged();
         return this;
@@ -2719,7 +2995,7 @@ public final class SGSystemProto {
       private java.lang.Object account_ = "";
       /**
        * <pre>
-       *账号
+       *账号 若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
        * </pre>
        *
        * <code>string account = 2;</code>
@@ -2738,7 +3014,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *账号
+       *账号 若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
        * </pre>
        *
        * <code>string account = 2;</code>
@@ -2758,7 +3034,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *账号
+       *账号 若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
        * </pre>
        *
        * <code>string account = 2;</code>
@@ -2775,7 +3051,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *账号
+       *账号 若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
        * </pre>
        *
        * <code>string account = 2;</code>
@@ -2788,7 +3064,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *账号
+       *账号 若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
        * </pre>
        *
        * <code>string account = 2;</code>
@@ -2928,6 +3204,70 @@ public final class SGSystemProto {
       public Builder clearNormal() {
         
         normal_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int loginType_ = 0;
+      /**
+       * <pre>
+       *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+       * </pre>
+       *
+       * <code>.E_LOGIN_TYPE loginType = 5;</code>
+       */
+      public int getLoginTypeValue() {
+        return loginType_;
+      }
+      /**
+       * <pre>
+       *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+       * </pre>
+       *
+       * <code>.E_LOGIN_TYPE loginType = 5;</code>
+       */
+      public Builder setLoginTypeValue(int value) {
+        loginType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+       * </pre>
+       *
+       * <code>.E_LOGIN_TYPE loginType = 5;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE getLoginType() {
+        com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE.valueOf(loginType_);
+        return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+       * </pre>
+       *
+       * <code>.E_LOGIN_TYPE loginType = 5;</code>
+       */
+      public Builder setLoginType(com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        loginType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+       * </pre>
+       *
+       * <code>.E_LOGIN_TYPE loginType = 5;</code>
+       */
+      public Builder clearLoginType() {
+        
+        loginType_ = 0;
         onChanged();
         return this;
       }
@@ -3147,6 +3487,49 @@ public final class SGSystemProto {
      * <code>.BattleData battleData = 7;</code>
      */
     com.douqu.game.core.protobuf.SGCommonProto.BattleDataOrBuilder getBattleDataOrBuilder();
+
+    /**
+     * <pre>
+     *排队时间
+     * </pre>
+     *
+     * <code>int32 waitTime = 8;</code>
+     */
+    int getWaitTime();
+
+    /**
+     * <pre>
+     *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+     * </pre>
+     *
+     * <code>.E_LOGIN_TYPE loginType = 9;</code>
+     */
+    int getLoginTypeValue();
+    /**
+     * <pre>
+     *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+     * </pre>
+     *
+     * <code>.E_LOGIN_TYPE loginType = 9;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE getLoginType();
+
+    /**
+     * <pre>
+     *当需要注册的时候作为推荐的阵营
+     * </pre>
+     *
+     * <code>.E_CAMP_TYPE recommendCamp = 10;</code>
+     */
+    int getRecommendCampValue();
+    /**
+     * <pre>
+     *当需要注册的时候作为推荐的阵营
+     * </pre>
+     *
+     * <code>.E_CAMP_TYPE recommendCamp = 10;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE getRecommendCamp();
   }
   /**
    * Protobuf type {@code S2C_Login}
@@ -3165,6 +3548,9 @@ public final class SGSystemProto {
       resourceUrl_ = "";
       password_ = "";
       flushData_ = java.util.Collections.emptyList();
+      waitTime_ = 0;
+      loginType_ = 0;
+      recommendCamp_ = 0;
     }
 
     @java.lang.Override
@@ -3249,6 +3635,23 @@ public final class SGSystemProto {
                 battleData_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 64: {
+
+              waitTime_ = input.readInt32();
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              loginType_ = rawValue;
+              break;
+            }
+            case 80: {
+              int rawValue = input.readEnum();
+
+              recommendCamp_ = rawValue;
               break;
             }
           }
@@ -3531,6 +3934,67 @@ public final class SGSystemProto {
       return getBattleData();
     }
 
+    public static final int WAITTIME_FIELD_NUMBER = 8;
+    private int waitTime_;
+    /**
+     * <pre>
+     *排队时间
+     * </pre>
+     *
+     * <code>int32 waitTime = 8;</code>
+     */
+    public int getWaitTime() {
+      return waitTime_;
+    }
+
+    public static final int LOGINTYPE_FIELD_NUMBER = 9;
+    private int loginType_;
+    /**
+     * <pre>
+     *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+     * </pre>
+     *
+     * <code>.E_LOGIN_TYPE loginType = 9;</code>
+     */
+    public int getLoginTypeValue() {
+      return loginType_;
+    }
+    /**
+     * <pre>
+     *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+     * </pre>
+     *
+     * <code>.E_LOGIN_TYPE loginType = 9;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE getLoginType() {
+      com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE.valueOf(loginType_);
+      return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE.UNRECOGNIZED : result;
+    }
+
+    public static final int RECOMMENDCAMP_FIELD_NUMBER = 10;
+    private int recommendCamp_;
+    /**
+     * <pre>
+     *当需要注册的时候作为推荐的阵营
+     * </pre>
+     *
+     * <code>.E_CAMP_TYPE recommendCamp = 10;</code>
+     */
+    public int getRecommendCampValue() {
+      return recommendCamp_;
+    }
+    /**
+     * <pre>
+     *当需要注册的时候作为推荐的阵营
+     * </pre>
+     *
+     * <code>.E_CAMP_TYPE recommendCamp = 10;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE getRecommendCamp() {
+      com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.valueOf(recommendCamp_);
+      return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -3564,6 +4028,15 @@ public final class SGSystemProto {
       if (battleData_ != null) {
         output.writeMessage(7, getBattleData());
       }
+      if (waitTime_ != 0) {
+        output.writeInt32(8, waitTime_);
+      }
+      if (loginType_ != com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE.LOGIN_TYPE_UNKNOWN.getNumber()) {
+        output.writeEnum(9, loginType_);
+      }
+      if (recommendCamp_ != com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.CAMP_TYPE_UNKNOWN.getNumber()) {
+        output.writeEnum(10, recommendCamp_);
+      }
     }
 
     public int getSerializedSize() {
@@ -3596,6 +4069,18 @@ public final class SGSystemProto {
       if (battleData_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getBattleData());
+      }
+      if (waitTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, waitTime_);
+      }
+      if (loginType_ != com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE.LOGIN_TYPE_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, loginType_);
+      }
+      if (recommendCamp_ != com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.CAMP_TYPE_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(10, recommendCamp_);
       }
       memoizedSize = size;
       return size;
@@ -3631,6 +4116,10 @@ public final class SGSystemProto {
         result = result && getBattleData()
             .equals(other.getBattleData());
       }
+      result = result && (getWaitTime()
+          == other.getWaitTime());
+      result = result && loginType_ == other.loginType_;
+      result = result && recommendCamp_ == other.recommendCamp_;
       return result;
     }
 
@@ -3661,6 +4150,12 @@ public final class SGSystemProto {
         hash = (37 * hash) + BATTLEDATA_FIELD_NUMBER;
         hash = (53 * hash) + getBattleData().hashCode();
       }
+      hash = (37 * hash) + WAITTIME_FIELD_NUMBER;
+      hash = (53 * hash) + getWaitTime();
+      hash = (37 * hash) + LOGINTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + loginType_;
+      hash = (37 * hash) + RECOMMENDCAMP_FIELD_NUMBER;
+      hash = (53 * hash) + recommendCamp_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3806,6 +4301,12 @@ public final class SGSystemProto {
           battleData_ = null;
           battleDataBuilder_ = null;
         }
+        waitTime_ = 0;
+
+        loginType_ = 0;
+
+        recommendCamp_ = 0;
+
         return this;
       }
 
@@ -3853,6 +4354,9 @@ public final class SGSystemProto {
         } else {
           result.battleData_ = battleDataBuilder_.build();
         }
+        result.waitTime_ = waitTime_;
+        result.loginType_ = loginType_;
+        result.recommendCamp_ = recommendCamp_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3940,6 +4444,15 @@ public final class SGSystemProto {
         }
         if (other.hasBattleData()) {
           mergeBattleData(other.getBattleData());
+        }
+        if (other.getWaitTime() != 0) {
+          setWaitTime(other.getWaitTime());
+        }
+        if (other.loginType_ != 0) {
+          setLoginTypeValue(other.getLoginTypeValue());
+        }
+        if (other.recommendCamp_ != 0) {
+          setRecommendCampValue(other.getRecommendCampValue());
         }
         onChanged();
         return this;
@@ -4890,6 +5403,172 @@ public final class SGSystemProto {
           battleData_ = null;
         }
         return battleDataBuilder_;
+      }
+
+      private int waitTime_ ;
+      /**
+       * <pre>
+       *排队时间
+       * </pre>
+       *
+       * <code>int32 waitTime = 8;</code>
+       */
+      public int getWaitTime() {
+        return waitTime_;
+      }
+      /**
+       * <pre>
+       *排队时间
+       * </pre>
+       *
+       * <code>int32 waitTime = 8;</code>
+       */
+      public Builder setWaitTime(int value) {
+        
+        waitTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *排队时间
+       * </pre>
+       *
+       * <code>int32 waitTime = 8;</code>
+       */
+      public Builder clearWaitTime() {
+        
+        waitTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int loginType_ = 0;
+      /**
+       * <pre>
+       *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+       * </pre>
+       *
+       * <code>.E_LOGIN_TYPE loginType = 9;</code>
+       */
+      public int getLoginTypeValue() {
+        return loginType_;
+      }
+      /**
+       * <pre>
+       *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+       * </pre>
+       *
+       * <code>.E_LOGIN_TYPE loginType = 9;</code>
+       */
+      public Builder setLoginTypeValue(int value) {
+        loginType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+       * </pre>
+       *
+       * <code>.E_LOGIN_TYPE loginType = 9;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE getLoginType() {
+        com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE.valueOf(loginType_);
+        return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+       * </pre>
+       *
+       * <code>.E_LOGIN_TYPE loginType = 9;</code>
+       */
+      public Builder setLoginType(com.douqu.game.core.protobuf.SGCommonProto.E_LOGIN_TYPE value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        loginType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *登录类型,若登录类型为战斗回连的时候,account字段请填入玩家流水号,password请填入在战斗结束接口中获得的key值
+       * </pre>
+       *
+       * <code>.E_LOGIN_TYPE loginType = 9;</code>
+       */
+      public Builder clearLoginType() {
+        
+        loginType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int recommendCamp_ = 0;
+      /**
+       * <pre>
+       *当需要注册的时候作为推荐的阵营
+       * </pre>
+       *
+       * <code>.E_CAMP_TYPE recommendCamp = 10;</code>
+       */
+      public int getRecommendCampValue() {
+        return recommendCamp_;
+      }
+      /**
+       * <pre>
+       *当需要注册的时候作为推荐的阵营
+       * </pre>
+       *
+       * <code>.E_CAMP_TYPE recommendCamp = 10;</code>
+       */
+      public Builder setRecommendCampValue(int value) {
+        recommendCamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *当需要注册的时候作为推荐的阵营
+       * </pre>
+       *
+       * <code>.E_CAMP_TYPE recommendCamp = 10;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE getRecommendCamp() {
+        com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.valueOf(recommendCamp_);
+        return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       *当需要注册的时候作为推荐的阵营
+       * </pre>
+       *
+       * <code>.E_CAMP_TYPE recommendCamp = 10;</code>
+       */
+      public Builder setRecommendCamp(com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        recommendCamp_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *当需要注册的时候作为推荐的阵营
+       * </pre>
+       *
+       * <code>.E_CAMP_TYPE recommendCamp = 10;</code>
+       */
+      public Builder clearRecommendCamp() {
+        
+        recommendCamp_ = 0;
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10926,7 +11605,7 @@ public final class SGSystemProto {
 
     /**
      * <pre>
-     *场上的兵			
+     *场上的兵	
      * </pre>
      *
      * <code>repeated .BattleUnit soldier = 8;</code>
@@ -10935,7 +11614,7 @@ public final class SGSystemProto {
         getSoldierList();
     /**
      * <pre>
-     *场上的兵			
+     *场上的兵	
      * </pre>
      *
      * <code>repeated .BattleUnit soldier = 8;</code>
@@ -10943,7 +11622,7 @@ public final class SGSystemProto {
     com.douqu.game.core.protobuf.SGCommonProto.BattleUnit getSoldier(int index);
     /**
      * <pre>
-     *场上的兵			
+     *场上的兵	
      * </pre>
      *
      * <code>repeated .BattleUnit soldier = 8;</code>
@@ -10951,7 +11630,7 @@ public final class SGSystemProto {
     int getSoldierCount();
     /**
      * <pre>
-     *场上的兵			
+     *场上的兵	
      * </pre>
      *
      * <code>repeated .BattleUnit soldier = 8;</code>
@@ -10960,13 +11639,38 @@ public final class SGSystemProto {
         getSoldierOrBuilderList();
     /**
      * <pre>
-     *场上的兵			
+     *场上的兵	
      * </pre>
      *
      * <code>repeated .BattleUnit soldier = 8;</code>
      */
     com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder getSoldierOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     *自己的主将技能		
+     * </pre>
+     *
+     * <code>repeated int32 selfMasterSkill = 9;</code>
+     */
+    java.util.List<java.lang.Integer> getSelfMasterSkillList();
+    /**
+     * <pre>
+     *自己的主将技能		
+     * </pre>
+     *
+     * <code>repeated int32 selfMasterSkill = 9;</code>
+     */
+    int getSelfMasterSkillCount();
+    /**
+     * <pre>
+     *自己的主将技能		
+     * </pre>
+     *
+     * <code>repeated int32 selfMasterSkill = 9;</code>
+     */
+    int getSelfMasterSkill(int index);
   }
   /**
    * Protobuf type {@code S2C_BattleReconnect}
@@ -10986,6 +11690,7 @@ public final class SGSystemProto {
       teamNo_ = 0;
       cardId_ = java.util.Collections.emptyList();
       soldier_ = java.util.Collections.emptyList();
+      selfMasterSkill_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -11092,6 +11797,27 @@ public final class SGSystemProto {
                   input.readMessage(com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.parser(), extensionRegistry));
               break;
             }
+            case 72: {
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                selfMasterSkill_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              selfMasterSkill_.add(input.readInt32());
+              break;
+            }
+            case 74: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100) && input.getBytesUntilLimit() > 0) {
+                selfMasterSkill_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                selfMasterSkill_.add(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -11105,6 +11831,9 @@ public final class SGSystemProto {
         }
         if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
           soldier_ = java.util.Collections.unmodifiableList(soldier_);
+        }
+        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+          selfMasterSkill_ = java.util.Collections.unmodifiableList(selfMasterSkill_);
         }
         makeExtensionsImmutable();
       }
@@ -11348,7 +12077,7 @@ public final class SGSystemProto {
     private java.util.List<com.douqu.game.core.protobuf.SGCommonProto.BattleUnit> soldier_;
     /**
      * <pre>
-     *场上的兵			
+     *场上的兵	
      * </pre>
      *
      * <code>repeated .BattleUnit soldier = 8;</code>
@@ -11358,7 +12087,7 @@ public final class SGSystemProto {
     }
     /**
      * <pre>
-     *场上的兵			
+     *场上的兵	
      * </pre>
      *
      * <code>repeated .BattleUnit soldier = 8;</code>
@@ -11369,7 +12098,7 @@ public final class SGSystemProto {
     }
     /**
      * <pre>
-     *场上的兵			
+     *场上的兵	
      * </pre>
      *
      * <code>repeated .BattleUnit soldier = 8;</code>
@@ -11379,7 +12108,7 @@ public final class SGSystemProto {
     }
     /**
      * <pre>
-     *场上的兵			
+     *场上的兵	
      * </pre>
      *
      * <code>repeated .BattleUnit soldier = 8;</code>
@@ -11389,7 +12118,7 @@ public final class SGSystemProto {
     }
     /**
      * <pre>
-     *场上的兵			
+     *场上的兵	
      * </pre>
      *
      * <code>repeated .BattleUnit soldier = 8;</code>
@@ -11398,6 +12127,41 @@ public final class SGSystemProto {
         int index) {
       return soldier_.get(index);
     }
+
+    public static final int SELFMASTERSKILL_FIELD_NUMBER = 9;
+    private java.util.List<java.lang.Integer> selfMasterSkill_;
+    /**
+     * <pre>
+     *自己的主将技能		
+     * </pre>
+     *
+     * <code>repeated int32 selfMasterSkill = 9;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getSelfMasterSkillList() {
+      return selfMasterSkill_;
+    }
+    /**
+     * <pre>
+     *自己的主将技能		
+     * </pre>
+     *
+     * <code>repeated int32 selfMasterSkill = 9;</code>
+     */
+    public int getSelfMasterSkillCount() {
+      return selfMasterSkill_.size();
+    }
+    /**
+     * <pre>
+     *自己的主将技能		
+     * </pre>
+     *
+     * <code>repeated int32 selfMasterSkill = 9;</code>
+     */
+    public int getSelfMasterSkill(int index) {
+      return selfMasterSkill_.get(index);
+    }
+    private int selfMasterSkillMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -11439,6 +12203,13 @@ public final class SGSystemProto {
       }
       for (int i = 0; i < soldier_.size(); i++) {
         output.writeMessage(8, soldier_.get(i));
+      }
+      if (getSelfMasterSkillList().size() > 0) {
+        output.writeUInt32NoTag(74);
+        output.writeUInt32NoTag(selfMasterSkillMemoizedSerializedSize);
+      }
+      for (int i = 0; i < selfMasterSkill_.size(); i++) {
+        output.writeInt32NoTag(selfMasterSkill_.get(i));
       }
     }
 
@@ -11487,6 +12258,20 @@ public final class SGSystemProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, soldier_.get(i));
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < selfMasterSkill_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(selfMasterSkill_.get(i));
+        }
+        size += dataSize;
+        if (!getSelfMasterSkillList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        selfMasterSkillMemoizedSerializedSize = dataSize;
+      }
       memoizedSize = size;
       return size;
     }
@@ -11524,6 +12309,8 @@ public final class SGSystemProto {
           .equals(other.getCardIdList());
       result = result && getSoldierList()
           .equals(other.getSoldierList());
+      result = result && getSelfMasterSkillList()
+          .equals(other.getSelfMasterSkillList());
       return result;
     }
 
@@ -11557,6 +12344,10 @@ public final class SGSystemProto {
       if (getSoldierCount() > 0) {
         hash = (37 * hash) + SOLDIER_FIELD_NUMBER;
         hash = (53 * hash) + getSoldierList().hashCode();
+      }
+      if (getSelfMasterSkillCount() > 0) {
+        hash = (37 * hash) + SELFMASTERSKILL_FIELD_NUMBER;
+        hash = (53 * hash) + getSelfMasterSkillList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -11705,6 +12496,8 @@ public final class SGSystemProto {
         } else {
           soldierBuilder_.clear();
         }
+        selfMasterSkill_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
 
@@ -11757,6 +12550,11 @@ public final class SGSystemProto {
         } else {
           result.soldier_ = soldierBuilder_.build();
         }
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          selfMasterSkill_ = java.util.Collections.unmodifiableList(selfMasterSkill_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.selfMasterSkill_ = selfMasterSkill_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -11854,6 +12652,16 @@ public final class SGSystemProto {
               soldierBuilder_.addAllMessages(other.soldier_);
             }
           }
+        }
+        if (!other.selfMasterSkill_.isEmpty()) {
+          if (selfMasterSkill_.isEmpty()) {
+            selfMasterSkill_ = other.selfMasterSkill_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureSelfMasterSkillIsMutable();
+            selfMasterSkill_.addAll(other.selfMasterSkill_);
+          }
+          onChanged();
         }
         onChanged();
         return this;
@@ -12576,7 +13384,7 @@ public final class SGSystemProto {
 
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12590,7 +13398,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12604,7 +13412,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12618,7 +13426,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12639,7 +13447,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12657,7 +13465,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12677,7 +13485,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12698,7 +13506,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12716,7 +13524,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12734,7 +13542,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12753,7 +13561,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12770,7 +13578,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12787,7 +13595,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12798,7 +13606,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12812,7 +13620,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12827,7 +13635,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12838,7 +13646,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12850,7 +13658,7 @@ public final class SGSystemProto {
       }
       /**
        * <pre>
-       *场上的兵			
+       *场上的兵	
        * </pre>
        *
        * <code>repeated .BattleUnit soldier = 8;</code>
@@ -12872,6 +13680,100 @@ public final class SGSystemProto {
           soldier_ = null;
         }
         return soldierBuilder_;
+      }
+
+      private java.util.List<java.lang.Integer> selfMasterSkill_ = java.util.Collections.emptyList();
+      private void ensureSelfMasterSkillIsMutable() {
+        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+          selfMasterSkill_ = new java.util.ArrayList<java.lang.Integer>(selfMasterSkill_);
+          bitField0_ |= 0x00000100;
+         }
+      }
+      /**
+       * <pre>
+       *自己的主将技能		
+       * </pre>
+       *
+       * <code>repeated int32 selfMasterSkill = 9;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getSelfMasterSkillList() {
+        return java.util.Collections.unmodifiableList(selfMasterSkill_);
+      }
+      /**
+       * <pre>
+       *自己的主将技能		
+       * </pre>
+       *
+       * <code>repeated int32 selfMasterSkill = 9;</code>
+       */
+      public int getSelfMasterSkillCount() {
+        return selfMasterSkill_.size();
+      }
+      /**
+       * <pre>
+       *自己的主将技能		
+       * </pre>
+       *
+       * <code>repeated int32 selfMasterSkill = 9;</code>
+       */
+      public int getSelfMasterSkill(int index) {
+        return selfMasterSkill_.get(index);
+      }
+      /**
+       * <pre>
+       *自己的主将技能		
+       * </pre>
+       *
+       * <code>repeated int32 selfMasterSkill = 9;</code>
+       */
+      public Builder setSelfMasterSkill(
+          int index, int value) {
+        ensureSelfMasterSkillIsMutable();
+        selfMasterSkill_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *自己的主将技能		
+       * </pre>
+       *
+       * <code>repeated int32 selfMasterSkill = 9;</code>
+       */
+      public Builder addSelfMasterSkill(int value) {
+        ensureSelfMasterSkillIsMutable();
+        selfMasterSkill_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *自己的主将技能		
+       * </pre>
+       *
+       * <code>repeated int32 selfMasterSkill = 9;</code>
+       */
+      public Builder addAllSelfMasterSkill(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureSelfMasterSkillIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, selfMasterSkill_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *自己的主将技能		
+       * </pre>
+       *
+       * <code>repeated int32 selfMasterSkill = 9;</code>
+       */
+      public Builder clearSelfMasterSkill() {
+        selfMasterSkill_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -13433,6 +14335,2131 @@ public final class SGSystemProto {
 
   }
 
+  public interface C2S_LoginOtherPlaceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:C2S_LoginOtherPlace)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   *112顶号 LoginOtherPlace
+   * </pre>
+   *
+   * Protobuf type {@code C2S_LoginOtherPlace}
+   */
+  public  static final class C2S_LoginOtherPlace extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:C2S_LoginOtherPlace)
+      C2S_LoginOtherPlaceOrBuilder {
+    // Use C2S_LoginOtherPlace.newBuilder() to construct.
+    private C2S_LoginOtherPlace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private C2S_LoginOtherPlace() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private C2S_LoginOtherPlace(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGSystemProto.internal_static_C2S_LoginOtherPlace_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGSystemProto.internal_static_C2S_LoginOtherPlace_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace.class, com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace other = (com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace) obj;
+
+      boolean result = true;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *112顶号 LoginOtherPlace
+     * </pre>
+     *
+     * Protobuf type {@code C2S_LoginOtherPlace}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:C2S_LoginOtherPlace)
+        com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlaceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGSystemProto.internal_static_C2S_LoginOtherPlace_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGSystemProto.internal_static_C2S_LoginOtherPlace_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace.class, com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGSystemProto.internal_static_C2S_LoginOtherPlace_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace build() {
+        com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace buildPartial() {
+        com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace result = new com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace other) {
+        if (other == com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace.getDefaultInstance()) return this;
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2S_LoginOtherPlace)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2S_LoginOtherPlace)
+    private static final com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace();
+    }
+
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<C2S_LoginOtherPlace>
+        PARSER = new com.google.protobuf.AbstractParser<C2S_LoginOtherPlace>() {
+      public C2S_LoginOtherPlace parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new C2S_LoginOtherPlace(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2S_LoginOtherPlace> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2S_LoginOtherPlace> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGSystemProto.C2S_LoginOtherPlace getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface S2C_LoginOtherPlaceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_LoginOtherPlace)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code S2C_LoginOtherPlace}
+   */
+  public  static final class S2C_LoginOtherPlace extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_LoginOtherPlace)
+      S2C_LoginOtherPlaceOrBuilder {
+    // Use S2C_LoginOtherPlace.newBuilder() to construct.
+    private S2C_LoginOtherPlace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_LoginOtherPlace() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private S2C_LoginOtherPlace(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGSystemProto.internal_static_S2C_LoginOtherPlace_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGSystemProto.internal_static_S2C_LoginOtherPlace_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace.class, com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace other = (com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace) obj;
+
+      boolean result = true;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code S2C_LoginOtherPlace}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_LoginOtherPlace)
+        com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlaceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGSystemProto.internal_static_S2C_LoginOtherPlace_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGSystemProto.internal_static_S2C_LoginOtherPlace_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace.class, com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGSystemProto.internal_static_S2C_LoginOtherPlace_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace build() {
+        com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace buildPartial() {
+        com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace result = new com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace other) {
+        if (other == com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace.getDefaultInstance()) return this;
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:S2C_LoginOtherPlace)
+    }
+
+    // @@protoc_insertion_point(class_scope:S2C_LoginOtherPlace)
+    private static final com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace();
+    }
+
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S2C_LoginOtherPlace>
+        PARSER = new com.google.protobuf.AbstractParser<S2C_LoginOtherPlace>() {
+      public S2C_LoginOtherPlace parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new S2C_LoginOtherPlace(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S2C_LoginOtherPlace> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S2C_LoginOtherPlace> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGSystemProto.S2C_LoginOtherPlace getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface C2S_CancelWaitOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:C2S_CancelWait)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string account = 1;</code>
+     */
+    java.lang.String getAccount();
+    /**
+     * <code>string account = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getAccountBytes();
+  }
+  /**
+   * <pre>
+   *113取消排队	CancelWait
+   * </pre>
+   *
+   * Protobuf type {@code C2S_CancelWait}
+   */
+  public  static final class C2S_CancelWait extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:C2S_CancelWait)
+      C2S_CancelWaitOrBuilder {
+    // Use C2S_CancelWait.newBuilder() to construct.
+    private C2S_CancelWait(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private C2S_CancelWait() {
+      account_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private C2S_CancelWait(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              account_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGSystemProto.internal_static_C2S_CancelWait_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGSystemProto.internal_static_C2S_CancelWait_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait.class, com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait.Builder.class);
+    }
+
+    public static final int ACCOUNT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object account_;
+    /**
+     * <code>string account = 1;</code>
+     */
+    public java.lang.String getAccount() {
+      java.lang.Object ref = account_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        account_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string account = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAccountBytes() {
+      java.lang.Object ref = account_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        account_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getAccountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, account_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getAccountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, account_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait other = (com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait) obj;
+
+      boolean result = true;
+      result = result && getAccount()
+          .equals(other.getAccount());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAccount().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *113取消排队	CancelWait
+     * </pre>
+     *
+     * Protobuf type {@code C2S_CancelWait}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:C2S_CancelWait)
+        com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWaitOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGSystemProto.internal_static_C2S_CancelWait_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGSystemProto.internal_static_C2S_CancelWait_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait.class, com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        account_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGSystemProto.internal_static_C2S_CancelWait_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait build() {
+        com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait buildPartial() {
+        com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait result = new com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait(this);
+        result.account_ = account_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait other) {
+        if (other == com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait.getDefaultInstance()) return this;
+        if (!other.getAccount().isEmpty()) {
+          account_ = other.account_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object account_ = "";
+      /**
+       * <code>string account = 1;</code>
+       */
+      public java.lang.String getAccount() {
+        java.lang.Object ref = account_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          account_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string account = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAccountBytes() {
+        java.lang.Object ref = account_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          account_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string account = 1;</code>
+       */
+      public Builder setAccount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        account_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string account = 1;</code>
+       */
+      public Builder clearAccount() {
+        
+        account_ = getDefaultInstance().getAccount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string account = 1;</code>
+       */
+      public Builder setAccountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        account_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2S_CancelWait)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2S_CancelWait)
+    private static final com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait();
+    }
+
+    public static com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<C2S_CancelWait>
+        PARSER = new com.google.protobuf.AbstractParser<C2S_CancelWait>() {
+      public C2S_CancelWait parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new C2S_CancelWait(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2S_CancelWait> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2S_CancelWait> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGSystemProto.C2S_CancelWait getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface S2C_CancelWaitOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_CancelWait)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string account = 1;</code>
+     */
+    java.lang.String getAccount();
+    /**
+     * <code>string account = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getAccountBytes();
+  }
+  /**
+   * Protobuf type {@code S2C_CancelWait}
+   */
+  public  static final class S2C_CancelWait extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_CancelWait)
+      S2C_CancelWaitOrBuilder {
+    // Use S2C_CancelWait.newBuilder() to construct.
+    private S2C_CancelWait(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_CancelWait() {
+      account_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private S2C_CancelWait(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              account_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGSystemProto.internal_static_S2C_CancelWait_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGSystemProto.internal_static_S2C_CancelWait_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait.class, com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait.Builder.class);
+    }
+
+    public static final int ACCOUNT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object account_;
+    /**
+     * <code>string account = 1;</code>
+     */
+    public java.lang.String getAccount() {
+      java.lang.Object ref = account_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        account_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string account = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAccountBytes() {
+      java.lang.Object ref = account_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        account_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getAccountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, account_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getAccountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, account_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait other = (com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait) obj;
+
+      boolean result = true;
+      result = result && getAccount()
+          .equals(other.getAccount());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAccount().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code S2C_CancelWait}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_CancelWait)
+        com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWaitOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGSystemProto.internal_static_S2C_CancelWait_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGSystemProto.internal_static_S2C_CancelWait_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait.class, com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        account_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGSystemProto.internal_static_S2C_CancelWait_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait build() {
+        com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait buildPartial() {
+        com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait result = new com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait(this);
+        result.account_ = account_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait other) {
+        if (other == com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait.getDefaultInstance()) return this;
+        if (!other.getAccount().isEmpty()) {
+          account_ = other.account_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object account_ = "";
+      /**
+       * <code>string account = 1;</code>
+       */
+      public java.lang.String getAccount() {
+        java.lang.Object ref = account_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          account_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string account = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAccountBytes() {
+        java.lang.Object ref = account_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          account_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string account = 1;</code>
+       */
+      public Builder setAccount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        account_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string account = 1;</code>
+       */
+      public Builder clearAccount() {
+        
+        account_ = getDefaultInstance().getAccount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string account = 1;</code>
+       */
+      public Builder setAccountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        account_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:S2C_CancelWait)
+    }
+
+    // @@protoc_insertion_point(class_scope:S2C_CancelWait)
+    private static final com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait();
+    }
+
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S2C_CancelWait>
+        PARSER = new com.google.protobuf.AbstractParser<S2C_CancelWait>() {
+      public S2C_CancelWait parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new S2C_CancelWait(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S2C_CancelWait> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S2C_CancelWait> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGSystemProto.S2C_CancelWait getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface S2C_OfflineOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_Offline)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   *114 通知客户端掉线了,客户端显示对话框,上面有两个选项(重新连接和返回登录,重新连接也是调用登录接口,只是loginType不一样)
+   * </pre>
+   *
+   * Protobuf type {@code S2C_Offline}
+   */
+  public  static final class S2C_Offline extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_Offline)
+      S2C_OfflineOrBuilder {
+    // Use S2C_Offline.newBuilder() to construct.
+    private S2C_Offline(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_Offline() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private S2C_Offline(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGSystemProto.internal_static_S2C_Offline_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGSystemProto.internal_static_S2C_Offline_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline.class, com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline other = (com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline) obj;
+
+      boolean result = true;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *114 通知客户端掉线了,客户端显示对话框,上面有两个选项(重新连接和返回登录,重新连接也是调用登录接口,只是loginType不一样)
+     * </pre>
+     *
+     * Protobuf type {@code S2C_Offline}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_Offline)
+        com.douqu.game.core.protobuf.SGSystemProto.S2C_OfflineOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGSystemProto.internal_static_S2C_Offline_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGSystemProto.internal_static_S2C_Offline_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline.class, com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGSystemProto.internal_static_S2C_Offline_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline build() {
+        com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline buildPartial() {
+        com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline result = new com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline other) {
+        if (other == com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline.getDefaultInstance()) return this;
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:S2C_Offline)
+    }
+
+    // @@protoc_insertion_point(class_scope:S2C_Offline)
+    private static final com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline();
+    }
+
+    public static com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S2C_Offline>
+        PARSER = new com.google.protobuf.AbstractParser<S2C_Offline>() {
+      public S2C_Offline parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new S2C_Offline(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S2C_Offline> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S2C_Offline> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGSystemProto.S2C_Offline getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_C2S_Regist_descriptor;
   private static final 
@@ -13513,6 +16540,31 @@ public final class SGSystemProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_C2S_GMCmd_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2S_LoginOtherPlace_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2S_LoginOtherPlace_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_S2C_LoginOtherPlace_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_S2C_LoginOtherPlace_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2S_CancelWait_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2S_CancelWait_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_S2C_CancelWait_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_S2C_CancelWait_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_S2C_Offline_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_S2C_Offline_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -13522,41 +16574,49 @@ public final class SGSystemProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016SGSystem.proto\032\016SGCommon.proto\"u\n\nC2S_" +
-      "Regist\022 \n\007channel\030\001 \001(\0162\017.E_CHANNEL_TYPE" +
-      "\022\017\n\007account\030\002 \001(\t\022\017\n\007captcha\030\003 \001(\t\022\021\n\tav" +
-      "atarUrl\030\004 \001(\t\022\020\n\010nickName\030\005 \001(\t\"U\n\nS2C_R" +
-      "egist\022 \n\006result\030\001 \001(\0162\020.E_REGIST_RESULT\022" +
-      "\023\n\013resourceUrl\030\002 \001(\t\022\020\n\010password\030\003 \001(\t\"`" +
-      "\n\tC2S_Login\022 \n\007channel\030\001 \001(\0162\017.E_CHANNEL" +
-      "_TYPE\022\017\n\007account\030\002 \001(\t\022\020\n\010password\030\003 \001(\t" +
-      "\022\016\n\006normal\030\004 \001(\010\"\332\001\n\tS2C_Login\022\037\n\006result" +
-      "\030\001 \001(\0162\017.E_LOGIN_RESULT\022 \n\007channel\030\002 \001(\016",
-      "2\017.E_CHANNEL_TYPE\022\023\n\013resourceUrl\030\003 \001(\t\022\020" +
-      "\n\010password\030\004 \001(\t\022#\n\nplayerInfo\030\005 \001(\0132\017.P" +
-      "layerBaseInfo\022\035\n\tflushData\030\006 \003(\0132\n.Flush" +
-      "Data\022\037\n\nbattleData\030\007 \001(\0132\013.BattleData\"\020\n" +
-      "\016C2S_SuperLogin\"k\n\016S2C_SuperLogin\022\037\n\006res" +
-      "ult\030\001 \001(\0162\017.E_LOGIN_RESULT\022\023\n\013resourceUr" +
-      "l\030\002 \001(\t\022#\n\nplayerInfo\030\003 \001(\0132\017.PlayerBase" +
-      "Info\"\030\n\010C2S_Ping\022\014\n\004time\030\001 \001(\003\"\030\n\010S2C_Pi" +
-      "ng\022\014\n\004time\030\001 \001(\003\"\037\n\016C2S_GetCaptcha\022\r\n\005ph" +
-      "one\030\001 \001(\t\"R\n\016S2C_GetCaptcha\022 \n\006result\030\001 ",
-      "\001(\0162\020.E_REGIST_RESULT\022\r\n\005phone\030\002 \001(\t\022\017\n\007" +
-      "captcha\030\003 \001(\t\"@\n\017S2C_NotifyAlert\022\034\n\004type" +
-      "\030\001 \001(\0162\016.E_NOTIFY_TYPE\022\017\n\007content\030\002 \001(\t\"" +
-      "\014\n\nC2S_Logout\"1\n\nS2C_Logout\022#\n\006result\030\001 " +
-      "\001(\0162\023.E_UNIVERSAL_RESULT\"<\n\023C2S_BattleRe" +
-      "connect\022\020\n\010battleId\030\001 \001(\t\022\023\n\013playerIndex" +
-      "\030\002 \001(\t\"\341\001\n\023S2C_BattleReconnect\022\020\n\010battle" +
-      "Id\030\001 \001(\t\022\023\n\013playerIndex\030\002 \001(\t\022\"\n\nbattleT" +
-      "ype\030\003 \001(\0162\016.E_BATTLE_TYPE\022\016\n\006teamNo\030\004 \001(" +
-      "\005\022\037\n\nselfMaster\030\005 \001(\0132\013.BattleUnit\022 \n\013ot",
-      "herMaster\030\006 \001(\0132\013.BattleUnit\022\016\n\006cardId\030\007" +
-      " \003(\005\022\034\n\007soldier\030\010 \003(\0132\013.BattleUnit\"\030\n\tC2" +
-      "S_GMCmd\022\013\n\003cmd\030\001 \001(\tB5\n\034com.douqu.game.c" +
-      "ore.protobufB\rSGSystemProto\252\002\005UBaseb\006pro" +
-      "to3"
+      "\n\016SGSystem.proto\032\016SGCommon.proto\"\250\001\n\nC2S" +
+      "_Regist\022 \n\007channel\030\001 \001(\0162\017.E_CHANNEL_TYP" +
+      "E\022\017\n\007account\030\002 \001(\t\022\020\n\010password\030\003 \001(\t\022\021\n\t" +
+      "avatarUrl\030\004 \001(\t\022\020\n\010nickName\030\005 \001(\t\022\032\n\004cam" +
+      "p\030\006 \001(\0162\014.E_CAMP_TYPE\022\024\n\014isRandomRole\030\007 " +
+      "\001(\010\"U\n\nS2C_Regist\022 \n\006result\030\001 \001(\0162\020.E_RE" +
+      "GIST_RESULT\022\023\n\013resourceUrl\030\002 \001(\t\022\020\n\010pass" +
+      "word\030\003 \001(\t\"\202\001\n\tC2S_Login\022 \n\007channel\030\001 \001(" +
+      "\0162\017.E_CHANNEL_TYPE\022\017\n\007account\030\002 \001(\t\022\020\n\010p" +
+      "assword\030\003 \001(\t\022\016\n\006normal\030\004 \001(\010\022 \n\tloginTy",
+      "pe\030\005 \001(\0162\r.E_LOGIN_TYPE\"\263\002\n\tS2C_Login\022\037\n" +
+      "\006result\030\001 \001(\0162\017.E_LOGIN_RESULT\022 \n\007channe" +
+      "l\030\002 \001(\0162\017.E_CHANNEL_TYPE\022\023\n\013resourceUrl\030" +
+      "\003 \001(\t\022\020\n\010password\030\004 \001(\t\022#\n\nplayerInfo\030\005 " +
+      "\001(\0132\017.PlayerBaseInfo\022\035\n\tflushData\030\006 \003(\0132" +
+      "\n.FlushData\022\037\n\nbattleData\030\007 \001(\0132\013.Battle" +
+      "Data\022\020\n\010waitTime\030\010 \001(\005\022 \n\tloginType\030\t \001(" +
+      "\0162\r.E_LOGIN_TYPE\022#\n\rrecommendCamp\030\n \001(\0162" +
+      "\014.E_CAMP_TYPE\"\020\n\016C2S_SuperLogin\"k\n\016S2C_S" +
+      "uperLogin\022\037\n\006result\030\001 \001(\0162\017.E_LOGIN_RESU",
+      "LT\022\023\n\013resourceUrl\030\002 \001(\t\022#\n\nplayerInfo\030\003 " +
+      "\001(\0132\017.PlayerBaseInfo\"\030\n\010C2S_Ping\022\014\n\004time" +
+      "\030\001 \001(\003\"\030\n\010S2C_Ping\022\014\n\004time\030\001 \001(\003\"\037\n\016C2S_" +
+      "GetCaptcha\022\r\n\005phone\030\001 \001(\t\"R\n\016S2C_GetCapt" +
+      "cha\022 \n\006result\030\001 \001(\0162\020.E_REGIST_RESULT\022\r\n" +
+      "\005phone\030\002 \001(\t\022\017\n\007captcha\030\003 \001(\t\"@\n\017S2C_Not" +
+      "ifyAlert\022\034\n\004type\030\001 \001(\0162\016.E_NOTIFY_TYPE\022\017" +
+      "\n\007content\030\002 \001(\t\"\014\n\nC2S_Logout\"1\n\nS2C_Log" +
+      "out\022#\n\006result\030\001 \001(\0162\023.E_UNIVERSAL_RESULT" +
+      "\"<\n\023C2S_BattleReconnect\022\020\n\010battleId\030\001 \001(",
+      "\t\022\023\n\013playerIndex\030\002 \001(\t\"\372\001\n\023S2C_BattleRec" +
+      "onnect\022\020\n\010battleId\030\001 \001(\t\022\023\n\013playerIndex\030" +
+      "\002 \001(\t\022\"\n\nbattleType\030\003 \001(\0162\016.E_BATTLE_TYP" +
+      "E\022\016\n\006teamNo\030\004 \001(\005\022\037\n\nselfMaster\030\005 \001(\0132\013." +
+      "BattleUnit\022 \n\013otherMaster\030\006 \001(\0132\013.Battle" +
+      "Unit\022\016\n\006cardId\030\007 \003(\005\022\034\n\007soldier\030\010 \003(\0132\013." +
+      "BattleUnit\022\027\n\017selfMasterSkill\030\t \003(\005\"\030\n\tC" +
+      "2S_GMCmd\022\013\n\003cmd\030\001 \001(\t\"\025\n\023C2S_LoginOtherP" +
+      "lace\"\025\n\023S2C_LoginOtherPlace\"!\n\016C2S_Cance" +
+      "lWait\022\017\n\007account\030\001 \001(\t\"!\n\016S2C_CancelWait",
+      "\022\017\n\007account\030\001 \001(\t\"\r\n\013S2C_OfflineB5\n\034com." +
+      "douqu.game.core.protobufB\rSGSystemProto\252" +
+      "\002\005UBaseb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13576,7 +16636,7 @@ public final class SGSystemProto {
     internal_static_C2S_Regist_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Regist_descriptor,
-        new java.lang.String[] { "Channel", "Account", "Captcha", "AvatarUrl", "NickName", });
+        new java.lang.String[] { "Channel", "Account", "Password", "AvatarUrl", "NickName", "Camp", "IsRandomRole", });
     internal_static_S2C_Regist_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_S2C_Regist_fieldAccessorTable = new
@@ -13588,13 +16648,13 @@ public final class SGSystemProto {
     internal_static_C2S_Login_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Login_descriptor,
-        new java.lang.String[] { "Channel", "Account", "Password", "Normal", });
+        new java.lang.String[] { "Channel", "Account", "Password", "Normal", "LoginType", });
     internal_static_S2C_Login_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_S2C_Login_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Login_descriptor,
-        new java.lang.String[] { "Result", "Channel", "ResourceUrl", "Password", "PlayerInfo", "FlushData", "BattleData", });
+        new java.lang.String[] { "Result", "Channel", "ResourceUrl", "Password", "PlayerInfo", "FlushData", "BattleData", "WaitTime", "LoginType", "RecommendCamp", });
     internal_static_C2S_SuperLogin_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_C2S_SuperLogin_fieldAccessorTable = new
@@ -13660,13 +16720,43 @@ public final class SGSystemProto {
     internal_static_S2C_BattleReconnect_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_BattleReconnect_descriptor,
-        new java.lang.String[] { "BattleId", "PlayerIndex", "BattleType", "TeamNo", "SelfMaster", "OtherMaster", "CardId", "Soldier", });
+        new java.lang.String[] { "BattleId", "PlayerIndex", "BattleType", "TeamNo", "SelfMaster", "OtherMaster", "CardId", "Soldier", "SelfMasterSkill", });
     internal_static_C2S_GMCmd_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_C2S_GMCmd_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_GMCmd_descriptor,
         new java.lang.String[] { "Cmd", });
+    internal_static_C2S_LoginOtherPlace_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_C2S_LoginOtherPlace_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2S_LoginOtherPlace_descriptor,
+        new java.lang.String[] { });
+    internal_static_S2C_LoginOtherPlace_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_S2C_LoginOtherPlace_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_S2C_LoginOtherPlace_descriptor,
+        new java.lang.String[] { });
+    internal_static_C2S_CancelWait_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_C2S_CancelWait_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2S_CancelWait_descriptor,
+        new java.lang.String[] { "Account", });
+    internal_static_S2C_CancelWait_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_S2C_CancelWait_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_S2C_CancelWait_descriptor,
+        new java.lang.String[] { "Account", });
+    internal_static_S2C_Offline_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_S2C_Offline_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_S2C_Offline_descriptor,
+        new java.lang.String[] { });
     com.douqu.game.core.protobuf.SGCommonProto.getDescriptor();
   }
 

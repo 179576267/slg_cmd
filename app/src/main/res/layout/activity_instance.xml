@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.wzf.slgtest.ArenaActivity">
+    tools:context="com.wzf.slgtest.ui.ArenaActivity">
     <TextView
         android:id="@+id/tv_object_index"
         android:layout_width="match_parent"
@@ -24,6 +24,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="获取当前副本进度"/>
+            <Button
+                android:id="@+id/btn_battle_request"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="战斗发起"/>
             <Button
                 android:id="@+id/btn_pass_level"
                 android:layout_width="match_parent"

@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
+import com.wzf.slgtest.netty.Config;
+
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -19,6 +21,7 @@ import butterknife.ButterKnife;
  */
 
 public class BaseActivity extends AppCompatActivity {
+    private boolean isShow;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +34,27 @@ public class BaseActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        isShow = true;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        isShow = false;
+    }
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void notifyAlert(String msgInfo) {
-        new AlertDialog.Builder(this).setMessage(msgInfo).show();
+        if(isShow){
+            new AlertDialog.Builder(this).setMessage(msgInfo).show();
+        }
+    }
+
+    protected boolean isMultAccount(){
+        return Config.multPlayerTest = false;
     }
 
 

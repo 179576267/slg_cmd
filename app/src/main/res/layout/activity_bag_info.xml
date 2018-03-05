@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.wzf.slgtest.ArenaActivity">
+    tools:context="com.wzf.slgtest.ui.ArenaActivity">
     <TextView
         android:id="@+id/tv_object_index"
         android:layout_width="match_parent"
@@ -20,6 +20,12 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/btn_use_prop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="使用道具"/>
+
+            <Button
                 android:id="@+id/btn_bg_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -32,10 +38,42 @@
                 android:text="卡牌升级"/>
 
             <Button
-                android:id="@+id/btn_use_prop"
+                android:id="@+id/btn_card_add_exp_by_porp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="使用道具"/>
+                android:text="根据经验卷轴升级"/>
+
+            <Button
+                android:id="@+id/btn_card_merge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="卡牌合成"/>
+
+            <Button
+                android:id="@+id/btn_equip_strong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="装备强化"/>
+
+            <Button
+                android:id="@+id/btn_accessory_lv_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="饰品升级"/>
+
+            <Button
+                android:id="@+id/btn_accessory_strong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="饰品强化"/>
+
+            <Button
+                android:id="@+id/btn_fate_active"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="宿命激活"/>
+
+
 
 
         </LinearLayout>

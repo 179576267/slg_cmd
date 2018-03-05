@@ -10,10 +10,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:screenOrientation="portrait"
+        android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,35 +23,49 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MenuActivity"
+            android:name=".ui.MenuActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ArenaActivity"
+            android:name=".ui.ArenaActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".InstanceActivity"
+            android:name=".ui.InstanceActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".OfficialRankActivity"
+            android:name=".ui.OfficialRankActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".GoblinStoreActivity"
+            android:name=".ui.GoblinStoreActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PlayerInfoActivity"
+            android:name=".ui.PlayerInfoActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".VipAndBonusActivity"
+            android:name=".ui.VipAndBonusActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".BagInfoActivity"
+            android:name=".ui.BagCardInfoActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ResolveActivity"
+        <activity
+            android:name=".ui.ResolveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.HeroTempleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ExpeditionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.TaskActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.AltarLotteryActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.ForceTestActivity"
             android:screenOrientation="portrait"></activity>
-        <activity android:name=".HeroTempleActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".AltarActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ui.MultFunctionTestActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"></activity>
     </application>
 
 </manifest>

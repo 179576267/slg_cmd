@@ -25982,6 +25982,2699 @@ public final class SGBagProto {
 
   }
 
+  public interface C2S_AccessoryActivatedOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:C2S_AccessoryActivated)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *卡牌id		
+     * </pre>
+     *
+     * <code>int32 cardId = 1;</code>
+     */
+    int getCardId();
+
+    /**
+     * <pre>
+     *装备类型	
+     * </pre>
+     *
+     * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+     */
+    int getAccessoryTypeValue();
+    /**
+     * <pre>
+     *装备类型	
+     * </pre>
+     *
+     * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE getAccessoryType();
+  }
+  /**
+   * <pre>
+   *饰品激活 526
+   * </pre>
+   *
+   * Protobuf type {@code C2S_AccessoryActivated}
+   */
+  public  static final class C2S_AccessoryActivated extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:C2S_AccessoryActivated)
+      C2S_AccessoryActivatedOrBuilder {
+    // Use C2S_AccessoryActivated.newBuilder() to construct.
+    private C2S_AccessoryActivated(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private C2S_AccessoryActivated() {
+      cardId_ = 0;
+      accessoryType_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private C2S_AccessoryActivated(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              cardId_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              accessoryType_ = rawValue;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGBagProto.internal_static_C2S_AccessoryActivated_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGBagProto.internal_static_C2S_AccessoryActivated_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated.class, com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated.Builder.class);
+    }
+
+    public static final int CARDID_FIELD_NUMBER = 1;
+    private int cardId_;
+    /**
+     * <pre>
+     *卡牌id		
+     * </pre>
+     *
+     * <code>int32 cardId = 1;</code>
+     */
+    public int getCardId() {
+      return cardId_;
+    }
+
+    public static final int ACCESSORYTYPE_FIELD_NUMBER = 2;
+    private int accessoryType_;
+    /**
+     * <pre>
+     *装备类型	
+     * </pre>
+     *
+     * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+     */
+    public int getAccessoryTypeValue() {
+      return accessoryType_;
+    }
+    /**
+     * <pre>
+     *装备类型	
+     * </pre>
+     *
+     * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE getAccessoryType() {
+      com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE.valueOf(accessoryType_);
+      return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (cardId_ != 0) {
+        output.writeInt32(1, cardId_);
+      }
+      if (accessoryType_ != com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE.ACCESSORY_TYPE_UNKNOWN.getNumber()) {
+        output.writeEnum(2, accessoryType_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (cardId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, cardId_);
+      }
+      if (accessoryType_ != com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE.ACCESSORY_TYPE_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, accessoryType_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated other = (com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated) obj;
+
+      boolean result = true;
+      result = result && (getCardId()
+          == other.getCardId());
+      result = result && accessoryType_ == other.accessoryType_;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CARDID_FIELD_NUMBER;
+      hash = (53 * hash) + getCardId();
+      hash = (37 * hash) + ACCESSORYTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + accessoryType_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *饰品激活 526
+     * </pre>
+     *
+     * Protobuf type {@code C2S_AccessoryActivated}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:C2S_AccessoryActivated)
+        com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivatedOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGBagProto.internal_static_C2S_AccessoryActivated_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGBagProto.internal_static_C2S_AccessoryActivated_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated.class, com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        cardId_ = 0;
+
+        accessoryType_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGBagProto.internal_static_C2S_AccessoryActivated_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated build() {
+        com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated buildPartial() {
+        com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated result = new com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated(this);
+        result.cardId_ = cardId_;
+        result.accessoryType_ = accessoryType_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated other) {
+        if (other == com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated.getDefaultInstance()) return this;
+        if (other.getCardId() != 0) {
+          setCardId(other.getCardId());
+        }
+        if (other.accessoryType_ != 0) {
+          setAccessoryTypeValue(other.getAccessoryTypeValue());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int cardId_ ;
+      /**
+       * <pre>
+       *卡牌id		
+       * </pre>
+       *
+       * <code>int32 cardId = 1;</code>
+       */
+      public int getCardId() {
+        return cardId_;
+      }
+      /**
+       * <pre>
+       *卡牌id		
+       * </pre>
+       *
+       * <code>int32 cardId = 1;</code>
+       */
+      public Builder setCardId(int value) {
+        
+        cardId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *卡牌id		
+       * </pre>
+       *
+       * <code>int32 cardId = 1;</code>
+       */
+      public Builder clearCardId() {
+        
+        cardId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int accessoryType_ = 0;
+      /**
+       * <pre>
+       *装备类型	
+       * </pre>
+       *
+       * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+       */
+      public int getAccessoryTypeValue() {
+        return accessoryType_;
+      }
+      /**
+       * <pre>
+       *装备类型	
+       * </pre>
+       *
+       * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+       */
+      public Builder setAccessoryTypeValue(int value) {
+        accessoryType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *装备类型	
+       * </pre>
+       *
+       * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE getAccessoryType() {
+        com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE.valueOf(accessoryType_);
+        return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       *装备类型	
+       * </pre>
+       *
+       * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+       */
+      public Builder setAccessoryType(com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        accessoryType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *装备类型	
+       * </pre>
+       *
+       * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+       */
+      public Builder clearAccessoryType() {
+        
+        accessoryType_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2S_AccessoryActivated)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2S_AccessoryActivated)
+    private static final com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated();
+    }
+
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<C2S_AccessoryActivated>
+        PARSER = new com.google.protobuf.AbstractParser<C2S_AccessoryActivated>() {
+      public C2S_AccessoryActivated parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new C2S_AccessoryActivated(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2S_AccessoryActivated> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2S_AccessoryActivated> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGBagProto.C2S_AccessoryActivated getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface S2C_AccessoryActivatedOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_AccessoryActivated)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *卡牌id		
+     * </pre>
+     *
+     * <code>int32 cardId = 1;</code>
+     */
+    int getCardId();
+
+    /**
+     * <pre>
+     *装备类型	
+     * </pre>
+     *
+     * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+     */
+    int getAccessoryTypeValue();
+    /**
+     * <pre>
+     *装备类型	
+     * </pre>
+     *
+     * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE getAccessoryType();
+
+    /**
+     * <pre>
+     *是否激活
+     * </pre>
+     *
+     * <code>bool isActivated = 3;</code>
+     */
+    boolean getIsActivated();
+  }
+  /**
+   * Protobuf type {@code S2C_AccessoryActivated}
+   */
+  public  static final class S2C_AccessoryActivated extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_AccessoryActivated)
+      S2C_AccessoryActivatedOrBuilder {
+    // Use S2C_AccessoryActivated.newBuilder() to construct.
+    private S2C_AccessoryActivated(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_AccessoryActivated() {
+      cardId_ = 0;
+      accessoryType_ = 0;
+      isActivated_ = false;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private S2C_AccessoryActivated(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              cardId_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              accessoryType_ = rawValue;
+              break;
+            }
+            case 24: {
+
+              isActivated_ = input.readBool();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGBagProto.internal_static_S2C_AccessoryActivated_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGBagProto.internal_static_S2C_AccessoryActivated_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated.class, com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated.Builder.class);
+    }
+
+    public static final int CARDID_FIELD_NUMBER = 1;
+    private int cardId_;
+    /**
+     * <pre>
+     *卡牌id		
+     * </pre>
+     *
+     * <code>int32 cardId = 1;</code>
+     */
+    public int getCardId() {
+      return cardId_;
+    }
+
+    public static final int ACCESSORYTYPE_FIELD_NUMBER = 2;
+    private int accessoryType_;
+    /**
+     * <pre>
+     *装备类型	
+     * </pre>
+     *
+     * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+     */
+    public int getAccessoryTypeValue() {
+      return accessoryType_;
+    }
+    /**
+     * <pre>
+     *装备类型	
+     * </pre>
+     *
+     * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE getAccessoryType() {
+      com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE.valueOf(accessoryType_);
+      return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE.UNRECOGNIZED : result;
+    }
+
+    public static final int ISACTIVATED_FIELD_NUMBER = 3;
+    private boolean isActivated_;
+    /**
+     * <pre>
+     *是否激活
+     * </pre>
+     *
+     * <code>bool isActivated = 3;</code>
+     */
+    public boolean getIsActivated() {
+      return isActivated_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (cardId_ != 0) {
+        output.writeInt32(1, cardId_);
+      }
+      if (accessoryType_ != com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE.ACCESSORY_TYPE_UNKNOWN.getNumber()) {
+        output.writeEnum(2, accessoryType_);
+      }
+      if (isActivated_ != false) {
+        output.writeBool(3, isActivated_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (cardId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, cardId_);
+      }
+      if (accessoryType_ != com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE.ACCESSORY_TYPE_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, accessoryType_);
+      }
+      if (isActivated_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, isActivated_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated other = (com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated) obj;
+
+      boolean result = true;
+      result = result && (getCardId()
+          == other.getCardId());
+      result = result && accessoryType_ == other.accessoryType_;
+      result = result && (getIsActivated()
+          == other.getIsActivated());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CARDID_FIELD_NUMBER;
+      hash = (53 * hash) + getCardId();
+      hash = (37 * hash) + ACCESSORYTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + accessoryType_;
+      hash = (37 * hash) + ISACTIVATED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsActivated());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code S2C_AccessoryActivated}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_AccessoryActivated)
+        com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivatedOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGBagProto.internal_static_S2C_AccessoryActivated_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGBagProto.internal_static_S2C_AccessoryActivated_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated.class, com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        cardId_ = 0;
+
+        accessoryType_ = 0;
+
+        isActivated_ = false;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGBagProto.internal_static_S2C_AccessoryActivated_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated build() {
+        com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated buildPartial() {
+        com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated result = new com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated(this);
+        result.cardId_ = cardId_;
+        result.accessoryType_ = accessoryType_;
+        result.isActivated_ = isActivated_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated other) {
+        if (other == com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated.getDefaultInstance()) return this;
+        if (other.getCardId() != 0) {
+          setCardId(other.getCardId());
+        }
+        if (other.accessoryType_ != 0) {
+          setAccessoryTypeValue(other.getAccessoryTypeValue());
+        }
+        if (other.getIsActivated() != false) {
+          setIsActivated(other.getIsActivated());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int cardId_ ;
+      /**
+       * <pre>
+       *卡牌id		
+       * </pre>
+       *
+       * <code>int32 cardId = 1;</code>
+       */
+      public int getCardId() {
+        return cardId_;
+      }
+      /**
+       * <pre>
+       *卡牌id		
+       * </pre>
+       *
+       * <code>int32 cardId = 1;</code>
+       */
+      public Builder setCardId(int value) {
+        
+        cardId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *卡牌id		
+       * </pre>
+       *
+       * <code>int32 cardId = 1;</code>
+       */
+      public Builder clearCardId() {
+        
+        cardId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int accessoryType_ = 0;
+      /**
+       * <pre>
+       *装备类型	
+       * </pre>
+       *
+       * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+       */
+      public int getAccessoryTypeValue() {
+        return accessoryType_;
+      }
+      /**
+       * <pre>
+       *装备类型	
+       * </pre>
+       *
+       * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+       */
+      public Builder setAccessoryTypeValue(int value) {
+        accessoryType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *装备类型	
+       * </pre>
+       *
+       * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE getAccessoryType() {
+        com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE.valueOf(accessoryType_);
+        return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       *装备类型	
+       * </pre>
+       *
+       * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+       */
+      public Builder setAccessoryType(com.douqu.game.core.protobuf.SGCommonProto.E_ACCESSORY_TYPE value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        accessoryType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *装备类型	
+       * </pre>
+       *
+       * <code>.E_ACCESSORY_TYPE accessoryType = 2;</code>
+       */
+      public Builder clearAccessoryType() {
+        
+        accessoryType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isActivated_ ;
+      /**
+       * <pre>
+       *是否激活
+       * </pre>
+       *
+       * <code>bool isActivated = 3;</code>
+       */
+      public boolean getIsActivated() {
+        return isActivated_;
+      }
+      /**
+       * <pre>
+       *是否激活
+       * </pre>
+       *
+       * <code>bool isActivated = 3;</code>
+       */
+      public Builder setIsActivated(boolean value) {
+        
+        isActivated_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *是否激活
+       * </pre>
+       *
+       * <code>bool isActivated = 3;</code>
+       */
+      public Builder clearIsActivated() {
+        
+        isActivated_ = false;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:S2C_AccessoryActivated)
+    }
+
+    // @@protoc_insertion_point(class_scope:S2C_AccessoryActivated)
+    private static final com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated();
+    }
+
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S2C_AccessoryActivated>
+        PARSER = new com.google.protobuf.AbstractParser<S2C_AccessoryActivated>() {
+      public S2C_AccessoryActivated parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new S2C_AccessoryActivated(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S2C_AccessoryActivated> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S2C_AccessoryActivated> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGBagProto.S2C_AccessoryActivated getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface C2S_BattleCardResetOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:C2S_BattleCardReset)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *卡牌id		
+     * </pre>
+     *
+     * <code>repeated int32 cardId = 1;</code>
+     */
+    java.util.List<java.lang.Integer> getCardIdList();
+    /**
+     * <pre>
+     *卡牌id		
+     * </pre>
+     *
+     * <code>repeated int32 cardId = 1;</code>
+     */
+    int getCardIdCount();
+    /**
+     * <pre>
+     *卡牌id		
+     * </pre>
+     *
+     * <code>repeated int32 cardId = 1;</code>
+     */
+    int getCardId(int index);
+  }
+  /**
+   * <pre>
+   *上阵卡片替换 527
+   * </pre>
+   *
+   * Protobuf type {@code C2S_BattleCardReset}
+   */
+  public  static final class C2S_BattleCardReset extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:C2S_BattleCardReset)
+      C2S_BattleCardResetOrBuilder {
+    // Use C2S_BattleCardReset.newBuilder() to construct.
+    private C2S_BattleCardReset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private C2S_BattleCardReset() {
+      cardId_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private C2S_BattleCardReset(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                cardId_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cardId_.add(input.readInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
+                cardId_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                cardId_.add(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          cardId_ = java.util.Collections.unmodifiableList(cardId_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGBagProto.internal_static_C2S_BattleCardReset_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGBagProto.internal_static_C2S_BattleCardReset_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset.class, com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset.Builder.class);
+    }
+
+    public static final int CARDID_FIELD_NUMBER = 1;
+    private java.util.List<java.lang.Integer> cardId_;
+    /**
+     * <pre>
+     *卡牌id		
+     * </pre>
+     *
+     * <code>repeated int32 cardId = 1;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getCardIdList() {
+      return cardId_;
+    }
+    /**
+     * <pre>
+     *卡牌id		
+     * </pre>
+     *
+     * <code>repeated int32 cardId = 1;</code>
+     */
+    public int getCardIdCount() {
+      return cardId_.size();
+    }
+    /**
+     * <pre>
+     *卡牌id		
+     * </pre>
+     *
+     * <code>repeated int32 cardId = 1;</code>
+     */
+    public int getCardId(int index) {
+      return cardId_.get(index);
+    }
+    private int cardIdMemoizedSerializedSize = -1;
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (getCardIdList().size() > 0) {
+        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(cardIdMemoizedSerializedSize);
+      }
+      for (int i = 0; i < cardId_.size(); i++) {
+        output.writeInt32NoTag(cardId_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < cardId_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(cardId_.get(i));
+        }
+        size += dataSize;
+        if (!getCardIdList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        cardIdMemoizedSerializedSize = dataSize;
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset other = (com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset) obj;
+
+      boolean result = true;
+      result = result && getCardIdList()
+          .equals(other.getCardIdList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getCardIdCount() > 0) {
+        hash = (37 * hash) + CARDID_FIELD_NUMBER;
+        hash = (53 * hash) + getCardIdList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *上阵卡片替换 527
+     * </pre>
+     *
+     * Protobuf type {@code C2S_BattleCardReset}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:C2S_BattleCardReset)
+        com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardResetOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGBagProto.internal_static_C2S_BattleCardReset_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGBagProto.internal_static_C2S_BattleCardReset_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset.class, com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        cardId_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGBagProto.internal_static_C2S_BattleCardReset_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset build() {
+        com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset buildPartial() {
+        com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset result = new com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          cardId_ = java.util.Collections.unmodifiableList(cardId_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.cardId_ = cardId_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset other) {
+        if (other == com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset.getDefaultInstance()) return this;
+        if (!other.cardId_.isEmpty()) {
+          if (cardId_.isEmpty()) {
+            cardId_ = other.cardId_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureCardIdIsMutable();
+            cardId_.addAll(other.cardId_);
+          }
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<java.lang.Integer> cardId_ = java.util.Collections.emptyList();
+      private void ensureCardIdIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          cardId_ = new java.util.ArrayList<java.lang.Integer>(cardId_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       *卡牌id		
+       * </pre>
+       *
+       * <code>repeated int32 cardId = 1;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getCardIdList() {
+        return java.util.Collections.unmodifiableList(cardId_);
+      }
+      /**
+       * <pre>
+       *卡牌id		
+       * </pre>
+       *
+       * <code>repeated int32 cardId = 1;</code>
+       */
+      public int getCardIdCount() {
+        return cardId_.size();
+      }
+      /**
+       * <pre>
+       *卡牌id		
+       * </pre>
+       *
+       * <code>repeated int32 cardId = 1;</code>
+       */
+      public int getCardId(int index) {
+        return cardId_.get(index);
+      }
+      /**
+       * <pre>
+       *卡牌id		
+       * </pre>
+       *
+       * <code>repeated int32 cardId = 1;</code>
+       */
+      public Builder setCardId(
+          int index, int value) {
+        ensureCardIdIsMutable();
+        cardId_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *卡牌id		
+       * </pre>
+       *
+       * <code>repeated int32 cardId = 1;</code>
+       */
+      public Builder addCardId(int value) {
+        ensureCardIdIsMutable();
+        cardId_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *卡牌id		
+       * </pre>
+       *
+       * <code>repeated int32 cardId = 1;</code>
+       */
+      public Builder addAllCardId(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureCardIdIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, cardId_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *卡牌id		
+       * </pre>
+       *
+       * <code>repeated int32 cardId = 1;</code>
+       */
+      public Builder clearCardId() {
+        cardId_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2S_BattleCardReset)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2S_BattleCardReset)
+    private static final com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset();
+    }
+
+    public static com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<C2S_BattleCardReset>
+        PARSER = new com.google.protobuf.AbstractParser<C2S_BattleCardReset>() {
+      public C2S_BattleCardReset parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new C2S_BattleCardReset(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2S_BattleCardReset> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2S_BattleCardReset> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGBagProto.C2S_BattleCardReset getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface S2C_BattleCardResetOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_BattleCardReset)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *卡组信息
+     * </pre>
+     *
+     * <code>repeated .CardGroup cardGroups = 1;</code>
+     */
+    java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CardGroup> 
+        getCardGroupsList();
+    /**
+     * <pre>
+     *卡组信息
+     * </pre>
+     *
+     * <code>repeated .CardGroup cardGroups = 1;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.CardGroup getCardGroups(int index);
+    /**
+     * <pre>
+     *卡组信息
+     * </pre>
+     *
+     * <code>repeated .CardGroup cardGroups = 1;</code>
+     */
+    int getCardGroupsCount();
+    /**
+     * <pre>
+     *卡组信息
+     * </pre>
+     *
+     * <code>repeated .CardGroup cardGroups = 1;</code>
+     */
+    java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.CardGroupOrBuilder> 
+        getCardGroupsOrBuilderList();
+    /**
+     * <pre>
+     *卡组信息
+     * </pre>
+     *
+     * <code>repeated .CardGroup cardGroups = 1;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.CardGroupOrBuilder getCardGroupsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code S2C_BattleCardReset}
+   */
+  public  static final class S2C_BattleCardReset extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_BattleCardReset)
+      S2C_BattleCardResetOrBuilder {
+    // Use S2C_BattleCardReset.newBuilder() to construct.
+    private S2C_BattleCardReset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_BattleCardReset() {
+      cardGroups_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private S2C_BattleCardReset(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                cardGroups_ = new java.util.ArrayList<com.douqu.game.core.protobuf.SGCommonProto.CardGroup>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cardGroups_.add(
+                  input.readMessage(com.douqu.game.core.protobuf.SGCommonProto.CardGroup.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          cardGroups_ = java.util.Collections.unmodifiableList(cardGroups_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGBagProto.internal_static_S2C_BattleCardReset_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGBagProto.internal_static_S2C_BattleCardReset_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset.class, com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset.Builder.class);
+    }
+
+    public static final int CARDGROUPS_FIELD_NUMBER = 1;
+    private java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CardGroup> cardGroups_;
+    /**
+     * <pre>
+     *卡组信息
+     * </pre>
+     *
+     * <code>repeated .CardGroup cardGroups = 1;</code>
+     */
+    public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CardGroup> getCardGroupsList() {
+      return cardGroups_;
+    }
+    /**
+     * <pre>
+     *卡组信息
+     * </pre>
+     *
+     * <code>repeated .CardGroup cardGroups = 1;</code>
+     */
+    public java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.CardGroupOrBuilder> 
+        getCardGroupsOrBuilderList() {
+      return cardGroups_;
+    }
+    /**
+     * <pre>
+     *卡组信息
+     * </pre>
+     *
+     * <code>repeated .CardGroup cardGroups = 1;</code>
+     */
+    public int getCardGroupsCount() {
+      return cardGroups_.size();
+    }
+    /**
+     * <pre>
+     *卡组信息
+     * </pre>
+     *
+     * <code>repeated .CardGroup cardGroups = 1;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.CardGroup getCardGroups(int index) {
+      return cardGroups_.get(index);
+    }
+    /**
+     * <pre>
+     *卡组信息
+     * </pre>
+     *
+     * <code>repeated .CardGroup cardGroups = 1;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.CardGroupOrBuilder getCardGroupsOrBuilder(
+        int index) {
+      return cardGroups_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < cardGroups_.size(); i++) {
+        output.writeMessage(1, cardGroups_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < cardGroups_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, cardGroups_.get(i));
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset other = (com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset) obj;
+
+      boolean result = true;
+      result = result && getCardGroupsList()
+          .equals(other.getCardGroupsList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getCardGroupsCount() > 0) {
+        hash = (37 * hash) + CARDGROUPS_FIELD_NUMBER;
+        hash = (53 * hash) + getCardGroupsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code S2C_BattleCardReset}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_BattleCardReset)
+        com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardResetOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGBagProto.internal_static_S2C_BattleCardReset_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGBagProto.internal_static_S2C_BattleCardReset_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset.class, com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getCardGroupsFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (cardGroupsBuilder_ == null) {
+          cardGroups_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          cardGroupsBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGBagProto.internal_static_S2C_BattleCardReset_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset build() {
+        com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset buildPartial() {
+        com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset result = new com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset(this);
+        int from_bitField0_ = bitField0_;
+        if (cardGroupsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            cardGroups_ = java.util.Collections.unmodifiableList(cardGroups_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.cardGroups_ = cardGroups_;
+        } else {
+          result.cardGroups_ = cardGroupsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset other) {
+        if (other == com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset.getDefaultInstance()) return this;
+        if (cardGroupsBuilder_ == null) {
+          if (!other.cardGroups_.isEmpty()) {
+            if (cardGroups_.isEmpty()) {
+              cardGroups_ = other.cardGroups_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureCardGroupsIsMutable();
+              cardGroups_.addAll(other.cardGroups_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.cardGroups_.isEmpty()) {
+            if (cardGroupsBuilder_.isEmpty()) {
+              cardGroupsBuilder_.dispose();
+              cardGroupsBuilder_ = null;
+              cardGroups_ = other.cardGroups_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              cardGroupsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getCardGroupsFieldBuilder() : null;
+            } else {
+              cardGroupsBuilder_.addAllMessages(other.cardGroups_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CardGroup> cardGroups_ =
+        java.util.Collections.emptyList();
+      private void ensureCardGroupsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          cardGroups_ = new java.util.ArrayList<com.douqu.game.core.protobuf.SGCommonProto.CardGroup>(cardGroups_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.CardGroup, com.douqu.game.core.protobuf.SGCommonProto.CardGroup.Builder, com.douqu.game.core.protobuf.SGCommonProto.CardGroupOrBuilder> cardGroupsBuilder_;
+
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CardGroup> getCardGroupsList() {
+        if (cardGroupsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(cardGroups_);
+        } else {
+          return cardGroupsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public int getCardGroupsCount() {
+        if (cardGroupsBuilder_ == null) {
+          return cardGroups_.size();
+        } else {
+          return cardGroupsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CardGroup getCardGroups(int index) {
+        if (cardGroupsBuilder_ == null) {
+          return cardGroups_.get(index);
+        } else {
+          return cardGroupsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public Builder setCardGroups(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CardGroup value) {
+        if (cardGroupsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCardGroupsIsMutable();
+          cardGroups_.set(index, value);
+          onChanged();
+        } else {
+          cardGroupsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public Builder setCardGroups(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CardGroup.Builder builderForValue) {
+        if (cardGroupsBuilder_ == null) {
+          ensureCardGroupsIsMutable();
+          cardGroups_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          cardGroupsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public Builder addCardGroups(com.douqu.game.core.protobuf.SGCommonProto.CardGroup value) {
+        if (cardGroupsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCardGroupsIsMutable();
+          cardGroups_.add(value);
+          onChanged();
+        } else {
+          cardGroupsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public Builder addCardGroups(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CardGroup value) {
+        if (cardGroupsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCardGroupsIsMutable();
+          cardGroups_.add(index, value);
+          onChanged();
+        } else {
+          cardGroupsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public Builder addCardGroups(
+          com.douqu.game.core.protobuf.SGCommonProto.CardGroup.Builder builderForValue) {
+        if (cardGroupsBuilder_ == null) {
+          ensureCardGroupsIsMutable();
+          cardGroups_.add(builderForValue.build());
+          onChanged();
+        } else {
+          cardGroupsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public Builder addCardGroups(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CardGroup.Builder builderForValue) {
+        if (cardGroupsBuilder_ == null) {
+          ensureCardGroupsIsMutable();
+          cardGroups_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          cardGroupsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public Builder addAllCardGroups(
+          java.lang.Iterable<? extends com.douqu.game.core.protobuf.SGCommonProto.CardGroup> values) {
+        if (cardGroupsBuilder_ == null) {
+          ensureCardGroupsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, cardGroups_);
+          onChanged();
+        } else {
+          cardGroupsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public Builder clearCardGroups() {
+        if (cardGroupsBuilder_ == null) {
+          cardGroups_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          cardGroupsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public Builder removeCardGroups(int index) {
+        if (cardGroupsBuilder_ == null) {
+          ensureCardGroupsIsMutable();
+          cardGroups_.remove(index);
+          onChanged();
+        } else {
+          cardGroupsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CardGroup.Builder getCardGroupsBuilder(
+          int index) {
+        return getCardGroupsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CardGroupOrBuilder getCardGroupsOrBuilder(
+          int index) {
+        if (cardGroupsBuilder_ == null) {
+          return cardGroups_.get(index);  } else {
+          return cardGroupsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.CardGroupOrBuilder> 
+           getCardGroupsOrBuilderList() {
+        if (cardGroupsBuilder_ != null) {
+          return cardGroupsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(cardGroups_);
+        }
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CardGroup.Builder addCardGroupsBuilder() {
+        return getCardGroupsFieldBuilder().addBuilder(
+            com.douqu.game.core.protobuf.SGCommonProto.CardGroup.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CardGroup.Builder addCardGroupsBuilder(
+          int index) {
+        return getCardGroupsFieldBuilder().addBuilder(
+            index, com.douqu.game.core.protobuf.SGCommonProto.CardGroup.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       *卡组信息
+       * </pre>
+       *
+       * <code>repeated .CardGroup cardGroups = 1;</code>
+       */
+      public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CardGroup.Builder> 
+           getCardGroupsBuilderList() {
+        return getCardGroupsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.CardGroup, com.douqu.game.core.protobuf.SGCommonProto.CardGroup.Builder, com.douqu.game.core.protobuf.SGCommonProto.CardGroupOrBuilder> 
+          getCardGroupsFieldBuilder() {
+        if (cardGroupsBuilder_ == null) {
+          cardGroupsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.douqu.game.core.protobuf.SGCommonProto.CardGroup, com.douqu.game.core.protobuf.SGCommonProto.CardGroup.Builder, com.douqu.game.core.protobuf.SGCommonProto.CardGroupOrBuilder>(
+                  cardGroups_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          cardGroups_ = null;
+        }
+        return cardGroupsBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:S2C_BattleCardReset)
+    }
+
+    // @@protoc_insertion_point(class_scope:S2C_BattleCardReset)
+    private static final com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset();
+    }
+
+    public static com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S2C_BattleCardReset>
+        PARSER = new com.google.protobuf.AbstractParser<S2C_BattleCardReset>() {
+      public S2C_BattleCardReset parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new S2C_BattleCardReset(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S2C_BattleCardReset> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S2C_BattleCardReset> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGBagProto.S2C_BattleCardReset getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_C2S_CardLevelUp_descriptor;
   private static final 
@@ -26202,6 +28895,26 @@ public final class SGBagProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_S2C_UseProp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2S_AccessoryActivated_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2S_AccessoryActivated_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_S2C_AccessoryActivated_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_S2C_AccessoryActivated_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2S_BattleCardReset_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2S_BattleCardReset_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_S2C_BattleCardReset_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_S2C_BattleCardReset_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -26277,8 +28990,16 @@ public final class SGBagProto {
       "oup\022\023\n\013cardGroupId\030\001 \001(\005\022\024\n\014activeCardId" +
       "\030\002 \001(\005\",\n\013C2S_UseProp\022\016\n\006propId\030\001 \001(\005\022\r\n" +
       "\005count\030\002 \001(\005\",\n\013S2C_UseProp\022\016\n\006propId\030\001 " +
-      "\001(\005\022\r\n\005count\030\002 \001(\005B2\n\034com.douqu.game.cor" +
-      "e.protobufB\nSGBagProto\252\002\005UBaseb\006proto3"
+      "\001(\005\022\r\n\005count\030\002 \001(\005\"R\n\026C2S_AccessoryActiv" +
+      "ated\022\016\n\006cardId\030\001 \001(\005\022(\n\raccessoryType\030\002 " +
+      "\001(\0162\021.E_ACCESSORY_TYPE\"g\n\026S2C_AccessoryA" +
+      "ctivated\022\016\n\006cardId\030\001 \001(\005\022(\n\raccessoryTyp",
+      "e\030\002 \001(\0162\021.E_ACCESSORY_TYPE\022\023\n\013isActivate" +
+      "d\030\003 \001(\010\"%\n\023C2S_BattleCardReset\022\016\n\006cardId" +
+      "\030\001 \003(\005\"5\n\023S2C_BattleCardReset\022\036\n\ncardGro" +
+      "ups\030\001 \003(\0132\n.CardGroupB2\n\034com.douqu.game." +
+      "core.protobufB\nSGBagProto\252\002\005UBaseb\006proto" +
+      "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -26557,6 +29278,30 @@ public final class SGBagProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_UseProp_descriptor,
         new java.lang.String[] { "PropId", "Count", });
+    internal_static_C2S_AccessoryActivated_descriptor =
+      getDescriptor().getMessageTypes().get(44);
+    internal_static_C2S_AccessoryActivated_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2S_AccessoryActivated_descriptor,
+        new java.lang.String[] { "CardId", "AccessoryType", });
+    internal_static_S2C_AccessoryActivated_descriptor =
+      getDescriptor().getMessageTypes().get(45);
+    internal_static_S2C_AccessoryActivated_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_S2C_AccessoryActivated_descriptor,
+        new java.lang.String[] { "CardId", "AccessoryType", "IsActivated", });
+    internal_static_C2S_BattleCardReset_descriptor =
+      getDescriptor().getMessageTypes().get(46);
+    internal_static_C2S_BattleCardReset_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2S_BattleCardReset_descriptor,
+        new java.lang.String[] { "CardId", });
+    internal_static_S2C_BattleCardReset_descriptor =
+      getDescriptor().getMessageTypes().get(47);
+    internal_static_S2C_BattleCardReset_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_S2C_BattleCardReset_descriptor,
+        new java.lang.String[] { "CardGroups", });
     com.douqu.game.core.protobuf.SGCommonProto.getDescriptor();
   }
 

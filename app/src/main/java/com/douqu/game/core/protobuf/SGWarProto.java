@@ -56,53 +56,12 @@ public final class SGWarProto {
 
     /**
      * <pre>
-     *左下角位置
+     *是否开启自动战斗
      * </pre>
      *
-     * <code>.Pos battleFieldBottomLeft = 3;</code>
+     * <code>bool autoBattle = 3;</code>
      */
-    boolean hasBattleFieldBottomLeft();
-    /**
-     * <pre>
-     *左下角位置
-     * </pre>
-     *
-     * <code>.Pos battleFieldBottomLeft = 3;</code>
-     */
-    com.douqu.game.core.protobuf.SGCommonProto.Pos getBattleFieldBottomLeft();
-    /**
-     * <pre>
-     *左下角位置
-     * </pre>
-     *
-     * <code>.Pos battleFieldBottomLeft = 3;</code>
-     */
-    com.douqu.game.core.protobuf.SGCommonProto.PosOrBuilder getBattleFieldBottomLeftOrBuilder();
-
-    /**
-     * <pre>
-     *右上角位置
-     * </pre>
-     *
-     * <code>.Pos battleFieldTopRight = 4;</code>
-     */
-    boolean hasBattleFieldTopRight();
-    /**
-     * <pre>
-     *右上角位置
-     * </pre>
-     *
-     * <code>.Pos battleFieldTopRight = 4;</code>
-     */
-    com.douqu.game.core.protobuf.SGCommonProto.Pos getBattleFieldTopRight();
-    /**
-     * <pre>
-     *右上角位置
-     * </pre>
-     *
-     * <code>.Pos battleFieldTopRight = 4;</code>
-     */
-    com.douqu.game.core.protobuf.SGCommonProto.PosOrBuilder getBattleFieldTopRightOrBuilder();
+    boolean getAutoBattle();
   }
   /**
    * <pre>
@@ -122,6 +81,7 @@ public final class SGWarProto {
     private C2S_Create() {
       battleId_ = "";
       playerIndex_ = "";
+      autoBattle_ = false;
     }
 
     @java.lang.Override
@@ -161,30 +121,9 @@ public final class SGWarProto {
               playerIndex_ = s;
               break;
             }
-            case 26: {
-              com.douqu.game.core.protobuf.SGCommonProto.Pos.Builder subBuilder = null;
-              if (battleFieldBottomLeft_ != null) {
-                subBuilder = battleFieldBottomLeft_.toBuilder();
-              }
-              battleFieldBottomLeft_ = input.readMessage(com.douqu.game.core.protobuf.SGCommonProto.Pos.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(battleFieldBottomLeft_);
-                battleFieldBottomLeft_ = subBuilder.buildPartial();
-              }
+            case 24: {
 
-              break;
-            }
-            case 34: {
-              com.douqu.game.core.protobuf.SGCommonProto.Pos.Builder subBuilder = null;
-              if (battleFieldTopRight_ != null) {
-                subBuilder = battleFieldTopRight_.toBuilder();
-              }
-              battleFieldTopRight_ = input.readMessage(com.douqu.game.core.protobuf.SGCommonProto.Pos.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(battleFieldTopRight_);
-                battleFieldTopRight_ = subBuilder.buildPartial();
-              }
-
+              autoBattle_ = input.readBool();
               break;
             }
           }
@@ -294,70 +233,17 @@ public final class SGWarProto {
       }
     }
 
-    public static final int BATTLEFIELDBOTTOMLEFT_FIELD_NUMBER = 3;
-    private com.douqu.game.core.protobuf.SGCommonProto.Pos battleFieldBottomLeft_;
+    public static final int AUTOBATTLE_FIELD_NUMBER = 3;
+    private boolean autoBattle_;
     /**
      * <pre>
-     *左下角位置
+     *是否开启自动战斗
      * </pre>
      *
-     * <code>.Pos battleFieldBottomLeft = 3;</code>
+     * <code>bool autoBattle = 3;</code>
      */
-    public boolean hasBattleFieldBottomLeft() {
-      return battleFieldBottomLeft_ != null;
-    }
-    /**
-     * <pre>
-     *左下角位置
-     * </pre>
-     *
-     * <code>.Pos battleFieldBottomLeft = 3;</code>
-     */
-    public com.douqu.game.core.protobuf.SGCommonProto.Pos getBattleFieldBottomLeft() {
-      return battleFieldBottomLeft_ == null ? com.douqu.game.core.protobuf.SGCommonProto.Pos.getDefaultInstance() : battleFieldBottomLeft_;
-    }
-    /**
-     * <pre>
-     *左下角位置
-     * </pre>
-     *
-     * <code>.Pos battleFieldBottomLeft = 3;</code>
-     */
-    public com.douqu.game.core.protobuf.SGCommonProto.PosOrBuilder getBattleFieldBottomLeftOrBuilder() {
-      return getBattleFieldBottomLeft();
-    }
-
-    public static final int BATTLEFIELDTOPRIGHT_FIELD_NUMBER = 4;
-    private com.douqu.game.core.protobuf.SGCommonProto.Pos battleFieldTopRight_;
-    /**
-     * <pre>
-     *右上角位置
-     * </pre>
-     *
-     * <code>.Pos battleFieldTopRight = 4;</code>
-     */
-    public boolean hasBattleFieldTopRight() {
-      return battleFieldTopRight_ != null;
-    }
-    /**
-     * <pre>
-     *右上角位置
-     * </pre>
-     *
-     * <code>.Pos battleFieldTopRight = 4;</code>
-     */
-    public com.douqu.game.core.protobuf.SGCommonProto.Pos getBattleFieldTopRight() {
-      return battleFieldTopRight_ == null ? com.douqu.game.core.protobuf.SGCommonProto.Pos.getDefaultInstance() : battleFieldTopRight_;
-    }
-    /**
-     * <pre>
-     *右上角位置
-     * </pre>
-     *
-     * <code>.Pos battleFieldTopRight = 4;</code>
-     */
-    public com.douqu.game.core.protobuf.SGCommonProto.PosOrBuilder getBattleFieldTopRightOrBuilder() {
-      return getBattleFieldTopRight();
+    public boolean getAutoBattle() {
+      return autoBattle_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -378,11 +264,8 @@ public final class SGWarProto {
       if (!getPlayerIndexBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, playerIndex_);
       }
-      if (battleFieldBottomLeft_ != null) {
-        output.writeMessage(3, getBattleFieldBottomLeft());
-      }
-      if (battleFieldTopRight_ != null) {
-        output.writeMessage(4, getBattleFieldTopRight());
+      if (autoBattle_ != false) {
+        output.writeBool(3, autoBattle_);
       }
     }
 
@@ -397,13 +280,9 @@ public final class SGWarProto {
       if (!getPlayerIndexBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, playerIndex_);
       }
-      if (battleFieldBottomLeft_ != null) {
+      if (autoBattle_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getBattleFieldBottomLeft());
-      }
-      if (battleFieldTopRight_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getBattleFieldTopRight());
+          .computeBoolSize(3, autoBattle_);
       }
       memoizedSize = size;
       return size;
@@ -425,16 +304,8 @@ public final class SGWarProto {
           .equals(other.getBattleId());
       result = result && getPlayerIndex()
           .equals(other.getPlayerIndex());
-      result = result && (hasBattleFieldBottomLeft() == other.hasBattleFieldBottomLeft());
-      if (hasBattleFieldBottomLeft()) {
-        result = result && getBattleFieldBottomLeft()
-            .equals(other.getBattleFieldBottomLeft());
-      }
-      result = result && (hasBattleFieldTopRight() == other.hasBattleFieldTopRight());
-      if (hasBattleFieldTopRight()) {
-        result = result && getBattleFieldTopRight()
-            .equals(other.getBattleFieldTopRight());
-      }
+      result = result && (getAutoBattle()
+          == other.getAutoBattle());
       return result;
     }
 
@@ -449,14 +320,9 @@ public final class SGWarProto {
       hash = (53 * hash) + getBattleId().hashCode();
       hash = (37 * hash) + PLAYERINDEX_FIELD_NUMBER;
       hash = (53 * hash) + getPlayerIndex().hashCode();
-      if (hasBattleFieldBottomLeft()) {
-        hash = (37 * hash) + BATTLEFIELDBOTTOMLEFT_FIELD_NUMBER;
-        hash = (53 * hash) + getBattleFieldBottomLeft().hashCode();
-      }
-      if (hasBattleFieldTopRight()) {
-        hash = (37 * hash) + BATTLEFIELDTOPRIGHT_FIELD_NUMBER;
-        hash = (53 * hash) + getBattleFieldTopRight().hashCode();
-      }
+      hash = (37 * hash) + AUTOBATTLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getAutoBattle());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -583,18 +449,8 @@ public final class SGWarProto {
 
         playerIndex_ = "";
 
-        if (battleFieldBottomLeftBuilder_ == null) {
-          battleFieldBottomLeft_ = null;
-        } else {
-          battleFieldBottomLeft_ = null;
-          battleFieldBottomLeftBuilder_ = null;
-        }
-        if (battleFieldTopRightBuilder_ == null) {
-          battleFieldTopRight_ = null;
-        } else {
-          battleFieldTopRight_ = null;
-          battleFieldTopRightBuilder_ = null;
-        }
+        autoBattle_ = false;
+
         return this;
       }
 
@@ -619,16 +475,7 @@ public final class SGWarProto {
         com.douqu.game.core.protobuf.SGWarProto.C2S_Create result = new com.douqu.game.core.protobuf.SGWarProto.C2S_Create(this);
         result.battleId_ = battleId_;
         result.playerIndex_ = playerIndex_;
-        if (battleFieldBottomLeftBuilder_ == null) {
-          result.battleFieldBottomLeft_ = battleFieldBottomLeft_;
-        } else {
-          result.battleFieldBottomLeft_ = battleFieldBottomLeftBuilder_.build();
-        }
-        if (battleFieldTopRightBuilder_ == null) {
-          result.battleFieldTopRight_ = battleFieldTopRight_;
-        } else {
-          result.battleFieldTopRight_ = battleFieldTopRightBuilder_.build();
-        }
+        result.autoBattle_ = autoBattle_;
         onBuilt();
         return result;
       }
@@ -678,11 +525,8 @@ public final class SGWarProto {
           playerIndex_ = other.playerIndex_;
           onChanged();
         }
-        if (other.hasBattleFieldBottomLeft()) {
-          mergeBattleFieldBottomLeft(other.getBattleFieldBottomLeft());
-        }
-        if (other.hasBattleFieldTopRight()) {
-          mergeBattleFieldTopRight(other.getBattleFieldTopRight());
+        if (other.getAutoBattle() != false) {
+          setAutoBattle(other.getAutoBattle());
         }
         onChanged();
         return this;
@@ -888,310 +732,42 @@ public final class SGWarProto {
         return this;
       }
 
-      private com.douqu.game.core.protobuf.SGCommonProto.Pos battleFieldBottomLeft_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.douqu.game.core.protobuf.SGCommonProto.Pos, com.douqu.game.core.protobuf.SGCommonProto.Pos.Builder, com.douqu.game.core.protobuf.SGCommonProto.PosOrBuilder> battleFieldBottomLeftBuilder_;
+      private boolean autoBattle_ ;
       /**
        * <pre>
-       *左下角位置
+       *是否开启自动战斗
        * </pre>
        *
-       * <code>.Pos battleFieldBottomLeft = 3;</code>
+       * <code>bool autoBattle = 3;</code>
        */
-      public boolean hasBattleFieldBottomLeft() {
-        return battleFieldBottomLeftBuilder_ != null || battleFieldBottomLeft_ != null;
+      public boolean getAutoBattle() {
+        return autoBattle_;
       }
       /**
        * <pre>
-       *左下角位置
+       *是否开启自动战斗
        * </pre>
        *
-       * <code>.Pos battleFieldBottomLeft = 3;</code>
+       * <code>bool autoBattle = 3;</code>
        */
-      public com.douqu.game.core.protobuf.SGCommonProto.Pos getBattleFieldBottomLeft() {
-        if (battleFieldBottomLeftBuilder_ == null) {
-          return battleFieldBottomLeft_ == null ? com.douqu.game.core.protobuf.SGCommonProto.Pos.getDefaultInstance() : battleFieldBottomLeft_;
-        } else {
-          return battleFieldBottomLeftBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       *左下角位置
-       * </pre>
-       *
-       * <code>.Pos battleFieldBottomLeft = 3;</code>
-       */
-      public Builder setBattleFieldBottomLeft(com.douqu.game.core.protobuf.SGCommonProto.Pos value) {
-        if (battleFieldBottomLeftBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          battleFieldBottomLeft_ = value;
-          onChanged();
-        } else {
-          battleFieldBottomLeftBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       *左下角位置
-       * </pre>
-       *
-       * <code>.Pos battleFieldBottomLeft = 3;</code>
-       */
-      public Builder setBattleFieldBottomLeft(
-          com.douqu.game.core.protobuf.SGCommonProto.Pos.Builder builderForValue) {
-        if (battleFieldBottomLeftBuilder_ == null) {
-          battleFieldBottomLeft_ = builderForValue.build();
-          onChanged();
-        } else {
-          battleFieldBottomLeftBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       *左下角位置
-       * </pre>
-       *
-       * <code>.Pos battleFieldBottomLeft = 3;</code>
-       */
-      public Builder mergeBattleFieldBottomLeft(com.douqu.game.core.protobuf.SGCommonProto.Pos value) {
-        if (battleFieldBottomLeftBuilder_ == null) {
-          if (battleFieldBottomLeft_ != null) {
-            battleFieldBottomLeft_ =
-              com.douqu.game.core.protobuf.SGCommonProto.Pos.newBuilder(battleFieldBottomLeft_).mergeFrom(value).buildPartial();
-          } else {
-            battleFieldBottomLeft_ = value;
-          }
-          onChanged();
-        } else {
-          battleFieldBottomLeftBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       *左下角位置
-       * </pre>
-       *
-       * <code>.Pos battleFieldBottomLeft = 3;</code>
-       */
-      public Builder clearBattleFieldBottomLeft() {
-        if (battleFieldBottomLeftBuilder_ == null) {
-          battleFieldBottomLeft_ = null;
-          onChanged();
-        } else {
-          battleFieldBottomLeft_ = null;
-          battleFieldBottomLeftBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       *左下角位置
-       * </pre>
-       *
-       * <code>.Pos battleFieldBottomLeft = 3;</code>
-       */
-      public com.douqu.game.core.protobuf.SGCommonProto.Pos.Builder getBattleFieldBottomLeftBuilder() {
+      public Builder setAutoBattle(boolean value) {
         
+        autoBattle_ = value;
         onChanged();
-        return getBattleFieldBottomLeftFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       *左下角位置
-       * </pre>
-       *
-       * <code>.Pos battleFieldBottomLeft = 3;</code>
-       */
-      public com.douqu.game.core.protobuf.SGCommonProto.PosOrBuilder getBattleFieldBottomLeftOrBuilder() {
-        if (battleFieldBottomLeftBuilder_ != null) {
-          return battleFieldBottomLeftBuilder_.getMessageOrBuilder();
-        } else {
-          return battleFieldBottomLeft_ == null ?
-              com.douqu.game.core.protobuf.SGCommonProto.Pos.getDefaultInstance() : battleFieldBottomLeft_;
-        }
-      }
-      /**
-       * <pre>
-       *左下角位置
-       * </pre>
-       *
-       * <code>.Pos battleFieldBottomLeft = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.douqu.game.core.protobuf.SGCommonProto.Pos, com.douqu.game.core.protobuf.SGCommonProto.Pos.Builder, com.douqu.game.core.protobuf.SGCommonProto.PosOrBuilder> 
-          getBattleFieldBottomLeftFieldBuilder() {
-        if (battleFieldBottomLeftBuilder_ == null) {
-          battleFieldBottomLeftBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.douqu.game.core.protobuf.SGCommonProto.Pos, com.douqu.game.core.protobuf.SGCommonProto.Pos.Builder, com.douqu.game.core.protobuf.SGCommonProto.PosOrBuilder>(
-                  getBattleFieldBottomLeft(),
-                  getParentForChildren(),
-                  isClean());
-          battleFieldBottomLeft_ = null;
-        }
-        return battleFieldBottomLeftBuilder_;
-      }
-
-      private com.douqu.game.core.protobuf.SGCommonProto.Pos battleFieldTopRight_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.douqu.game.core.protobuf.SGCommonProto.Pos, com.douqu.game.core.protobuf.SGCommonProto.Pos.Builder, com.douqu.game.core.protobuf.SGCommonProto.PosOrBuilder> battleFieldTopRightBuilder_;
-      /**
-       * <pre>
-       *右上角位置
-       * </pre>
-       *
-       * <code>.Pos battleFieldTopRight = 4;</code>
-       */
-      public boolean hasBattleFieldTopRight() {
-        return battleFieldTopRightBuilder_ != null || battleFieldTopRight_ != null;
-      }
-      /**
-       * <pre>
-       *右上角位置
-       * </pre>
-       *
-       * <code>.Pos battleFieldTopRight = 4;</code>
-       */
-      public com.douqu.game.core.protobuf.SGCommonProto.Pos getBattleFieldTopRight() {
-        if (battleFieldTopRightBuilder_ == null) {
-          return battleFieldTopRight_ == null ? com.douqu.game.core.protobuf.SGCommonProto.Pos.getDefaultInstance() : battleFieldTopRight_;
-        } else {
-          return battleFieldTopRightBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       *右上角位置
-       * </pre>
-       *
-       * <code>.Pos battleFieldTopRight = 4;</code>
-       */
-      public Builder setBattleFieldTopRight(com.douqu.game.core.protobuf.SGCommonProto.Pos value) {
-        if (battleFieldTopRightBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          battleFieldTopRight_ = value;
-          onChanged();
-        } else {
-          battleFieldTopRightBuilder_.setMessage(value);
-        }
-
         return this;
       }
       /**
        * <pre>
-       *右上角位置
+       *是否开启自动战斗
        * </pre>
        *
-       * <code>.Pos battleFieldTopRight = 4;</code>
+       * <code>bool autoBattle = 3;</code>
        */
-      public Builder setBattleFieldTopRight(
-          com.douqu.game.core.protobuf.SGCommonProto.Pos.Builder builderForValue) {
-        if (battleFieldTopRightBuilder_ == null) {
-          battleFieldTopRight_ = builderForValue.build();
-          onChanged();
-        } else {
-          battleFieldTopRightBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       *右上角位置
-       * </pre>
-       *
-       * <code>.Pos battleFieldTopRight = 4;</code>
-       */
-      public Builder mergeBattleFieldTopRight(com.douqu.game.core.protobuf.SGCommonProto.Pos value) {
-        if (battleFieldTopRightBuilder_ == null) {
-          if (battleFieldTopRight_ != null) {
-            battleFieldTopRight_ =
-              com.douqu.game.core.protobuf.SGCommonProto.Pos.newBuilder(battleFieldTopRight_).mergeFrom(value).buildPartial();
-          } else {
-            battleFieldTopRight_ = value;
-          }
-          onChanged();
-        } else {
-          battleFieldTopRightBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       *右上角位置
-       * </pre>
-       *
-       * <code>.Pos battleFieldTopRight = 4;</code>
-       */
-      public Builder clearBattleFieldTopRight() {
-        if (battleFieldTopRightBuilder_ == null) {
-          battleFieldTopRight_ = null;
-          onChanged();
-        } else {
-          battleFieldTopRight_ = null;
-          battleFieldTopRightBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       *右上角位置
-       * </pre>
-       *
-       * <code>.Pos battleFieldTopRight = 4;</code>
-       */
-      public com.douqu.game.core.protobuf.SGCommonProto.Pos.Builder getBattleFieldTopRightBuilder() {
+      public Builder clearAutoBattle() {
         
+        autoBattle_ = false;
         onChanged();
-        return getBattleFieldTopRightFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       *右上角位置
-       * </pre>
-       *
-       * <code>.Pos battleFieldTopRight = 4;</code>
-       */
-      public com.douqu.game.core.protobuf.SGCommonProto.PosOrBuilder getBattleFieldTopRightOrBuilder() {
-        if (battleFieldTopRightBuilder_ != null) {
-          return battleFieldTopRightBuilder_.getMessageOrBuilder();
-        } else {
-          return battleFieldTopRight_ == null ?
-              com.douqu.game.core.protobuf.SGCommonProto.Pos.getDefaultInstance() : battleFieldTopRight_;
-        }
-      }
-      /**
-       * <pre>
-       *右上角位置
-       * </pre>
-       *
-       * <code>.Pos battleFieldTopRight = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.douqu.game.core.protobuf.SGCommonProto.Pos, com.douqu.game.core.protobuf.SGCommonProto.Pos.Builder, com.douqu.game.core.protobuf.SGCommonProto.PosOrBuilder> 
-          getBattleFieldTopRightFieldBuilder() {
-        if (battleFieldTopRightBuilder_ == null) {
-          battleFieldTopRightBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.douqu.game.core.protobuf.SGCommonProto.Pos, com.douqu.game.core.protobuf.SGCommonProto.Pos.Builder, com.douqu.game.core.protobuf.SGCommonProto.PosOrBuilder>(
-                  getBattleFieldTopRight(),
-                  getParentForChildren(),
-                  isClean());
-          battleFieldTopRight_ = null;
-        }
-        return battleFieldTopRightBuilder_;
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1247,74 +823,70 @@ public final class SGWarProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     *队伍编号
-     * </pre>
-     *
-     * <code>int32 teamNo = 1;</code>
+     * <code>.E_BATTLE_TYPE battleType = 1;</code>
      */
-    int getTeamNo();
+    int getBattleTypeValue();
+    /**
+     * <code>.E_BATTLE_TYPE battleType = 1;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE getBattleType();
 
     /**
      * <pre>
-     *自己主将ID
+     *自己的主将
      * </pre>
      *
-     * <code>int32 selfMasterGuid = 2;</code>
+     * <code>.BattleUnit selftMaster = 2;</code>
      */
-    int getSelfMasterGuid();
+    boolean hasSelftMaster();
+    /**
+     * <pre>
+     *自己的主将
+     * </pre>
+     *
+     * <code>.BattleUnit selftMaster = 2;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.BattleUnit getSelftMaster();
+    /**
+     * <pre>
+     *自己的主将
+     * </pre>
+     *
+     * <code>.BattleUnit selftMaster = 2;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder getSelftMasterOrBuilder();
 
     /**
      * <pre>
-     *对方主将ID
+     *对方的主将
      * </pre>
      *
-     * <code>int32 otherMasterGuid = 3;</code>
+     * <code>.BattleUnit otherMaster = 3;</code>
      */
-    int getOtherMasterGuid();
-
+    boolean hasOtherMaster();
     /**
      * <pre>
-     *自己主将等级ID
+     *对方的主将
      * </pre>
      *
-     * <code>int32 selfMasterGradeId = 4;</code>
+     * <code>.BattleUnit otherMaster = 3;</code>
      */
-    int getSelfMasterGradeId();
-
+    com.douqu.game.core.protobuf.SGCommonProto.BattleUnit getOtherMaster();
     /**
      * <pre>
-     *对方主将等级ID
+     *对方的主将
      * </pre>
      *
-     * <code>int32 otherMasterGradeId = 5;</code>
+     * <code>.BattleUnit otherMaster = 3;</code>
      */
-    int getOtherMasterGradeId();
-
-    /**
-     * <pre>
-     *自己主将HP
-     * </pre>
-     *
-     * <code>int32 selfMasterHP = 6;</code>
-     */
-    int getSelfMasterHP();
-
-    /**
-     * <pre>
-     *对方主将HP
-     * </pre>
-     *
-     * <code>int32 otherMasterHP = 7;</code>
-     */
-    int getOtherMasterHP();
+    com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder getOtherMasterOrBuilder();
 
     /**
      * <pre>
      *已经上阵的卡牌ID
      * </pre>
      *
-     * <code>repeated int32 battleCardId = 8;</code>
+     * <code>repeated int32 battleCardId = 4;</code>
      */
     java.util.List<java.lang.Integer> getBattleCardIdList();
     /**
@@ -1322,7 +894,7 @@ public final class SGWarProto {
      *已经上阵的卡牌ID
      * </pre>
      *
-     * <code>repeated int32 battleCardId = 8;</code>
+     * <code>repeated int32 battleCardId = 4;</code>
      */
     int getBattleCardIdCount();
     /**
@@ -1330,18 +902,34 @@ public final class SGWarProto {
      *已经上阵的卡牌ID
      * </pre>
      *
-     * <code>repeated int32 battleCardId = 8;</code>
+     * <code>repeated int32 battleCardId = 4;</code>
      */
     int getBattleCardId(int index);
 
     /**
-     * <code>.E_BATTLE_TYPE battleType = 9;</code>
+     * <pre>
+     *自己可以手动释放的主将技能
+     * </pre>
+     *
+     * <code>repeated int32 selfMasterSkill = 5;</code>
      */
-    int getBattleTypeValue();
+    java.util.List<java.lang.Integer> getSelfMasterSkillList();
     /**
-     * <code>.E_BATTLE_TYPE battleType = 9;</code>
+     * <pre>
+     *自己可以手动释放的主将技能
+     * </pre>
+     *
+     * <code>repeated int32 selfMasterSkill = 5;</code>
      */
-    com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE getBattleType();
+    int getSelfMasterSkillCount();
+    /**
+     * <pre>
+     *自己可以手动释放的主将技能
+     * </pre>
+     *
+     * <code>repeated int32 selfMasterSkill = 5;</code>
+     */
+    int getSelfMasterSkill(int index);
   }
   /**
    * Protobuf type {@code S2C_Create}
@@ -1355,15 +943,9 @@ public final class SGWarProto {
       super(builder);
     }
     private S2C_Create() {
-      teamNo_ = 0;
-      selfMasterGuid_ = 0;
-      otherMasterGuid_ = 0;
-      selfMasterGradeId_ = 0;
-      otherMasterGradeId_ = 0;
-      selfMasterHP_ = 0;
-      otherMasterHP_ = 0;
-      battleCardId_ = java.util.Collections.emptyList();
       battleType_ = 0;
+      battleCardId_ = java.util.Collections.emptyList();
+      selfMasterSkill_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1392,54 +974,51 @@ public final class SGWarProto {
               break;
             }
             case 8: {
+              int rawValue = input.readEnum();
 
-              teamNo_ = input.readInt32();
+              battleType_ = rawValue;
               break;
             }
-            case 16: {
+            case 18: {
+              com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.Builder subBuilder = null;
+              if (selftMaster_ != null) {
+                subBuilder = selftMaster_.toBuilder();
+              }
+              selftMaster_ = input.readMessage(com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(selftMaster_);
+                selftMaster_ = subBuilder.buildPartial();
+              }
 
-              selfMasterGuid_ = input.readInt32();
               break;
             }
-            case 24: {
+            case 26: {
+              com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.Builder subBuilder = null;
+              if (otherMaster_ != null) {
+                subBuilder = otherMaster_.toBuilder();
+              }
+              otherMaster_ = input.readMessage(com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(otherMaster_);
+                otherMaster_ = subBuilder.buildPartial();
+              }
 
-              otherMasterGuid_ = input.readInt32();
               break;
             }
             case 32: {
-
-              selfMasterGradeId_ = input.readInt32();
-              break;
-            }
-            case 40: {
-
-              otherMasterGradeId_ = input.readInt32();
-              break;
-            }
-            case 48: {
-
-              selfMasterHP_ = input.readInt32();
-              break;
-            }
-            case 56: {
-
-              otherMasterHP_ = input.readInt32();
-              break;
-            }
-            case 64: {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                 battleCardId_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000008;
               }
               battleCardId_.add(input.readInt32());
               break;
             }
-            case 66: {
+            case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
                 battleCardId_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000008;
               }
               while (input.getBytesUntilLimit() > 0) {
                 battleCardId_.add(input.readInt32());
@@ -1447,10 +1026,25 @@ public final class SGWarProto {
               input.popLimit(limit);
               break;
             }
-            case 72: {
-              int rawValue = input.readEnum();
-
-              battleType_ = rawValue;
+            case 40: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                selfMasterSkill_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              selfMasterSkill_.add(input.readInt32());
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
+                selfMasterSkill_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                selfMasterSkill_.add(input.readInt32());
+              }
+              input.popLimit(limit);
               break;
             }
           }
@@ -1461,8 +1055,11 @@ public final class SGWarProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           battleCardId_ = java.util.Collections.unmodifiableList(battleCardId_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          selfMasterSkill_ = java.util.Collections.unmodifiableList(selfMasterSkill_);
         }
         makeExtensionsImmutable();
       }
@@ -1480,105 +1077,96 @@ public final class SGWarProto {
     }
 
     private int bitField0_;
-    public static final int TEAMNO_FIELD_NUMBER = 1;
-    private int teamNo_;
+    public static final int BATTLETYPE_FIELD_NUMBER = 1;
+    private int battleType_;
     /**
-     * <pre>
-     *队伍编号
-     * </pre>
-     *
-     * <code>int32 teamNo = 1;</code>
+     * <code>.E_BATTLE_TYPE battleType = 1;</code>
      */
-    public int getTeamNo() {
-      return teamNo_;
+    public int getBattleTypeValue() {
+      return battleType_;
+    }
+    /**
+     * <code>.E_BATTLE_TYPE battleType = 1;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE getBattleType() {
+      com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE.valueOf(battleType_);
+      return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE.UNRECOGNIZED : result;
     }
 
-    public static final int SELFMASTERGUID_FIELD_NUMBER = 2;
-    private int selfMasterGuid_;
+    public static final int SELFTMASTER_FIELD_NUMBER = 2;
+    private com.douqu.game.core.protobuf.SGCommonProto.BattleUnit selftMaster_;
     /**
      * <pre>
-     *自己主将ID
+     *自己的主将
      * </pre>
      *
-     * <code>int32 selfMasterGuid = 2;</code>
+     * <code>.BattleUnit selftMaster = 2;</code>
      */
-    public int getSelfMasterGuid() {
-      return selfMasterGuid_;
+    public boolean hasSelftMaster() {
+      return selftMaster_ != null;
     }
-
-    public static final int OTHERMASTERGUID_FIELD_NUMBER = 3;
-    private int otherMasterGuid_;
     /**
      * <pre>
-     *对方主将ID
+     *自己的主将
      * </pre>
      *
-     * <code>int32 otherMasterGuid = 3;</code>
+     * <code>.BattleUnit selftMaster = 2;</code>
      */
-    public int getOtherMasterGuid() {
-      return otherMasterGuid_;
+    public com.douqu.game.core.protobuf.SGCommonProto.BattleUnit getSelftMaster() {
+      return selftMaster_ == null ? com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.getDefaultInstance() : selftMaster_;
     }
-
-    public static final int SELFMASTERGRADEID_FIELD_NUMBER = 4;
-    private int selfMasterGradeId_;
     /**
      * <pre>
-     *自己主将等级ID
+     *自己的主将
      * </pre>
      *
-     * <code>int32 selfMasterGradeId = 4;</code>
+     * <code>.BattleUnit selftMaster = 2;</code>
      */
-    public int getSelfMasterGradeId() {
-      return selfMasterGradeId_;
+    public com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder getSelftMasterOrBuilder() {
+      return getSelftMaster();
     }
 
-    public static final int OTHERMASTERGRADEID_FIELD_NUMBER = 5;
-    private int otherMasterGradeId_;
+    public static final int OTHERMASTER_FIELD_NUMBER = 3;
+    private com.douqu.game.core.protobuf.SGCommonProto.BattleUnit otherMaster_;
     /**
      * <pre>
-     *对方主将等级ID
+     *对方的主将
      * </pre>
      *
-     * <code>int32 otherMasterGradeId = 5;</code>
+     * <code>.BattleUnit otherMaster = 3;</code>
      */
-    public int getOtherMasterGradeId() {
-      return otherMasterGradeId_;
+    public boolean hasOtherMaster() {
+      return otherMaster_ != null;
     }
-
-    public static final int SELFMASTERHP_FIELD_NUMBER = 6;
-    private int selfMasterHP_;
     /**
      * <pre>
-     *自己主将HP
+     *对方的主将
      * </pre>
      *
-     * <code>int32 selfMasterHP = 6;</code>
+     * <code>.BattleUnit otherMaster = 3;</code>
      */
-    public int getSelfMasterHP() {
-      return selfMasterHP_;
+    public com.douqu.game.core.protobuf.SGCommonProto.BattleUnit getOtherMaster() {
+      return otherMaster_ == null ? com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.getDefaultInstance() : otherMaster_;
     }
-
-    public static final int OTHERMASTERHP_FIELD_NUMBER = 7;
-    private int otherMasterHP_;
     /**
      * <pre>
-     *对方主将HP
+     *对方的主将
      * </pre>
      *
-     * <code>int32 otherMasterHP = 7;</code>
+     * <code>.BattleUnit otherMaster = 3;</code>
      */
-    public int getOtherMasterHP() {
-      return otherMasterHP_;
+    public com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder getOtherMasterOrBuilder() {
+      return getOtherMaster();
     }
 
-    public static final int BATTLECARDID_FIELD_NUMBER = 8;
+    public static final int BATTLECARDID_FIELD_NUMBER = 4;
     private java.util.List<java.lang.Integer> battleCardId_;
     /**
      * <pre>
      *已经上阵的卡牌ID
      * </pre>
      *
-     * <code>repeated int32 battleCardId = 8;</code>
+     * <code>repeated int32 battleCardId = 4;</code>
      */
     public java.util.List<java.lang.Integer>
         getBattleCardIdList() {
@@ -1589,7 +1177,7 @@ public final class SGWarProto {
      *已经上阵的卡牌ID
      * </pre>
      *
-     * <code>repeated int32 battleCardId = 8;</code>
+     * <code>repeated int32 battleCardId = 4;</code>
      */
     public int getBattleCardIdCount() {
       return battleCardId_.size();
@@ -1599,28 +1187,47 @@ public final class SGWarProto {
      *已经上阵的卡牌ID
      * </pre>
      *
-     * <code>repeated int32 battleCardId = 8;</code>
+     * <code>repeated int32 battleCardId = 4;</code>
      */
     public int getBattleCardId(int index) {
       return battleCardId_.get(index);
     }
     private int battleCardIdMemoizedSerializedSize = -1;
 
-    public static final int BATTLETYPE_FIELD_NUMBER = 9;
-    private int battleType_;
+    public static final int SELFMASTERSKILL_FIELD_NUMBER = 5;
+    private java.util.List<java.lang.Integer> selfMasterSkill_;
     /**
-     * <code>.E_BATTLE_TYPE battleType = 9;</code>
+     * <pre>
+     *自己可以手动释放的主将技能
+     * </pre>
+     *
+     * <code>repeated int32 selfMasterSkill = 5;</code>
      */
-    public int getBattleTypeValue() {
-      return battleType_;
+    public java.util.List<java.lang.Integer>
+        getSelfMasterSkillList() {
+      return selfMasterSkill_;
     }
     /**
-     * <code>.E_BATTLE_TYPE battleType = 9;</code>
+     * <pre>
+     *自己可以手动释放的主将技能
+     * </pre>
+     *
+     * <code>repeated int32 selfMasterSkill = 5;</code>
      */
-    public com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE getBattleType() {
-      com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE.valueOf(battleType_);
-      return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE.UNRECOGNIZED : result;
+    public int getSelfMasterSkillCount() {
+      return selfMasterSkill_.size();
     }
+    /**
+     * <pre>
+     *自己可以手动释放的主将技能
+     * </pre>
+     *
+     * <code>repeated int32 selfMasterSkill = 5;</code>
+     */
+    public int getSelfMasterSkill(int index) {
+      return selfMasterSkill_.get(index);
+    }
+    private int selfMasterSkillMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1635,36 +1242,28 @@ public final class SGWarProto {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (teamNo_ != 0) {
-        output.writeInt32(1, teamNo_);
+      if (battleType_ != com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE.BATTLE_TYPE_UNKNOWN.getNumber()) {
+        output.writeEnum(1, battleType_);
       }
-      if (selfMasterGuid_ != 0) {
-        output.writeInt32(2, selfMasterGuid_);
+      if (selftMaster_ != null) {
+        output.writeMessage(2, getSelftMaster());
       }
-      if (otherMasterGuid_ != 0) {
-        output.writeInt32(3, otherMasterGuid_);
-      }
-      if (selfMasterGradeId_ != 0) {
-        output.writeInt32(4, selfMasterGradeId_);
-      }
-      if (otherMasterGradeId_ != 0) {
-        output.writeInt32(5, otherMasterGradeId_);
-      }
-      if (selfMasterHP_ != 0) {
-        output.writeInt32(6, selfMasterHP_);
-      }
-      if (otherMasterHP_ != 0) {
-        output.writeInt32(7, otherMasterHP_);
+      if (otherMaster_ != null) {
+        output.writeMessage(3, getOtherMaster());
       }
       if (getBattleCardIdList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(34);
         output.writeUInt32NoTag(battleCardIdMemoizedSerializedSize);
       }
       for (int i = 0; i < battleCardId_.size(); i++) {
         output.writeInt32NoTag(battleCardId_.get(i));
       }
-      if (battleType_ != com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE.BATTLE_TYPE_UNKNOWN.getNumber()) {
-        output.writeEnum(9, battleType_);
+      if (getSelfMasterSkillList().size() > 0) {
+        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(selfMasterSkillMemoizedSerializedSize);
+      }
+      for (int i = 0; i < selfMasterSkill_.size(); i++) {
+        output.writeInt32NoTag(selfMasterSkill_.get(i));
       }
     }
 
@@ -1673,33 +1272,17 @@ public final class SGWarProto {
       if (size != -1) return size;
 
       size = 0;
-      if (teamNo_ != 0) {
+      if (battleType_ != com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE.BATTLE_TYPE_UNKNOWN.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, teamNo_);
+          .computeEnumSize(1, battleType_);
       }
-      if (selfMasterGuid_ != 0) {
+      if (selftMaster_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, selfMasterGuid_);
+          .computeMessageSize(2, getSelftMaster());
       }
-      if (otherMasterGuid_ != 0) {
+      if (otherMaster_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, otherMasterGuid_);
-      }
-      if (selfMasterGradeId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, selfMasterGradeId_);
-      }
-      if (otherMasterGradeId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, otherMasterGradeId_);
-      }
-      if (selfMasterHP_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, selfMasterHP_);
-      }
-      if (otherMasterHP_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, otherMasterHP_);
+          .computeMessageSize(3, getOtherMaster());
       }
       {
         int dataSize = 0;
@@ -1715,9 +1298,19 @@ public final class SGWarProto {
         }
         battleCardIdMemoizedSerializedSize = dataSize;
       }
-      if (battleType_ != com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE.BATTLE_TYPE_UNKNOWN.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(9, battleType_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < selfMasterSkill_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(selfMasterSkill_.get(i));
+        }
+        size += dataSize;
+        if (!getSelfMasterSkillList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        selfMasterSkillMemoizedSerializedSize = dataSize;
       }
       memoizedSize = size;
       return size;
@@ -1735,23 +1328,21 @@ public final class SGWarProto {
       com.douqu.game.core.protobuf.SGWarProto.S2C_Create other = (com.douqu.game.core.protobuf.SGWarProto.S2C_Create) obj;
 
       boolean result = true;
-      result = result && (getTeamNo()
-          == other.getTeamNo());
-      result = result && (getSelfMasterGuid()
-          == other.getSelfMasterGuid());
-      result = result && (getOtherMasterGuid()
-          == other.getOtherMasterGuid());
-      result = result && (getSelfMasterGradeId()
-          == other.getSelfMasterGradeId());
-      result = result && (getOtherMasterGradeId()
-          == other.getOtherMasterGradeId());
-      result = result && (getSelfMasterHP()
-          == other.getSelfMasterHP());
-      result = result && (getOtherMasterHP()
-          == other.getOtherMasterHP());
+      result = result && battleType_ == other.battleType_;
+      result = result && (hasSelftMaster() == other.hasSelftMaster());
+      if (hasSelftMaster()) {
+        result = result && getSelftMaster()
+            .equals(other.getSelftMaster());
+      }
+      result = result && (hasOtherMaster() == other.hasOtherMaster());
+      if (hasOtherMaster()) {
+        result = result && getOtherMaster()
+            .equals(other.getOtherMaster());
+      }
       result = result && getBattleCardIdList()
           .equals(other.getBattleCardIdList());
-      result = result && battleType_ == other.battleType_;
+      result = result && getSelfMasterSkillList()
+          .equals(other.getSelfMasterSkillList());
       return result;
     }
 
@@ -1762,26 +1353,24 @@ public final class SGWarProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TEAMNO_FIELD_NUMBER;
-      hash = (53 * hash) + getTeamNo();
-      hash = (37 * hash) + SELFMASTERGUID_FIELD_NUMBER;
-      hash = (53 * hash) + getSelfMasterGuid();
-      hash = (37 * hash) + OTHERMASTERGUID_FIELD_NUMBER;
-      hash = (53 * hash) + getOtherMasterGuid();
-      hash = (37 * hash) + SELFMASTERGRADEID_FIELD_NUMBER;
-      hash = (53 * hash) + getSelfMasterGradeId();
-      hash = (37 * hash) + OTHERMASTERGRADEID_FIELD_NUMBER;
-      hash = (53 * hash) + getOtherMasterGradeId();
-      hash = (37 * hash) + SELFMASTERHP_FIELD_NUMBER;
-      hash = (53 * hash) + getSelfMasterHP();
-      hash = (37 * hash) + OTHERMASTERHP_FIELD_NUMBER;
-      hash = (53 * hash) + getOtherMasterHP();
+      hash = (37 * hash) + BATTLETYPE_FIELD_NUMBER;
+      hash = (53 * hash) + battleType_;
+      if (hasSelftMaster()) {
+        hash = (37 * hash) + SELFTMASTER_FIELD_NUMBER;
+        hash = (53 * hash) + getSelftMaster().hashCode();
+      }
+      if (hasOtherMaster()) {
+        hash = (37 * hash) + OTHERMASTER_FIELD_NUMBER;
+        hash = (53 * hash) + getOtherMaster().hashCode();
+      }
       if (getBattleCardIdCount() > 0) {
         hash = (37 * hash) + BATTLECARDID_FIELD_NUMBER;
         hash = (53 * hash) + getBattleCardIdList().hashCode();
       }
-      hash = (37 * hash) + BATTLETYPE_FIELD_NUMBER;
-      hash = (53 * hash) + battleType_;
+      if (getSelfMasterSkillCount() > 0) {
+        hash = (37 * hash) + SELFMASTERSKILL_FIELD_NUMBER;
+        hash = (53 * hash) + getSelfMasterSkillList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1900,24 +1489,24 @@ public final class SGWarProto {
       }
       public Builder clear() {
         super.clear();
-        teamNo_ = 0;
-
-        selfMasterGuid_ = 0;
-
-        otherMasterGuid_ = 0;
-
-        selfMasterGradeId_ = 0;
-
-        otherMasterGradeId_ = 0;
-
-        selfMasterHP_ = 0;
-
-        otherMasterHP_ = 0;
-
-        battleCardId_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
         battleType_ = 0;
 
+        if (selftMasterBuilder_ == null) {
+          selftMaster_ = null;
+        } else {
+          selftMaster_ = null;
+          selftMasterBuilder_ = null;
+        }
+        if (otherMasterBuilder_ == null) {
+          otherMaster_ = null;
+        } else {
+          otherMaster_ = null;
+          otherMasterBuilder_ = null;
+        }
+        battleCardId_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        selfMasterSkill_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1942,19 +1531,27 @@ public final class SGWarProto {
         com.douqu.game.core.protobuf.SGWarProto.S2C_Create result = new com.douqu.game.core.protobuf.SGWarProto.S2C_Create(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        result.teamNo_ = teamNo_;
-        result.selfMasterGuid_ = selfMasterGuid_;
-        result.otherMasterGuid_ = otherMasterGuid_;
-        result.selfMasterGradeId_ = selfMasterGradeId_;
-        result.otherMasterGradeId_ = otherMasterGradeId_;
-        result.selfMasterHP_ = selfMasterHP_;
-        result.otherMasterHP_ = otherMasterHP_;
-        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        result.battleType_ = battleType_;
+        if (selftMasterBuilder_ == null) {
+          result.selftMaster_ = selftMaster_;
+        } else {
+          result.selftMaster_ = selftMasterBuilder_.build();
+        }
+        if (otherMasterBuilder_ == null) {
+          result.otherMaster_ = otherMaster_;
+        } else {
+          result.otherMaster_ = otherMasterBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
           battleCardId_ = java.util.Collections.unmodifiableList(battleCardId_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.battleCardId_ = battleCardId_;
-        result.battleType_ = battleType_;
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          selfMasterSkill_ = java.util.Collections.unmodifiableList(selfMasterSkill_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.selfMasterSkill_ = selfMasterSkill_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1997,39 +1594,34 @@ public final class SGWarProto {
 
       public Builder mergeFrom(com.douqu.game.core.protobuf.SGWarProto.S2C_Create other) {
         if (other == com.douqu.game.core.protobuf.SGWarProto.S2C_Create.getDefaultInstance()) return this;
-        if (other.getTeamNo() != 0) {
-          setTeamNo(other.getTeamNo());
+        if (other.battleType_ != 0) {
+          setBattleTypeValue(other.getBattleTypeValue());
         }
-        if (other.getSelfMasterGuid() != 0) {
-          setSelfMasterGuid(other.getSelfMasterGuid());
+        if (other.hasSelftMaster()) {
+          mergeSelftMaster(other.getSelftMaster());
         }
-        if (other.getOtherMasterGuid() != 0) {
-          setOtherMasterGuid(other.getOtherMasterGuid());
-        }
-        if (other.getSelfMasterGradeId() != 0) {
-          setSelfMasterGradeId(other.getSelfMasterGradeId());
-        }
-        if (other.getOtherMasterGradeId() != 0) {
-          setOtherMasterGradeId(other.getOtherMasterGradeId());
-        }
-        if (other.getSelfMasterHP() != 0) {
-          setSelfMasterHP(other.getSelfMasterHP());
-        }
-        if (other.getOtherMasterHP() != 0) {
-          setOtherMasterHP(other.getOtherMasterHP());
+        if (other.hasOtherMaster()) {
+          mergeOtherMaster(other.getOtherMaster());
         }
         if (!other.battleCardId_.isEmpty()) {
           if (battleCardId_.isEmpty()) {
             battleCardId_ = other.battleCardId_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureBattleCardIdIsMutable();
             battleCardId_.addAll(other.battleCardId_);
           }
           onChanged();
         }
-        if (other.battleType_ != 0) {
-          setBattleTypeValue(other.getBattleTypeValue());
+        if (!other.selfMasterSkill_.isEmpty()) {
+          if (selfMasterSkill_.isEmpty()) {
+            selfMasterSkill_ = other.selfMasterSkill_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureSelfMasterSkillIsMutable();
+            selfMasterSkill_.addAll(other.selfMasterSkill_);
+          }
+          onChanged();
         }
         onChanged();
         return this;
@@ -2058,277 +1650,361 @@ public final class SGWarProto {
       }
       private int bitField0_;
 
-      private int teamNo_ ;
+      private int battleType_ = 0;
       /**
-       * <pre>
-       *队伍编号
-       * </pre>
-       *
-       * <code>int32 teamNo = 1;</code>
+       * <code>.E_BATTLE_TYPE battleType = 1;</code>
        */
-      public int getTeamNo() {
-        return teamNo_;
+      public int getBattleTypeValue() {
+        return battleType_;
       }
       /**
-       * <pre>
-       *队伍编号
-       * </pre>
-       *
-       * <code>int32 teamNo = 1;</code>
+       * <code>.E_BATTLE_TYPE battleType = 1;</code>
        */
-      public Builder setTeamNo(int value) {
-        
-        teamNo_ = value;
+      public Builder setBattleTypeValue(int value) {
+        battleType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       *队伍编号
-       * </pre>
-       *
-       * <code>int32 teamNo = 1;</code>
+       * <code>.E_BATTLE_TYPE battleType = 1;</code>
        */
-      public Builder clearTeamNo() {
-        
-        teamNo_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int selfMasterGuid_ ;
-      /**
-       * <pre>
-       *自己主将ID
-       * </pre>
-       *
-       * <code>int32 selfMasterGuid = 2;</code>
-       */
-      public int getSelfMasterGuid() {
-        return selfMasterGuid_;
+      public com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE getBattleType() {
+        com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE.valueOf(battleType_);
+        return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE.UNRECOGNIZED : result;
       }
       /**
-       * <pre>
-       *自己主将ID
-       * </pre>
-       *
-       * <code>int32 selfMasterGuid = 2;</code>
+       * <code>.E_BATTLE_TYPE battleType = 1;</code>
        */
-      public Builder setSelfMasterGuid(int value) {
+      public Builder setBattleType(com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         
-        selfMasterGuid_ = value;
+        battleType_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       *自己主将ID
-       * </pre>
-       *
-       * <code>int32 selfMasterGuid = 2;</code>
+       * <code>.E_BATTLE_TYPE battleType = 1;</code>
        */
-      public Builder clearSelfMasterGuid() {
+      public Builder clearBattleType() {
         
-        selfMasterGuid_ = 0;
+        battleType_ = 0;
         onChanged();
         return this;
       }
 
-      private int otherMasterGuid_ ;
+      private com.douqu.game.core.protobuf.SGCommonProto.BattleUnit selftMaster_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.BattleUnit, com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.Builder, com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder> selftMasterBuilder_;
       /**
        * <pre>
-       *对方主将ID
+       *自己的主将
        * </pre>
        *
-       * <code>int32 otherMasterGuid = 3;</code>
+       * <code>.BattleUnit selftMaster = 2;</code>
        */
-      public int getOtherMasterGuid() {
-        return otherMasterGuid_;
+      public boolean hasSelftMaster() {
+        return selftMasterBuilder_ != null || selftMaster_ != null;
       }
       /**
        * <pre>
-       *对方主将ID
+       *自己的主将
        * </pre>
        *
-       * <code>int32 otherMasterGuid = 3;</code>
+       * <code>.BattleUnit selftMaster = 2;</code>
        */
-      public Builder setOtherMasterGuid(int value) {
-        
-        otherMasterGuid_ = value;
-        onChanged();
+      public com.douqu.game.core.protobuf.SGCommonProto.BattleUnit getSelftMaster() {
+        if (selftMasterBuilder_ == null) {
+          return selftMaster_ == null ? com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.getDefaultInstance() : selftMaster_;
+        } else {
+          return selftMasterBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       *自己的主将
+       * </pre>
+       *
+       * <code>.BattleUnit selftMaster = 2;</code>
+       */
+      public Builder setSelftMaster(com.douqu.game.core.protobuf.SGCommonProto.BattleUnit value) {
+        if (selftMasterBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          selftMaster_ = value;
+          onChanged();
+        } else {
+          selftMasterBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
        * <pre>
-       *对方主将ID
+       *自己的主将
        * </pre>
        *
-       * <code>int32 otherMasterGuid = 3;</code>
+       * <code>.BattleUnit selftMaster = 2;</code>
        */
-      public Builder clearOtherMasterGuid() {
-        
-        otherMasterGuid_ = 0;
-        onChanged();
+      public Builder setSelftMaster(
+          com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.Builder builderForValue) {
+        if (selftMasterBuilder_ == null) {
+          selftMaster_ = builderForValue.build();
+          onChanged();
+        } else {
+          selftMasterBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
+      }
+      /**
+       * <pre>
+       *自己的主将
+       * </pre>
+       *
+       * <code>.BattleUnit selftMaster = 2;</code>
+       */
+      public Builder mergeSelftMaster(com.douqu.game.core.protobuf.SGCommonProto.BattleUnit value) {
+        if (selftMasterBuilder_ == null) {
+          if (selftMaster_ != null) {
+            selftMaster_ =
+              com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.newBuilder(selftMaster_).mergeFrom(value).buildPartial();
+          } else {
+            selftMaster_ = value;
+          }
+          onChanged();
+        } else {
+          selftMasterBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       *自己的主将
+       * </pre>
+       *
+       * <code>.BattleUnit selftMaster = 2;</code>
+       */
+      public Builder clearSelftMaster() {
+        if (selftMasterBuilder_ == null) {
+          selftMaster_ = null;
+          onChanged();
+        } else {
+          selftMaster_ = null;
+          selftMasterBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       *自己的主将
+       * </pre>
+       *
+       * <code>.BattleUnit selftMaster = 2;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.Builder getSelftMasterBuilder() {
+        
+        onChanged();
+        return getSelftMasterFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       *自己的主将
+       * </pre>
+       *
+       * <code>.BattleUnit selftMaster = 2;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder getSelftMasterOrBuilder() {
+        if (selftMasterBuilder_ != null) {
+          return selftMasterBuilder_.getMessageOrBuilder();
+        } else {
+          return selftMaster_ == null ?
+              com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.getDefaultInstance() : selftMaster_;
+        }
+      }
+      /**
+       * <pre>
+       *自己的主将
+       * </pre>
+       *
+       * <code>.BattleUnit selftMaster = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.BattleUnit, com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.Builder, com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder> 
+          getSelftMasterFieldBuilder() {
+        if (selftMasterBuilder_ == null) {
+          selftMasterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.douqu.game.core.protobuf.SGCommonProto.BattleUnit, com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.Builder, com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder>(
+                  getSelftMaster(),
+                  getParentForChildren(),
+                  isClean());
+          selftMaster_ = null;
+        }
+        return selftMasterBuilder_;
       }
 
-      private int selfMasterGradeId_ ;
+      private com.douqu.game.core.protobuf.SGCommonProto.BattleUnit otherMaster_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.BattleUnit, com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.Builder, com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder> otherMasterBuilder_;
       /**
        * <pre>
-       *自己主将等级ID
+       *对方的主将
        * </pre>
        *
-       * <code>int32 selfMasterGradeId = 4;</code>
+       * <code>.BattleUnit otherMaster = 3;</code>
        */
-      public int getSelfMasterGradeId() {
-        return selfMasterGradeId_;
+      public boolean hasOtherMaster() {
+        return otherMasterBuilder_ != null || otherMaster_ != null;
       }
       /**
        * <pre>
-       *自己主将等级ID
+       *对方的主将
        * </pre>
        *
-       * <code>int32 selfMasterGradeId = 4;</code>
+       * <code>.BattleUnit otherMaster = 3;</code>
        */
-      public Builder setSelfMasterGradeId(int value) {
-        
-        selfMasterGradeId_ = value;
-        onChanged();
-        return this;
+      public com.douqu.game.core.protobuf.SGCommonProto.BattleUnit getOtherMaster() {
+        if (otherMasterBuilder_ == null) {
+          return otherMaster_ == null ? com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.getDefaultInstance() : otherMaster_;
+        } else {
+          return otherMasterBuilder_.getMessage();
+        }
       }
       /**
        * <pre>
-       *自己主将等级ID
+       *对方的主将
        * </pre>
        *
-       * <code>int32 selfMasterGradeId = 4;</code>
+       * <code>.BattleUnit otherMaster = 3;</code>
        */
-      public Builder clearSelfMasterGradeId() {
-        
-        selfMasterGradeId_ = 0;
-        onChanged();
-        return this;
-      }
+      public Builder setOtherMaster(com.douqu.game.core.protobuf.SGCommonProto.BattleUnit value) {
+        if (otherMasterBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          otherMaster_ = value;
+          onChanged();
+        } else {
+          otherMasterBuilder_.setMessage(value);
+        }
 
-      private int otherMasterGradeId_ ;
-      /**
-       * <pre>
-       *对方主将等级ID
-       * </pre>
-       *
-       * <code>int32 otherMasterGradeId = 5;</code>
-       */
-      public int getOtherMasterGradeId() {
-        return otherMasterGradeId_;
-      }
-      /**
-       * <pre>
-       *对方主将等级ID
-       * </pre>
-       *
-       * <code>int32 otherMasterGradeId = 5;</code>
-       */
-      public Builder setOtherMasterGradeId(int value) {
-        
-        otherMasterGradeId_ = value;
-        onChanged();
         return this;
       }
       /**
        * <pre>
-       *对方主将等级ID
+       *对方的主将
        * </pre>
        *
-       * <code>int32 otherMasterGradeId = 5;</code>
+       * <code>.BattleUnit otherMaster = 3;</code>
        */
-      public Builder clearOtherMasterGradeId() {
-        
-        otherMasterGradeId_ = 0;
-        onChanged();
-        return this;
-      }
+      public Builder setOtherMaster(
+          com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.Builder builderForValue) {
+        if (otherMasterBuilder_ == null) {
+          otherMaster_ = builderForValue.build();
+          onChanged();
+        } else {
+          otherMasterBuilder_.setMessage(builderForValue.build());
+        }
 
-      private int selfMasterHP_ ;
-      /**
-       * <pre>
-       *自己主将HP
-       * </pre>
-       *
-       * <code>int32 selfMasterHP = 6;</code>
-       */
-      public int getSelfMasterHP() {
-        return selfMasterHP_;
-      }
-      /**
-       * <pre>
-       *自己主将HP
-       * </pre>
-       *
-       * <code>int32 selfMasterHP = 6;</code>
-       */
-      public Builder setSelfMasterHP(int value) {
-        
-        selfMasterHP_ = value;
-        onChanged();
         return this;
       }
       /**
        * <pre>
-       *自己主将HP
+       *对方的主将
        * </pre>
        *
-       * <code>int32 selfMasterHP = 6;</code>
+       * <code>.BattleUnit otherMaster = 3;</code>
        */
-      public Builder clearSelfMasterHP() {
-        
-        selfMasterHP_ = 0;
-        onChanged();
-        return this;
-      }
+      public Builder mergeOtherMaster(com.douqu.game.core.protobuf.SGCommonProto.BattleUnit value) {
+        if (otherMasterBuilder_ == null) {
+          if (otherMaster_ != null) {
+            otherMaster_ =
+              com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.newBuilder(otherMaster_).mergeFrom(value).buildPartial();
+          } else {
+            otherMaster_ = value;
+          }
+          onChanged();
+        } else {
+          otherMasterBuilder_.mergeFrom(value);
+        }
 
-      private int otherMasterHP_ ;
-      /**
-       * <pre>
-       *对方主将HP
-       * </pre>
-       *
-       * <code>int32 otherMasterHP = 7;</code>
-       */
-      public int getOtherMasterHP() {
-        return otherMasterHP_;
-      }
-      /**
-       * <pre>
-       *对方主将HP
-       * </pre>
-       *
-       * <code>int32 otherMasterHP = 7;</code>
-       */
-      public Builder setOtherMasterHP(int value) {
-        
-        otherMasterHP_ = value;
-        onChanged();
         return this;
       }
       /**
        * <pre>
-       *对方主将HP
+       *对方的主将
        * </pre>
        *
-       * <code>int32 otherMasterHP = 7;</code>
+       * <code>.BattleUnit otherMaster = 3;</code>
        */
-      public Builder clearOtherMasterHP() {
-        
-        otherMasterHP_ = 0;
-        onChanged();
+      public Builder clearOtherMaster() {
+        if (otherMasterBuilder_ == null) {
+          otherMaster_ = null;
+          onChanged();
+        } else {
+          otherMaster_ = null;
+          otherMasterBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <pre>
+       *对方的主将
+       * </pre>
+       *
+       * <code>.BattleUnit otherMaster = 3;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.Builder getOtherMasterBuilder() {
+        
+        onChanged();
+        return getOtherMasterFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       *对方的主将
+       * </pre>
+       *
+       * <code>.BattleUnit otherMaster = 3;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder getOtherMasterOrBuilder() {
+        if (otherMasterBuilder_ != null) {
+          return otherMasterBuilder_.getMessageOrBuilder();
+        } else {
+          return otherMaster_ == null ?
+              com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.getDefaultInstance() : otherMaster_;
+        }
+      }
+      /**
+       * <pre>
+       *对方的主将
+       * </pre>
+       *
+       * <code>.BattleUnit otherMaster = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.BattleUnit, com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.Builder, com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder> 
+          getOtherMasterFieldBuilder() {
+        if (otherMasterBuilder_ == null) {
+          otherMasterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.douqu.game.core.protobuf.SGCommonProto.BattleUnit, com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.Builder, com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder>(
+                  getOtherMaster(),
+                  getParentForChildren(),
+                  isClean());
+          otherMaster_ = null;
+        }
+        return otherMasterBuilder_;
       }
 
       private java.util.List<java.lang.Integer> battleCardId_ = java.util.Collections.emptyList();
       private void ensureBattleCardIdIsMutable() {
-        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           battleCardId_ = new java.util.ArrayList<java.lang.Integer>(battleCardId_);
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000008;
          }
       }
       /**
@@ -2336,7 +2012,7 @@ public final class SGWarProto {
        *已经上阵的卡牌ID
        * </pre>
        *
-       * <code>repeated int32 battleCardId = 8;</code>
+       * <code>repeated int32 battleCardId = 4;</code>
        */
       public java.util.List<java.lang.Integer>
           getBattleCardIdList() {
@@ -2347,7 +2023,7 @@ public final class SGWarProto {
        *已经上阵的卡牌ID
        * </pre>
        *
-       * <code>repeated int32 battleCardId = 8;</code>
+       * <code>repeated int32 battleCardId = 4;</code>
        */
       public int getBattleCardIdCount() {
         return battleCardId_.size();
@@ -2357,7 +2033,7 @@ public final class SGWarProto {
        *已经上阵的卡牌ID
        * </pre>
        *
-       * <code>repeated int32 battleCardId = 8;</code>
+       * <code>repeated int32 battleCardId = 4;</code>
        */
       public int getBattleCardId(int index) {
         return battleCardId_.get(index);
@@ -2367,7 +2043,7 @@ public final class SGWarProto {
        *已经上阵的卡牌ID
        * </pre>
        *
-       * <code>repeated int32 battleCardId = 8;</code>
+       * <code>repeated int32 battleCardId = 4;</code>
        */
       public Builder setBattleCardId(
           int index, int value) {
@@ -2381,7 +2057,7 @@ public final class SGWarProto {
        *已经上阵的卡牌ID
        * </pre>
        *
-       * <code>repeated int32 battleCardId = 8;</code>
+       * <code>repeated int32 battleCardId = 4;</code>
        */
       public Builder addBattleCardId(int value) {
         ensureBattleCardIdIsMutable();
@@ -2394,7 +2070,7 @@ public final class SGWarProto {
        *已经上阵的卡牌ID
        * </pre>
        *
-       * <code>repeated int32 battleCardId = 8;</code>
+       * <code>repeated int32 battleCardId = 4;</code>
        */
       public Builder addAllBattleCardId(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -2409,55 +2085,105 @@ public final class SGWarProto {
        *已经上阵的卡牌ID
        * </pre>
        *
-       * <code>repeated int32 battleCardId = 8;</code>
+       * <code>repeated int32 battleCardId = 4;</code>
        */
       public Builder clearBattleCardId() {
         battleCardId_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
 
-      private int battleType_ = 0;
-      /**
-       * <code>.E_BATTLE_TYPE battleType = 9;</code>
-       */
-      public int getBattleTypeValue() {
-        return battleType_;
+      private java.util.List<java.lang.Integer> selfMasterSkill_ = java.util.Collections.emptyList();
+      private void ensureSelfMasterSkillIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          selfMasterSkill_ = new java.util.ArrayList<java.lang.Integer>(selfMasterSkill_);
+          bitField0_ |= 0x00000010;
+         }
       }
       /**
-       * <code>.E_BATTLE_TYPE battleType = 9;</code>
+       * <pre>
+       *自己可以手动释放的主将技能
+       * </pre>
+       *
+       * <code>repeated int32 selfMasterSkill = 5;</code>
        */
-      public Builder setBattleTypeValue(int value) {
-        battleType_ = value;
+      public java.util.List<java.lang.Integer>
+          getSelfMasterSkillList() {
+        return java.util.Collections.unmodifiableList(selfMasterSkill_);
+      }
+      /**
+       * <pre>
+       *自己可以手动释放的主将技能
+       * </pre>
+       *
+       * <code>repeated int32 selfMasterSkill = 5;</code>
+       */
+      public int getSelfMasterSkillCount() {
+        return selfMasterSkill_.size();
+      }
+      /**
+       * <pre>
+       *自己可以手动释放的主将技能
+       * </pre>
+       *
+       * <code>repeated int32 selfMasterSkill = 5;</code>
+       */
+      public int getSelfMasterSkill(int index) {
+        return selfMasterSkill_.get(index);
+      }
+      /**
+       * <pre>
+       *自己可以手动释放的主将技能
+       * </pre>
+       *
+       * <code>repeated int32 selfMasterSkill = 5;</code>
+       */
+      public Builder setSelfMasterSkill(
+          int index, int value) {
+        ensureSelfMasterSkillIsMutable();
+        selfMasterSkill_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>.E_BATTLE_TYPE battleType = 9;</code>
+       * <pre>
+       *自己可以手动释放的主将技能
+       * </pre>
+       *
+       * <code>repeated int32 selfMasterSkill = 5;</code>
        */
-      public com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE getBattleType() {
-        com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE.valueOf(battleType_);
-        return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.E_BATTLE_TYPE battleType = 9;</code>
-       */
-      public Builder setBattleType(com.douqu.game.core.protobuf.SGCommonProto.E_BATTLE_TYPE value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        battleType_ = value.getNumber();
+      public Builder addSelfMasterSkill(int value) {
+        ensureSelfMasterSkillIsMutable();
+        selfMasterSkill_.add(value);
         onChanged();
         return this;
       }
       /**
-       * <code>.E_BATTLE_TYPE battleType = 9;</code>
+       * <pre>
+       *自己可以手动释放的主将技能
+       * </pre>
+       *
+       * <code>repeated int32 selfMasterSkill = 5;</code>
        */
-      public Builder clearBattleType() {
-        
-        battleType_ = 0;
+      public Builder addAllSelfMasterSkill(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureSelfMasterSkillIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, selfMasterSkill_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *自己可以手动释放的主将技能
+       * </pre>
+       *
+       * <code>repeated int32 selfMasterSkill = 5;</code>
+       */
+      public Builder clearSelfMasterSkill() {
+        selfMasterSkill_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -3475,12 +3201,25 @@ public final class SGWarProto {
 
     /**
      * <pre>
-     *卡牌ID
      * </pre>
      *
-     * <code>int32 cardId = 2;</code>
+     * <code>.Card card = 2;</code>
      */
-    int getCardId();
+    boolean hasCard();
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>.Card card = 2;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.Card getCard();
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>.Card card = 2;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.CardOrBuilder getCardOrBuilder();
 
     /**
      * <pre>
@@ -3525,6 +3264,15 @@ public final class SGWarProto {
      */
     com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder getSoldierOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     *是d
+     * </pre>
+     *
+     * <code>bool isCardSoldier = 4;</code>
+     */
+    boolean getIsCardSoldier();
   }
   /**
    * Protobuf type {@code S2C_ToBattle}
@@ -3539,8 +3287,8 @@ public final class SGWarProto {
     }
     private S2C_ToBattle() {
       playerIndex_ = "";
-      cardId_ = 0;
       soldier_ = java.util.Collections.emptyList();
+      isCardSoldier_ = false;
     }
 
     @java.lang.Override
@@ -3574,9 +3322,17 @@ public final class SGWarProto {
               playerIndex_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              com.douqu.game.core.protobuf.SGCommonProto.Card.Builder subBuilder = null;
+              if (card_ != null) {
+                subBuilder = card_.toBuilder();
+              }
+              card_ = input.readMessage(com.douqu.game.core.protobuf.SGCommonProto.Card.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(card_);
+                card_ = subBuilder.buildPartial();
+              }
 
-              cardId_ = input.readInt32();
               break;
             }
             case 26: {
@@ -3586,6 +3342,11 @@ public final class SGWarProto {
               }
               soldier_.add(
                   input.readMessage(com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.parser(), extensionRegistry));
+              break;
+            }
+            case 32: {
+
+              isCardSoldier_ = input.readBool();
               break;
             }
           }
@@ -3657,17 +3418,34 @@ public final class SGWarProto {
       }
     }
 
-    public static final int CARDID_FIELD_NUMBER = 2;
-    private int cardId_;
+    public static final int CARD_FIELD_NUMBER = 2;
+    private com.douqu.game.core.protobuf.SGCommonProto.Card card_;
     /**
      * <pre>
-     *卡牌ID
      * </pre>
      *
-     * <code>int32 cardId = 2;</code>
+     * <code>.Card card = 2;</code>
      */
-    public int getCardId() {
-      return cardId_;
+    public boolean hasCard() {
+      return card_ != null;
+    }
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>.Card card = 2;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.Card getCard() {
+      return card_ == null ? com.douqu.game.core.protobuf.SGCommonProto.Card.getDefaultInstance() : card_;
+    }
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>.Card card = 2;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.CardOrBuilder getCardOrBuilder() {
+      return getCard();
     }
 
     public static final int SOLDIER_FIELD_NUMBER = 3;
@@ -3725,6 +3503,19 @@ public final class SGWarProto {
       return soldier_.get(index);
     }
 
+    public static final int ISCARDSOLDIER_FIELD_NUMBER = 4;
+    private boolean isCardSoldier_;
+    /**
+     * <pre>
+     *是d
+     * </pre>
+     *
+     * <code>bool isCardSoldier = 4;</code>
+     */
+    public boolean getIsCardSoldier() {
+      return isCardSoldier_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -3740,11 +3531,14 @@ public final class SGWarProto {
       if (!getPlayerIndexBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, playerIndex_);
       }
-      if (cardId_ != 0) {
-        output.writeInt32(2, cardId_);
+      if (card_ != null) {
+        output.writeMessage(2, getCard());
       }
       for (int i = 0; i < soldier_.size(); i++) {
         output.writeMessage(3, soldier_.get(i));
+      }
+      if (isCardSoldier_ != false) {
+        output.writeBool(4, isCardSoldier_);
       }
     }
 
@@ -3756,13 +3550,17 @@ public final class SGWarProto {
       if (!getPlayerIndexBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, playerIndex_);
       }
-      if (cardId_ != 0) {
+      if (card_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, cardId_);
+          .computeMessageSize(2, getCard());
       }
       for (int i = 0; i < soldier_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, soldier_.get(i));
+      }
+      if (isCardSoldier_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, isCardSoldier_);
       }
       memoizedSize = size;
       return size;
@@ -3782,10 +3580,15 @@ public final class SGWarProto {
       boolean result = true;
       result = result && getPlayerIndex()
           .equals(other.getPlayerIndex());
-      result = result && (getCardId()
-          == other.getCardId());
+      result = result && (hasCard() == other.hasCard());
+      if (hasCard()) {
+        result = result && getCard()
+            .equals(other.getCard());
+      }
       result = result && getSoldierList()
           .equals(other.getSoldierList());
+      result = result && (getIsCardSoldier()
+          == other.getIsCardSoldier());
       return result;
     }
 
@@ -3798,12 +3601,17 @@ public final class SGWarProto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PLAYERINDEX_FIELD_NUMBER;
       hash = (53 * hash) + getPlayerIndex().hashCode();
-      hash = (37 * hash) + CARDID_FIELD_NUMBER;
-      hash = (53 * hash) + getCardId();
+      if (hasCard()) {
+        hash = (37 * hash) + CARD_FIELD_NUMBER;
+        hash = (53 * hash) + getCard().hashCode();
+      }
       if (getSoldierCount() > 0) {
         hash = (37 * hash) + SOLDIER_FIELD_NUMBER;
         hash = (53 * hash) + getSoldierList().hashCode();
       }
+      hash = (37 * hash) + ISCARDSOLDIER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsCardSoldier());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3925,14 +3733,20 @@ public final class SGWarProto {
         super.clear();
         playerIndex_ = "";
 
-        cardId_ = 0;
-
+        if (cardBuilder_ == null) {
+          card_ = null;
+        } else {
+          card_ = null;
+          cardBuilder_ = null;
+        }
         if (soldierBuilder_ == null) {
           soldier_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           soldierBuilder_.clear();
         }
+        isCardSoldier_ = false;
+
         return this;
       }
 
@@ -3958,7 +3772,11 @@ public final class SGWarProto {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.playerIndex_ = playerIndex_;
-        result.cardId_ = cardId_;
+        if (cardBuilder_ == null) {
+          result.card_ = card_;
+        } else {
+          result.card_ = cardBuilder_.build();
+        }
         if (soldierBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004)) {
             soldier_ = java.util.Collections.unmodifiableList(soldier_);
@@ -3968,6 +3786,7 @@ public final class SGWarProto {
         } else {
           result.soldier_ = soldierBuilder_.build();
         }
+        result.isCardSoldier_ = isCardSoldier_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4014,8 +3833,8 @@ public final class SGWarProto {
           playerIndex_ = other.playerIndex_;
           onChanged();
         }
-        if (other.getCardId() != 0) {
-          setCardId(other.getCardId());
+        if (other.hasCard()) {
+          mergeCard(other.getCard());
         }
         if (soldierBuilder_ == null) {
           if (!other.soldier_.isEmpty()) {
@@ -4042,6 +3861,9 @@ public final class SGWarProto {
               soldierBuilder_.addAllMessages(other.soldier_);
             }
           }
+        }
+        if (other.getIsCardSoldier() != false) {
+          setIsCardSoldier(other.getIsCardSoldier());
         }
         onChanged();
         return this;
@@ -4159,42 +3981,148 @@ public final class SGWarProto {
         return this;
       }
 
-      private int cardId_ ;
+      private com.douqu.game.core.protobuf.SGCommonProto.Card card_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.Card, com.douqu.game.core.protobuf.SGCommonProto.Card.Builder, com.douqu.game.core.protobuf.SGCommonProto.CardOrBuilder> cardBuilder_;
       /**
        * <pre>
-       *卡牌ID
        * </pre>
        *
-       * <code>int32 cardId = 2;</code>
+       * <code>.Card card = 2;</code>
        */
-      public int getCardId() {
-        return cardId_;
+      public boolean hasCard() {
+        return cardBuilder_ != null || card_ != null;
       }
       /**
        * <pre>
-       *卡牌ID
        * </pre>
        *
-       * <code>int32 cardId = 2;</code>
+       * <code>.Card card = 2;</code>
        */
-      public Builder setCardId(int value) {
-        
-        cardId_ = value;
-        onChanged();
+      public com.douqu.game.core.protobuf.SGCommonProto.Card getCard() {
+        if (cardBuilder_ == null) {
+          return card_ == null ? com.douqu.game.core.protobuf.SGCommonProto.Card.getDefaultInstance() : card_;
+        } else {
+          return cardBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * </pre>
+       *
+       * <code>.Card card = 2;</code>
+       */
+      public Builder setCard(com.douqu.game.core.protobuf.SGCommonProto.Card value) {
+        if (cardBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          card_ = value;
+          onChanged();
+        } else {
+          cardBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
        * <pre>
-       *卡牌ID
        * </pre>
        *
-       * <code>int32 cardId = 2;</code>
+       * <code>.Card card = 2;</code>
        */
-      public Builder clearCardId() {
-        
-        cardId_ = 0;
-        onChanged();
+      public Builder setCard(
+          com.douqu.game.core.protobuf.SGCommonProto.Card.Builder builderForValue) {
+        if (cardBuilder_ == null) {
+          card_ = builderForValue.build();
+          onChanged();
+        } else {
+          cardBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
+      }
+      /**
+       * <pre>
+       * </pre>
+       *
+       * <code>.Card card = 2;</code>
+       */
+      public Builder mergeCard(com.douqu.game.core.protobuf.SGCommonProto.Card value) {
+        if (cardBuilder_ == null) {
+          if (card_ != null) {
+            card_ =
+              com.douqu.game.core.protobuf.SGCommonProto.Card.newBuilder(card_).mergeFrom(value).buildPartial();
+          } else {
+            card_ = value;
+          }
+          onChanged();
+        } else {
+          cardBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * </pre>
+       *
+       * <code>.Card card = 2;</code>
+       */
+      public Builder clearCard() {
+        if (cardBuilder_ == null) {
+          card_ = null;
+          onChanged();
+        } else {
+          card_ = null;
+          cardBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * </pre>
+       *
+       * <code>.Card card = 2;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.Card.Builder getCardBuilder() {
+        
+        onChanged();
+        return getCardFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * </pre>
+       *
+       * <code>.Card card = 2;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CardOrBuilder getCardOrBuilder() {
+        if (cardBuilder_ != null) {
+          return cardBuilder_.getMessageOrBuilder();
+        } else {
+          return card_ == null ?
+              com.douqu.game.core.protobuf.SGCommonProto.Card.getDefaultInstance() : card_;
+        }
+      }
+      /**
+       * <pre>
+       * </pre>
+       *
+       * <code>.Card card = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.Card, com.douqu.game.core.protobuf.SGCommonProto.Card.Builder, com.douqu.game.core.protobuf.SGCommonProto.CardOrBuilder> 
+          getCardFieldBuilder() {
+        if (cardBuilder_ == null) {
+          cardBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.douqu.game.core.protobuf.SGCommonProto.Card, com.douqu.game.core.protobuf.SGCommonProto.Card.Builder, com.douqu.game.core.protobuf.SGCommonProto.CardOrBuilder>(
+                  getCard(),
+                  getParentForChildren(),
+                  isClean());
+          card_ = null;
+        }
+        return cardBuilder_;
       }
 
       private java.util.List<com.douqu.game.core.protobuf.SGCommonProto.BattleUnit> soldier_ =
@@ -4507,6 +4435,44 @@ public final class SGWarProto {
           soldier_ = null;
         }
         return soldierBuilder_;
+      }
+
+      private boolean isCardSoldier_ ;
+      /**
+       * <pre>
+       *是d
+       * </pre>
+       *
+       * <code>bool isCardSoldier = 4;</code>
+       */
+      public boolean getIsCardSoldier() {
+        return isCardSoldier_;
+      }
+      /**
+       * <pre>
+       *是d
+       * </pre>
+       *
+       * <code>bool isCardSoldier = 4;</code>
+       */
+      public Builder setIsCardSoldier(boolean value) {
+        
+        isCardSoldier_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *是d
+       * </pre>
+       *
+       * <code>bool isCardSoldier = 4;</code>
+       */
+      public Builder clearIsCardSoldier() {
+        
+        isCardSoldier_ = false;
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5991,6 +5957,24 @@ public final class SGWarProto {
      * <code>int32 star = 2;</code>
      */
     int getStar();
+
+    /**
+     * <pre>
+     *加密串,用来回连主服务器的
+     * </pre>
+     *
+     * <code>string key = 3;</code>
+     */
+    java.lang.String getKey();
+    /**
+     * <pre>
+     *加密串,用来回连主服务器的
+     * </pre>
+     *
+     * <code>string key = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getKeyBytes();
   }
   /**
    * <pre>
@@ -6010,6 +5994,7 @@ public final class SGWarProto {
     private S2C_SynResult() {
       winTeam_ = 0;
       star_ = 0;
+      key_ = "";
     }
 
     @java.lang.Override
@@ -6045,6 +6030,12 @@ public final class SGWarProto {
             case 16: {
 
               star_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              key_ = s;
               break;
             }
           }
@@ -6096,6 +6087,48 @@ public final class SGWarProto {
       return star_;
     }
 
+    public static final int KEY_FIELD_NUMBER = 3;
+    private volatile java.lang.Object key_;
+    /**
+     * <pre>
+     *加密串,用来回连主服务器的
+     * </pre>
+     *
+     * <code>string key = 3;</code>
+     */
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *加密串,用来回连主服务器的
+     * </pre>
+     *
+     * <code>string key = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -6114,6 +6147,9 @@ public final class SGWarProto {
       if (star_ != 0) {
         output.writeInt32(2, star_);
       }
+      if (!getKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, key_);
+      }
     }
 
     public int getSerializedSize() {
@@ -6128,6 +6164,9 @@ public final class SGWarProto {
       if (star_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, star_);
+      }
+      if (!getKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, key_);
       }
       memoizedSize = size;
       return size;
@@ -6149,6 +6188,8 @@ public final class SGWarProto {
           == other.getWinTeam());
       result = result && (getStar()
           == other.getStar());
+      result = result && getKey()
+          .equals(other.getKey());
       return result;
     }
 
@@ -6163,6 +6204,8 @@ public final class SGWarProto {
       hash = (53 * hash) + getWinTeam();
       hash = (37 * hash) + STAR_FIELD_NUMBER;
       hash = (53 * hash) + getStar();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6289,6 +6332,8 @@ public final class SGWarProto {
 
         star_ = 0;
 
+        key_ = "";
+
         return this;
       }
 
@@ -6313,6 +6358,7 @@ public final class SGWarProto {
         com.douqu.game.core.protobuf.SGWarProto.S2C_SynResult result = new com.douqu.game.core.protobuf.SGWarProto.S2C_SynResult(this);
         result.winTeam_ = winTeam_;
         result.star_ = star_;
+        result.key_ = key_;
         onBuilt();
         return result;
       }
@@ -6359,6 +6405,10 @@ public final class SGWarProto {
         }
         if (other.getStar() != 0) {
           setStar(other.getStar());
+        }
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -6458,6 +6508,95 @@ public final class SGWarProto {
       public Builder clearStar() {
         
         star_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object key_ = "";
+      /**
+       * <pre>
+       *加密串,用来回连主服务器的
+       * </pre>
+       *
+       * <code>string key = 3;</code>
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *加密串,用来回连主服务器的
+       * </pre>
+       *
+       * <code>string key = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *加密串,用来回连主服务器的
+       * </pre>
+       *
+       * <code>string key = 3;</code>
+       */
+      public Builder setKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *加密串,用来回连主服务器的
+       * </pre>
+       *
+       * <code>string key = 3;</code>
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *加密串,用来回连主服务器的
+       * </pre>
+       *
+       * <code>string key = 3;</code>
+       */
+      public Builder setKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        key_ = value;
         onChanged();
         return this;
       }
@@ -12467,50 +12606,6 @@ public final class SGWarProto {
   public interface C2S_SynPosOrBuilder extends
       // @@protoc_insertion_point(interface_extends:C2S_SynPos)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     *单位,这里只需要唯一ID,类型,位置这三个值
-     * </pre>
-     *
-     * <code>repeated .BattleUnit battleUnit = 1;</code>
-     */
-    java.util.List<com.douqu.game.core.protobuf.SGCommonProto.BattleUnit> 
-        getBattleUnitList();
-    /**
-     * <pre>
-     *单位,这里只需要唯一ID,类型,位置这三个值
-     * </pre>
-     *
-     * <code>repeated .BattleUnit battleUnit = 1;</code>
-     */
-    com.douqu.game.core.protobuf.SGCommonProto.BattleUnit getBattleUnit(int index);
-    /**
-     * <pre>
-     *单位,这里只需要唯一ID,类型,位置这三个值
-     * </pre>
-     *
-     * <code>repeated .BattleUnit battleUnit = 1;</code>
-     */
-    int getBattleUnitCount();
-    /**
-     * <pre>
-     *单位,这里只需要唯一ID,类型,位置这三个值
-     * </pre>
-     *
-     * <code>repeated .BattleUnit battleUnit = 1;</code>
-     */
-    java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder> 
-        getBattleUnitOrBuilderList();
-    /**
-     * <pre>
-     *单位,这里只需要唯一ID,类型,位置这三个值
-     * </pre>
-     *
-     * <code>repeated .BattleUnit battleUnit = 1;</code>
-     */
-    com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder getBattleUnitOrBuilder(
-        int index);
   }
   /**
    * <pre>
@@ -12528,7 +12623,6 @@ public final class SGWarProto {
       super(builder);
     }
     private C2S_SynPos() {
-      battleUnit_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -12541,7 +12635,6 @@ public final class SGWarProto {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
       try {
         boolean done = false;
         while (!done) {
@@ -12556,15 +12649,6 @@ public final class SGWarProto {
               }
               break;
             }
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                battleUnit_ = new java.util.ArrayList<com.douqu.game.core.protobuf.SGCommonProto.BattleUnit>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              battleUnit_.add(
-                  input.readMessage(com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.parser(), extensionRegistry));
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -12573,9 +12657,6 @@ public final class SGWarProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          battleUnit_ = java.util.Collections.unmodifiableList(battleUnit_);
-        }
         makeExtensionsImmutable();
       }
     }
@@ -12591,61 +12672,6 @@ public final class SGWarProto {
               com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos.class, com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos.Builder.class);
     }
 
-    public static final int BATTLEUNIT_FIELD_NUMBER = 1;
-    private java.util.List<com.douqu.game.core.protobuf.SGCommonProto.BattleUnit> battleUnit_;
-    /**
-     * <pre>
-     *单位,这里只需要唯一ID,类型,位置这三个值
-     * </pre>
-     *
-     * <code>repeated .BattleUnit battleUnit = 1;</code>
-     */
-    public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.BattleUnit> getBattleUnitList() {
-      return battleUnit_;
-    }
-    /**
-     * <pre>
-     *单位,这里只需要唯一ID,类型,位置这三个值
-     * </pre>
-     *
-     * <code>repeated .BattleUnit battleUnit = 1;</code>
-     */
-    public java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder> 
-        getBattleUnitOrBuilderList() {
-      return battleUnit_;
-    }
-    /**
-     * <pre>
-     *单位,这里只需要唯一ID,类型,位置这三个值
-     * </pre>
-     *
-     * <code>repeated .BattleUnit battleUnit = 1;</code>
-     */
-    public int getBattleUnitCount() {
-      return battleUnit_.size();
-    }
-    /**
-     * <pre>
-     *单位,这里只需要唯一ID,类型,位置这三个值
-     * </pre>
-     *
-     * <code>repeated .BattleUnit battleUnit = 1;</code>
-     */
-    public com.douqu.game.core.protobuf.SGCommonProto.BattleUnit getBattleUnit(int index) {
-      return battleUnit_.get(index);
-    }
-    /**
-     * <pre>
-     *单位,这里只需要唯一ID,类型,位置这三个值
-     * </pre>
-     *
-     * <code>repeated .BattleUnit battleUnit = 1;</code>
-     */
-    public com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder getBattleUnitOrBuilder(
-        int index) {
-      return battleUnit_.get(index);
-    }
-
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -12658,9 +12684,6 @@ public final class SGWarProto {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < battleUnit_.size(); i++) {
-        output.writeMessage(1, battleUnit_.get(i));
-      }
     }
 
     public int getSerializedSize() {
@@ -12668,10 +12691,6 @@ public final class SGWarProto {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < battleUnit_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, battleUnit_.get(i));
-      }
       memoizedSize = size;
       return size;
     }
@@ -12688,8 +12707,6 @@ public final class SGWarProto {
       com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos other = (com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos) obj;
 
       boolean result = true;
-      result = result && getBattleUnitList()
-          .equals(other.getBattleUnitList());
       return result;
     }
 
@@ -12700,10 +12717,6 @@ public final class SGWarProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getBattleUnitCount() > 0) {
-        hash = (37 * hash) + BATTLEUNIT_FIELD_NUMBER;
-        hash = (53 * hash) + getBattleUnitList().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -12822,17 +12835,10 @@ public final class SGWarProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getBattleUnitFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        if (battleUnitBuilder_ == null) {
-          battleUnit_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          battleUnitBuilder_.clear();
-        }
         return this;
       }
 
@@ -12855,16 +12861,6 @@ public final class SGWarProto {
 
       public com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos buildPartial() {
         com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos result = new com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos(this);
-        int from_bitField0_ = bitField0_;
-        if (battleUnitBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            battleUnit_ = java.util.Collections.unmodifiableList(battleUnit_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.battleUnit_ = battleUnit_;
-        } else {
-          result.battleUnit_ = battleUnitBuilder_.build();
-        }
         onBuilt();
         return result;
       }
@@ -12906,6 +12902,514 @@ public final class SGWarProto {
 
       public Builder mergeFrom(com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos other) {
         if (other == com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos.getDefaultInstance()) return this;
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2S_SynPos)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2S_SynPos)
+    private static final com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos();
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<C2S_SynPos>
+        PARSER = new com.google.protobuf.AbstractParser<C2S_SynPos>() {
+      public C2S_SynPos parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new C2S_SynPos(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2S_SynPos> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2S_SynPos> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface S2C_SynPosOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_SynPos)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *单位,这里只需要唯一ID,类型,位置这三个值
+     * </pre>
+     *
+     * <code>repeated .BattleUnit battleUnit = 1;</code>
+     */
+    java.util.List<com.douqu.game.core.protobuf.SGCommonProto.BattleUnit> 
+        getBattleUnitList();
+    /**
+     * <pre>
+     *单位,这里只需要唯一ID,类型,位置这三个值
+     * </pre>
+     *
+     * <code>repeated .BattleUnit battleUnit = 1;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.BattleUnit getBattleUnit(int index);
+    /**
+     * <pre>
+     *单位,这里只需要唯一ID,类型,位置这三个值
+     * </pre>
+     *
+     * <code>repeated .BattleUnit battleUnit = 1;</code>
+     */
+    int getBattleUnitCount();
+    /**
+     * <pre>
+     *单位,这里只需要唯一ID,类型,位置这三个值
+     * </pre>
+     *
+     * <code>repeated .BattleUnit battleUnit = 1;</code>
+     */
+    java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder> 
+        getBattleUnitOrBuilderList();
+    /**
+     * <pre>
+     *单位,这里只需要唯一ID,类型,位置这三个值
+     * </pre>
+     *
+     * <code>repeated .BattleUnit battleUnit = 1;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder getBattleUnitOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code S2C_SynPos}
+   */
+  public  static final class S2C_SynPos extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_SynPos)
+      S2C_SynPosOrBuilder {
+    // Use S2C_SynPos.newBuilder() to construct.
+    private S2C_SynPos(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_SynPos() {
+      battleUnit_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private S2C_SynPos(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                battleUnit_ = new java.util.ArrayList<com.douqu.game.core.protobuf.SGCommonProto.BattleUnit>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              battleUnit_.add(
+                  input.readMessage(com.douqu.game.core.protobuf.SGCommonProto.BattleUnit.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          battleUnit_ = java.util.Collections.unmodifiableList(battleUnit_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_SynPos_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_SynPos_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos.class, com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos.Builder.class);
+    }
+
+    public static final int BATTLEUNIT_FIELD_NUMBER = 1;
+    private java.util.List<com.douqu.game.core.protobuf.SGCommonProto.BattleUnit> battleUnit_;
+    /**
+     * <pre>
+     *单位,这里只需要唯一ID,类型,位置这三个值
+     * </pre>
+     *
+     * <code>repeated .BattleUnit battleUnit = 1;</code>
+     */
+    public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.BattleUnit> getBattleUnitList() {
+      return battleUnit_;
+    }
+    /**
+     * <pre>
+     *单位,这里只需要唯一ID,类型,位置这三个值
+     * </pre>
+     *
+     * <code>repeated .BattleUnit battleUnit = 1;</code>
+     */
+    public java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder> 
+        getBattleUnitOrBuilderList() {
+      return battleUnit_;
+    }
+    /**
+     * <pre>
+     *单位,这里只需要唯一ID,类型,位置这三个值
+     * </pre>
+     *
+     * <code>repeated .BattleUnit battleUnit = 1;</code>
+     */
+    public int getBattleUnitCount() {
+      return battleUnit_.size();
+    }
+    /**
+     * <pre>
+     *单位,这里只需要唯一ID,类型,位置这三个值
+     * </pre>
+     *
+     * <code>repeated .BattleUnit battleUnit = 1;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.BattleUnit getBattleUnit(int index) {
+      return battleUnit_.get(index);
+    }
+    /**
+     * <pre>
+     *单位,这里只需要唯一ID,类型,位置这三个值
+     * </pre>
+     *
+     * <code>repeated .BattleUnit battleUnit = 1;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.BattleUnitOrBuilder getBattleUnitOrBuilder(
+        int index) {
+      return battleUnit_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < battleUnit_.size(); i++) {
+        output.writeMessage(1, battleUnit_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < battleUnit_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, battleUnit_.get(i));
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos other = (com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos) obj;
+
+      boolean result = true;
+      result = result && getBattleUnitList()
+          .equals(other.getBattleUnitList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getBattleUnitCount() > 0) {
+        hash = (37 * hash) + BATTLEUNIT_FIELD_NUMBER;
+        hash = (53 * hash) + getBattleUnitList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code S2C_SynPos}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_SynPos)
+        com.douqu.game.core.protobuf.SGWarProto.S2C_SynPosOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_SynPos_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_SynPos_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos.class, com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getBattleUnitFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (battleUnitBuilder_ == null) {
+          battleUnit_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          battleUnitBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_SynPos_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos build() {
+        com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos buildPartial() {
+        com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos result = new com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos(this);
+        int from_bitField0_ = bitField0_;
+        if (battleUnitBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            battleUnit_ = java.util.Collections.unmodifiableList(battleUnit_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.battleUnit_ = battleUnit_;
+        } else {
+          result.battleUnit_ = battleUnitBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos other) {
+        if (other == com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos.getDefaultInstance()) return this;
         if (battleUnitBuilder_ == null) {
           if (!other.battleUnit_.isEmpty()) {
             if (battleUnit_.isEmpty()) {
@@ -12944,11 +13448,11 @@ public final class SGWarProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos parsedMessage = null;
+        com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos) e.getUnfinishedMessage();
+          parsedMessage = (com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -13269,371 +13773,6 @@ public final class SGWarProto {
           battleUnit_ = null;
         }
         return battleUnitBuilder_;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:C2S_SynPos)
-    }
-
-    // @@protoc_insertion_point(class_scope:C2S_SynPos)
-    private static final com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos();
-    }
-
-    public static com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<C2S_SynPos>
-        PARSER = new com.google.protobuf.AbstractParser<C2S_SynPos>() {
-      public C2S_SynPos parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new C2S_SynPos(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<C2S_SynPos> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<C2S_SynPos> getParserForType() {
-      return PARSER;
-    }
-
-    public com.douqu.game.core.protobuf.SGWarProto.C2S_SynPos getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface S2C_SynPosOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:S2C_SynPos)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * Protobuf type {@code S2C_SynPos}
-   */
-  public  static final class S2C_SynPos extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:S2C_SynPos)
-      S2C_SynPosOrBuilder {
-    // Use S2C_SynPos.newBuilder() to construct.
-    private S2C_SynPos(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private S2C_SynPos() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private S2C_SynPos(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_SynPos_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_SynPos_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos.class, com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos)) {
-        return super.equals(obj);
-      }
-      com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos other = (com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos) obj;
-
-      boolean result = true;
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code S2C_SynPos}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:S2C_SynPos)
-        com.douqu.game.core.protobuf.SGWarProto.S2C_SynPosOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_SynPos_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_SynPos_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos.class, com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos.Builder.class);
-      }
-
-      // Construct using com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_SynPos_descriptor;
-      }
-
-      public com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos getDefaultInstanceForType() {
-        return com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos.getDefaultInstance();
-      }
-
-      public com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos build() {
-        com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos buildPartial() {
-        com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos result = new com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos(this);
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos) {
-          return mergeFrom((com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos other) {
-        if (other == com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos.getDefaultInstance()) return this;
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.douqu.game.core.protobuf.SGWarProto.S2C_SynPos) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -15333,6 +15472,15 @@ public final class SGWarProto {
      */
     com.douqu.game.core.protobuf.SGCommonProto.PosOrBuilder getRouteOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     *移动速度
+     * </pre>
+     *
+     * <code>int32 moveSpeed = 3;</code>
+     */
+    int getMoveSpeed();
   }
   /**
    * Protobuf type {@code S2C_SoldierRoute}
@@ -15348,6 +15496,7 @@ public final class SGWarProto {
     private S2C_SoldierRoute() {
       uniqueId_ = 0;
       route_ = java.util.Collections.emptyList();
+      moveSpeed_ = 0;
     }
 
     @java.lang.Override
@@ -15387,6 +15536,11 @@ public final class SGWarProto {
               }
               route_.add(
                   input.readMessage(com.douqu.game.core.protobuf.SGCommonProto.Pos.parser(), extensionRegistry));
+              break;
+            }
+            case 24: {
+
+              moveSpeed_ = input.readInt32();
               break;
             }
           }
@@ -15484,6 +15638,19 @@ public final class SGWarProto {
       return route_.get(index);
     }
 
+    public static final int MOVESPEED_FIELD_NUMBER = 3;
+    private int moveSpeed_;
+    /**
+     * <pre>
+     *移动速度
+     * </pre>
+     *
+     * <code>int32 moveSpeed = 3;</code>
+     */
+    public int getMoveSpeed() {
+      return moveSpeed_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -15502,6 +15669,9 @@ public final class SGWarProto {
       for (int i = 0; i < route_.size(); i++) {
         output.writeMessage(2, route_.get(i));
       }
+      if (moveSpeed_ != 0) {
+        output.writeInt32(3, moveSpeed_);
+      }
     }
 
     public int getSerializedSize() {
@@ -15516,6 +15686,10 @@ public final class SGWarProto {
       for (int i = 0; i < route_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, route_.get(i));
+      }
+      if (moveSpeed_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, moveSpeed_);
       }
       memoizedSize = size;
       return size;
@@ -15537,6 +15711,8 @@ public final class SGWarProto {
           == other.getUniqueId());
       result = result && getRouteList()
           .equals(other.getRouteList());
+      result = result && (getMoveSpeed()
+          == other.getMoveSpeed());
       return result;
     }
 
@@ -15553,6 +15729,8 @@ public final class SGWarProto {
         hash = (37 * hash) + ROUTE_FIELD_NUMBER;
         hash = (53 * hash) + getRouteList().hashCode();
       }
+      hash = (37 * hash) + MOVESPEED_FIELD_NUMBER;
+      hash = (53 * hash) + getMoveSpeed();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -15680,6 +15858,8 @@ public final class SGWarProto {
         } else {
           routeBuilder_.clear();
         }
+        moveSpeed_ = 0;
+
         return this;
       }
 
@@ -15714,6 +15894,7 @@ public final class SGWarProto {
         } else {
           result.route_ = routeBuilder_.build();
         }
+        result.moveSpeed_ = moveSpeed_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -15784,6 +15965,9 @@ public final class SGWarProto {
               routeBuilder_.addAllMessages(other.route_);
             }
           }
+        }
+        if (other.getMoveSpeed() != 0) {
+          setMoveSpeed(other.getMoveSpeed());
         }
         onChanged();
         return this;
@@ -16160,6 +16344,44 @@ public final class SGWarProto {
           route_ = null;
         }
         return routeBuilder_;
+      }
+
+      private int moveSpeed_ ;
+      /**
+       * <pre>
+       *移动速度
+       * </pre>
+       *
+       * <code>int32 moveSpeed = 3;</code>
+       */
+      public int getMoveSpeed() {
+        return moveSpeed_;
+      }
+      /**
+       * <pre>
+       *移动速度
+       * </pre>
+       *
+       * <code>int32 moveSpeed = 3;</code>
+       */
+      public Builder setMoveSpeed(int value) {
+        
+        moveSpeed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *移动速度
+       * </pre>
+       *
+       * <code>int32 moveSpeed = 3;</code>
+       */
+      public Builder clearMoveSpeed() {
+        
+        moveSpeed_ = 0;
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -19023,6 +19245,3198 @@ public final class SGWarProto {
 
   }
 
+  public interface S2C_SynCountDownOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_SynCountDown)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *倒计时类型
+     * </pre>
+     *
+     * <code>.E_COUNTDOWN_TYPE type = 1;</code>
+     */
+    int getTypeValue();
+    /**
+     * <pre>
+     *倒计时类型
+     * </pre>
+     *
+     * <code>.E_COUNTDOWN_TYPE type = 1;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.E_COUNTDOWN_TYPE getType();
+
+    /**
+     * <pre>
+     *剩余时间，毫秒记
+     * </pre>
+     *
+     * <code>int32 remainTime = 2;</code>
+     */
+    int getRemainTime();
+  }
+  /**
+   * <pre>
+   *216 同步倒计时
+   * </pre>
+   *
+   * Protobuf type {@code S2C_SynCountDown}
+   */
+  public  static final class S2C_SynCountDown extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_SynCountDown)
+      S2C_SynCountDownOrBuilder {
+    // Use S2C_SynCountDown.newBuilder() to construct.
+    private S2C_SynCountDown(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_SynCountDown() {
+      type_ = 0;
+      remainTime_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private S2C_SynCountDown(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 16: {
+
+              remainTime_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_SynCountDown_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_SynCountDown_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown.class, com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown.Builder.class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_;
+    /**
+     * <pre>
+     *倒计时类型
+     * </pre>
+     *
+     * <code>.E_COUNTDOWN_TYPE type = 1;</code>
+     */
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     *倒计时类型
+     * </pre>
+     *
+     * <code>.E_COUNTDOWN_TYPE type = 1;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.E_COUNTDOWN_TYPE getType() {
+      com.douqu.game.core.protobuf.SGCommonProto.E_COUNTDOWN_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_COUNTDOWN_TYPE.valueOf(type_);
+      return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_COUNTDOWN_TYPE.UNRECOGNIZED : result;
+    }
+
+    public static final int REMAINTIME_FIELD_NUMBER = 2;
+    private int remainTime_;
+    /**
+     * <pre>
+     *剩余时间，毫秒记
+     * </pre>
+     *
+     * <code>int32 remainTime = 2;</code>
+     */
+    public int getRemainTime() {
+      return remainTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (type_ != com.douqu.game.core.protobuf.SGCommonProto.E_COUNTDOWN_TYPE.COUNTDOWN_TYPE_UNKNOW.getNumber()) {
+        output.writeEnum(1, type_);
+      }
+      if (remainTime_ != 0) {
+        output.writeInt32(2, remainTime_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (type_ != com.douqu.game.core.protobuf.SGCommonProto.E_COUNTDOWN_TYPE.COUNTDOWN_TYPE_UNKNOW.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_);
+      }
+      if (remainTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, remainTime_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown other = (com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown) obj;
+
+      boolean result = true;
+      result = result && type_ == other.type_;
+      result = result && (getRemainTime()
+          == other.getRemainTime());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + REMAINTIME_FIELD_NUMBER;
+      hash = (53 * hash) + getRemainTime();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *216 同步倒计时
+     * </pre>
+     *
+     * Protobuf type {@code S2C_SynCountDown}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_SynCountDown)
+        com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDownOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_SynCountDown_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_SynCountDown_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown.class, com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        type_ = 0;
+
+        remainTime_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_SynCountDown_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown build() {
+        com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown buildPartial() {
+        com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown result = new com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown(this);
+        result.type_ = type_;
+        result.remainTime_ = remainTime_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown other) {
+        if (other == com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown.getDefaultInstance()) return this;
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (other.getRemainTime() != 0) {
+          setRemainTime(other.getRemainTime());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <pre>
+       *倒计时类型
+       * </pre>
+       *
+       * <code>.E_COUNTDOWN_TYPE type = 1;</code>
+       */
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <pre>
+       *倒计时类型
+       * </pre>
+       *
+       * <code>.E_COUNTDOWN_TYPE type = 1;</code>
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *倒计时类型
+       * </pre>
+       *
+       * <code>.E_COUNTDOWN_TYPE type = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.E_COUNTDOWN_TYPE getType() {
+        com.douqu.game.core.protobuf.SGCommonProto.E_COUNTDOWN_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_COUNTDOWN_TYPE.valueOf(type_);
+        return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_COUNTDOWN_TYPE.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       *倒计时类型
+       * </pre>
+       *
+       * <code>.E_COUNTDOWN_TYPE type = 1;</code>
+       */
+      public Builder setType(com.douqu.game.core.protobuf.SGCommonProto.E_COUNTDOWN_TYPE value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *倒计时类型
+       * </pre>
+       *
+       * <code>.E_COUNTDOWN_TYPE type = 1;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int remainTime_ ;
+      /**
+       * <pre>
+       *剩余时间，毫秒记
+       * </pre>
+       *
+       * <code>int32 remainTime = 2;</code>
+       */
+      public int getRemainTime() {
+        return remainTime_;
+      }
+      /**
+       * <pre>
+       *剩余时间，毫秒记
+       * </pre>
+       *
+       * <code>int32 remainTime = 2;</code>
+       */
+      public Builder setRemainTime(int value) {
+        
+        remainTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *剩余时间，毫秒记
+       * </pre>
+       *
+       * <code>int32 remainTime = 2;</code>
+       */
+      public Builder clearRemainTime() {
+        
+        remainTime_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:S2C_SynCountDown)
+    }
+
+    // @@protoc_insertion_point(class_scope:S2C_SynCountDown)
+    private static final com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown();
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S2C_SynCountDown>
+        PARSER = new com.google.protobuf.AbstractParser<S2C_SynCountDown>() {
+      public S2C_SynCountDown parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new S2C_SynCountDown(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S2C_SynCountDown> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S2C_SynCountDown> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGWarProto.S2C_SynCountDown getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface C2S_SurrenderOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:C2S_Surrender)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   *217 投降
+   * </pre>
+   *
+   * Protobuf type {@code C2S_Surrender}
+   */
+  public  static final class C2S_Surrender extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:C2S_Surrender)
+      C2S_SurrenderOrBuilder {
+    // Use C2S_Surrender.newBuilder() to construct.
+    private C2S_Surrender(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private C2S_Surrender() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private C2S_Surrender(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_C2S_Surrender_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_C2S_Surrender_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender.class, com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender other = (com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender) obj;
+
+      boolean result = true;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *217 投降
+     * </pre>
+     *
+     * Protobuf type {@code C2S_Surrender}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:C2S_Surrender)
+        com.douqu.game.core.protobuf.SGWarProto.C2S_SurrenderOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_C2S_Surrender_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_C2S_Surrender_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender.class, com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_C2S_Surrender_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender build() {
+        com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender buildPartial() {
+        com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender result = new com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender other) {
+        if (other == com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender.getDefaultInstance()) return this;
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2S_Surrender)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2S_Surrender)
+    private static final com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender();
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<C2S_Surrender>
+        PARSER = new com.google.protobuf.AbstractParser<C2S_Surrender>() {
+      public C2S_Surrender parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new C2S_Surrender(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2S_Surrender> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2S_Surrender> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGWarProto.C2S_Surrender getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface S2C_SurrenderOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_Surrender)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.E_UNIVERSAL_RESULT result = 1;</code>
+     */
+    int getResultValue();
+    /**
+     * <code>.E_UNIVERSAL_RESULT result = 1;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.E_UNIVERSAL_RESULT getResult();
+  }
+  /**
+   * Protobuf type {@code S2C_Surrender}
+   */
+  public  static final class S2C_Surrender extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_Surrender)
+      S2C_SurrenderOrBuilder {
+    // Use S2C_Surrender.newBuilder() to construct.
+    private S2C_Surrender(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_Surrender() {
+      result_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private S2C_Surrender(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+
+              result_ = rawValue;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_Surrender_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_Surrender_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender.class, com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender.Builder.class);
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 1;
+    private int result_;
+    /**
+     * <code>.E_UNIVERSAL_RESULT result = 1;</code>
+     */
+    public int getResultValue() {
+      return result_;
+    }
+    /**
+     * <code>.E_UNIVERSAL_RESULT result = 1;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.E_UNIVERSAL_RESULT getResult() {
+      com.douqu.game.core.protobuf.SGCommonProto.E_UNIVERSAL_RESULT result = com.douqu.game.core.protobuf.SGCommonProto.E_UNIVERSAL_RESULT.valueOf(result_);
+      return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_UNIVERSAL_RESULT.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (result_ != com.douqu.game.core.protobuf.SGCommonProto.E_UNIVERSAL_RESULT.UNIVERSAL_RESULT_UNKNOWN.getNumber()) {
+        output.writeEnum(1, result_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (result_ != com.douqu.game.core.protobuf.SGCommonProto.E_UNIVERSAL_RESULT.UNIVERSAL_RESULT_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, result_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender other = (com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender) obj;
+
+      boolean result = true;
+      result = result && result_ == other.result_;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + result_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code S2C_Surrender}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_Surrender)
+        com.douqu.game.core.protobuf.SGWarProto.S2C_SurrenderOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_Surrender_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_Surrender_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender.class, com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        result_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_Surrender_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender build() {
+        com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender buildPartial() {
+        com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender result = new com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender(this);
+        result.result_ = result_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender other) {
+        if (other == com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender.getDefaultInstance()) return this;
+        if (other.result_ != 0) {
+          setResultValue(other.getResultValue());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int result_ = 0;
+      /**
+       * <code>.E_UNIVERSAL_RESULT result = 1;</code>
+       */
+      public int getResultValue() {
+        return result_;
+      }
+      /**
+       * <code>.E_UNIVERSAL_RESULT result = 1;</code>
+       */
+      public Builder setResultValue(int value) {
+        result_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.E_UNIVERSAL_RESULT result = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.E_UNIVERSAL_RESULT getResult() {
+        com.douqu.game.core.protobuf.SGCommonProto.E_UNIVERSAL_RESULT result = com.douqu.game.core.protobuf.SGCommonProto.E_UNIVERSAL_RESULT.valueOf(result_);
+        return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_UNIVERSAL_RESULT.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.E_UNIVERSAL_RESULT result = 1;</code>
+       */
+      public Builder setResult(com.douqu.game.core.protobuf.SGCommonProto.E_UNIVERSAL_RESULT value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        result_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.E_UNIVERSAL_RESULT result = 1;</code>
+       */
+      public Builder clearResult() {
+        
+        result_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:S2C_Surrender)
+    }
+
+    // @@protoc_insertion_point(class_scope:S2C_Surrender)
+    private static final com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender();
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S2C_Surrender>
+        PARSER = new com.google.protobuf.AbstractParser<S2C_Surrender>() {
+      public S2C_Surrender parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new S2C_Surrender(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S2C_Surrender> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S2C_Surrender> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGWarProto.S2C_Surrender getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface C2S_AutoBattleOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:C2S_AutoBattle)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool begin = 1;</code>
+     */
+    boolean getBegin();
+  }
+  /**
+   * <pre>
+   *218 自动战斗
+   * </pre>
+   *
+   * Protobuf type {@code C2S_AutoBattle}
+   */
+  public  static final class C2S_AutoBattle extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:C2S_AutoBattle)
+      C2S_AutoBattleOrBuilder {
+    // Use C2S_AutoBattle.newBuilder() to construct.
+    private C2S_AutoBattle(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private C2S_AutoBattle() {
+      begin_ = false;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private C2S_AutoBattle(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              begin_ = input.readBool();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_C2S_AutoBattle_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_C2S_AutoBattle_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle.class, com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle.Builder.class);
+    }
+
+    public static final int BEGIN_FIELD_NUMBER = 1;
+    private boolean begin_;
+    /**
+     * <code>bool begin = 1;</code>
+     */
+    public boolean getBegin() {
+      return begin_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (begin_ != false) {
+        output.writeBool(1, begin_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (begin_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, begin_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle other = (com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle) obj;
+
+      boolean result = true;
+      result = result && (getBegin()
+          == other.getBegin());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BEGIN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getBegin());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *218 自动战斗
+     * </pre>
+     *
+     * Protobuf type {@code C2S_AutoBattle}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:C2S_AutoBattle)
+        com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_C2S_AutoBattle_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_C2S_AutoBattle_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle.class, com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        begin_ = false;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_C2S_AutoBattle_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle build() {
+        com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle buildPartial() {
+        com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle result = new com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle(this);
+        result.begin_ = begin_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle other) {
+        if (other == com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle.getDefaultInstance()) return this;
+        if (other.getBegin() != false) {
+          setBegin(other.getBegin());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean begin_ ;
+      /**
+       * <code>bool begin = 1;</code>
+       */
+      public boolean getBegin() {
+        return begin_;
+      }
+      /**
+       * <code>bool begin = 1;</code>
+       */
+      public Builder setBegin(boolean value) {
+        
+        begin_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool begin = 1;</code>
+       */
+      public Builder clearBegin() {
+        
+        begin_ = false;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2S_AutoBattle)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2S_AutoBattle)
+    private static final com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle();
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<C2S_AutoBattle>
+        PARSER = new com.google.protobuf.AbstractParser<C2S_AutoBattle>() {
+      public C2S_AutoBattle parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new C2S_AutoBattle(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2S_AutoBattle> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2S_AutoBattle> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGWarProto.C2S_AutoBattle getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface S2C_AutoBattleOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_AutoBattle)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool begin = 1;</code>
+     */
+    boolean getBegin();
+  }
+  /**
+   * Protobuf type {@code S2C_AutoBattle}
+   */
+  public  static final class S2C_AutoBattle extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_AutoBattle)
+      S2C_AutoBattleOrBuilder {
+    // Use S2C_AutoBattle.newBuilder() to construct.
+    private S2C_AutoBattle(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_AutoBattle() {
+      begin_ = false;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private S2C_AutoBattle(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              begin_ = input.readBool();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_AutoBattle_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_AutoBattle_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle.class, com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle.Builder.class);
+    }
+
+    public static final int BEGIN_FIELD_NUMBER = 1;
+    private boolean begin_;
+    /**
+     * <code>bool begin = 1;</code>
+     */
+    public boolean getBegin() {
+      return begin_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (begin_ != false) {
+        output.writeBool(1, begin_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (begin_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, begin_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle other = (com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle) obj;
+
+      boolean result = true;
+      result = result && (getBegin()
+          == other.getBegin());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BEGIN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getBegin());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code S2C_AutoBattle}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_AutoBattle)
+        com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_AutoBattle_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_AutoBattle_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle.class, com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        begin_ = false;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_AutoBattle_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle build() {
+        com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle buildPartial() {
+        com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle result = new com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle(this);
+        result.begin_ = begin_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle other) {
+        if (other == com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle.getDefaultInstance()) return this;
+        if (other.getBegin() != false) {
+          setBegin(other.getBegin());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean begin_ ;
+      /**
+       * <code>bool begin = 1;</code>
+       */
+      public boolean getBegin() {
+        return begin_;
+      }
+      /**
+       * <code>bool begin = 1;</code>
+       */
+      public Builder setBegin(boolean value) {
+        
+        begin_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool begin = 1;</code>
+       */
+      public Builder clearBegin() {
+        
+        begin_ = false;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:S2C_AutoBattle)
+    }
+
+    // @@protoc_insertion_point(class_scope:S2C_AutoBattle)
+    private static final com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle();
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S2C_AutoBattle>
+        PARSER = new com.google.protobuf.AbstractParser<S2C_AutoBattle>() {
+      public S2C_AutoBattle parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new S2C_AutoBattle(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S2C_AutoBattle> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S2C_AutoBattle> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGWarProto.S2C_AutoBattle getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface C2S_PauseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:C2S_Pause)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *true表示暂停,false表示继续
+     * </pre>
+     *
+     * <code>bool begin = 1;</code>
+     */
+    boolean getBegin();
+  }
+  /**
+   * <pre>
+   *219 战斗暂停
+   * </pre>
+   *
+   * Protobuf type {@code C2S_Pause}
+   */
+  public  static final class C2S_Pause extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:C2S_Pause)
+      C2S_PauseOrBuilder {
+    // Use C2S_Pause.newBuilder() to construct.
+    private C2S_Pause(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private C2S_Pause() {
+      begin_ = false;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private C2S_Pause(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              begin_ = input.readBool();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_C2S_Pause_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_C2S_Pause_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGWarProto.C2S_Pause.class, com.douqu.game.core.protobuf.SGWarProto.C2S_Pause.Builder.class);
+    }
+
+    public static final int BEGIN_FIELD_NUMBER = 1;
+    private boolean begin_;
+    /**
+     * <pre>
+     *true表示暂停,false表示继续
+     * </pre>
+     *
+     * <code>bool begin = 1;</code>
+     */
+    public boolean getBegin() {
+      return begin_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (begin_ != false) {
+        output.writeBool(1, begin_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (begin_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, begin_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGWarProto.C2S_Pause)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGWarProto.C2S_Pause other = (com.douqu.game.core.protobuf.SGWarProto.C2S_Pause) obj;
+
+      boolean result = true;
+      result = result && (getBegin()
+          == other.getBegin());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BEGIN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getBegin());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Pause parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Pause parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Pause parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Pause parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Pause parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Pause parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Pause parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Pause parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Pause parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Pause parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGWarProto.C2S_Pause prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *219 战斗暂停
+     * </pre>
+     *
+     * Protobuf type {@code C2S_Pause}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:C2S_Pause)
+        com.douqu.game.core.protobuf.SGWarProto.C2S_PauseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_C2S_Pause_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_C2S_Pause_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGWarProto.C2S_Pause.class, com.douqu.game.core.protobuf.SGWarProto.C2S_Pause.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGWarProto.C2S_Pause.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        begin_ = false;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_C2S_Pause_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.C2S_Pause getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.C2S_Pause.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.C2S_Pause build() {
+        com.douqu.game.core.protobuf.SGWarProto.C2S_Pause result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.C2S_Pause buildPartial() {
+        com.douqu.game.core.protobuf.SGWarProto.C2S_Pause result = new com.douqu.game.core.protobuf.SGWarProto.C2S_Pause(this);
+        result.begin_ = begin_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGWarProto.C2S_Pause) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGWarProto.C2S_Pause)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGWarProto.C2S_Pause other) {
+        if (other == com.douqu.game.core.protobuf.SGWarProto.C2S_Pause.getDefaultInstance()) return this;
+        if (other.getBegin() != false) {
+          setBegin(other.getBegin());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGWarProto.C2S_Pause parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGWarProto.C2S_Pause) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean begin_ ;
+      /**
+       * <pre>
+       *true表示暂停,false表示继续
+       * </pre>
+       *
+       * <code>bool begin = 1;</code>
+       */
+      public boolean getBegin() {
+        return begin_;
+      }
+      /**
+       * <pre>
+       *true表示暂停,false表示继续
+       * </pre>
+       *
+       * <code>bool begin = 1;</code>
+       */
+      public Builder setBegin(boolean value) {
+        
+        begin_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *true表示暂停,false表示继续
+       * </pre>
+       *
+       * <code>bool begin = 1;</code>
+       */
+      public Builder clearBegin() {
+        
+        begin_ = false;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2S_Pause)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2S_Pause)
+    private static final com.douqu.game.core.protobuf.SGWarProto.C2S_Pause DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGWarProto.C2S_Pause();
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.C2S_Pause getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<C2S_Pause>
+        PARSER = new com.google.protobuf.AbstractParser<C2S_Pause>() {
+      public C2S_Pause parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new C2S_Pause(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2S_Pause> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2S_Pause> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGWarProto.C2S_Pause getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface S2C_PauseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_Pause)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *true表示暂停,false表示继续
+     * </pre>
+     *
+     * <code>bool begin = 1;</code>
+     */
+    boolean getBegin();
+  }
+  /**
+   * Protobuf type {@code S2C_Pause}
+   */
+  public  static final class S2C_Pause extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_Pause)
+      S2C_PauseOrBuilder {
+    // Use S2C_Pause.newBuilder() to construct.
+    private S2C_Pause(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_Pause() {
+      begin_ = false;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private S2C_Pause(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              begin_ = input.readBool();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_Pause_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_Pause_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGWarProto.S2C_Pause.class, com.douqu.game.core.protobuf.SGWarProto.S2C_Pause.Builder.class);
+    }
+
+    public static final int BEGIN_FIELD_NUMBER = 1;
+    private boolean begin_;
+    /**
+     * <pre>
+     *true表示暂停,false表示继续
+     * </pre>
+     *
+     * <code>bool begin = 1;</code>
+     */
+    public boolean getBegin() {
+      return begin_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (begin_ != false) {
+        output.writeBool(1, begin_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (begin_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, begin_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGWarProto.S2C_Pause)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGWarProto.S2C_Pause other = (com.douqu.game.core.protobuf.SGWarProto.S2C_Pause) obj;
+
+      boolean result = true;
+      result = result && (getBegin()
+          == other.getBegin());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BEGIN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getBegin());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Pause parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Pause parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Pause parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Pause parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Pause parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Pause parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Pause parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Pause parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Pause parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Pause parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGWarProto.S2C_Pause prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code S2C_Pause}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_Pause)
+        com.douqu.game.core.protobuf.SGWarProto.S2C_PauseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_Pause_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_Pause_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGWarProto.S2C_Pause.class, com.douqu.game.core.protobuf.SGWarProto.S2C_Pause.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGWarProto.S2C_Pause.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        begin_ = false;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.internal_static_S2C_Pause_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.S2C_Pause getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGWarProto.S2C_Pause.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.S2C_Pause build() {
+        com.douqu.game.core.protobuf.SGWarProto.S2C_Pause result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGWarProto.S2C_Pause buildPartial() {
+        com.douqu.game.core.protobuf.SGWarProto.S2C_Pause result = new com.douqu.game.core.protobuf.SGWarProto.S2C_Pause(this);
+        result.begin_ = begin_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGWarProto.S2C_Pause) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGWarProto.S2C_Pause)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGWarProto.S2C_Pause other) {
+        if (other == com.douqu.game.core.protobuf.SGWarProto.S2C_Pause.getDefaultInstance()) return this;
+        if (other.getBegin() != false) {
+          setBegin(other.getBegin());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGWarProto.S2C_Pause parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGWarProto.S2C_Pause) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean begin_ ;
+      /**
+       * <pre>
+       *true表示暂停,false表示继续
+       * </pre>
+       *
+       * <code>bool begin = 1;</code>
+       */
+      public boolean getBegin() {
+        return begin_;
+      }
+      /**
+       * <pre>
+       *true表示暂停,false表示继续
+       * </pre>
+       *
+       * <code>bool begin = 1;</code>
+       */
+      public Builder setBegin(boolean value) {
+        
+        begin_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *true表示暂停,false表示继续
+       * </pre>
+       *
+       * <code>bool begin = 1;</code>
+       */
+      public Builder clearBegin() {
+        
+        begin_ = false;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:S2C_Pause)
+    }
+
+    // @@protoc_insertion_point(class_scope:S2C_Pause)
+    private static final com.douqu.game.core.protobuf.SGWarProto.S2C_Pause DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGWarProto.S2C_Pause();
+    }
+
+    public static com.douqu.game.core.protobuf.SGWarProto.S2C_Pause getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S2C_Pause>
+        PARSER = new com.google.protobuf.AbstractParser<S2C_Pause>() {
+      public S2C_Pause parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new S2C_Pause(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S2C_Pause> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S2C_Pause> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGWarProto.S2C_Pause getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_C2S_Create_descriptor;
   private static final 
@@ -19163,6 +22577,41 @@ public final class SGWarProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_S2C_SynBuff_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_S2C_SynCountDown_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_S2C_SynCountDown_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2S_Surrender_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2S_Surrender_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_S2C_Surrender_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_S2C_Surrender_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2S_AutoBattle_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2S_AutoBattle_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_S2C_AutoBattle_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_S2C_AutoBattle_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2S_Pause_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2S_Pause_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_S2C_Pause_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_S2C_Pause_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -19172,50 +22621,55 @@ public final class SGWarProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013SGWar.proto\032\016SGCommon.proto\"{\n\nC2S_Cre" +
+      "\n\013SGWar.proto\032\016SGCommon.proto\"G\n\nC2S_Cre" +
       "ate\022\020\n\010battleId\030\001 \001(\t\022\023\n\013playerIndex\030\002 \001" +
-      "(\t\022#\n\025battleFieldBottomLeft\030\003 \001(\0132\004.Pos\022" +
-      "!\n\023battleFieldTopRight\030\004 \001(\0132\004.Pos\"\353\001\n\nS" +
-      "2C_Create\022\016\n\006teamNo\030\001 \001(\005\022\026\n\016selfMasterG" +
-      "uid\030\002 \001(\005\022\027\n\017otherMasterGuid\030\003 \001(\005\022\031\n\021se" +
-      "lfMasterGradeId\030\004 \001(\005\022\032\n\022otherMasterGrad" +
-      "eId\030\005 \001(\005\022\024\n\014selfMasterHP\030\006 \001(\005\022\025\n\rother" +
-      "MasterHP\030\007 \001(\005\022\024\n\014battleCardId\030\010 \003(\005\022\"\n\n" +
-      "battleType\030\t \001(\0162\016.E_BATTLE_TYPE\"1\n\014C2S_",
-      "ToBattle\022\016\n\006cardId\030\001 \001(\005\022\021\n\003pos\030\002 \003(\0132\004." +
-      "Pos\"Q\n\014S2C_ToBattle\022\023\n\013playerIndex\030\001 \001(\t" +
-      "\022\016\n\006cardId\030\002 \001(\005\022\034\n\007soldier\030\003 \003(\0132\013.Batt" +
-      "leUnit\"\030\n\026C2S_SoldierBattleStart\"n\n\026S2C_" +
-      "SoldierBattleStart\022\020\n\010attackId\030\001 \001(\005\022\027\n\t" +
-      "attackPos\030\002 \001(\0132\004.Pos\022\020\n\010targetId\030\003 \001(\005\022" +
-      "\027\n\ttargetPos\030\004 \001(\0132\004.Pos\".\n\rS2C_SynResul" +
-      "t\022\017\n\007winTeam\030\001 \001(\005\022\014\n\004star\030\002 \001(\005\"D\n\014C2S_" +
-      "UseSkill\022\017\n\007skillId\030\001 \001(\005\022\021\n\003pos\030\002 \001(\0132\004" +
-      ".Pos\022\020\n\010targetId\030\003 \003(\005\"r\n\014S2C_UseSkill\022\017",
-      "\n\007skillId\030\001 \001(\005\022\022\n\nreleaserId\030\002 \001(\005\022\020\n\010t" +
-      "argetId\030\003 \003(\005\022\022\n\neffectTime\030\004 \001(\005\022\027\n\ttar" +
-      "getPos\030\005 \001(\0132\004.Pos\"\017\n\rC2S_AddEffect\"4\n\rS" +
-      "2C_AddEffect\022#\n\006result\030\001 \001(\0162\023.E_UNIVERS" +
-      "AL_RESULT\"2\n\020C2S_RemoveEffect\022\036\n\rremoved" +
-      "Effect\030\001 \001(\0132\007.Effect\"7\n\020S2C_RemoveEffec" +
-      "t\022#\n\006result\030\001 \001(\0162\023.E_UNIVERSAL_RESULT\"@" +
-      "\n\030C2S_UpdateEffectDuration\022\020\n\010effectId\030\001" +
-      " \001(\005\022\022\n\nupdateTime\030\002 \001(\002\"?\n\030S2C_UpdateEf" +
-      "fectDuration\022#\n\006result\030\001 \001(\0162\023.E_UNIVERS",
-      "AL_RESULT\"1\n\rC2S_ObjectDie\022\021\n\twarriorID\030" +
-      "\001 \001(\005\022\r\n\005count\030\002 \001(\005\"4\n\rS2C_ObjectDie\022#\n" +
-      "\006result\030\001 \001(\0162\023.E_UNIVERSAL_RESULT\"-\n\nC2" +
-      "S_SynPos\022\037\n\nbattleUnit\030\001 \003(\0132\013.BattleUni" +
-      "t\"\014\n\nS2C_SynPos\"\016\n\014C2S_DoDamage\"3\n\014S2C_D" +
-      "oDamage\022#\n\014spriteDamage\030\001 \003(\0132\r.SpriteDa" +
-      "mage\"\022\n\020C2S_SoldierRoute\"9\n\020S2C_SoldierR" +
-      "oute\022\020\n\010uniqueId\030\001 \001(\005\022\023\n\005route\030\002 \003(\0132\004." +
-      "Pos\"\025\n\023C2S_AttributeUpdate\"@\n\023S2C_Attrib" +
-      "uteUpdate\022)\n\017attributeChange\030\001 \003(\0132\020.Att",
-      "ributeChange\"\020\n\016C2S_ReadyStart\"\020\n\016S2C_Re" +
-      "adyStart\"(\n\013S2C_SynBuff\022\031\n\004buff\030\001 \003(\0132\013." +
-      "BuffChangeB2\n\034com.douqu.game.core.protob" +
-      "ufB\nSGWarProto\252\002\005UBaseb\006proto3"
+      "(\t\022\022\n\nautoBattle\030\003 \001(\010\"\243\001\n\nS2C_Create\022\"\n" +
+      "\nbattleType\030\001 \001(\0162\016.E_BATTLE_TYPE\022 \n\013sel" +
+      "ftMaster\030\002 \001(\0132\013.BattleUnit\022 \n\013otherMast" +
+      "er\030\003 \001(\0132\013.BattleUnit\022\024\n\014battleCardId\030\004 " +
+      "\003(\005\022\027\n\017selfMasterSkill\030\005 \003(\005\"1\n\014C2S_ToBa" +
+      "ttle\022\016\n\006cardId\030\001 \001(\005\022\021\n\003pos\030\002 \003(\0132\004.Pos\"" +
+      "m\n\014S2C_ToBattle\022\023\n\013playerIndex\030\001 \001(\t\022\023\n\004" +
+      "card\030\002 \001(\0132\005.Card\022\034\n\007soldier\030\003 \003(\0132\013.Bat",
+      "tleUnit\022\025\n\risCardSoldier\030\004 \001(\010\"\030\n\026C2S_So" +
+      "ldierBattleStart\"n\n\026S2C_SoldierBattleSta" +
+      "rt\022\020\n\010attackId\030\001 \001(\005\022\027\n\tattackPos\030\002 \001(\0132" +
+      "\004.Pos\022\020\n\010targetId\030\003 \001(\005\022\027\n\ttargetPos\030\004 \001" +
+      "(\0132\004.Pos\";\n\rS2C_SynResult\022\017\n\007winTeam\030\001 \001" +
+      "(\005\022\014\n\004star\030\002 \001(\005\022\013\n\003key\030\003 \001(\t\"D\n\014C2S_Use" +
+      "Skill\022\017\n\007skillId\030\001 \001(\005\022\021\n\003pos\030\002 \001(\0132\004.Po" +
+      "s\022\020\n\010targetId\030\003 \003(\005\"r\n\014S2C_UseSkill\022\017\n\007s" +
+      "killId\030\001 \001(\005\022\022\n\nreleaserId\030\002 \001(\005\022\020\n\010targ" +
+      "etId\030\003 \003(\005\022\022\n\neffectTime\030\004 \001(\005\022\027\n\ttarget",
+      "Pos\030\005 \001(\0132\004.Pos\"\017\n\rC2S_AddEffect\"4\n\rS2C_" +
+      "AddEffect\022#\n\006result\030\001 \001(\0162\023.E_UNIVERSAL_" +
+      "RESULT\"2\n\020C2S_RemoveEffect\022\036\n\rremovedEff" +
+      "ect\030\001 \001(\0132\007.Effect\"7\n\020S2C_RemoveEffect\022#" +
+      "\n\006result\030\001 \001(\0162\023.E_UNIVERSAL_RESULT\"@\n\030C" +
+      "2S_UpdateEffectDuration\022\020\n\010effectId\030\001 \001(" +
+      "\005\022\022\n\nupdateTime\030\002 \001(\002\"?\n\030S2C_UpdateEffec" +
+      "tDuration\022#\n\006result\030\001 \001(\0162\023.E_UNIVERSAL_" +
+      "RESULT\"1\n\rC2S_ObjectDie\022\021\n\twarriorID\030\001 \001" +
+      "(\005\022\r\n\005count\030\002 \001(\005\"4\n\rS2C_ObjectDie\022#\n\006re",
+      "sult\030\001 \001(\0162\023.E_UNIVERSAL_RESULT\"\014\n\nC2S_S" +
+      "ynPos\"-\n\nS2C_SynPos\022\037\n\nbattleUnit\030\001 \003(\0132" +
+      "\013.BattleUnit\"\016\n\014C2S_DoDamage\"3\n\014S2C_DoDa" +
+      "mage\022#\n\014spriteDamage\030\001 \003(\0132\r.SpriteDamag" +
+      "e\"\022\n\020C2S_SoldierRoute\"L\n\020S2C_SoldierRout" +
+      "e\022\020\n\010uniqueId\030\001 \001(\005\022\023\n\005route\030\002 \003(\0132\004.Pos" +
+      "\022\021\n\tmoveSpeed\030\003 \001(\005\"\025\n\023C2S_AttributeUpda" +
+      "te\"@\n\023S2C_AttributeUpdate\022)\n\017attributeCh" +
+      "ange\030\001 \003(\0132\020.AttributeChange\"\020\n\016C2S_Read" +
+      "yStart\"\020\n\016S2C_ReadyStart\"(\n\013S2C_SynBuff\022",
+      "\031\n\004buff\030\001 \003(\0132\013.BuffChange\"G\n\020S2C_SynCou" +
+      "ntDown\022\037\n\004type\030\001 \001(\0162\021.E_COUNTDOWN_TYPE\022" +
+      "\022\n\nremainTime\030\002 \001(\005\"\017\n\rC2S_Surrender\"4\n\r" +
+      "S2C_Surrender\022#\n\006result\030\001 \001(\0162\023.E_UNIVER" +
+      "SAL_RESULT\"\037\n\016C2S_AutoBattle\022\r\n\005begin\030\001 " +
+      "\001(\010\"\037\n\016S2C_AutoBattle\022\r\n\005begin\030\001 \001(\010\"\032\n\t" +
+      "C2S_Pause\022\r\n\005begin\030\001 \001(\010\"\032\n\tS2C_Pause\022\r\n" +
+      "\005begin\030\001 \001(\010B2\n\034com.douqu.game.core.prot" +
+      "obufB\nSGWarProto\252\002\005UBaseb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19235,13 +22689,13 @@ public final class SGWarProto {
     internal_static_C2S_Create_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Create_descriptor,
-        new java.lang.String[] { "BattleId", "PlayerIndex", "BattleFieldBottomLeft", "BattleFieldTopRight", });
+        new java.lang.String[] { "BattleId", "PlayerIndex", "AutoBattle", });
     internal_static_S2C_Create_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_S2C_Create_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Create_descriptor,
-        new java.lang.String[] { "TeamNo", "SelfMasterGuid", "OtherMasterGuid", "SelfMasterGradeId", "OtherMasterGradeId", "SelfMasterHP", "OtherMasterHP", "BattleCardId", "BattleType", });
+        new java.lang.String[] { "BattleType", "SelftMaster", "OtherMaster", "BattleCardId", "SelfMasterSkill", });
     internal_static_C2S_ToBattle_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_C2S_ToBattle_fieldAccessorTable = new
@@ -19253,7 +22707,7 @@ public final class SGWarProto {
     internal_static_S2C_ToBattle_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_ToBattle_descriptor,
-        new java.lang.String[] { "PlayerIndex", "CardId", "Soldier", });
+        new java.lang.String[] { "PlayerIndex", "Card", "Soldier", "IsCardSoldier", });
     internal_static_C2S_SoldierBattleStart_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_C2S_SoldierBattleStart_fieldAccessorTable = new
@@ -19271,7 +22725,7 @@ public final class SGWarProto {
     internal_static_S2C_SynResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_SynResult_descriptor,
-        new java.lang.String[] { "WinTeam", "Star", });
+        new java.lang.String[] { "WinTeam", "Star", "Key", });
     internal_static_C2S_UseSkill_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_C2S_UseSkill_fieldAccessorTable = new
@@ -19337,13 +22791,13 @@ public final class SGWarProto {
     internal_static_C2S_SynPos_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_SynPos_descriptor,
-        new java.lang.String[] { "BattleUnit", });
+        new java.lang.String[] { });
     internal_static_S2C_SynPos_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_S2C_SynPos_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_SynPos_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "BattleUnit", });
     internal_static_C2S_DoDamage_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_C2S_DoDamage_fieldAccessorTable = new
@@ -19367,7 +22821,7 @@ public final class SGWarProto {
     internal_static_S2C_SoldierRoute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_SoldierRoute_descriptor,
-        new java.lang.String[] { "UniqueId", "Route", });
+        new java.lang.String[] { "UniqueId", "Route", "MoveSpeed", });
     internal_static_C2S_AttributeUpdate_descriptor =
       getDescriptor().getMessageTypes().get(23);
     internal_static_C2S_AttributeUpdate_fieldAccessorTable = new
@@ -19398,6 +22852,48 @@ public final class SGWarProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_SynBuff_descriptor,
         new java.lang.String[] { "Buff", });
+    internal_static_S2C_SynCountDown_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_S2C_SynCountDown_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_S2C_SynCountDown_descriptor,
+        new java.lang.String[] { "Type", "RemainTime", });
+    internal_static_C2S_Surrender_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_C2S_Surrender_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2S_Surrender_descriptor,
+        new java.lang.String[] { });
+    internal_static_S2C_Surrender_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_S2C_Surrender_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_S2C_Surrender_descriptor,
+        new java.lang.String[] { "Result", });
+    internal_static_C2S_AutoBattle_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_C2S_AutoBattle_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2S_AutoBattle_descriptor,
+        new java.lang.String[] { "Begin", });
+    internal_static_S2C_AutoBattle_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_S2C_AutoBattle_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_S2C_AutoBattle_descriptor,
+        new java.lang.String[] { "Begin", });
+    internal_static_C2S_Pause_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_C2S_Pause_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2S_Pause_descriptor,
+        new java.lang.String[] { "Begin", });
+    internal_static_S2C_Pause_descriptor =
+      getDescriptor().getMessageTypes().get(34);
+    internal_static_S2C_Pause_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_S2C_Pause_descriptor,
+        new java.lang.String[] { "Begin", });
     com.douqu.game.core.protobuf.SGCommonProto.getDescriptor();
   }
 
