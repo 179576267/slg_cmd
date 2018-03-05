@@ -48,7 +48,7 @@ public abstract class NettyTCPClient implements Runnable{
                 }
             });
             // 发起异步连接操作
-            ChannelFuture future = bootstrap.connect(Config.IP, 28540).sync();
+            ChannelFuture future = bootstrap.connect(Config.IP, 11111).sync();
 
             if(future.isSuccess())
             {
