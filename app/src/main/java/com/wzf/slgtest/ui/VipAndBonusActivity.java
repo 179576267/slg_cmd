@@ -90,13 +90,18 @@ public class VipAndBonusActivity extends BaseActivity {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void fun2(SGPlayerProto.S2C_ReceiveLoginTimesReward msgInfo) {
+    public void fun2(SGPlayerProto.S2C_NewServerActivityInit msgInfo) {
         tvResult.setText("累计登录奖励领取返回： \n" + msgInfo.toString());
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void fun2(SGPlayerProto.S2C_ReceiveLoginTimesReward msgInfo) {
+        tvResult.setText("新区活动返回： \n" + msgInfo.toString());
     }
 
     @OnClick({R.id.btn_recharge_init,R.id.btn_recharge, R.id.btn_vip_gift, R.id.btn_mouth_card_reward, R.id.btn_sign,
             R.id.btn_buy_open_fund, R.id.btn_open_fund_reward, R.id.btn_bonus_init, R.id.btn_receive_first_recharge_reward,
-            R.id.btn_login_times_init, R.id.btn_receive_login_times})
+            R.id.btn_login_times_init, R.id.btn_receive_login_times, R.id.btn_new_server})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_recharge_init:
@@ -148,7 +153,7 @@ public class VipAndBonusActivity extends BaseActivity {
                 break;
 
             case R.id.btn_open_fund_reward:
-                new InputTextDialog(this, "fundType（1.开服基金）;rewardId") {
+                new InputTextDialog(this, "fundType（1.开服基金 2新区基金 3累计充值）;rewardId") {
                     @Override
                     public void sendText(String text) {
                         SGPlayerProto.C2S_ReceiveFundReward.Builder request = SGPlayerProto.C2S_ReceiveFundReward.newBuilder();
@@ -177,6 +182,9 @@ public class VipAndBonusActivity extends BaseActivity {
                         SendUtils.sendMsg(VipAndBonusActivity.this, SGMainProto.E_MSG_ID.MsgID_Bonus_ReceiveLoginTimesReward_VALUE, request.build().toByteArray());
                     }
                 }.show();
+                break;
+            case R.id.btn_new_server:
+                SendUtils.sendMsg(VipAndBonusActivity.this, SGMainProto.E_MSG_ID.MsgID_Bonus_NewServerActivityInit_VALUE, null);
                 break;
             default:
                 break;

@@ -154,6 +154,14 @@ public final class SGMainProto {
      * <code>MsgType_Expedition = 1600;</code>
      */
     MsgType_Expedition(1600),
+    /**
+     * <pre>
+     *专业技能消息
+     * </pre>
+     *
+     * <code>MsgType_Major = 1700;</code>
+     */
+    MsgType_Major(1700),
     UNRECOGNIZED(-1),
     ;
 
@@ -292,6 +300,14 @@ public final class SGMainProto {
      * <code>MsgType_Expedition = 1600;</code>
      */
     public static final int MsgType_Expedition_VALUE = 1600;
+    /**
+     * <pre>
+     *专业技能消息
+     * </pre>
+     *
+     * <code>MsgType_Major = 1700;</code>
+     */
+    public static final int MsgType_Major_VALUE = 1700;
 
 
     public final int getNumber() {
@@ -329,6 +345,7 @@ public final class SGMainProto {
         case 1400: return MsgType_Mail;
         case 1500: return MsgType_Bonus;
         case 1600: return MsgType_Expedition;
+        case 1700: return MsgType_Major;
         default: return null;
       }
     }
@@ -794,6 +811,30 @@ public final class SGMainProto {
      * <code>MsgID_Player_RankList = 319;</code>
      */
     MsgID_Player_RankList(319),
+    /**
+     * <pre>
+     *主将培养
+     * </pre>
+     *
+     * <code>MsgID_Player_MasterTrain = 320;</code>
+     */
+    MsgID_Player_MasterTrain(320),
+    /**
+     * <pre>
+     *接受培养
+     * </pre>
+     *
+     * <code>MsgID_Player_MasterTrainAccept = 321;</code>
+     */
+    MsgID_Player_MasterTrainAccept(321),
+    /**
+     * <pre>
+     *军团连锁解锁
+     * </pre>
+     *
+     * <code>MsgID_Player_LegionChainUnlock = 322;</code>
+     */
+    MsgID_Player_LegionChainUnlock(322),
     /**
      * <pre>
      *进入主城场景
@@ -1532,6 +1573,14 @@ public final class SGMainProto {
     MsgID_Bonus_RechargeCheck(1512),
     /**
      * <pre>
+     *新区活动初始化
+     * </pre>
+     *
+     * <code>MsgID_Bonus_NewServerActivityInit = 1513;</code>
+     */
+    MsgID_Bonus_NewServerActivityInit(1513),
+    /**
+     * <pre>
      *远征初始化
      * </pre>
      *
@@ -1562,6 +1611,54 @@ public final class SGMainProto {
      * <code>MsgID_Expedition_CallBoss = 1604;</code>
      */
     MsgID_Expedition_CallBoss(1604),
+    /**
+     * <pre>
+     *专业战斗请求
+     * </pre>
+     *
+     * <code>MsgID_Major_Battle = 1701;</code>
+     */
+    MsgID_Major_Battle(1701),
+    /**
+     * <pre>
+     *采集初始化
+     * </pre>
+     *
+     * <code>MsgID_Major_CollectInit = 1702;</code>
+     */
+    MsgID_Major_CollectInit(1702),
+    /**
+     * <pre>
+     *开始采集
+     * </pre>
+     *
+     * <code>MsgID_Major_CollectStart = 1703;</code>
+     */
+    MsgID_Major_CollectStart(1703),
+    /**
+     * <pre>
+     *采集产品领取
+     * </pre>
+     *
+     * <code>MsgID_Major_CollectProductionReceiver = 1704;</code>
+     */
+    MsgID_Major_CollectProductionReceiver(1704),
+    /**
+     * <pre>
+     *合成初始化
+     * </pre>
+     *
+     * <code>MsgID_Major_MergeInit = 1721;</code>
+     */
+    MsgID_Major_MergeInit(1721),
+    /**
+     * <pre>
+     *合成
+     * </pre>
+     *
+     * <code>MsgID_Major_Merge = 1722;</code>
+     */
+    MsgID_Major_Merge(1722),
     UNRECOGNIZED(-1),
     ;
 
@@ -1973,6 +2070,30 @@ public final class SGMainProto {
      * <code>MsgID_Player_RankList = 319;</code>
      */
     public static final int MsgID_Player_RankList_VALUE = 319;
+    /**
+     * <pre>
+     *主将培养
+     * </pre>
+     *
+     * <code>MsgID_Player_MasterTrain = 320;</code>
+     */
+    public static final int MsgID_Player_MasterTrain_VALUE = 320;
+    /**
+     * <pre>
+     *接受培养
+     * </pre>
+     *
+     * <code>MsgID_Player_MasterTrainAccept = 321;</code>
+     */
+    public static final int MsgID_Player_MasterTrainAccept_VALUE = 321;
+    /**
+     * <pre>
+     *军团连锁解锁
+     * </pre>
+     *
+     * <code>MsgID_Player_LegionChainUnlock = 322;</code>
+     */
+    public static final int MsgID_Player_LegionChainUnlock_VALUE = 322;
     /**
      * <pre>
      *进入主城场景
@@ -2711,6 +2832,14 @@ public final class SGMainProto {
     public static final int MsgID_Bonus_RechargeCheck_VALUE = 1512;
     /**
      * <pre>
+     *新区活动初始化
+     * </pre>
+     *
+     * <code>MsgID_Bonus_NewServerActivityInit = 1513;</code>
+     */
+    public static final int MsgID_Bonus_NewServerActivityInit_VALUE = 1513;
+    /**
+     * <pre>
      *远征初始化
      * </pre>
      *
@@ -2741,6 +2870,54 @@ public final class SGMainProto {
      * <code>MsgID_Expedition_CallBoss = 1604;</code>
      */
     public static final int MsgID_Expedition_CallBoss_VALUE = 1604;
+    /**
+     * <pre>
+     *专业战斗请求
+     * </pre>
+     *
+     * <code>MsgID_Major_Battle = 1701;</code>
+     */
+    public static final int MsgID_Major_Battle_VALUE = 1701;
+    /**
+     * <pre>
+     *采集初始化
+     * </pre>
+     *
+     * <code>MsgID_Major_CollectInit = 1702;</code>
+     */
+    public static final int MsgID_Major_CollectInit_VALUE = 1702;
+    /**
+     * <pre>
+     *开始采集
+     * </pre>
+     *
+     * <code>MsgID_Major_CollectStart = 1703;</code>
+     */
+    public static final int MsgID_Major_CollectStart_VALUE = 1703;
+    /**
+     * <pre>
+     *采集产品领取
+     * </pre>
+     *
+     * <code>MsgID_Major_CollectProductionReceiver = 1704;</code>
+     */
+    public static final int MsgID_Major_CollectProductionReceiver_VALUE = 1704;
+    /**
+     * <pre>
+     *合成初始化
+     * </pre>
+     *
+     * <code>MsgID_Major_MergeInit = 1721;</code>
+     */
+    public static final int MsgID_Major_MergeInit_VALUE = 1721;
+    /**
+     * <pre>
+     *合成
+     * </pre>
+     *
+     * <code>MsgID_Major_Merge = 1722;</code>
+     */
+    public static final int MsgID_Major_Merge_VALUE = 1722;
 
 
     public final int getNumber() {
@@ -2812,6 +2989,9 @@ public final class SGMainProto {
         case 317: return MsgID_Player_CdkUse;
         case 318: return MsgID_Player_FeedBack;
         case 319: return MsgID_Player_RankList;
+        case 320: return MsgID_Player_MasterTrain;
+        case 321: return MsgID_Player_MasterTrainAccept;
+        case 322: return MsgID_Player_LegionChainUnlock;
         case 401: return MsgID_Map_EnterHomeScene;
         case 402: return MsgID_Map_AddBuildingQueue;
         case 403: return MsgID_Map_RemoveBuildingQueue;
@@ -2904,10 +3084,17 @@ public final class SGMainProto {
         case 1510: return MsgID_Bonus_LoginTimesRewardInit;
         case 1511: return MsgID_Bonus_ReceiveLoginTimesReward;
         case 1512: return MsgID_Bonus_RechargeCheck;
+        case 1513: return MsgID_Bonus_NewServerActivityInit;
         case 1601: return MsgID_Expedition_Init;
         case 1602: return MsgID_Expedition_ChallengeRequest;
         case 1603: return MsgID_Expedition_FreshBoss;
         case 1604: return MsgID_Expedition_CallBoss;
+        case 1701: return MsgID_Major_Battle;
+        case 1702: return MsgID_Major_CollectInit;
+        case 1703: return MsgID_Major_CollectStart;
+        case 1704: return MsgID_Major_CollectProductionReceiver;
+        case 1721: return MsgID_Major_MergeInit;
+        case 1722: return MsgID_Major_Merge;
         default: return null;
       }
     }
@@ -2969,7 +3156,7 @@ public final class SGMainProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014SGMain.proto*\365\002\n\nE_MSG_TYPE\022\024\n\020MsgType" +
+      "\n\014SGMain.proto*\211\003\n\nE_MSG_TYPE\022\024\n\020MsgType" +
       "_NeverUse\020\000\022\022\n\rMsgType_Close\020\217N\022\023\n\016MsgTy" +
       "pe_Battle\020\310\001\022\023\n\016MsgType_Player\020\254\002\022\022\n\rMsg" +
       "Type_World\020\220\003\022\020\n\013MsgType_Bag\020\364\003\022\025\n\020MsgTy" +
@@ -2978,124 +3165,132 @@ public final class SGMainProto {
       "MsgType_OfficialWar\020\350\007\022\021\n\014MsgType_Task\020\314" +
       "\010\022\022\n\rMsgType_Store\020\260\t\022\027\n\022MsgType_HeroTem" +
       "ple\020\224\n\022\021\n\014MsgType_Mail\020\370\n\022\022\n\rMsgType_Bon" +
-      "us\020\334\013\022\027\n\022MsgType_Expedition\020\300\014*\361#\n\010E_MSG",
-      "_ID\022\022\n\016MsgID_NeverUse\020\000\022\027\n\023MsgID_System_" +
-      "Regist\020e\022\026\n\022MsgID_System_Login\020f\022\025\n\021MsgI" +
-      "D_System_Ping\020g\022\033\n\027MsgID_System_GetCaptc" +
-      "ha\020h\022\034\n\030MsgID_System_NotifyAlert\020i\022\027\n\023Ms" +
-      "gID_System_Logout\020j\022\034\n\027MsgID_System_Supe" +
-      "rLogin\020\307\001\022 \n\034MsgID_System_BattleReconnec" +
-      "t\020n\022\026\n\022MsgID_System_GMCmd\020o\022 \n\034MsgID_Sys" +
-      "tem_LoginOtherPlace\020p\022\033\n\027MsgID_System_Ca" +
-      "ncelWait\020q\022\030\n\024MsgID_System_Offline\020r\022\025\n\020" +
-      "MsgID_War_Create\020\311\001\022\027\n\022MsgID_War_ToBattl",
-      "e\020\312\001\022!\n\034MsgID_War_SoldierBattleStart\020\313\001\022" +
-      "\030\n\023MsgID_War_SynResult\020\314\001\022\027\n\022MsgID_War_U" +
-      "seSkill\020\315\001\022\030\n\023MsgID_War_AddEffect\020\316\001\022\033\n\026" +
-      "MsgID_War_RemoveEffect\020\317\001\022#\n\036MsgID_War_U" +
-      "pdateEffectDuration\020\320\001\022\030\n\023MsgID_War_Obje" +
-      "ctDie\020\321\001\022\025\n\020MsgID_War_SynPos\020\322\001\022\027\n\022MsgID" +
-      "_War_DoDamage\020\323\001\022\033\n\026MsgID_War_SoldierRou" +
-      "te\020\324\001\022\036\n\031MsgID_War_AttributeUpdate\020\325\001\022\031\n" +
-      "\024MsgID_War_ReadyStart\020\326\001\022\026\n\021MsgID_War_Sy" +
-      "nBuff\020\327\001\022\033\n\026MsgID_War_SynCountDown\020\330\001\022\030\n",
-      "\023MsgID_War_Surrender\020\331\001\022\031\n\024MsgID_War_Aut" +
-      "oBattle\020\332\001\022\024\n\017MsgID_War_Pause\020\333\001\022\031\n\024MsgI" +
-      "D_Player_GetInfo\020\255\002\022\033\n\026MsgID_Player_Flus" +
-      "hData\020\256\002\022 \n\033MsgID_Player_RedPointRemind\020" +
-      "\257\002\022\035\n\030MsgID_Player_SynBaseData\020\260\002\022\034\n\027Msg" +
-      "ID_Player_ArenaMatch\020\261\002\022\"\n\035MsgID_Player_" +
-      "CancelArenaMatch\020\262\002\022 \n\033MsgID_Player_Edit" +
-      "PlayerName\020\263\002\022\"\n\035MsgID_Player_EditPlayer" +
-      "Avatar\020\264\002\022+\n&MsgID_Player_ChangeConsumeR" +
-      "emindStatus\020\265\002\022%\n MsgID_Player_ChangeEqu",
-      "ippedSkill\020\266\002\022\"\n\035MsgID_Player_SettingBoa" +
-      "rdInit\020\267\002\022\037\n\032MsgID_Player_FlushGoodsGet\020" +
-      "\270\002\0220\n+MsgID_Player_GetInstanceRemainChal" +
-      "lengeTime\020\271\002\022%\n MsgID_Player_UpdateGuide" +
-      "Progress\020\272\002\022\"\n\035MsgID_Player_GetMobileCap" +
-      "tcha\020\273\002\022\037\n\032MsgID_Player_BindingMobile\020\274\002" +
-      "\022\030\n\023MsgID_Player_CdkUse\020\275\002\022\032\n\025MsgID_Play" +
-      "er_FeedBack\020\276\002\022\032\n\025MsgID_Player_RankList\020" +
-      "\277\002\022\035\n\030MsgID_Map_EnterHomeScene\020\221\003\022\037\n\032Msg" +
-      "ID_Map_AddBuildingQueue\020\222\003\022\"\n\035MsgID_Map_",
-      "RemoveBuildingQueue\020\223\003\022\037\n\032MsgID_Map_Buil" +
-      "dingFinished\020\224\003\022\036\n\031MsgID_Map_BuildingLev" +
-      "elUp\020\225\003\022\027\n\022MsgID_Map_MoveHome\020\226\003\022 \n\033MsgI" +
-      "D_Bag_SoldierTeamConfig\020\365\003\022 \n\033MsgID_Bag_" +
-      "SoldierTeamBattle\020\366\003\022\032\n\025MsgID_Bag_CardLe" +
-      "velUp\020\367\003\022\025\n\020MsgID_Bag_MyCard\020\370\003\022\031\n\024MsgID" +
-      "_Bag_MyCardTeam\020\371\003\022 \n\033MsgID_Bag_SetBattl" +
-      "eCardTeam\020\372\003\022\035\n\030MsgID_Bag_SetCardReplace" +
-      "\020\373\003\022\031\n\024MsgID_Bag_CardDetail\020\374\003\022\027\n\022MsgID_" +
-      "Bag_CardUpLv\020\375\003\022\031\n\024MsgID_Bag_CardUpStar\020",
-      "\376\003\022\027\n\022MsgID_Bag_CardFate\020\377\003\022\033\n\026MsgID_Bag" +
-      "_CardFateList\020\200\004\022\035\n\030MsgID_Bag_EquipInten" +
-      "sify\020\201\004\022\026\n\021MsgID_Bag_EquipUp\020\202\004\022\032\n\025MsgID" +
-      "_Bag_AccessoryUp\020\203\004\022!\n\034MsgID_Bag_Accesso" +
-      "ryIntensify\020\204\004\022\031\n\024MsgID_Bag_CardAddExp\020\205" +
-      "\004\022\036\n\031MsgID_Bag_AccessoryAddExp\020\206\004\022\026\n\021Msg" +
-      "ID_Bag_CardSyn\020\207\004\022\032\n\025MsgID_Bag_RebirthCa" +
-      "rd\020\210\004\022!\n\034MsgID_Bag_ResolveCardPreview\020\211\004" +
-      "\022\032\n\025MsgID_Bag_SoulResolve\020\212\004\022\033\n\026MsgID_Ba" +
-      "g_EquipResolve\020\213\004\022\036\n\031MsgID_Bag_QuitBattl",
-      "eGroup\020\214\004\022\026\n\021MsgID_Bag_UseProp\020\215\004\022!\n\034Msg" +
-      "ID_Bag_AccessoryActivated\020\216\004\022\036\n\031MsgID_Ba" +
-      "g_BattleCardReset\020\217\004\022#\n\036MsgID_Instance_G" +
-      "etInstanceInfo\020\331\004\022\035\n\030MsgID_Instance_Pass" +
-      "Level\020\332\004\022 \n\033MsgID_Instance_ReceiveAward\020" +
-      "\333\004\022&\n!MsgID_Instance_RequestLevelBattle\020" +
-      "\334\004\022)\n$MsgID_Instance_ReceiveLevelBoxRewa" +
-      "rd\020\335\004\022$\n\037MsgID_Instance_GetLastPassLevel" +
-      "\020\336\004\022\035\n\030MsgID_Arena_GetArenaInfo\020\275\005\022\032\n\025Ms" +
-      "gID_Arena_Challenge\020\276\005\022\037\n\032MsgID_Arena_Ge",
-      "tDailyReward\020\277\005\022\034\n\027MsgID_Arena_PreviewRa" +
-      "nk\020\300\005\022\037\n\032MsgID_Arena_ExchangeReward\020\301\005\022\035" +
-      "\n\030MsgID_Arena_RewardRecord\020\302\005\022\026\n\021MsgID_A" +
-      "rena_Sweep\020\303\005\022\033\n\026MsgID_Pub_LotteryClick\020" +
-      "\241\006\022\032\n\025MsgID_Pub_LotteryInit\020\242\006\022\025\n\020MsgID_" +
-      "Altar_Init\020\205\007\022\032\n\025MsgID_Altar_Sacrifice\020\206" +
-      "\007\022\037\n\032MsgID_OfficialWar_InitInfo\020\351\007\022\"\n\035Ms" +
-      "gID_OfficialWar_PreviewRank\020\352\007\022$\n\037MsgID_" +
-      "OfficialWar_ChallengeRank\020\353\007\022 \n\033MsgID_Of" +
-      "ficialWar_SweepRank\020\354\007\022%\n MsgID_Official",
-      "War_GetDailyReward\020\355\007\022%\n MsgID_OfficialW" +
-      "ar_ExchangeReward\020\356\007\022#\n\036MsgID_OfficialWa" +
-      "r_RewardRecord\020\357\007\022%\n MsgID_OfficialWar_I" +
-      "ntegralReward\020\360\007\022+\n&MsgID_OfficialWar_In" +
-      "tegralRewardRecord\020\361\007\022$\n\037MsgID_OfficialW" +
-      "ar_RequestBattle\020\362\007\022\030\n\023MsgID_Task_TaskLi" +
-      "st\020\315\010\022\032\n\025MsgID_Task_TaskReward\020\316\010\022\036\n\031Msg" +
-      "ID_Task_TreasureReward\020\317\010\022\"\n\035MsgID_Task_" +
-      "TaskMainDoneNotify\020\320\010\022\031\n\024MsgID_Store_Ini" +
-      "tInfo\020\261\t\022\031\n\024MsgID_Store_BuyGoods\020\262\t\022\031\n\024M",
-      "sgID_Store_BuyTimes\020\263\t\022\036\n\031MsgID_HeroTemp" +
-      "le_InitInfo\020\225\n\022\037\n\032MsgID_HeroTemple_Chall" +
-      "enge\020\226\n\022\033\n\026MsgID_HeroTemple_Sweep\020\227\n\022\024\n\017" +
-      "MsgID_Mail_List\020\371\n\022\026\n\021MsgID_Mail_Detail\020" +
-      "\372\n\022\034\n\027MsgID_Mail_GetAuxiliary\020\373\n\022\037\n\032MsgI" +
-      "D_Mail_PrivacyMailList\020\374\n\022!\n\034MsgID_Mail_" +
-      "PrivacyMailDetail\020\375\n\022\037\n\032MsgID_Mail_SendP" +
-      "rivacyMail\020\376\n\022\031\n\024MsgID_Mail_BlackList\020\377\n" +
-      "\022%\n MsgID_Mail_AddAndRemoveBlackList\020\200\013\022" +
-      "%\n MsgID_Mail_CheckSendJurisdiction\020\201\013\022\035",
-      "\n\030MsgID_Mail_NewMailNotify\020\202\013\022\035\n\030MsgID_B" +
-      "onus_RechargeInit\020\335\013\022\037\n\032MsgID_Bonus_Rech" +
-      "argeResult\020\336\013\022\036\n\031MsgID_Bonus_BuyVipGiftB" +
-      "ag\020\337\013\022\'\n\"MsgID_Bonus_ReceiveMouthCardRew" +
-      "ard\020\340\013\022+\n&MsgID_Bonus_ReceiveFirstRechar" +
-      "geReward\020\341\013\022\037\n\032MsgID_Bonus_BonusBoardIni" +
-      "t\020\342\013\022 \n\033MsgID_Bonus_DailySignReward\020\343\013\022\030" +
-      "\n\023MsgID_Bonus_BuyFund\020\344\013\022\"\n\035MsgID_Bonus_" +
-      "ReceiveFundReward\020\345\013\022%\n MsgID_Bonus_Logi" +
-      "nTimesRewardInit\020\346\013\022(\n#MsgID_Bonus_Recei",
-      "veLoginTimesReward\020\347\013\022\036\n\031MsgID_Bonus_Rec" +
-      "hargeCheck\020\350\013\022\032\n\025MsgID_Expedition_Init\020\301" +
-      "\014\022&\n!MsgID_Expedition_ChallengeRequest\020\302" +
-      "\014\022\037\n\032MsgID_Expedition_FreshBoss\020\303\014\022\036\n\031Ms" +
-      "gID_Expedition_CallBoss\020\304\014B3\n\034com.douqu." +
-      "game.core.protobufB\013SGMainProto\252\002\005UBaseb" +
-      "\006proto3"
+      "us\020\334\013\022\027\n\022MsgType_Expedition\020\300\014\022\022\n\rMsgTyp",
+      "e_Major\020\244\r*\270&\n\010E_MSG_ID\022\022\n\016MsgID_NeverUs" +
+      "e\020\000\022\027\n\023MsgID_System_Regist\020e\022\026\n\022MsgID_Sy" +
+      "stem_Login\020f\022\025\n\021MsgID_System_Ping\020g\022\033\n\027M" +
+      "sgID_System_GetCaptcha\020h\022\034\n\030MsgID_System" +
+      "_NotifyAlert\020i\022\027\n\023MsgID_System_Logout\020j\022" +
+      "\034\n\027MsgID_System_SuperLogin\020\307\001\022 \n\034MsgID_S" +
+      "ystem_BattleReconnect\020n\022\026\n\022MsgID_System_" +
+      "GMCmd\020o\022 \n\034MsgID_System_LoginOtherPlace\020" +
+      "p\022\033\n\027MsgID_System_CancelWait\020q\022\030\n\024MsgID_" +
+      "System_Offline\020r\022\025\n\020MsgID_War_Create\020\311\001\022",
+      "\027\n\022MsgID_War_ToBattle\020\312\001\022!\n\034MsgID_War_So" +
+      "ldierBattleStart\020\313\001\022\030\n\023MsgID_War_SynResu" +
+      "lt\020\314\001\022\027\n\022MsgID_War_UseSkill\020\315\001\022\030\n\023MsgID_" +
+      "War_AddEffect\020\316\001\022\033\n\026MsgID_War_RemoveEffe" +
+      "ct\020\317\001\022#\n\036MsgID_War_UpdateEffectDuration\020" +
+      "\320\001\022\030\n\023MsgID_War_ObjectDie\020\321\001\022\025\n\020MsgID_Wa" +
+      "r_SynPos\020\322\001\022\027\n\022MsgID_War_DoDamage\020\323\001\022\033\n\026" +
+      "MsgID_War_SoldierRoute\020\324\001\022\036\n\031MsgID_War_A" +
+      "ttributeUpdate\020\325\001\022\031\n\024MsgID_War_ReadyStar" +
+      "t\020\326\001\022\026\n\021MsgID_War_SynBuff\020\327\001\022\033\n\026MsgID_Wa",
+      "r_SynCountDown\020\330\001\022\030\n\023MsgID_War_Surrender" +
+      "\020\331\001\022\031\n\024MsgID_War_AutoBattle\020\332\001\022\024\n\017MsgID_" +
+      "War_Pause\020\333\001\022\031\n\024MsgID_Player_GetInfo\020\255\002\022" +
+      "\033\n\026MsgID_Player_FlushData\020\256\002\022 \n\033MsgID_Pl" +
+      "ayer_RedPointRemind\020\257\002\022\035\n\030MsgID_Player_S" +
+      "ynBaseData\020\260\002\022\034\n\027MsgID_Player_ArenaMatch" +
+      "\020\261\002\022\"\n\035MsgID_Player_CancelArenaMatch\020\262\002\022" +
+      " \n\033MsgID_Player_EditPlayerName\020\263\002\022\"\n\035Msg" +
+      "ID_Player_EditPlayerAvatar\020\264\002\022+\n&MsgID_P" +
+      "layer_ChangeConsumeRemindStatus\020\265\002\022%\n Ms",
+      "gID_Player_ChangeEquippedSkill\020\266\002\022\"\n\035Msg" +
+      "ID_Player_SettingBoardInit\020\267\002\022\037\n\032MsgID_P" +
+      "layer_FlushGoodsGet\020\270\002\0220\n+MsgID_Player_G" +
+      "etInstanceRemainChallengeTime\020\271\002\022%\n MsgI" +
+      "D_Player_UpdateGuideProgress\020\272\002\022\"\n\035MsgID" +
+      "_Player_GetMobileCaptcha\020\273\002\022\037\n\032MsgID_Pla" +
+      "yer_BindingMobile\020\274\002\022\030\n\023MsgID_Player_Cdk" +
+      "Use\020\275\002\022\032\n\025MsgID_Player_FeedBack\020\276\002\022\032\n\025Ms" +
+      "gID_Player_RankList\020\277\002\022\035\n\030MsgID_Player_M" +
+      "asterTrain\020\300\002\022#\n\036MsgID_Player_MasterTrai",
+      "nAccept\020\301\002\022#\n\036MsgID_Player_LegionChainUn" +
+      "lock\020\302\002\022\035\n\030MsgID_Map_EnterHomeScene\020\221\003\022\037" +
+      "\n\032MsgID_Map_AddBuildingQueue\020\222\003\022\"\n\035MsgID" +
+      "_Map_RemoveBuildingQueue\020\223\003\022\037\n\032MsgID_Map" +
+      "_BuildingFinished\020\224\003\022\036\n\031MsgID_Map_Buildi" +
+      "ngLevelUp\020\225\003\022\027\n\022MsgID_Map_MoveHome\020\226\003\022 \n" +
+      "\033MsgID_Bag_SoldierTeamConfig\020\365\003\022 \n\033MsgID" +
+      "_Bag_SoldierTeamBattle\020\366\003\022\032\n\025MsgID_Bag_C" +
+      "ardLevelUp\020\367\003\022\025\n\020MsgID_Bag_MyCard\020\370\003\022\031\n\024" +
+      "MsgID_Bag_MyCardTeam\020\371\003\022 \n\033MsgID_Bag_Set",
+      "BattleCardTeam\020\372\003\022\035\n\030MsgID_Bag_SetCardRe" +
+      "place\020\373\003\022\031\n\024MsgID_Bag_CardDetail\020\374\003\022\027\n\022M" +
+      "sgID_Bag_CardUpLv\020\375\003\022\031\n\024MsgID_Bag_CardUp" +
+      "Star\020\376\003\022\027\n\022MsgID_Bag_CardFate\020\377\003\022\033\n\026MsgI" +
+      "D_Bag_CardFateList\020\200\004\022\035\n\030MsgID_Bag_Equip" +
+      "Intensify\020\201\004\022\026\n\021MsgID_Bag_EquipUp\020\202\004\022\032\n\025" +
+      "MsgID_Bag_AccessoryUp\020\203\004\022!\n\034MsgID_Bag_Ac" +
+      "cessoryIntensify\020\204\004\022\031\n\024MsgID_Bag_CardAdd" +
+      "Exp\020\205\004\022\036\n\031MsgID_Bag_AccessoryAddExp\020\206\004\022\026" +
+      "\n\021MsgID_Bag_CardSyn\020\207\004\022\032\n\025MsgID_Bag_Rebi",
+      "rthCard\020\210\004\022!\n\034MsgID_Bag_ResolveCardPrevi" +
+      "ew\020\211\004\022\032\n\025MsgID_Bag_SoulResolve\020\212\004\022\033\n\026Msg" +
+      "ID_Bag_EquipResolve\020\213\004\022\036\n\031MsgID_Bag_Quit" +
+      "BattleGroup\020\214\004\022\026\n\021MsgID_Bag_UseProp\020\215\004\022!" +
+      "\n\034MsgID_Bag_AccessoryActivated\020\216\004\022\036\n\031Msg" +
+      "ID_Bag_BattleCardReset\020\217\004\022#\n\036MsgID_Insta" +
+      "nce_GetInstanceInfo\020\331\004\022\035\n\030MsgID_Instance" +
+      "_PassLevel\020\332\004\022 \n\033MsgID_Instance_ReceiveA" +
+      "ward\020\333\004\022&\n!MsgID_Instance_RequestLevelBa" +
+      "ttle\020\334\004\022)\n$MsgID_Instance_ReceiveLevelBo",
+      "xReward\020\335\004\022$\n\037MsgID_Instance_GetLastPass" +
+      "Level\020\336\004\022\035\n\030MsgID_Arena_GetArenaInfo\020\275\005\022" +
+      "\032\n\025MsgID_Arena_Challenge\020\276\005\022\037\n\032MsgID_Are" +
+      "na_GetDailyReward\020\277\005\022\034\n\027MsgID_Arena_Prev" +
+      "iewRank\020\300\005\022\037\n\032MsgID_Arena_ExchangeReward" +
+      "\020\301\005\022\035\n\030MsgID_Arena_RewardRecord\020\302\005\022\026\n\021Ms" +
+      "gID_Arena_Sweep\020\303\005\022\033\n\026MsgID_Pub_LotteryC" +
+      "lick\020\241\006\022\032\n\025MsgID_Pub_LotteryInit\020\242\006\022\025\n\020M" +
+      "sgID_Altar_Init\020\205\007\022\032\n\025MsgID_Altar_Sacrif" +
+      "ice\020\206\007\022\037\n\032MsgID_OfficialWar_InitInfo\020\351\007\022",
+      "\"\n\035MsgID_OfficialWar_PreviewRank\020\352\007\022$\n\037M" +
+      "sgID_OfficialWar_ChallengeRank\020\353\007\022 \n\033Msg" +
+      "ID_OfficialWar_SweepRank\020\354\007\022%\n MsgID_Off" +
+      "icialWar_GetDailyReward\020\355\007\022%\n MsgID_Offi" +
+      "cialWar_ExchangeReward\020\356\007\022#\n\036MsgID_Offic" +
+      "ialWar_RewardRecord\020\357\007\022%\n MsgID_Official" +
+      "War_IntegralReward\020\360\007\022+\n&MsgID_OfficialW" +
+      "ar_IntegralRewardRecord\020\361\007\022$\n\037MsgID_Offi" +
+      "cialWar_RequestBattle\020\362\007\022\030\n\023MsgID_Task_T" +
+      "askList\020\315\010\022\032\n\025MsgID_Task_TaskReward\020\316\010\022\036",
+      "\n\031MsgID_Task_TreasureReward\020\317\010\022\"\n\035MsgID_" +
+      "Task_TaskMainDoneNotify\020\320\010\022\031\n\024MsgID_Stor" +
+      "e_InitInfo\020\261\t\022\031\n\024MsgID_Store_BuyGoods\020\262\t" +
+      "\022\031\n\024MsgID_Store_BuyTimes\020\263\t\022\036\n\031MsgID_Her" +
+      "oTemple_InitInfo\020\225\n\022\037\n\032MsgID_HeroTemple_" +
+      "Challenge\020\226\n\022\033\n\026MsgID_HeroTemple_Sweep\020\227" +
+      "\n\022\024\n\017MsgID_Mail_List\020\371\n\022\026\n\021MsgID_Mail_De" +
+      "tail\020\372\n\022\034\n\027MsgID_Mail_GetAuxiliary\020\373\n\022\037\n" +
+      "\032MsgID_Mail_PrivacyMailList\020\374\n\022!\n\034MsgID_" +
+      "Mail_PrivacyMailDetail\020\375\n\022\037\n\032MsgID_Mail_",
+      "SendPrivacyMail\020\376\n\022\031\n\024MsgID_Mail_BlackLi" +
+      "st\020\377\n\022%\n MsgID_Mail_AddAndRemoveBlackLis" +
+      "t\020\200\013\022%\n MsgID_Mail_CheckSendJurisdiction" +
+      "\020\201\013\022\035\n\030MsgID_Mail_NewMailNotify\020\202\013\022\035\n\030Ms" +
+      "gID_Bonus_RechargeInit\020\335\013\022\037\n\032MsgID_Bonus" +
+      "_RechargeResult\020\336\013\022\036\n\031MsgID_Bonus_BuyVip" +
+      "GiftBag\020\337\013\022\'\n\"MsgID_Bonus_ReceiveMouthCa" +
+      "rdReward\020\340\013\022+\n&MsgID_Bonus_ReceiveFirstR" +
+      "echargeReward\020\341\013\022\037\n\032MsgID_Bonus_BonusBoa" +
+      "rdInit\020\342\013\022 \n\033MsgID_Bonus_DailySignReward",
+      "\020\343\013\022\030\n\023MsgID_Bonus_BuyFund\020\344\013\022\"\n\035MsgID_B" +
+      "onus_ReceiveFundReward\020\345\013\022%\n MsgID_Bonus" +
+      "_LoginTimesRewardInit\020\346\013\022(\n#MsgID_Bonus_" +
+      "ReceiveLoginTimesReward\020\347\013\022\036\n\031MsgID_Bonu" +
+      "s_RechargeCheck\020\350\013\022&\n!MsgID_Bonus_NewSer" +
+      "verActivityInit\020\351\013\022\032\n\025MsgID_Expedition_I" +
+      "nit\020\301\014\022&\n!MsgID_Expedition_ChallengeRequ" +
+      "est\020\302\014\022\037\n\032MsgID_Expedition_FreshBoss\020\303\014\022" +
+      "\036\n\031MsgID_Expedition_CallBoss\020\304\014\022\027\n\022MsgID" +
+      "_Major_Battle\020\245\r\022\034\n\027MsgID_Major_CollectI",
+      "nit\020\246\r\022\035\n\030MsgID_Major_CollectStart\020\247\r\022*\n" +
+      "%MsgID_Major_CollectProductionReceiver\020\250" +
+      "\r\022\032\n\025MsgID_Major_MergeInit\020\271\r\022\026\n\021MsgID_M" +
+      "ajor_Merge\020\272\rB3\n\034com.douqu.game.core.pro" +
+      "tobufB\013SGMainProto\252\002\005UBaseb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

@@ -57,7 +57,7 @@ public class GoblinStoreActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_init:
-                new InputTextDialog(this, "storeType(1地精商店，2竞技场商店,4远征商店,5钻石商店)") {
+                new InputTextDialog(this, "storeType(1地精商店，2竞技场商店,4远征商店,5钻石商店,6vip商店)") {
                     @Override
                     public void sendText(String text) {
                         try {
@@ -73,7 +73,7 @@ public class GoblinStoreActivity extends BaseActivity {
 
                 break;
             case R.id.btn_refresh:
-                new InputTextDialog(this, "storeType(1地精商店，2竞技场商店，4远征商店，5钻石商店)") {
+                new InputTextDialog(this, "storeType(1地精商店，2竞技场商店，4远征商店，5钻石商店，6vip商店)") {
                     @Override
                     public void sendText(String text) {
                         try {

@@ -8,6 +8,7 @@ import com.douqu.game.core.protobuf.SGChallengeProto.*;
 import com.douqu.game.core.protobuf.SGBagProto;
 import com.douqu.game.core.protobuf.SGCommonProto;
 import com.douqu.game.core.protobuf.SGMainProto;
+import com.douqu.game.core.protobuf.SGMajorProto;
 import com.douqu.game.core.protobuf.SGPlayerProto;
 import com.douqu.game.core.protobuf.SGSystemProto;
 import com.douqu.game.core.protobuf.SGTaskProto;
@@ -110,6 +111,12 @@ public class NettyTCPClientHandler extends ChannelInboundHandlerAdapter {
             case SGMainProto.E_MSG_ID.MsgID_Player_RankList_VALUE:
                 EventBus.getDefault().post(SGPlayerProto.S2C_RankList.parseFrom(data));
                 break;
+            case SGMainProto.E_MSG_ID.MsgID_Player_MasterTrain_VALUE:
+                EventBus.getDefault().post(SGPlayerProto.S2C_MasterTrain.parseFrom(data));
+                break;
+            case SGMainProto.E_MSG_ID.MsgID_Player_MasterTrainAccept_VALUE:
+                EventBus.getDefault().post(SGPlayerProto.S2C_MasterTrainAccept.parseFrom(data));
+                break;
             /****************************************vip和福利***************************************/
             case SGMainProto.E_MSG_ID.MsgID_Bonus_RechargeInit_VALUE:
                 EventBus.getDefault().post(SGPlayerProto.S2C_RechargeInit.parseFrom(data));
@@ -143,6 +150,9 @@ public class NettyTCPClientHandler extends ChannelInboundHandlerAdapter {
                 break;
             case SGMainProto.E_MSG_ID.MsgID_Bonus_ReceiveLoginTimesReward_VALUE:
                 EventBus.getDefault().post(SGPlayerProto.S2C_ReceiveLoginTimesReward.parseFrom(data));
+                break;
+            case SGMainProto.E_MSG_ID.MsgID_Bonus_NewServerActivityInit_VALUE:
+                EventBus.getDefault().post(SGPlayerProto.S2C_NewServerActivityInit.parseFrom(data));
                 break;
             /*************************副本****************************************/
             case  SGMainProto.E_MSG_ID.MsgID_Instance_GetInstanceInfo_VALUE:
@@ -310,6 +320,22 @@ public class NettyTCPClientHandler extends ChannelInboundHandlerAdapter {
                 break;
             case SGMainProto.E_MSG_ID.MsgID_Task_TreasureReward_VALUE:
                 EventBus.getDefault().post(SGTaskProto.S2C_TreasureReward.parseFrom(data));
+                break;
+            /*********************************专业技能***********************************************/
+            case SGMainProto.E_MSG_ID.MsgID_Major_Battle_VALUE:
+                EventBus.getDefault().post(SGMajorProto.S2C_MajorBattle.parseFrom(data));
+                break;
+            case SGMainProto.E_MSG_ID.MsgID_Major_CollectInit_VALUE:
+                EventBus.getDefault().post(SGMajorProto.S2C_MajorCollectInit.parseFrom(data));
+                break;
+            case SGMainProto.E_MSG_ID.MsgID_Major_CollectStart_VALUE:
+                EventBus.getDefault().post(SGMajorProto.S2C_MajorCollectStart.parseFrom(data));
+                break;
+            case SGMainProto.E_MSG_ID.MsgID_Major_CollectProductionReceiver_VALUE:
+                EventBus.getDefault().post(SGMajorProto.S2C_MajorCollectProductionReceiver.parseFrom(data));
+                break;
+            case SGMainProto.E_MSG_ID.MsgID_Major_Merge_VALUE:
+                EventBus.getDefault().post(SGMajorProto.S2C_MajorMerge.parseFrom(data));
                 break;
             default:
                 break;

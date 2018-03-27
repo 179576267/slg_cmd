@@ -25,7 +25,7 @@ public class MenuActivity extends BaseActivity {
 
     @OnClick({R.id.instance, R.id.arena, R.id.official, R.id.goblin_store, R.id.playerinfo,
             R.id.goblin_bag, R.id.resolve, R.id.hero_temple, R.id.hero_altar, R.id.vip,
-        R.id.hero_expedition,R.id.hero_task})
+        R.id.hero_expedition,R.id.hero_task,R.id.major})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.instance:
@@ -63,6 +63,9 @@ public class MenuActivity extends BaseActivity {
                 break;
             case R.id.hero_task:
                 startActivity(new Intent(this, TaskActivity.class));
+                break;
+            case R.id.major:
+                startActivity(new Intent(this, MajorActivity.class));
                 break;
             default:
                 break;

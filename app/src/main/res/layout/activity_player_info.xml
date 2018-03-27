@@ -88,6 +88,18 @@
                 android:layout_height="wrap_content"
                 android:text="获取排行榜信息"/>
 
+            <Button
+                android:id="@+id/btn_master_train"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="主将培养"/>
+
+            <Button
+                android:id="@+id/btn_master_train_accept"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="主将培养接受"/>
+
         </LinearLayout>
 
     </ScrollView>

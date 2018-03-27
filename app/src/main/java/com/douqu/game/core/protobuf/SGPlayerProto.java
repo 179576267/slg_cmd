@@ -20252,6 +20252,3480 @@ public final class SGPlayerProto {
 
   }
 
+  public interface C2S_MasterTrainOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:C2S_MasterTrain)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *培养类型
+     * </pre>
+     *
+     * <code>.E_MASTER_TRAIN_TYPE trainType = 1;</code>
+     */
+    int getTrainTypeValue();
+    /**
+     * <pre>
+     *培养类型
+     * </pre>
+     *
+     * <code>.E_MASTER_TRAIN_TYPE trainType = 1;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.E_MASTER_TRAIN_TYPE getTrainType();
+  }
+  /**
+   * <pre>
+   *320 主将培养
+   * </pre>
+   *
+   * Protobuf type {@code C2S_MasterTrain}
+   */
+  public  static final class C2S_MasterTrain extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:C2S_MasterTrain)
+      C2S_MasterTrainOrBuilder {
+    // Use C2S_MasterTrain.newBuilder() to construct.
+    private C2S_MasterTrain(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private C2S_MasterTrain() {
+      trainType_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private C2S_MasterTrain(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+
+              trainType_ = rawValue;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_MasterTrain_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_MasterTrain_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain.class, com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain.Builder.class);
+    }
+
+    public static final int TRAINTYPE_FIELD_NUMBER = 1;
+    private int trainType_;
+    /**
+     * <pre>
+     *培养类型
+     * </pre>
+     *
+     * <code>.E_MASTER_TRAIN_TYPE trainType = 1;</code>
+     */
+    public int getTrainTypeValue() {
+      return trainType_;
+    }
+    /**
+     * <pre>
+     *培养类型
+     * </pre>
+     *
+     * <code>.E_MASTER_TRAIN_TYPE trainType = 1;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.E_MASTER_TRAIN_TYPE getTrainType() {
+      com.douqu.game.core.protobuf.SGCommonProto.E_MASTER_TRAIN_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_MASTER_TRAIN_TYPE.valueOf(trainType_);
+      return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_MASTER_TRAIN_TYPE.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (trainType_ != com.douqu.game.core.protobuf.SGCommonProto.E_MASTER_TRAIN_TYPE.MASTER_TRAIN_TYPE_UNKNOW.getNumber()) {
+        output.writeEnum(1, trainType_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (trainType_ != com.douqu.game.core.protobuf.SGCommonProto.E_MASTER_TRAIN_TYPE.MASTER_TRAIN_TYPE_UNKNOW.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, trainType_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain other = (com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain) obj;
+
+      boolean result = true;
+      result = result && trainType_ == other.trainType_;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TRAINTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + trainType_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *320 主将培养
+     * </pre>
+     *
+     * Protobuf type {@code C2S_MasterTrain}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:C2S_MasterTrain)
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_MasterTrain_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_MasterTrain_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain.class, com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        trainType_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_MasterTrain_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain build() {
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain buildPartial() {
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain result = new com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain(this);
+        result.trainType_ = trainType_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain other) {
+        if (other == com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain.getDefaultInstance()) return this;
+        if (other.trainType_ != 0) {
+          setTrainTypeValue(other.getTrainTypeValue());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int trainType_ = 0;
+      /**
+       * <pre>
+       *培养类型
+       * </pre>
+       *
+       * <code>.E_MASTER_TRAIN_TYPE trainType = 1;</code>
+       */
+      public int getTrainTypeValue() {
+        return trainType_;
+      }
+      /**
+       * <pre>
+       *培养类型
+       * </pre>
+       *
+       * <code>.E_MASTER_TRAIN_TYPE trainType = 1;</code>
+       */
+      public Builder setTrainTypeValue(int value) {
+        trainType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *培养类型
+       * </pre>
+       *
+       * <code>.E_MASTER_TRAIN_TYPE trainType = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.E_MASTER_TRAIN_TYPE getTrainType() {
+        com.douqu.game.core.protobuf.SGCommonProto.E_MASTER_TRAIN_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_MASTER_TRAIN_TYPE.valueOf(trainType_);
+        return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_MASTER_TRAIN_TYPE.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       *培养类型
+       * </pre>
+       *
+       * <code>.E_MASTER_TRAIN_TYPE trainType = 1;</code>
+       */
+      public Builder setTrainType(com.douqu.game.core.protobuf.SGCommonProto.E_MASTER_TRAIN_TYPE value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        trainType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *培养类型
+       * </pre>
+       *
+       * <code>.E_MASTER_TRAIN_TYPE trainType = 1;</code>
+       */
+      public Builder clearTrainType() {
+        
+        trainType_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2S_MasterTrain)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2S_MasterTrain)
+    private static final com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain();
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<C2S_MasterTrain>
+        PARSER = new com.google.protobuf.AbstractParser<C2S_MasterTrain>() {
+      public C2S_MasterTrain parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new C2S_MasterTrain(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2S_MasterTrain> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2S_MasterTrain> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrain getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface S2C_MasterTrainOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_MasterTrain)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject changeValue = 1;</code>
+     */
+    java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject> 
+        getChangeValueList();
+    /**
+     * <pre>
+     *改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject changeValue = 1;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.CommonObject getChangeValue(int index);
+    /**
+     * <pre>
+     *改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject changeValue = 1;</code>
+     */
+    int getChangeValueCount();
+    /**
+     * <pre>
+     *改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject changeValue = 1;</code>
+     */
+    java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder> 
+        getChangeValueOrBuilderList();
+    /**
+     * <pre>
+     *改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject changeValue = 1;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder getChangeValueOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code S2C_MasterTrain}
+   */
+  public  static final class S2C_MasterTrain extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_MasterTrain)
+      S2C_MasterTrainOrBuilder {
+    // Use S2C_MasterTrain.newBuilder() to construct.
+    private S2C_MasterTrain(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_MasterTrain() {
+      changeValue_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private S2C_MasterTrain(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                changeValue_ = new java.util.ArrayList<com.douqu.game.core.protobuf.SGCommonProto.CommonObject>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              changeValue_.add(
+                  input.readMessage(com.douqu.game.core.protobuf.SGCommonProto.CommonObject.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          changeValue_ = java.util.Collections.unmodifiableList(changeValue_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_MasterTrain_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_MasterTrain_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain.class, com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain.Builder.class);
+    }
+
+    public static final int CHANGEVALUE_FIELD_NUMBER = 1;
+    private java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject> changeValue_;
+    /**
+     * <pre>
+     *改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject changeValue = 1;</code>
+     */
+    public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject> getChangeValueList() {
+      return changeValue_;
+    }
+    /**
+     * <pre>
+     *改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject changeValue = 1;</code>
+     */
+    public java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder> 
+        getChangeValueOrBuilderList() {
+      return changeValue_;
+    }
+    /**
+     * <pre>
+     *改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject changeValue = 1;</code>
+     */
+    public int getChangeValueCount() {
+      return changeValue_.size();
+    }
+    /**
+     * <pre>
+     *改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject changeValue = 1;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.CommonObject getChangeValue(int index) {
+      return changeValue_.get(index);
+    }
+    /**
+     * <pre>
+     *改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject changeValue = 1;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder getChangeValueOrBuilder(
+        int index) {
+      return changeValue_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < changeValue_.size(); i++) {
+        output.writeMessage(1, changeValue_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < changeValue_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, changeValue_.get(i));
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain other = (com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain) obj;
+
+      boolean result = true;
+      result = result && getChangeValueList()
+          .equals(other.getChangeValueList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getChangeValueCount() > 0) {
+        hash = (37 * hash) + CHANGEVALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getChangeValueList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code S2C_MasterTrain}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_MasterTrain)
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_MasterTrain_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_MasterTrain_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain.class, com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getChangeValueFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (changeValueBuilder_ == null) {
+          changeValue_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          changeValueBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_MasterTrain_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain build() {
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain buildPartial() {
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain result = new com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain(this);
+        int from_bitField0_ = bitField0_;
+        if (changeValueBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            changeValue_ = java.util.Collections.unmodifiableList(changeValue_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.changeValue_ = changeValue_;
+        } else {
+          result.changeValue_ = changeValueBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain other) {
+        if (other == com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain.getDefaultInstance()) return this;
+        if (changeValueBuilder_ == null) {
+          if (!other.changeValue_.isEmpty()) {
+            if (changeValue_.isEmpty()) {
+              changeValue_ = other.changeValue_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureChangeValueIsMutable();
+              changeValue_.addAll(other.changeValue_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.changeValue_.isEmpty()) {
+            if (changeValueBuilder_.isEmpty()) {
+              changeValueBuilder_.dispose();
+              changeValueBuilder_ = null;
+              changeValue_ = other.changeValue_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              changeValueBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getChangeValueFieldBuilder() : null;
+            } else {
+              changeValueBuilder_.addAllMessages(other.changeValue_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject> changeValue_ =
+        java.util.Collections.emptyList();
+      private void ensureChangeValueIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          changeValue_ = new java.util.ArrayList<com.douqu.game.core.protobuf.SGCommonProto.CommonObject>(changeValue_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.CommonObject, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder, com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder> changeValueBuilder_;
+
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject> getChangeValueList() {
+        if (changeValueBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(changeValue_);
+        } else {
+          return changeValueBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public int getChangeValueCount() {
+        if (changeValueBuilder_ == null) {
+          return changeValue_.size();
+        } else {
+          return changeValueBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CommonObject getChangeValue(int index) {
+        if (changeValueBuilder_ == null) {
+          return changeValue_.get(index);
+        } else {
+          return changeValueBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public Builder setChangeValue(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CommonObject value) {
+        if (changeValueBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureChangeValueIsMutable();
+          changeValue_.set(index, value);
+          onChanged();
+        } else {
+          changeValueBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public Builder setChangeValue(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder builderForValue) {
+        if (changeValueBuilder_ == null) {
+          ensureChangeValueIsMutable();
+          changeValue_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          changeValueBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public Builder addChangeValue(com.douqu.game.core.protobuf.SGCommonProto.CommonObject value) {
+        if (changeValueBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureChangeValueIsMutable();
+          changeValue_.add(value);
+          onChanged();
+        } else {
+          changeValueBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public Builder addChangeValue(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CommonObject value) {
+        if (changeValueBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureChangeValueIsMutable();
+          changeValue_.add(index, value);
+          onChanged();
+        } else {
+          changeValueBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public Builder addChangeValue(
+          com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder builderForValue) {
+        if (changeValueBuilder_ == null) {
+          ensureChangeValueIsMutable();
+          changeValue_.add(builderForValue.build());
+          onChanged();
+        } else {
+          changeValueBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public Builder addChangeValue(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder builderForValue) {
+        if (changeValueBuilder_ == null) {
+          ensureChangeValueIsMutable();
+          changeValue_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          changeValueBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public Builder addAllChangeValue(
+          java.lang.Iterable<? extends com.douqu.game.core.protobuf.SGCommonProto.CommonObject> values) {
+        if (changeValueBuilder_ == null) {
+          ensureChangeValueIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, changeValue_);
+          onChanged();
+        } else {
+          changeValueBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public Builder clearChangeValue() {
+        if (changeValueBuilder_ == null) {
+          changeValue_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          changeValueBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public Builder removeChangeValue(int index) {
+        if (changeValueBuilder_ == null) {
+          ensureChangeValueIsMutable();
+          changeValue_.remove(index);
+          onChanged();
+        } else {
+          changeValueBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder getChangeValueBuilder(
+          int index) {
+        return getChangeValueFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder getChangeValueOrBuilder(
+          int index) {
+        if (changeValueBuilder_ == null) {
+          return changeValue_.get(index);  } else {
+          return changeValueBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder> 
+           getChangeValueOrBuilderList() {
+        if (changeValueBuilder_ != null) {
+          return changeValueBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(changeValue_);
+        }
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder addChangeValueBuilder() {
+        return getChangeValueFieldBuilder().addBuilder(
+            com.douqu.game.core.protobuf.SGCommonProto.CommonObject.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder addChangeValueBuilder(
+          int index) {
+        return getChangeValueFieldBuilder().addBuilder(
+            index, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       *改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject changeValue = 1;</code>
+       */
+      public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder> 
+           getChangeValueBuilderList() {
+        return getChangeValueFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.CommonObject, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder, com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder> 
+          getChangeValueFieldBuilder() {
+        if (changeValueBuilder_ == null) {
+          changeValueBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.douqu.game.core.protobuf.SGCommonProto.CommonObject, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder, com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder>(
+                  changeValue_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          changeValue_ = null;
+        }
+        return changeValueBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:S2C_MasterTrain)
+    }
+
+    // @@protoc_insertion_point(class_scope:S2C_MasterTrain)
+    private static final com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain();
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S2C_MasterTrain>
+        PARSER = new com.google.protobuf.AbstractParser<S2C_MasterTrain>() {
+      public S2C_MasterTrain parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new S2C_MasterTrain(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S2C_MasterTrain> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S2C_MasterTrain> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrain getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface C2S_MasterTrainAcceptOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:C2S_MasterTrainAccept)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   *321 主将培养接受
+   * </pre>
+   *
+   * Protobuf type {@code C2S_MasterTrainAccept}
+   */
+  public  static final class C2S_MasterTrainAccept extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:C2S_MasterTrainAccept)
+      C2S_MasterTrainAcceptOrBuilder {
+    // Use C2S_MasterTrainAccept.newBuilder() to construct.
+    private C2S_MasterTrainAccept(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private C2S_MasterTrainAccept() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private C2S_MasterTrainAccept(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_MasterTrainAccept_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_MasterTrainAccept_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept.class, com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept other = (com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept) obj;
+
+      boolean result = true;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *321 主将培养接受
+     * </pre>
+     *
+     * Protobuf type {@code C2S_MasterTrainAccept}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:C2S_MasterTrainAccept)
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAcceptOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_MasterTrainAccept_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_MasterTrainAccept_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept.class, com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_MasterTrainAccept_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept build() {
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept buildPartial() {
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept result = new com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept other) {
+        if (other == com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept.getDefaultInstance()) return this;
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2S_MasterTrainAccept)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2S_MasterTrainAccept)
+    private static final com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept();
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<C2S_MasterTrainAccept>
+        PARSER = new com.google.protobuf.AbstractParser<C2S_MasterTrainAccept>() {
+      public C2S_MasterTrainAccept parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new C2S_MasterTrainAccept(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2S_MasterTrainAccept> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2S_MasterTrainAccept> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGPlayerProto.C2S_MasterTrainAccept getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface S2C_MasterTrainAcceptOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_MasterTrainAccept)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *主将培养改变后的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+     */
+    java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject> 
+        getMasterTrainAttributesList();
+    /**
+     * <pre>
+     *主将培养改变后的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.CommonObject getMasterTrainAttributes(int index);
+    /**
+     * <pre>
+     *主将培养改变后的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+     */
+    int getMasterTrainAttributesCount();
+    /**
+     * <pre>
+     *主将培养改变后的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+     */
+    java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder> 
+        getMasterTrainAttributesOrBuilderList();
+    /**
+     * <pre>
+     *主将培养改变后的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder getMasterTrainAttributesOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code S2C_MasterTrainAccept}
+   */
+  public  static final class S2C_MasterTrainAccept extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_MasterTrainAccept)
+      S2C_MasterTrainAcceptOrBuilder {
+    // Use S2C_MasterTrainAccept.newBuilder() to construct.
+    private S2C_MasterTrainAccept(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_MasterTrainAccept() {
+      masterTrainAttributes_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private S2C_MasterTrainAccept(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                masterTrainAttributes_ = new java.util.ArrayList<com.douqu.game.core.protobuf.SGCommonProto.CommonObject>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              masterTrainAttributes_.add(
+                  input.readMessage(com.douqu.game.core.protobuf.SGCommonProto.CommonObject.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          masterTrainAttributes_ = java.util.Collections.unmodifiableList(masterTrainAttributes_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_MasterTrainAccept_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_MasterTrainAccept_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept.class, com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept.Builder.class);
+    }
+
+    public static final int MASTERTRAINATTRIBUTES_FIELD_NUMBER = 1;
+    private java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject> masterTrainAttributes_;
+    /**
+     * <pre>
+     *主将培养改变后的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+     */
+    public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject> getMasterTrainAttributesList() {
+      return masterTrainAttributes_;
+    }
+    /**
+     * <pre>
+     *主将培养改变后的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+     */
+    public java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder> 
+        getMasterTrainAttributesOrBuilderList() {
+      return masterTrainAttributes_;
+    }
+    /**
+     * <pre>
+     *主将培养改变后的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+     */
+    public int getMasterTrainAttributesCount() {
+      return masterTrainAttributes_.size();
+    }
+    /**
+     * <pre>
+     *主将培养改变后的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.CommonObject getMasterTrainAttributes(int index) {
+      return masterTrainAttributes_.get(index);
+    }
+    /**
+     * <pre>
+     *主将培养改变后的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder getMasterTrainAttributesOrBuilder(
+        int index) {
+      return masterTrainAttributes_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < masterTrainAttributes_.size(); i++) {
+        output.writeMessage(1, masterTrainAttributes_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < masterTrainAttributes_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, masterTrainAttributes_.get(i));
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept other = (com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept) obj;
+
+      boolean result = true;
+      result = result && getMasterTrainAttributesList()
+          .equals(other.getMasterTrainAttributesList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getMasterTrainAttributesCount() > 0) {
+        hash = (37 * hash) + MASTERTRAINATTRIBUTES_FIELD_NUMBER;
+        hash = (53 * hash) + getMasterTrainAttributesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code S2C_MasterTrainAccept}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_MasterTrainAccept)
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAcceptOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_MasterTrainAccept_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_MasterTrainAccept_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept.class, com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMasterTrainAttributesFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (masterTrainAttributesBuilder_ == null) {
+          masterTrainAttributes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          masterTrainAttributesBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_MasterTrainAccept_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept build() {
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept buildPartial() {
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept result = new com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept(this);
+        int from_bitField0_ = bitField0_;
+        if (masterTrainAttributesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            masterTrainAttributes_ = java.util.Collections.unmodifiableList(masterTrainAttributes_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.masterTrainAttributes_ = masterTrainAttributes_;
+        } else {
+          result.masterTrainAttributes_ = masterTrainAttributesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept other) {
+        if (other == com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept.getDefaultInstance()) return this;
+        if (masterTrainAttributesBuilder_ == null) {
+          if (!other.masterTrainAttributes_.isEmpty()) {
+            if (masterTrainAttributes_.isEmpty()) {
+              masterTrainAttributes_ = other.masterTrainAttributes_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureMasterTrainAttributesIsMutable();
+              masterTrainAttributes_.addAll(other.masterTrainAttributes_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.masterTrainAttributes_.isEmpty()) {
+            if (masterTrainAttributesBuilder_.isEmpty()) {
+              masterTrainAttributesBuilder_.dispose();
+              masterTrainAttributesBuilder_ = null;
+              masterTrainAttributes_ = other.masterTrainAttributes_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              masterTrainAttributesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMasterTrainAttributesFieldBuilder() : null;
+            } else {
+              masterTrainAttributesBuilder_.addAllMessages(other.masterTrainAttributes_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject> masterTrainAttributes_ =
+        java.util.Collections.emptyList();
+      private void ensureMasterTrainAttributesIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          masterTrainAttributes_ = new java.util.ArrayList<com.douqu.game.core.protobuf.SGCommonProto.CommonObject>(masterTrainAttributes_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.CommonObject, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder, com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder> masterTrainAttributesBuilder_;
+
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject> getMasterTrainAttributesList() {
+        if (masterTrainAttributesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(masterTrainAttributes_);
+        } else {
+          return masterTrainAttributesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public int getMasterTrainAttributesCount() {
+        if (masterTrainAttributesBuilder_ == null) {
+          return masterTrainAttributes_.size();
+        } else {
+          return masterTrainAttributesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CommonObject getMasterTrainAttributes(int index) {
+        if (masterTrainAttributesBuilder_ == null) {
+          return masterTrainAttributes_.get(index);
+        } else {
+          return masterTrainAttributesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public Builder setMasterTrainAttributes(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CommonObject value) {
+        if (masterTrainAttributesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMasterTrainAttributesIsMutable();
+          masterTrainAttributes_.set(index, value);
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public Builder setMasterTrainAttributes(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder builderForValue) {
+        if (masterTrainAttributesBuilder_ == null) {
+          ensureMasterTrainAttributesIsMutable();
+          masterTrainAttributes_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public Builder addMasterTrainAttributes(com.douqu.game.core.protobuf.SGCommonProto.CommonObject value) {
+        if (masterTrainAttributesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMasterTrainAttributesIsMutable();
+          masterTrainAttributes_.add(value);
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public Builder addMasterTrainAttributes(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CommonObject value) {
+        if (masterTrainAttributesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMasterTrainAttributesIsMutable();
+          masterTrainAttributes_.add(index, value);
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public Builder addMasterTrainAttributes(
+          com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder builderForValue) {
+        if (masterTrainAttributesBuilder_ == null) {
+          ensureMasterTrainAttributesIsMutable();
+          masterTrainAttributes_.add(builderForValue.build());
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public Builder addMasterTrainAttributes(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder builderForValue) {
+        if (masterTrainAttributesBuilder_ == null) {
+          ensureMasterTrainAttributesIsMutable();
+          masterTrainAttributes_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public Builder addAllMasterTrainAttributes(
+          java.lang.Iterable<? extends com.douqu.game.core.protobuf.SGCommonProto.CommonObject> values) {
+        if (masterTrainAttributesBuilder_ == null) {
+          ensureMasterTrainAttributesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, masterTrainAttributes_);
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public Builder clearMasterTrainAttributes() {
+        if (masterTrainAttributesBuilder_ == null) {
+          masterTrainAttributes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public Builder removeMasterTrainAttributes(int index) {
+        if (masterTrainAttributesBuilder_ == null) {
+          ensureMasterTrainAttributesIsMutable();
+          masterTrainAttributes_.remove(index);
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder getMasterTrainAttributesBuilder(
+          int index) {
+        return getMasterTrainAttributesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder getMasterTrainAttributesOrBuilder(
+          int index) {
+        if (masterTrainAttributesBuilder_ == null) {
+          return masterTrainAttributes_.get(index);  } else {
+          return masterTrainAttributesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder> 
+           getMasterTrainAttributesOrBuilderList() {
+        if (masterTrainAttributesBuilder_ != null) {
+          return masterTrainAttributesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(masterTrainAttributes_);
+        }
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder addMasterTrainAttributesBuilder() {
+        return getMasterTrainAttributesFieldBuilder().addBuilder(
+            com.douqu.game.core.protobuf.SGCommonProto.CommonObject.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder addMasterTrainAttributesBuilder(
+          int index) {
+        return getMasterTrainAttributesFieldBuilder().addBuilder(
+            index, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       *主将培养改变后的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 1;</code>
+       */
+      public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder> 
+           getMasterTrainAttributesBuilderList() {
+        return getMasterTrainAttributesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.CommonObject, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder, com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder> 
+          getMasterTrainAttributesFieldBuilder() {
+        if (masterTrainAttributesBuilder_ == null) {
+          masterTrainAttributesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.douqu.game.core.protobuf.SGCommonProto.CommonObject, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder, com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder>(
+                  masterTrainAttributes_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          masterTrainAttributes_ = null;
+        }
+        return masterTrainAttributesBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:S2C_MasterTrainAccept)
+    }
+
+    // @@protoc_insertion_point(class_scope:S2C_MasterTrainAccept)
+    private static final com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept();
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S2C_MasterTrainAccept>
+        PARSER = new com.google.protobuf.AbstractParser<S2C_MasterTrainAccept>() {
+      public S2C_MasterTrainAccept parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new S2C_MasterTrainAccept(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S2C_MasterTrainAccept> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S2C_MasterTrainAccept> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGPlayerProto.S2C_MasterTrainAccept getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface C2S_LegionChainUnlockOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:C2S_LegionChainUnlock)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   *322 军团连锁解锁通知
+   * </pre>
+   *
+   * Protobuf type {@code C2S_LegionChainUnlock}
+   */
+  public  static final class C2S_LegionChainUnlock extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:C2S_LegionChainUnlock)
+      C2S_LegionChainUnlockOrBuilder {
+    // Use C2S_LegionChainUnlock.newBuilder() to construct.
+    private C2S_LegionChainUnlock(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private C2S_LegionChainUnlock() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private C2S_LegionChainUnlock(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_LegionChainUnlock_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_LegionChainUnlock_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock.class, com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock other = (com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock) obj;
+
+      boolean result = true;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *322 军团连锁解锁通知
+     * </pre>
+     *
+     * Protobuf type {@code C2S_LegionChainUnlock}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:C2S_LegionChainUnlock)
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlockOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_LegionChainUnlock_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_LegionChainUnlock_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock.class, com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_LegionChainUnlock_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock build() {
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock buildPartial() {
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock result = new com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock other) {
+        if (other == com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock.getDefaultInstance()) return this;
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2S_LegionChainUnlock)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2S_LegionChainUnlock)
+    private static final com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock();
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<C2S_LegionChainUnlock>
+        PARSER = new com.google.protobuf.AbstractParser<C2S_LegionChainUnlock>() {
+      public C2S_LegionChainUnlock parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new C2S_LegionChainUnlock(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2S_LegionChainUnlock> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2S_LegionChainUnlock> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGPlayerProto.C2S_LegionChainUnlock getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface S2C_LegionChainUnlockOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_LegionChainUnlock)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *连锁id
+     * </pre>
+     *
+     * <code>int32 legionChainId = 1;</code>
+     */
+    int getLegionChainId();
+
+    /**
+     * <pre>
+     * 下标
+     * </pre>
+     *
+     * <code>int32 index = 2;</code>
+     */
+    int getIndex();
+  }
+  /**
+   * Protobuf type {@code S2C_LegionChainUnlock}
+   */
+  public  static final class S2C_LegionChainUnlock extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_LegionChainUnlock)
+      S2C_LegionChainUnlockOrBuilder {
+    // Use S2C_LegionChainUnlock.newBuilder() to construct.
+    private S2C_LegionChainUnlock(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_LegionChainUnlock() {
+      legionChainId_ = 0;
+      index_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private S2C_LegionChainUnlock(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              legionChainId_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              index_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_LegionChainUnlock_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_LegionChainUnlock_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock.class, com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock.Builder.class);
+    }
+
+    public static final int LEGIONCHAINID_FIELD_NUMBER = 1;
+    private int legionChainId_;
+    /**
+     * <pre>
+     *连锁id
+     * </pre>
+     *
+     * <code>int32 legionChainId = 1;</code>
+     */
+    public int getLegionChainId() {
+      return legionChainId_;
+    }
+
+    public static final int INDEX_FIELD_NUMBER = 2;
+    private int index_;
+    /**
+     * <pre>
+     * 下标
+     * </pre>
+     *
+     * <code>int32 index = 2;</code>
+     */
+    public int getIndex() {
+      return index_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (legionChainId_ != 0) {
+        output.writeInt32(1, legionChainId_);
+      }
+      if (index_ != 0) {
+        output.writeInt32(2, index_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (legionChainId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, legionChainId_);
+      }
+      if (index_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, index_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock other = (com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock) obj;
+
+      boolean result = true;
+      result = result && (getLegionChainId()
+          == other.getLegionChainId());
+      result = result && (getIndex()
+          == other.getIndex());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LEGIONCHAINID_FIELD_NUMBER;
+      hash = (53 * hash) + getLegionChainId();
+      hash = (37 * hash) + INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getIndex();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code S2C_LegionChainUnlock}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_LegionChainUnlock)
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlockOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_LegionChainUnlock_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_LegionChainUnlock_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock.class, com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        legionChainId_ = 0;
+
+        index_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_LegionChainUnlock_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock build() {
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock buildPartial() {
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock result = new com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock(this);
+        result.legionChainId_ = legionChainId_;
+        result.index_ = index_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock other) {
+        if (other == com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock.getDefaultInstance()) return this;
+        if (other.getLegionChainId() != 0) {
+          setLegionChainId(other.getLegionChainId());
+        }
+        if (other.getIndex() != 0) {
+          setIndex(other.getIndex());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int legionChainId_ ;
+      /**
+       * <pre>
+       *连锁id
+       * </pre>
+       *
+       * <code>int32 legionChainId = 1;</code>
+       */
+      public int getLegionChainId() {
+        return legionChainId_;
+      }
+      /**
+       * <pre>
+       *连锁id
+       * </pre>
+       *
+       * <code>int32 legionChainId = 1;</code>
+       */
+      public Builder setLegionChainId(int value) {
+        
+        legionChainId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *连锁id
+       * </pre>
+       *
+       * <code>int32 legionChainId = 1;</code>
+       */
+      public Builder clearLegionChainId() {
+        
+        legionChainId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int index_ ;
+      /**
+       * <pre>
+       * 下标
+       * </pre>
+       *
+       * <code>int32 index = 2;</code>
+       */
+      public int getIndex() {
+        return index_;
+      }
+      /**
+       * <pre>
+       * 下标
+       * </pre>
+       *
+       * <code>int32 index = 2;</code>
+       */
+      public Builder setIndex(int value) {
+        
+        index_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 下标
+       * </pre>
+       *
+       * <code>int32 index = 2;</code>
+       */
+      public Builder clearIndex() {
+        
+        index_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:S2C_LegionChainUnlock)
+    }
+
+    // @@protoc_insertion_point(class_scope:S2C_LegionChainUnlock)
+    private static final com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock();
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S2C_LegionChainUnlock>
+        PARSER = new com.google.protobuf.AbstractParser<S2C_LegionChainUnlock>() {
+      public S2C_LegionChainUnlock parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new S2C_LegionChainUnlock(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S2C_LegionChainUnlock> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S2C_LegionChainUnlock> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGPlayerProto.S2C_LegionChainUnlock getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface C2S_LotteryInitOrBuilder extends
       // @@protoc_insertion_point(interface_extends:C2S_LotteryInit)
       com.google.protobuf.MessageOrBuilder {
@@ -50848,6 +54322,31 @@ public final class SGPlayerProto {
      * <code>int64 currentServerTime = 9;</code>
      */
     long getCurrentServerTime();
+
+    /**
+     * <pre>
+     *每日充值礼包记录
+     * </pre>
+     *
+     * <code>repeated int32 dailyRechargeIds = 10;</code>
+     */
+    java.util.List<java.lang.Integer> getDailyRechargeIdsList();
+    /**
+     * <pre>
+     *每日充值礼包记录
+     * </pre>
+     *
+     * <code>repeated int32 dailyRechargeIds = 10;</code>
+     */
+    int getDailyRechargeIdsCount();
+    /**
+     * <pre>
+     *每日充值礼包记录
+     * </pre>
+     *
+     * <code>repeated int32 dailyRechargeIds = 10;</code>
+     */
+    int getDailyRechargeIds(int index);
   }
   /**
    * Protobuf type {@code S2C_BonusBoardInit}
@@ -50870,6 +54369,7 @@ public final class SGPlayerProto {
       isOpenFundBuy_ = false;
       openFundRewardRecord_ = java.util.Collections.emptyList();
       currentServerTime_ = 0L;
+      dailyRechargeIds_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -50962,6 +54462,27 @@ public final class SGPlayerProto {
               currentServerTime_ = input.readInt64();
               break;
             }
+            case 80: {
+              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+                dailyRechargeIds_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              dailyRechargeIds_.add(input.readInt32());
+              break;
+            }
+            case 82: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200) && input.getBytesUntilLimit() > 0) {
+                dailyRechargeIds_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                dailyRechargeIds_.add(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -50975,6 +54496,9 @@ public final class SGPlayerProto {
         }
         if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
           openFundRewardRecord_ = java.util.Collections.unmodifiableList(openFundRewardRecord_);
+        }
+        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+          dailyRechargeIds_ = java.util.Collections.unmodifiableList(dailyRechargeIds_);
         }
         makeExtensionsImmutable();
       }
@@ -51173,6 +54697,41 @@ public final class SGPlayerProto {
       return currentServerTime_;
     }
 
+    public static final int DAILYRECHARGEIDS_FIELD_NUMBER = 10;
+    private java.util.List<java.lang.Integer> dailyRechargeIds_;
+    /**
+     * <pre>
+     *每日充值礼包记录
+     * </pre>
+     *
+     * <code>repeated int32 dailyRechargeIds = 10;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getDailyRechargeIdsList() {
+      return dailyRechargeIds_;
+    }
+    /**
+     * <pre>
+     *每日充值礼包记录
+     * </pre>
+     *
+     * <code>repeated int32 dailyRechargeIds = 10;</code>
+     */
+    public int getDailyRechargeIdsCount() {
+      return dailyRechargeIds_.size();
+    }
+    /**
+     * <pre>
+     *每日充值礼包记录
+     * </pre>
+     *
+     * <code>repeated int32 dailyRechargeIds = 10;</code>
+     */
+    public int getDailyRechargeIds(int index) {
+      return dailyRechargeIds_.get(index);
+    }
+    private int dailyRechargeIdsMemoizedSerializedSize = -1;
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -51216,6 +54775,13 @@ public final class SGPlayerProto {
       }
       if (currentServerTime_ != 0L) {
         output.writeInt64(9, currentServerTime_);
+      }
+      if (getDailyRechargeIdsList().size() > 0) {
+        output.writeUInt32NoTag(82);
+        output.writeUInt32NoTag(dailyRechargeIdsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < dailyRechargeIds_.size(); i++) {
+        output.writeInt32NoTag(dailyRechargeIds_.get(i));
       }
     }
 
@@ -51270,6 +54836,20 @@ public final class SGPlayerProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(9, currentServerTime_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < dailyRechargeIds_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dailyRechargeIds_.get(i));
+        }
+        size += dataSize;
+        if (!getDailyRechargeIdsList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        dailyRechargeIdsMemoizedSerializedSize = dataSize;
+      }
       memoizedSize = size;
       return size;
     }
@@ -51304,6 +54884,8 @@ public final class SGPlayerProto {
           .equals(other.getOpenFundRewardRecordList());
       result = result && (getCurrentServerTime()
           == other.getCurrentServerTime());
+      result = result && getDailyRechargeIdsList()
+          .equals(other.getDailyRechargeIdsList());
       return result;
     }
 
@@ -51339,6 +54921,10 @@ public final class SGPlayerProto {
       hash = (37 * hash) + CURRENTSERVERTIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCurrentServerTime());
+      if (getDailyRechargeIdsCount() > 0) {
+        hash = (37 * hash) + DAILYRECHARGEIDS_FIELD_NUMBER;
+        hash = (53 * hash) + getDailyRechargeIdsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -51480,6 +55066,8 @@ public final class SGPlayerProto {
         bitField0_ = (bitField0_ & ~0x00000080);
         currentServerTime_ = 0L;
 
+        dailyRechargeIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
 
@@ -51525,6 +55113,11 @@ public final class SGPlayerProto {
         }
         result.openFundRewardRecord_ = openFundRewardRecord_;
         result.currentServerTime_ = currentServerTime_;
+        if (((bitField0_ & 0x00000200) == 0x00000200)) {
+          dailyRechargeIds_ = java.util.Collections.unmodifiableList(dailyRechargeIds_);
+          bitField0_ = (bitField0_ & ~0x00000200);
+        }
+        result.dailyRechargeIds_ = dailyRechargeIds_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -51623,6 +55216,16 @@ public final class SGPlayerProto {
         }
         if (other.getCurrentServerTime() != 0L) {
           setCurrentServerTime(other.getCurrentServerTime());
+        }
+        if (!other.dailyRechargeIds_.isEmpty()) {
+          if (dailyRechargeIds_.isEmpty()) {
+            dailyRechargeIds_ = other.dailyRechargeIds_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+          } else {
+            ensureDailyRechargeIdsIsMutable();
+            dailyRechargeIds_.addAll(other.dailyRechargeIds_);
+          }
+          onChanged();
         }
         onChanged();
         return this;
@@ -52319,6 +55922,100 @@ public final class SGPlayerProto {
       public Builder clearCurrentServerTime() {
         
         currentServerTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Integer> dailyRechargeIds_ = java.util.Collections.emptyList();
+      private void ensureDailyRechargeIdsIsMutable() {
+        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+          dailyRechargeIds_ = new java.util.ArrayList<java.lang.Integer>(dailyRechargeIds_);
+          bitField0_ |= 0x00000200;
+         }
+      }
+      /**
+       * <pre>
+       *每日充值礼包记录
+       * </pre>
+       *
+       * <code>repeated int32 dailyRechargeIds = 10;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getDailyRechargeIdsList() {
+        return java.util.Collections.unmodifiableList(dailyRechargeIds_);
+      }
+      /**
+       * <pre>
+       *每日充值礼包记录
+       * </pre>
+       *
+       * <code>repeated int32 dailyRechargeIds = 10;</code>
+       */
+      public int getDailyRechargeIdsCount() {
+        return dailyRechargeIds_.size();
+      }
+      /**
+       * <pre>
+       *每日充值礼包记录
+       * </pre>
+       *
+       * <code>repeated int32 dailyRechargeIds = 10;</code>
+       */
+      public int getDailyRechargeIds(int index) {
+        return dailyRechargeIds_.get(index);
+      }
+      /**
+       * <pre>
+       *每日充值礼包记录
+       * </pre>
+       *
+       * <code>repeated int32 dailyRechargeIds = 10;</code>
+       */
+      public Builder setDailyRechargeIds(
+          int index, int value) {
+        ensureDailyRechargeIdsIsMutable();
+        dailyRechargeIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *每日充值礼包记录
+       * </pre>
+       *
+       * <code>repeated int32 dailyRechargeIds = 10;</code>
+       */
+      public Builder addDailyRechargeIds(int value) {
+        ensureDailyRechargeIdsIsMutable();
+        dailyRechargeIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *每日充值礼包记录
+       * </pre>
+       *
+       * <code>repeated int32 dailyRechargeIds = 10;</code>
+       */
+      public Builder addAllDailyRechargeIds(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureDailyRechargeIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, dailyRechargeIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *每日充值礼包记录
+       * </pre>
+       *
+       * <code>repeated int32 dailyRechargeIds = 10;</code>
+       */
+      public Builder clearDailyRechargeIds() {
+        dailyRechargeIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
         return this;
       }
@@ -58493,6 +62190,1364 @@ public final class SGPlayerProto {
 
   }
 
+  public interface C2S_NewServerActivityInitOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:C2S_NewServerActivityInit)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * 1513 新区活动初始化
+   * </pre>
+   *
+   * Protobuf type {@code C2S_NewServerActivityInit}
+   */
+  public  static final class C2S_NewServerActivityInit extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:C2S_NewServerActivityInit)
+      C2S_NewServerActivityInitOrBuilder {
+    // Use C2S_NewServerActivityInit.newBuilder() to construct.
+    private C2S_NewServerActivityInit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private C2S_NewServerActivityInit() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private C2S_NewServerActivityInit(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_NewServerActivityInit_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_NewServerActivityInit_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit.class, com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit other = (com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit) obj;
+
+      boolean result = true;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 1513 新区活动初始化
+     * </pre>
+     *
+     * Protobuf type {@code C2S_NewServerActivityInit}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:C2S_NewServerActivityInit)
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInitOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_NewServerActivityInit_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_NewServerActivityInit_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit.class, com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_C2S_NewServerActivityInit_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit build() {
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit buildPartial() {
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit result = new com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit other) {
+        if (other == com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit.getDefaultInstance()) return this;
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2S_NewServerActivityInit)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2S_NewServerActivityInit)
+    private static final com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit();
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<C2S_NewServerActivityInit>
+        PARSER = new com.google.protobuf.AbstractParser<C2S_NewServerActivityInit>() {
+      public C2S_NewServerActivityInit parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new C2S_NewServerActivityInit(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2S_NewServerActivityInit> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2S_NewServerActivityInit> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGPlayerProto.C2S_NewServerActivityInit getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface S2C_NewServerActivityInitOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_NewServerActivityInit)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *新区基金是否购买
+     * </pre>
+     *
+     * <code>bool newServerFundHasBuy = 1;</code>
+     */
+    boolean getNewServerFundHasBuy();
+
+    /**
+     * <pre>
+     *新区基金领取记录
+     * </pre>
+     *
+     * <code>repeated int32 newServerFundRewardIds = 2;</code>
+     */
+    java.util.List<java.lang.Integer> getNewServerFundRewardIdsList();
+    /**
+     * <pre>
+     *新区基金领取记录
+     * </pre>
+     *
+     * <code>repeated int32 newServerFundRewardIds = 2;</code>
+     */
+    int getNewServerFundRewardIdsCount();
+    /**
+     * <pre>
+     *新区基金领取记录
+     * </pre>
+     *
+     * <code>repeated int32 newServerFundRewardIds = 2;</code>
+     */
+    int getNewServerFundRewardIds(int index);
+
+    /**
+     * <pre>
+     *累计充值领取记录
+     * </pre>
+     *
+     * <code>repeated int32 totalRechargeRewardIds = 3;</code>
+     */
+    java.util.List<java.lang.Integer> getTotalRechargeRewardIdsList();
+    /**
+     * <pre>
+     *累计充值领取记录
+     * </pre>
+     *
+     * <code>repeated int32 totalRechargeRewardIds = 3;</code>
+     */
+    int getTotalRechargeRewardIdsCount();
+    /**
+     * <pre>
+     *累计充值领取记录
+     * </pre>
+     *
+     * <code>repeated int32 totalRechargeRewardIds = 3;</code>
+     */
+    int getTotalRechargeRewardIds(int index);
+
+    /**
+     * <pre>
+     *累计充值钻石数量
+     * </pre>
+     *
+     * <code>int32 totalRechargeDiamondCount = 4;</code>
+     */
+    int getTotalRechargeDiamondCount();
+  }
+  /**
+   * Protobuf type {@code S2C_NewServerActivityInit}
+   */
+  public  static final class S2C_NewServerActivityInit extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_NewServerActivityInit)
+      S2C_NewServerActivityInitOrBuilder {
+    // Use S2C_NewServerActivityInit.newBuilder() to construct.
+    private S2C_NewServerActivityInit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_NewServerActivityInit() {
+      newServerFundHasBuy_ = false;
+      newServerFundRewardIds_ = java.util.Collections.emptyList();
+      totalRechargeRewardIds_ = java.util.Collections.emptyList();
+      totalRechargeDiamondCount_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private S2C_NewServerActivityInit(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              newServerFundHasBuy_ = input.readBool();
+              break;
+            }
+            case 16: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                newServerFundRewardIds_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              newServerFundRewardIds_.add(input.readInt32());
+              break;
+            }
+            case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
+                newServerFundRewardIds_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                newServerFundRewardIds_.add(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                totalRechargeRewardIds_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              totalRechargeRewardIds_.add(input.readInt32());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
+                totalRechargeRewardIds_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                totalRechargeRewardIds_.add(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 32: {
+
+              totalRechargeDiamondCount_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          newServerFundRewardIds_ = java.util.Collections.unmodifiableList(newServerFundRewardIds_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          totalRechargeRewardIds_ = java.util.Collections.unmodifiableList(totalRechargeRewardIds_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_NewServerActivityInit_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_NewServerActivityInit_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit.class, com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int NEWSERVERFUNDHASBUY_FIELD_NUMBER = 1;
+    private boolean newServerFundHasBuy_;
+    /**
+     * <pre>
+     *新区基金是否购买
+     * </pre>
+     *
+     * <code>bool newServerFundHasBuy = 1;</code>
+     */
+    public boolean getNewServerFundHasBuy() {
+      return newServerFundHasBuy_;
+    }
+
+    public static final int NEWSERVERFUNDREWARDIDS_FIELD_NUMBER = 2;
+    private java.util.List<java.lang.Integer> newServerFundRewardIds_;
+    /**
+     * <pre>
+     *新区基金领取记录
+     * </pre>
+     *
+     * <code>repeated int32 newServerFundRewardIds = 2;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getNewServerFundRewardIdsList() {
+      return newServerFundRewardIds_;
+    }
+    /**
+     * <pre>
+     *新区基金领取记录
+     * </pre>
+     *
+     * <code>repeated int32 newServerFundRewardIds = 2;</code>
+     */
+    public int getNewServerFundRewardIdsCount() {
+      return newServerFundRewardIds_.size();
+    }
+    /**
+     * <pre>
+     *新区基金领取记录
+     * </pre>
+     *
+     * <code>repeated int32 newServerFundRewardIds = 2;</code>
+     */
+    public int getNewServerFundRewardIds(int index) {
+      return newServerFundRewardIds_.get(index);
+    }
+    private int newServerFundRewardIdsMemoizedSerializedSize = -1;
+
+    public static final int TOTALRECHARGEREWARDIDS_FIELD_NUMBER = 3;
+    private java.util.List<java.lang.Integer> totalRechargeRewardIds_;
+    /**
+     * <pre>
+     *累计充值领取记录
+     * </pre>
+     *
+     * <code>repeated int32 totalRechargeRewardIds = 3;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getTotalRechargeRewardIdsList() {
+      return totalRechargeRewardIds_;
+    }
+    /**
+     * <pre>
+     *累计充值领取记录
+     * </pre>
+     *
+     * <code>repeated int32 totalRechargeRewardIds = 3;</code>
+     */
+    public int getTotalRechargeRewardIdsCount() {
+      return totalRechargeRewardIds_.size();
+    }
+    /**
+     * <pre>
+     *累计充值领取记录
+     * </pre>
+     *
+     * <code>repeated int32 totalRechargeRewardIds = 3;</code>
+     */
+    public int getTotalRechargeRewardIds(int index) {
+      return totalRechargeRewardIds_.get(index);
+    }
+    private int totalRechargeRewardIdsMemoizedSerializedSize = -1;
+
+    public static final int TOTALRECHARGEDIAMONDCOUNT_FIELD_NUMBER = 4;
+    private int totalRechargeDiamondCount_;
+    /**
+     * <pre>
+     *累计充值钻石数量
+     * </pre>
+     *
+     * <code>int32 totalRechargeDiamondCount = 4;</code>
+     */
+    public int getTotalRechargeDiamondCount() {
+      return totalRechargeDiamondCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (newServerFundHasBuy_ != false) {
+        output.writeBool(1, newServerFundHasBuy_);
+      }
+      if (getNewServerFundRewardIdsList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(newServerFundRewardIdsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < newServerFundRewardIds_.size(); i++) {
+        output.writeInt32NoTag(newServerFundRewardIds_.get(i));
+      }
+      if (getTotalRechargeRewardIdsList().size() > 0) {
+        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(totalRechargeRewardIdsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < totalRechargeRewardIds_.size(); i++) {
+        output.writeInt32NoTag(totalRechargeRewardIds_.get(i));
+      }
+      if (totalRechargeDiamondCount_ != 0) {
+        output.writeInt32(4, totalRechargeDiamondCount_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (newServerFundHasBuy_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, newServerFundHasBuy_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < newServerFundRewardIds_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(newServerFundRewardIds_.get(i));
+        }
+        size += dataSize;
+        if (!getNewServerFundRewardIdsList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        newServerFundRewardIdsMemoizedSerializedSize = dataSize;
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < totalRechargeRewardIds_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(totalRechargeRewardIds_.get(i));
+        }
+        size += dataSize;
+        if (!getTotalRechargeRewardIdsList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        totalRechargeRewardIdsMemoizedSerializedSize = dataSize;
+      }
+      if (totalRechargeDiamondCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, totalRechargeDiamondCount_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit other = (com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit) obj;
+
+      boolean result = true;
+      result = result && (getNewServerFundHasBuy()
+          == other.getNewServerFundHasBuy());
+      result = result && getNewServerFundRewardIdsList()
+          .equals(other.getNewServerFundRewardIdsList());
+      result = result && getTotalRechargeRewardIdsList()
+          .equals(other.getTotalRechargeRewardIdsList());
+      result = result && (getTotalRechargeDiamondCount()
+          == other.getTotalRechargeDiamondCount());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NEWSERVERFUNDHASBUY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getNewServerFundHasBuy());
+      if (getNewServerFundRewardIdsCount() > 0) {
+        hash = (37 * hash) + NEWSERVERFUNDREWARDIDS_FIELD_NUMBER;
+        hash = (53 * hash) + getNewServerFundRewardIdsList().hashCode();
+      }
+      if (getTotalRechargeRewardIdsCount() > 0) {
+        hash = (37 * hash) + TOTALRECHARGEREWARDIDS_FIELD_NUMBER;
+        hash = (53 * hash) + getTotalRechargeRewardIdsList().hashCode();
+      }
+      hash = (37 * hash) + TOTALRECHARGEDIAMONDCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalRechargeDiamondCount();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code S2C_NewServerActivityInit}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_NewServerActivityInit)
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInitOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_NewServerActivityInit_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_NewServerActivityInit_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit.class, com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        newServerFundHasBuy_ = false;
+
+        newServerFundRewardIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        totalRechargeRewardIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        totalRechargeDiamondCount_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.internal_static_S2C_NewServerActivityInit_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit build() {
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit buildPartial() {
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit result = new com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.newServerFundHasBuy_ = newServerFundHasBuy_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          newServerFundRewardIds_ = java.util.Collections.unmodifiableList(newServerFundRewardIds_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.newServerFundRewardIds_ = newServerFundRewardIds_;
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          totalRechargeRewardIds_ = java.util.Collections.unmodifiableList(totalRechargeRewardIds_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.totalRechargeRewardIds_ = totalRechargeRewardIds_;
+        result.totalRechargeDiamondCount_ = totalRechargeDiamondCount_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit other) {
+        if (other == com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit.getDefaultInstance()) return this;
+        if (other.getNewServerFundHasBuy() != false) {
+          setNewServerFundHasBuy(other.getNewServerFundHasBuy());
+        }
+        if (!other.newServerFundRewardIds_.isEmpty()) {
+          if (newServerFundRewardIds_.isEmpty()) {
+            newServerFundRewardIds_ = other.newServerFundRewardIds_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureNewServerFundRewardIdsIsMutable();
+            newServerFundRewardIds_.addAll(other.newServerFundRewardIds_);
+          }
+          onChanged();
+        }
+        if (!other.totalRechargeRewardIds_.isEmpty()) {
+          if (totalRechargeRewardIds_.isEmpty()) {
+            totalRechargeRewardIds_ = other.totalRechargeRewardIds_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureTotalRechargeRewardIdsIsMutable();
+            totalRechargeRewardIds_.addAll(other.totalRechargeRewardIds_);
+          }
+          onChanged();
+        }
+        if (other.getTotalRechargeDiamondCount() != 0) {
+          setTotalRechargeDiamondCount(other.getTotalRechargeDiamondCount());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private boolean newServerFundHasBuy_ ;
+      /**
+       * <pre>
+       *新区基金是否购买
+       * </pre>
+       *
+       * <code>bool newServerFundHasBuy = 1;</code>
+       */
+      public boolean getNewServerFundHasBuy() {
+        return newServerFundHasBuy_;
+      }
+      /**
+       * <pre>
+       *新区基金是否购买
+       * </pre>
+       *
+       * <code>bool newServerFundHasBuy = 1;</code>
+       */
+      public Builder setNewServerFundHasBuy(boolean value) {
+        
+        newServerFundHasBuy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *新区基金是否购买
+       * </pre>
+       *
+       * <code>bool newServerFundHasBuy = 1;</code>
+       */
+      public Builder clearNewServerFundHasBuy() {
+        
+        newServerFundHasBuy_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Integer> newServerFundRewardIds_ = java.util.Collections.emptyList();
+      private void ensureNewServerFundRewardIdsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          newServerFundRewardIds_ = new java.util.ArrayList<java.lang.Integer>(newServerFundRewardIds_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <pre>
+       *新区基金领取记录
+       * </pre>
+       *
+       * <code>repeated int32 newServerFundRewardIds = 2;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getNewServerFundRewardIdsList() {
+        return java.util.Collections.unmodifiableList(newServerFundRewardIds_);
+      }
+      /**
+       * <pre>
+       *新区基金领取记录
+       * </pre>
+       *
+       * <code>repeated int32 newServerFundRewardIds = 2;</code>
+       */
+      public int getNewServerFundRewardIdsCount() {
+        return newServerFundRewardIds_.size();
+      }
+      /**
+       * <pre>
+       *新区基金领取记录
+       * </pre>
+       *
+       * <code>repeated int32 newServerFundRewardIds = 2;</code>
+       */
+      public int getNewServerFundRewardIds(int index) {
+        return newServerFundRewardIds_.get(index);
+      }
+      /**
+       * <pre>
+       *新区基金领取记录
+       * </pre>
+       *
+       * <code>repeated int32 newServerFundRewardIds = 2;</code>
+       */
+      public Builder setNewServerFundRewardIds(
+          int index, int value) {
+        ensureNewServerFundRewardIdsIsMutable();
+        newServerFundRewardIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *新区基金领取记录
+       * </pre>
+       *
+       * <code>repeated int32 newServerFundRewardIds = 2;</code>
+       */
+      public Builder addNewServerFundRewardIds(int value) {
+        ensureNewServerFundRewardIdsIsMutable();
+        newServerFundRewardIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *新区基金领取记录
+       * </pre>
+       *
+       * <code>repeated int32 newServerFundRewardIds = 2;</code>
+       */
+      public Builder addAllNewServerFundRewardIds(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureNewServerFundRewardIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, newServerFundRewardIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *新区基金领取记录
+       * </pre>
+       *
+       * <code>repeated int32 newServerFundRewardIds = 2;</code>
+       */
+      public Builder clearNewServerFundRewardIds() {
+        newServerFundRewardIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Integer> totalRechargeRewardIds_ = java.util.Collections.emptyList();
+      private void ensureTotalRechargeRewardIdsIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          totalRechargeRewardIds_ = new java.util.ArrayList<java.lang.Integer>(totalRechargeRewardIds_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <pre>
+       *累计充值领取记录
+       * </pre>
+       *
+       * <code>repeated int32 totalRechargeRewardIds = 3;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getTotalRechargeRewardIdsList() {
+        return java.util.Collections.unmodifiableList(totalRechargeRewardIds_);
+      }
+      /**
+       * <pre>
+       *累计充值领取记录
+       * </pre>
+       *
+       * <code>repeated int32 totalRechargeRewardIds = 3;</code>
+       */
+      public int getTotalRechargeRewardIdsCount() {
+        return totalRechargeRewardIds_.size();
+      }
+      /**
+       * <pre>
+       *累计充值领取记录
+       * </pre>
+       *
+       * <code>repeated int32 totalRechargeRewardIds = 3;</code>
+       */
+      public int getTotalRechargeRewardIds(int index) {
+        return totalRechargeRewardIds_.get(index);
+      }
+      /**
+       * <pre>
+       *累计充值领取记录
+       * </pre>
+       *
+       * <code>repeated int32 totalRechargeRewardIds = 3;</code>
+       */
+      public Builder setTotalRechargeRewardIds(
+          int index, int value) {
+        ensureTotalRechargeRewardIdsIsMutable();
+        totalRechargeRewardIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *累计充值领取记录
+       * </pre>
+       *
+       * <code>repeated int32 totalRechargeRewardIds = 3;</code>
+       */
+      public Builder addTotalRechargeRewardIds(int value) {
+        ensureTotalRechargeRewardIdsIsMutable();
+        totalRechargeRewardIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *累计充值领取记录
+       * </pre>
+       *
+       * <code>repeated int32 totalRechargeRewardIds = 3;</code>
+       */
+      public Builder addAllTotalRechargeRewardIds(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureTotalRechargeRewardIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, totalRechargeRewardIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *累计充值领取记录
+       * </pre>
+       *
+       * <code>repeated int32 totalRechargeRewardIds = 3;</code>
+       */
+      public Builder clearTotalRechargeRewardIds() {
+        totalRechargeRewardIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      private int totalRechargeDiamondCount_ ;
+      /**
+       * <pre>
+       *累计充值钻石数量
+       * </pre>
+       *
+       * <code>int32 totalRechargeDiamondCount = 4;</code>
+       */
+      public int getTotalRechargeDiamondCount() {
+        return totalRechargeDiamondCount_;
+      }
+      /**
+       * <pre>
+       *累计充值钻石数量
+       * </pre>
+       *
+       * <code>int32 totalRechargeDiamondCount = 4;</code>
+       */
+      public Builder setTotalRechargeDiamondCount(int value) {
+        
+        totalRechargeDiamondCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *累计充值钻石数量
+       * </pre>
+       *
+       * <code>int32 totalRechargeDiamondCount = 4;</code>
+       */
+      public Builder clearTotalRechargeDiamondCount() {
+        
+        totalRechargeDiamondCount_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:S2C_NewServerActivityInit)
+    }
+
+    // @@protoc_insertion_point(class_scope:S2C_NewServerActivityInit)
+    private static final com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit();
+    }
+
+    public static com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S2C_NewServerActivityInit>
+        PARSER = new com.google.protobuf.AbstractParser<S2C_NewServerActivityInit>() {
+      public S2C_NewServerActivityInit parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new S2C_NewServerActivityInit(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S2C_NewServerActivityInit> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S2C_NewServerActivityInit> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGPlayerProto.S2C_NewServerActivityInit getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_C2S_GetInfo_descriptor;
   private static final 
@@ -58668,6 +63723,36 @@ public final class SGPlayerProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_S2C_RankList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2S_MasterTrain_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2S_MasterTrain_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_S2C_MasterTrain_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_S2C_MasterTrain_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2S_MasterTrainAccept_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2S_MasterTrainAccept_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_S2C_MasterTrainAccept_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_S2C_MasterTrainAccept_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2S_LegionChainUnlock_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2S_LegionChainUnlock_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_S2C_LegionChainUnlock_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_S2C_LegionChainUnlock_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_C2S_LotteryInit_descriptor;
   private static final 
@@ -58963,6 +64048,16 @@ public final class SGPlayerProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_S2C_RechargeCheck_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2S_NewServerActivityInit_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2S_NewServerActivityInit_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_S2C_NewServerActivityInit_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_S2C_NewServerActivityInit_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -59018,111 +64113,124 @@ public final class SGPlayerProto {
       "ankList\022\036\n\010rankType\030\001 \001(\0162\014.E_RANK_TYPE\"" +
       "h\n\014S2C_RankList\022\036\n\010rankType\030\001 \001(\0162\014.E_RA" +
       "NK_TYPE\022\033\n\010rankInfo\030\002 \003(\0132\t.RankInfo\022\033\n\010" +
-      "selfRank\030\003 \001(\0132\t.RankInfo\"\021\n\017C2S_Lottery" +
-      "Init\"\272\001\n\017S2C_LotteryInit\022\025\n\rleftFreeCoun" +
-      "t\030\001 \001(\005\022\026\n\016rightFreeCount\030\002 \001(\005\022\022\n\nleftC" +
-      "DTime\030\003 \001(\005\022\023\n\013rightCDTime\030\004 \001(\005\022\030\n\020left",
-      "ResidueCount\030\005 \001(\005\022\031\n\021rightResidueCount\030" +
-      "\006 \001(\005\022\032\n\022rightResidueCount2\030\007 \001(\005\"E\n\013Lot" +
-      "teryInfo\022\n\n\002id\030\001 \001(\005\022\r\n\005count\030\002 \001(\005\022\033\n\004t" +
-      "ype\030\003 \001(\0162\r.E_GOODS_TYPE\"1\n\020C2S_LotteryC" +
-      "lick\022\014\n\004type\030\001 \001(\005\022\017\n\007buyType\030\002 \001(\005\"l\n\020S" +
-      "2C_LotteryClick\022!\n\013lotteryInfo\030\001 \003(\0132\014.L" +
-      "otteryInfo\022\031\n\021rightResidueCount\030\002 \001(\005\022\032\n" +
-      "\022rightResidueCount2\030\003 \001(\005\"H\n\tAltarInit\022\n" +
-      "\n\002id\030\001 \001(\005\022\021\n\tfreeCount\030\002 \001(\005\022\034\n\024everyda" +
-      "yResidueCount\030\003 \001(\005\"\017\n\rC2S_AltarInit\".\n\r",
-      "S2C_AltarInit\022\035\n\taltarInit\030\001 \003(\0132\n.Altar" +
-      "Init\"\033\n\rC2S_Sacrifice\022\n\n\002id\030\001 \001(\005\"k\n\rS2C" +
-      "_Sacrifice\022\n\n\002id\030\001 \001(\005\022\021\n\tfreeCount\030\002 \001(" +
-      "\005\022\034\n\024everydayResidueCount\030\003 \001(\005\022\035\n\010dropD" +
-      "ata\030\004 \003(\0132\013.CommonDrop\"A\n\021C2S_StoreInitI" +
-      "nfo\022\017\n\007isFresh\030\001 \001(\010\022\033\n\004type\030\002 \001(\0162\r.E_S" +
-      "TORE_TYPE\"v\n\021S2C_StoreInitInfo\022\032\n\005goods\030" +
-      "\001 \003(\0132\013.StoreGoods\022\021\n\tfreeTimes\030\002 \001(\005\022\033\n" +
-      "\004type\030\003 \001(\0162\r.E_STORE_TYPE\022\025\n\rhasFreshTi" +
-      "mes\030\004 \001(\005\"P\n\021C2S_StoreBuyGoods\022\017\n\007goodsI",
-      "d\030\001 \001(\005\022\033\n\004type\030\002 \001(\0162\r.E_STORE_TYPE\022\r\n\005" +
-      "count\030\003 \001(\005\"P\n\021S2C_StoreBuyGoods\022\017\n\007good" +
-      "sId\030\001 \001(\005\022\033\n\004type\030\002 \001(\0162\r.E_STORE_TYPE\022\r" +
-      "\n\005count\030\003 \001(\005\"C\n\021C2S_StoreBuyTimes\022\037\n\004ty" +
-      "pe\030\001 \001(\0162\021.E_BUY_TIMES_TYPE\022\r\n\005times\030\002 \001" +
-      "(\005\"W\n\021S2C_StoreBuyTimes\022\037\n\004type\030\001 \001(\0162\021." +
-      "E_BUY_TIMES_TYPE\022\r\n\005times\030\002 \001(\005\022\022\n\ntotal" +
-      "Times\030\003 \001(\005\".\n\014C2S_MailList\022\036\n\010mailType\030" +
-      "\001 \001(\0162\014.E_MAIL_TYPE\"C\n\014S2C_MailList\022\036\n\010m" +
-      "ailType\030\001 \001(\0162\014.E_MAIL_TYPE\022\023\n\004mail\030\002 \003(",
-      "\0132\005.Mail\"@\n\016C2S_MailDetail\022\036\n\010mailType\030\001" +
-      " \001(\0162\014.E_MAIL_TYPE\022\016\n\006mailId\030\002 \001(\005\"E\n\016S2" +
-      "C_MailDetail\022\036\n\010mailType\030\001 \001(\0162\014.E_MAIL_" +
-      "TYPE\022\023\n\004mail\030\002 \001(\0132\005.Mail\"&\n\024C2S_MailGet" +
-      "Auxiliary\022\016\n\006mailId\030\001 \001(\005\"&\n\024S2C_MailGet" +
-      "Auxiliary\022\016\n\006mailId\030\001 \001(\005\"9\n\027C2S_MailPri" +
-      "vacyMailList\022\036\n\010mailType\030\001 \001(\0162\014.E_MAIL_" +
-      "TYPE\"8\n\027S2C_MailPrivacyMailList\022\035\n\007priva" +
-      "cy\030\001 \003(\0132\014.PrivacyMail\"2\n\031C2S_MailPrivac" +
-      "yMailDetail\022\025\n\rprivacyMailId\030\001 \001(\005\">\n\031S2",
-      "C_MailPrivacyMailDetail\022!\n\013privacyMail\030\001" +
-      " \001(\0132\014.PrivacyMail\"\311\001\n\027C2S_MailSendPriva" +
-      "cyMail\022\025\n\rprivacyMailId\030\001 \001(\005\022\017\n\007content" +
-      "\030\002 \001(\t\022\020\n\010nickName\030\003 \001(\t\0224\n\017privacyMailT" +
-      "ype\030\004 \001(\0162\033.E_PRIVACY_MAIL_SENDER_TYPE\022)" +
-      "\n\014mailSendType\030\005 \001(\0162\023.E_MAIL_SENDER_TYP" +
-      "E\022\023\n\013targetIndex\030\006 \001(\t\"\206\001\n\027S2C_MailSendP" +
-      "rivacyMail\0224\n\017privacyMailType\030\001 \001(\0162\033.E_" +
-      "PRIVACY_MAIL_SENDER_TYPE\0225\n\027privacyMailR" +
-      "esponseList\030\002 \003(\0132\024.PrivacyMailResponse\"",
-      "V\n\035C2S_MailAddAndRemoveBlackList\022\023\n\013targ" +
-      "etIndex\030\001 \001(\t\022 \n\004type\030\002 \001(\0162\022.E_BLACK_LI" +
-      "ST_TYPE\"V\n\035S2C_MailAddAndRemoveBlackList" +
-      "\022\023\n\013targetIndex\030\001 \001(\t\022 \n\004type\030\002 \001(\0162\022.E_" +
-      "BLACK_LIST_TYPE\"\023\n\021C2S_MailBlackList\"2\n\021" +
-      "S2C_MailBlackList\022\035\n\tblackList\030\001 \003(\0132\n.B" +
-      "lackList\"\037\n\035C2S_MailCheckSendJurisdictio" +
-      "n\"/\n\035S2C_MailCheckSendJurisdiction\022\016\n\006st" +
-      "atus\030\001 \001(\010\"7\n\025S2C_MailNewMailNotify\022\036\n\010m" +
-      "ailType\030\001 \001(\0162\014.E_MAIL_TYPE\"\022\n\020C2S_Recha",
-      "rgeInit\"\226\001\n\020S2C_RechargeInit\022\r\n\005vipLv\030\001 " +
-      "\001(\005\022\016\n\006vipExp\030\002 \001(\005\022\030\n\020hasBuyRechargeId\030" +
-      "\003 \003(\005\022\036\n\nmouthCards\030\004 \003(\0132\n.MouthCard\022\016\n" +
-      "\006vipLvs\030\005 \003(\005\022\031\n\021currentServerTime\030\006 \001(\003" +
-      "\"\024\n\022C2S_RechargeResult\"\276\001\n\022S2C_RechargeR" +
-      "esult\022\r\n\005vipLv\030\001 \001(\005\022\016\n\006vipExp\030\002 \001(\005\022\030\n\020" +
-      "hasBuyRechargeId\030\003 \003(\005\022\036\n\nmouthCards\030\004 \003" +
-      "(\0132\n.MouthCard\022\021\n\taddVipExp\030\005 \001(\005\022\020\n\010rec" +
-      "harId\030\006 \001(\005\022\031\n\021currentServerTime\030\007 \001(\003\022\017" +
-      "\n\007orderNo\030\010 \001(\t\"\"\n\021C2S_BuyVipGiftBag\022\r\n\005",
-      "vipLv\030\001 \001(\005\"\"\n\021S2C_BuyVipGiftBag\022\r\n\005vipL" +
-      "v\030\001 \001(\005\".\n\032C2S_ReceiveMouthCardReward\022\020\n" +
-      "\010recharId\030\001 \001(\005\"L\n\032S2C_ReceiveMouthCardR" +
-      "eward\022\020\n\010recharId\030\001 \001(\005\022\034\n\024nextRewardOff" +
-      "setTime\030\002 \001(\003\" \n\036C2S_ReceiveFirstRecharg" +
-      "eReward\" \n\036S2C_ReceiveFirstRechargeRewar" +
-      "d\"\024\n\022C2S_BonusBoardInit\"\362\001\n\022S2C_BonusBoa" +
-      "rdInit\022\036\n\nmouthCards\030\001 \003(\0132\n.MouthCard\022\034" +
-      "\n\024dailySignRewardIndex\030\002 \001(\005\022\025\n\rhasSignM" +
-      "axDay\030\003 \001(\005\022\024\n\014hasSignToday\030\004 \001(\010\022\024\n\014rei",
-      "ssueTimes\030\005 \001(\005\022\013\n\003day\030\006 \001(\005\022\025\n\risOpenFu" +
-      "ndBuy\030\007 \001(\010\022\034\n\024openFundRewardRecord\030\010 \003(" +
-      "\005\022\031\n\021currentServerTime\030\t \001(\003\"\025\n\023C2S_Dail" +
-      "ySignReward\":\n\023S2C_DailySignReward\022\r\n\005da" +
-      "yId\030\001 \001(\005\022\024\n\014reissueTimes\030\002 \001(\005\"-\n\013C2S_B" +
-      "uyFund\022\036\n\010fundType\030\001 \001(\0162\014.E_FUND_TYPE\"-" +
-      "\n\013S2C_BuyFund\022\036\n\010fundType\030\001 \001(\0162\014.E_FUND" +
-      "_TYPE\"I\n\025C2S_ReceiveFundReward\022\036\n\010fundTy" +
+      "selfRank\030\003 \001(\0132\t.RankInfo\":\n\017C2S_MasterT" +
+      "rain\022\'\n\ttrainType\030\001 \001(\0162\024.E_MASTER_TRAIN" +
+      "_TYPE\"5\n\017S2C_MasterTrain\022\"\n\013changeValue\030" +
+      "\001 \003(\0132\r.CommonObject\"\027\n\025C2S_MasterTrainA",
+      "ccept\"E\n\025S2C_MasterTrainAccept\022,\n\025master" +
+      "TrainAttributes\030\001 \003(\0132\r.CommonObject\"\027\n\025" +
+      "C2S_LegionChainUnlock\"=\n\025S2C_LegionChain" +
+      "Unlock\022\025\n\rlegionChainId\030\001 \001(\005\022\r\n\005index\030\002" +
+      " \001(\005\"\021\n\017C2S_LotteryInit\"\272\001\n\017S2C_LotteryI" +
+      "nit\022\025\n\rleftFreeCount\030\001 \001(\005\022\026\n\016rightFreeC" +
+      "ount\030\002 \001(\005\022\022\n\nleftCDTime\030\003 \001(\005\022\023\n\013rightC" +
+      "DTime\030\004 \001(\005\022\030\n\020leftResidueCount\030\005 \001(\005\022\031\n" +
+      "\021rightResidueCount\030\006 \001(\005\022\032\n\022rightResidue" +
+      "Count2\030\007 \001(\005\"E\n\013LotteryInfo\022\n\n\002id\030\001 \001(\005\022",
+      "\r\n\005count\030\002 \001(\005\022\033\n\004type\030\003 \001(\0162\r.E_GOODS_T" +
+      "YPE\"1\n\020C2S_LotteryClick\022\014\n\004type\030\001 \001(\005\022\017\n" +
+      "\007buyType\030\002 \001(\005\"l\n\020S2C_LotteryClick\022!\n\013lo" +
+      "tteryInfo\030\001 \003(\0132\014.LotteryInfo\022\031\n\021rightRe" +
+      "sidueCount\030\002 \001(\005\022\032\n\022rightResidueCount2\030\003" +
+      " \001(\005\"H\n\tAltarInit\022\n\n\002id\030\001 \001(\005\022\021\n\tfreeCou" +
+      "nt\030\002 \001(\005\022\034\n\024everydayResidueCount\030\003 \001(\005\"\017" +
+      "\n\rC2S_AltarInit\".\n\rS2C_AltarInit\022\035\n\talta" +
+      "rInit\030\001 \003(\0132\n.AltarInit\"\033\n\rC2S_Sacrifice" +
+      "\022\n\n\002id\030\001 \001(\005\"k\n\rS2C_Sacrifice\022\n\n\002id\030\001 \001(",
+      "\005\022\021\n\tfreeCount\030\002 \001(\005\022\034\n\024everydayResidueC" +
+      "ount\030\003 \001(\005\022\035\n\010dropData\030\004 \003(\0132\013.CommonDro" +
+      "p\"A\n\021C2S_StoreInitInfo\022\017\n\007isFresh\030\001 \001(\010\022" +
+      "\033\n\004type\030\002 \001(\0162\r.E_STORE_TYPE\"v\n\021S2C_Stor" +
+      "eInitInfo\022\032\n\005goods\030\001 \003(\0132\013.StoreGoods\022\021\n" +
+      "\tfreeTimes\030\002 \001(\005\022\033\n\004type\030\003 \001(\0162\r.E_STORE" +
+      "_TYPE\022\025\n\rhasFreshTimes\030\004 \001(\005\"P\n\021C2S_Stor" +
+      "eBuyGoods\022\017\n\007goodsId\030\001 \001(\005\022\033\n\004type\030\002 \001(\016" +
+      "2\r.E_STORE_TYPE\022\r\n\005count\030\003 \001(\005\"P\n\021S2C_St" +
+      "oreBuyGoods\022\017\n\007goodsId\030\001 \001(\005\022\033\n\004type\030\002 \001",
+      "(\0162\r.E_STORE_TYPE\022\r\n\005count\030\003 \001(\005\"C\n\021C2S_" +
+      "StoreBuyTimes\022\037\n\004type\030\001 \001(\0162\021.E_BUY_TIME" +
+      "S_TYPE\022\r\n\005times\030\002 \001(\005\"W\n\021S2C_StoreBuyTim" +
+      "es\022\037\n\004type\030\001 \001(\0162\021.E_BUY_TIMES_TYPE\022\r\n\005t" +
+      "imes\030\002 \001(\005\022\022\n\ntotalTimes\030\003 \001(\005\".\n\014C2S_Ma" +
+      "ilList\022\036\n\010mailType\030\001 \001(\0162\014.E_MAIL_TYPE\"C" +
+      "\n\014S2C_MailList\022\036\n\010mailType\030\001 \001(\0162\014.E_MAI" +
+      "L_TYPE\022\023\n\004mail\030\002 \003(\0132\005.Mail\"@\n\016C2S_MailD" +
+      "etail\022\036\n\010mailType\030\001 \001(\0162\014.E_MAIL_TYPE\022\016\n" +
+      "\006mailId\030\002 \001(\005\"E\n\016S2C_MailDetail\022\036\n\010mailT",
+      "ype\030\001 \001(\0162\014.E_MAIL_TYPE\022\023\n\004mail\030\002 \001(\0132\005." +
+      "Mail\"&\n\024C2S_MailGetAuxiliary\022\016\n\006mailId\030\001" +
+      " \001(\005\"&\n\024S2C_MailGetAuxiliary\022\016\n\006mailId\030\001" +
+      " \001(\005\"9\n\027C2S_MailPrivacyMailList\022\036\n\010mailT" +
+      "ype\030\001 \001(\0162\014.E_MAIL_TYPE\"8\n\027S2C_MailPriva" +
+      "cyMailList\022\035\n\007privacy\030\001 \003(\0132\014.PrivacyMai" +
+      "l\"2\n\031C2S_MailPrivacyMailDetail\022\025\n\rprivac" +
+      "yMailId\030\001 \001(\005\">\n\031S2C_MailPrivacyMailDeta" +
+      "il\022!\n\013privacyMail\030\001 \001(\0132\014.PrivacyMail\"\311\001" +
+      "\n\027C2S_MailSendPrivacyMail\022\025\n\rprivacyMail",
+      "Id\030\001 \001(\005\022\017\n\007content\030\002 \001(\t\022\020\n\010nickName\030\003 " +
+      "\001(\t\0224\n\017privacyMailType\030\004 \001(\0162\033.E_PRIVACY" +
+      "_MAIL_SENDER_TYPE\022)\n\014mailSendType\030\005 \001(\0162" +
+      "\023.E_MAIL_SENDER_TYPE\022\023\n\013targetIndex\030\006 \001(" +
+      "\t\"\206\001\n\027S2C_MailSendPrivacyMail\0224\n\017privacy" +
+      "MailType\030\001 \001(\0162\033.E_PRIVACY_MAIL_SENDER_T" +
+      "YPE\0225\n\027privacyMailResponseList\030\002 \003(\0132\024.P" +
+      "rivacyMailResponse\"V\n\035C2S_MailAddAndRemo" +
+      "veBlackList\022\023\n\013targetIndex\030\001 \001(\t\022 \n\004type" +
+      "\030\002 \001(\0162\022.E_BLACK_LIST_TYPE\"V\n\035S2C_MailAd",
+      "dAndRemoveBlackList\022\023\n\013targetIndex\030\001 \001(\t" +
+      "\022 \n\004type\030\002 \001(\0162\022.E_BLACK_LIST_TYPE\"\023\n\021C2" +
+      "S_MailBlackList\"2\n\021S2C_MailBlackList\022\035\n\t" +
+      "blackList\030\001 \003(\0132\n.BlackList\"\037\n\035C2S_MailC" +
+      "heckSendJurisdiction\"/\n\035S2C_MailCheckSen" +
+      "dJurisdiction\022\016\n\006status\030\001 \001(\010\"7\n\025S2C_Mai" +
+      "lNewMailNotify\022\036\n\010mailType\030\001 \001(\0162\014.E_MAI" +
+      "L_TYPE\"\022\n\020C2S_RechargeInit\"\226\001\n\020S2C_Recha" +
+      "rgeInit\022\r\n\005vipLv\030\001 \001(\005\022\016\n\006vipExp\030\002 \001(\005\022\030" +
+      "\n\020hasBuyRechargeId\030\003 \003(\005\022\036\n\nmouthCards\030\004",
+      " \003(\0132\n.MouthCard\022\016\n\006vipLvs\030\005 \003(\005\022\031\n\021curr" +
+      "entServerTime\030\006 \001(\003\"\024\n\022C2S_RechargeResul" +
+      "t\"\276\001\n\022S2C_RechargeResult\022\r\n\005vipLv\030\001 \001(\005\022" +
+      "\016\n\006vipExp\030\002 \001(\005\022\030\n\020hasBuyRechargeId\030\003 \003(" +
+      "\005\022\036\n\nmouthCards\030\004 \003(\0132\n.MouthCard\022\021\n\tadd" +
+      "VipExp\030\005 \001(\005\022\020\n\010recharId\030\006 \001(\005\022\031\n\021curren" +
+      "tServerTime\030\007 \001(\003\022\017\n\007orderNo\030\010 \001(\t\"\"\n\021C2" +
+      "S_BuyVipGiftBag\022\r\n\005vipLv\030\001 \001(\005\"\"\n\021S2C_Bu" +
+      "yVipGiftBag\022\r\n\005vipLv\030\001 \001(\005\".\n\032C2S_Receiv" +
+      "eMouthCardReward\022\020\n\010recharId\030\001 \001(\005\"L\n\032S2",
+      "C_ReceiveMouthCardReward\022\020\n\010recharId\030\001 \001" +
+      "(\005\022\034\n\024nextRewardOffsetTime\030\002 \001(\003\" \n\036C2S_" +
+      "ReceiveFirstRechargeReward\" \n\036S2C_Receiv" +
+      "eFirstRechargeReward\"\024\n\022C2S_BonusBoardIn" +
+      "it\"\214\002\n\022S2C_BonusBoardInit\022\036\n\nmouthCards\030" +
+      "\001 \003(\0132\n.MouthCard\022\034\n\024dailySignRewardInde" +
+      "x\030\002 \001(\005\022\025\n\rhasSignMaxDay\030\003 \001(\005\022\024\n\014hasSig" +
+      "nToday\030\004 \001(\010\022\024\n\014reissueTimes\030\005 \001(\005\022\013\n\003da" +
+      "y\030\006 \001(\005\022\025\n\risOpenFundBuy\030\007 \001(\010\022\034\n\024openFu" +
+      "ndRewardRecord\030\010 \003(\005\022\031\n\021currentServerTim",
+      "e\030\t \001(\003\022\030\n\020dailyRechargeIds\030\n \003(\005\"\025\n\023C2S" +
+      "_DailySignReward\":\n\023S2C_DailySignReward\022" +
+      "\r\n\005dayId\030\001 \001(\005\022\024\n\014reissueTimes\030\002 \001(\005\"-\n\013" +
+      "C2S_BuyFund\022\036\n\010fundType\030\001 \001(\0162\014.E_FUND_T" +
+      "YPE\"-\n\013S2C_BuyFund\022\036\n\010fundType\030\001 \001(\0162\014.E" +
+      "_FUND_TYPE\"I\n\025C2S_ReceiveFundReward\022\036\n\010f" +
+      "undType\030\001 \001(\0162\014.E_FUND_TYPE\022\020\n\010rewardId\030" +
+      "\002 \001(\005\"I\n\025S2C_ReceiveFundReward\022\036\n\010fundTy" +
       "pe\030\001 \001(\0162\014.E_FUND_TYPE\022\020\n\010rewardId\030\002 \001(\005" +
-      "\"I\n\025S2C_ReceiveFundReward\022\036\n\010fundType\030\001 ",
-      "\001(\0162\014.E_FUND_TYPE\022\020\n\010rewardId\030\002 \001(\005\"\032\n\030C" +
-      "2S_LoginTimesRewardInit\"H\n\030S2C_LoginTime" +
-      "sRewardInit\022\026\n\016totalLoginDays\030\001 \001(\005\022\024\n\014h" +
-      "asReceiveId\030\002 \003(\005\"/\n\033C2S_ReceiveLoginTim" +
-      "esReward\022\020\n\010rewardId\030\001 \001(\005\"/\n\033S2C_Receiv" +
-      "eLoginTimesReward\022\020\n\010rewardId\030\001 \001(\005\"%\n\021C" +
-      "2S_RechargeCheck\022\020\n\010recharId\030\001 \001(\005\"W\n\021S2" +
-      "C_RechargeCheck\022\020\n\010recharId\030\001 \001(\005\022\014\n\004isO" +
-      "k\030\002 \001(\010\022\013\n\003rmb\030\003 \001(\005\022\025\n\rrechargeParam\030\004 " +
-      "\001(\tB5\n\034com.douqu.game.core.protobufB\rSGP",
-      "layerProto\252\002\005UBaseb\006proto3"
+      "\"\032\n\030C2S_LoginTimesRewardInit\"H\n\030S2C_Logi",
+      "nTimesRewardInit\022\026\n\016totalLoginDays\030\001 \001(\005" +
+      "\022\024\n\014hasReceiveId\030\002 \003(\005\"/\n\033C2S_ReceiveLog" +
+      "inTimesReward\022\020\n\010rewardId\030\001 \001(\005\"/\n\033S2C_R" +
+      "eceiveLoginTimesReward\022\020\n\010rewardId\030\001 \001(\005" +
+      "\"%\n\021C2S_RechargeCheck\022\020\n\010recharId\030\001 \001(\005\"" +
+      "W\n\021S2C_RechargeCheck\022\020\n\010recharId\030\001 \001(\005\022\014" +
+      "\n\004isOk\030\002 \001(\010\022\013\n\003rmb\030\003 \001(\005\022\025\n\rrechargePar" +
+      "am\030\004 \001(\t\"\033\n\031C2S_NewServerActivityInit\"\233\001" +
+      "\n\031S2C_NewServerActivityInit\022\033\n\023newServer" +
+      "FundHasBuy\030\001 \001(\010\022\036\n\026newServerFundRewardI",
+      "ds\030\002 \003(\005\022\036\n\026totalRechargeRewardIds\030\003 \003(\005" +
+      "\022!\n\031totalRechargeDiamondCount\030\004 \001(\005B5\n\034c" +
+      "om.douqu.game.core.protobufB\rSGPlayerPro" +
+      "to\252\002\005UBaseb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -59348,360 +64456,408 @@ public final class SGPlayerProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_RankList_descriptor,
         new java.lang.String[] { "RankType", "RankInfo", "SelfRank", });
-    internal_static_C2S_LotteryInit_descriptor =
+    internal_static_C2S_MasterTrain_descriptor =
       getDescriptor().getMessageTypes().get(35);
+    internal_static_C2S_MasterTrain_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2S_MasterTrain_descriptor,
+        new java.lang.String[] { "TrainType", });
+    internal_static_S2C_MasterTrain_descriptor =
+      getDescriptor().getMessageTypes().get(36);
+    internal_static_S2C_MasterTrain_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_S2C_MasterTrain_descriptor,
+        new java.lang.String[] { "ChangeValue", });
+    internal_static_C2S_MasterTrainAccept_descriptor =
+      getDescriptor().getMessageTypes().get(37);
+    internal_static_C2S_MasterTrainAccept_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2S_MasterTrainAccept_descriptor,
+        new java.lang.String[] { });
+    internal_static_S2C_MasterTrainAccept_descriptor =
+      getDescriptor().getMessageTypes().get(38);
+    internal_static_S2C_MasterTrainAccept_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_S2C_MasterTrainAccept_descriptor,
+        new java.lang.String[] { "MasterTrainAttributes", });
+    internal_static_C2S_LegionChainUnlock_descriptor =
+      getDescriptor().getMessageTypes().get(39);
+    internal_static_C2S_LegionChainUnlock_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2S_LegionChainUnlock_descriptor,
+        new java.lang.String[] { });
+    internal_static_S2C_LegionChainUnlock_descriptor =
+      getDescriptor().getMessageTypes().get(40);
+    internal_static_S2C_LegionChainUnlock_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_S2C_LegionChainUnlock_descriptor,
+        new java.lang.String[] { "LegionChainId", "Index", });
+    internal_static_C2S_LotteryInit_descriptor =
+      getDescriptor().getMessageTypes().get(41);
     internal_static_C2S_LotteryInit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_LotteryInit_descriptor,
         new java.lang.String[] { });
     internal_static_S2C_LotteryInit_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_S2C_LotteryInit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_LotteryInit_descriptor,
         new java.lang.String[] { "LeftFreeCount", "RightFreeCount", "LeftCDTime", "RightCDTime", "LeftResidueCount", "RightResidueCount", "RightResidueCount2", });
     internal_static_LotteryInfo_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_LotteryInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LotteryInfo_descriptor,
         new java.lang.String[] { "Id", "Count", "Type", });
     internal_static_C2S_LotteryClick_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_C2S_LotteryClick_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_LotteryClick_descriptor,
         new java.lang.String[] { "Type", "BuyType", });
     internal_static_S2C_LotteryClick_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_S2C_LotteryClick_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_LotteryClick_descriptor,
         new java.lang.String[] { "LotteryInfo", "RightResidueCount", "RightResidueCount2", });
     internal_static_AltarInit_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_AltarInit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AltarInit_descriptor,
         new java.lang.String[] { "Id", "FreeCount", "EverydayResidueCount", });
     internal_static_C2S_AltarInit_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_C2S_AltarInit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_AltarInit_descriptor,
         new java.lang.String[] { });
     internal_static_S2C_AltarInit_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_S2C_AltarInit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_AltarInit_descriptor,
         new java.lang.String[] { "AltarInit", });
     internal_static_C2S_Sacrifice_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_C2S_Sacrifice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Sacrifice_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_S2C_Sacrifice_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_S2C_Sacrifice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Sacrifice_descriptor,
         new java.lang.String[] { "Id", "FreeCount", "EverydayResidueCount", "DropData", });
     internal_static_C2S_StoreInitInfo_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_C2S_StoreInitInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_StoreInitInfo_descriptor,
         new java.lang.String[] { "IsFresh", "Type", });
     internal_static_S2C_StoreInitInfo_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_S2C_StoreInitInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_StoreInitInfo_descriptor,
         new java.lang.String[] { "Goods", "FreeTimes", "Type", "HasFreshTimes", });
     internal_static_C2S_StoreBuyGoods_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_C2S_StoreBuyGoods_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_StoreBuyGoods_descriptor,
         new java.lang.String[] { "GoodsId", "Type", "Count", });
     internal_static_S2C_StoreBuyGoods_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(54);
     internal_static_S2C_StoreBuyGoods_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_StoreBuyGoods_descriptor,
         new java.lang.String[] { "GoodsId", "Type", "Count", });
     internal_static_C2S_StoreBuyTimes_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_C2S_StoreBuyTimes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_StoreBuyTimes_descriptor,
         new java.lang.String[] { "Type", "Times", });
     internal_static_S2C_StoreBuyTimes_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(56);
     internal_static_S2C_StoreBuyTimes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_StoreBuyTimes_descriptor,
         new java.lang.String[] { "Type", "Times", "TotalTimes", });
     internal_static_C2S_MailList_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(57);
     internal_static_C2S_MailList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_MailList_descriptor,
         new java.lang.String[] { "MailType", });
     internal_static_S2C_MailList_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(58);
     internal_static_S2C_MailList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_MailList_descriptor,
         new java.lang.String[] { "MailType", "Mail", });
     internal_static_C2S_MailDetail_descriptor =
-      getDescriptor().getMessageTypes().get(53);
+      getDescriptor().getMessageTypes().get(59);
     internal_static_C2S_MailDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_MailDetail_descriptor,
         new java.lang.String[] { "MailType", "MailId", });
     internal_static_S2C_MailDetail_descriptor =
-      getDescriptor().getMessageTypes().get(54);
+      getDescriptor().getMessageTypes().get(60);
     internal_static_S2C_MailDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_MailDetail_descriptor,
         new java.lang.String[] { "MailType", "Mail", });
     internal_static_C2S_MailGetAuxiliary_descriptor =
-      getDescriptor().getMessageTypes().get(55);
+      getDescriptor().getMessageTypes().get(61);
     internal_static_C2S_MailGetAuxiliary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_MailGetAuxiliary_descriptor,
         new java.lang.String[] { "MailId", });
     internal_static_S2C_MailGetAuxiliary_descriptor =
-      getDescriptor().getMessageTypes().get(56);
+      getDescriptor().getMessageTypes().get(62);
     internal_static_S2C_MailGetAuxiliary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_MailGetAuxiliary_descriptor,
         new java.lang.String[] { "MailId", });
     internal_static_C2S_MailPrivacyMailList_descriptor =
-      getDescriptor().getMessageTypes().get(57);
+      getDescriptor().getMessageTypes().get(63);
     internal_static_C2S_MailPrivacyMailList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_MailPrivacyMailList_descriptor,
         new java.lang.String[] { "MailType", });
     internal_static_S2C_MailPrivacyMailList_descriptor =
-      getDescriptor().getMessageTypes().get(58);
+      getDescriptor().getMessageTypes().get(64);
     internal_static_S2C_MailPrivacyMailList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_MailPrivacyMailList_descriptor,
         new java.lang.String[] { "Privacy", });
     internal_static_C2S_MailPrivacyMailDetail_descriptor =
-      getDescriptor().getMessageTypes().get(59);
+      getDescriptor().getMessageTypes().get(65);
     internal_static_C2S_MailPrivacyMailDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_MailPrivacyMailDetail_descriptor,
         new java.lang.String[] { "PrivacyMailId", });
     internal_static_S2C_MailPrivacyMailDetail_descriptor =
-      getDescriptor().getMessageTypes().get(60);
+      getDescriptor().getMessageTypes().get(66);
     internal_static_S2C_MailPrivacyMailDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_MailPrivacyMailDetail_descriptor,
         new java.lang.String[] { "PrivacyMail", });
     internal_static_C2S_MailSendPrivacyMail_descriptor =
-      getDescriptor().getMessageTypes().get(61);
+      getDescriptor().getMessageTypes().get(67);
     internal_static_C2S_MailSendPrivacyMail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_MailSendPrivacyMail_descriptor,
         new java.lang.String[] { "PrivacyMailId", "Content", "NickName", "PrivacyMailType", "MailSendType", "TargetIndex", });
     internal_static_S2C_MailSendPrivacyMail_descriptor =
-      getDescriptor().getMessageTypes().get(62);
+      getDescriptor().getMessageTypes().get(68);
     internal_static_S2C_MailSendPrivacyMail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_MailSendPrivacyMail_descriptor,
         new java.lang.String[] { "PrivacyMailType", "PrivacyMailResponseList", });
     internal_static_C2S_MailAddAndRemoveBlackList_descriptor =
-      getDescriptor().getMessageTypes().get(63);
+      getDescriptor().getMessageTypes().get(69);
     internal_static_C2S_MailAddAndRemoveBlackList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_MailAddAndRemoveBlackList_descriptor,
         new java.lang.String[] { "TargetIndex", "Type", });
     internal_static_S2C_MailAddAndRemoveBlackList_descriptor =
-      getDescriptor().getMessageTypes().get(64);
+      getDescriptor().getMessageTypes().get(70);
     internal_static_S2C_MailAddAndRemoveBlackList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_MailAddAndRemoveBlackList_descriptor,
         new java.lang.String[] { "TargetIndex", "Type", });
     internal_static_C2S_MailBlackList_descriptor =
-      getDescriptor().getMessageTypes().get(65);
+      getDescriptor().getMessageTypes().get(71);
     internal_static_C2S_MailBlackList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_MailBlackList_descriptor,
         new java.lang.String[] { });
     internal_static_S2C_MailBlackList_descriptor =
-      getDescriptor().getMessageTypes().get(66);
+      getDescriptor().getMessageTypes().get(72);
     internal_static_S2C_MailBlackList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_MailBlackList_descriptor,
         new java.lang.String[] { "BlackList", });
     internal_static_C2S_MailCheckSendJurisdiction_descriptor =
-      getDescriptor().getMessageTypes().get(67);
+      getDescriptor().getMessageTypes().get(73);
     internal_static_C2S_MailCheckSendJurisdiction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_MailCheckSendJurisdiction_descriptor,
         new java.lang.String[] { });
     internal_static_S2C_MailCheckSendJurisdiction_descriptor =
-      getDescriptor().getMessageTypes().get(68);
+      getDescriptor().getMessageTypes().get(74);
     internal_static_S2C_MailCheckSendJurisdiction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_MailCheckSendJurisdiction_descriptor,
         new java.lang.String[] { "Status", });
     internal_static_S2C_MailNewMailNotify_descriptor =
-      getDescriptor().getMessageTypes().get(69);
+      getDescriptor().getMessageTypes().get(75);
     internal_static_S2C_MailNewMailNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_MailNewMailNotify_descriptor,
         new java.lang.String[] { "MailType", });
     internal_static_C2S_RechargeInit_descriptor =
-      getDescriptor().getMessageTypes().get(70);
+      getDescriptor().getMessageTypes().get(76);
     internal_static_C2S_RechargeInit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_RechargeInit_descriptor,
         new java.lang.String[] { });
     internal_static_S2C_RechargeInit_descriptor =
-      getDescriptor().getMessageTypes().get(71);
+      getDescriptor().getMessageTypes().get(77);
     internal_static_S2C_RechargeInit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_RechargeInit_descriptor,
         new java.lang.String[] { "VipLv", "VipExp", "HasBuyRechargeId", "MouthCards", "VipLvs", "CurrentServerTime", });
     internal_static_C2S_RechargeResult_descriptor =
-      getDescriptor().getMessageTypes().get(72);
+      getDescriptor().getMessageTypes().get(78);
     internal_static_C2S_RechargeResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_RechargeResult_descriptor,
         new java.lang.String[] { });
     internal_static_S2C_RechargeResult_descriptor =
-      getDescriptor().getMessageTypes().get(73);
+      getDescriptor().getMessageTypes().get(79);
     internal_static_S2C_RechargeResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_RechargeResult_descriptor,
         new java.lang.String[] { "VipLv", "VipExp", "HasBuyRechargeId", "MouthCards", "AddVipExp", "RecharId", "CurrentServerTime", "OrderNo", });
     internal_static_C2S_BuyVipGiftBag_descriptor =
-      getDescriptor().getMessageTypes().get(74);
+      getDescriptor().getMessageTypes().get(80);
     internal_static_C2S_BuyVipGiftBag_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_BuyVipGiftBag_descriptor,
         new java.lang.String[] { "VipLv", });
     internal_static_S2C_BuyVipGiftBag_descriptor =
-      getDescriptor().getMessageTypes().get(75);
+      getDescriptor().getMessageTypes().get(81);
     internal_static_S2C_BuyVipGiftBag_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_BuyVipGiftBag_descriptor,
         new java.lang.String[] { "VipLv", });
     internal_static_C2S_ReceiveMouthCardReward_descriptor =
-      getDescriptor().getMessageTypes().get(76);
+      getDescriptor().getMessageTypes().get(82);
     internal_static_C2S_ReceiveMouthCardReward_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_ReceiveMouthCardReward_descriptor,
         new java.lang.String[] { "RecharId", });
     internal_static_S2C_ReceiveMouthCardReward_descriptor =
-      getDescriptor().getMessageTypes().get(77);
+      getDescriptor().getMessageTypes().get(83);
     internal_static_S2C_ReceiveMouthCardReward_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_ReceiveMouthCardReward_descriptor,
         new java.lang.String[] { "RecharId", "NextRewardOffsetTime", });
     internal_static_C2S_ReceiveFirstRechargeReward_descriptor =
-      getDescriptor().getMessageTypes().get(78);
+      getDescriptor().getMessageTypes().get(84);
     internal_static_C2S_ReceiveFirstRechargeReward_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_ReceiveFirstRechargeReward_descriptor,
         new java.lang.String[] { });
     internal_static_S2C_ReceiveFirstRechargeReward_descriptor =
-      getDescriptor().getMessageTypes().get(79);
+      getDescriptor().getMessageTypes().get(85);
     internal_static_S2C_ReceiveFirstRechargeReward_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_ReceiveFirstRechargeReward_descriptor,
         new java.lang.String[] { });
     internal_static_C2S_BonusBoardInit_descriptor =
-      getDescriptor().getMessageTypes().get(80);
+      getDescriptor().getMessageTypes().get(86);
     internal_static_C2S_BonusBoardInit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_BonusBoardInit_descriptor,
         new java.lang.String[] { });
     internal_static_S2C_BonusBoardInit_descriptor =
-      getDescriptor().getMessageTypes().get(81);
+      getDescriptor().getMessageTypes().get(87);
     internal_static_S2C_BonusBoardInit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_BonusBoardInit_descriptor,
-        new java.lang.String[] { "MouthCards", "DailySignRewardIndex", "HasSignMaxDay", "HasSignToday", "ReissueTimes", "Day", "IsOpenFundBuy", "OpenFundRewardRecord", "CurrentServerTime", });
+        new java.lang.String[] { "MouthCards", "DailySignRewardIndex", "HasSignMaxDay", "HasSignToday", "ReissueTimes", "Day", "IsOpenFundBuy", "OpenFundRewardRecord", "CurrentServerTime", "DailyRechargeIds", });
     internal_static_C2S_DailySignReward_descriptor =
-      getDescriptor().getMessageTypes().get(82);
+      getDescriptor().getMessageTypes().get(88);
     internal_static_C2S_DailySignReward_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_DailySignReward_descriptor,
         new java.lang.String[] { });
     internal_static_S2C_DailySignReward_descriptor =
-      getDescriptor().getMessageTypes().get(83);
+      getDescriptor().getMessageTypes().get(89);
     internal_static_S2C_DailySignReward_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_DailySignReward_descriptor,
         new java.lang.String[] { "DayId", "ReissueTimes", });
     internal_static_C2S_BuyFund_descriptor =
-      getDescriptor().getMessageTypes().get(84);
+      getDescriptor().getMessageTypes().get(90);
     internal_static_C2S_BuyFund_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_BuyFund_descriptor,
         new java.lang.String[] { "FundType", });
     internal_static_S2C_BuyFund_descriptor =
-      getDescriptor().getMessageTypes().get(85);
+      getDescriptor().getMessageTypes().get(91);
     internal_static_S2C_BuyFund_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_BuyFund_descriptor,
         new java.lang.String[] { "FundType", });
     internal_static_C2S_ReceiveFundReward_descriptor =
-      getDescriptor().getMessageTypes().get(86);
+      getDescriptor().getMessageTypes().get(92);
     internal_static_C2S_ReceiveFundReward_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_ReceiveFundReward_descriptor,
         new java.lang.String[] { "FundType", "RewardId", });
     internal_static_S2C_ReceiveFundReward_descriptor =
-      getDescriptor().getMessageTypes().get(87);
+      getDescriptor().getMessageTypes().get(93);
     internal_static_S2C_ReceiveFundReward_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_ReceiveFundReward_descriptor,
         new java.lang.String[] { "FundType", "RewardId", });
     internal_static_C2S_LoginTimesRewardInit_descriptor =
-      getDescriptor().getMessageTypes().get(88);
+      getDescriptor().getMessageTypes().get(94);
     internal_static_C2S_LoginTimesRewardInit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_LoginTimesRewardInit_descriptor,
         new java.lang.String[] { });
     internal_static_S2C_LoginTimesRewardInit_descriptor =
-      getDescriptor().getMessageTypes().get(89);
+      getDescriptor().getMessageTypes().get(95);
     internal_static_S2C_LoginTimesRewardInit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_LoginTimesRewardInit_descriptor,
         new java.lang.String[] { "TotalLoginDays", "HasReceiveId", });
     internal_static_C2S_ReceiveLoginTimesReward_descriptor =
-      getDescriptor().getMessageTypes().get(90);
+      getDescriptor().getMessageTypes().get(96);
     internal_static_C2S_ReceiveLoginTimesReward_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_ReceiveLoginTimesReward_descriptor,
         new java.lang.String[] { "RewardId", });
     internal_static_S2C_ReceiveLoginTimesReward_descriptor =
-      getDescriptor().getMessageTypes().get(91);
+      getDescriptor().getMessageTypes().get(97);
     internal_static_S2C_ReceiveLoginTimesReward_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_ReceiveLoginTimesReward_descriptor,
         new java.lang.String[] { "RewardId", });
     internal_static_C2S_RechargeCheck_descriptor =
-      getDescriptor().getMessageTypes().get(92);
+      getDescriptor().getMessageTypes().get(98);
     internal_static_C2S_RechargeCheck_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_RechargeCheck_descriptor,
         new java.lang.String[] { "RecharId", });
     internal_static_S2C_RechargeCheck_descriptor =
-      getDescriptor().getMessageTypes().get(93);
+      getDescriptor().getMessageTypes().get(99);
     internal_static_S2C_RechargeCheck_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_RechargeCheck_descriptor,
         new java.lang.String[] { "RecharId", "IsOk", "Rmb", "RechargeParam", });
+    internal_static_C2S_NewServerActivityInit_descriptor =
+      getDescriptor().getMessageTypes().get(100);
+    internal_static_C2S_NewServerActivityInit_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2S_NewServerActivityInit_descriptor,
+        new java.lang.String[] { });
+    internal_static_S2C_NewServerActivityInit_descriptor =
+      getDescriptor().getMessageTypes().get(101);
+    internal_static_S2C_NewServerActivityInit_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_S2C_NewServerActivityInit_descriptor,
+        new java.lang.String[] { "NewServerFundHasBuy", "NewServerFundRewardIds", "TotalRechargeRewardIds", "TotalRechargeDiamondCount", });
     com.douqu.game.core.protobuf.SGCommonProto.getDescriptor();
     com.douqu.game.core.protobuf.SGMainProto.getDescriptor();
   }

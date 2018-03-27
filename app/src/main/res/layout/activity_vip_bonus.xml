@@ -69,13 +69,14 @@
                 android:id="@+id/btn_buy_open_fund"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:text="开服基金购买" />
 
             <Button
                 android:id="@+id/btn_open_fund_reward"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="开服基金奖励领取" />
+                android:text="基金奖励领取" />
 
             <Button
                 android:id="@+id/btn_login_times_init"
@@ -88,6 +89,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="累计登录奖励领取" />
+
+            <Button
+                android:id="@+id/btn_new_server"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="新服活动初始化" />
 
         </LinearLayout>
 

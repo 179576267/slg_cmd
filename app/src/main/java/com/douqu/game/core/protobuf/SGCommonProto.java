@@ -1147,6 +1147,30 @@ public final class SGCommonProto {
      * <code>BATTLE_TYPE_PVE_EXPEDITION = 7;</code>
      */
     BATTLE_TYPE_PVE_EXPEDITION(7),
+    /**
+     * <pre>
+     *跨服阵营战PVP
+     * </pre>
+     *
+     * <code>BATTLE_TYPE_PVP_CAMP = 8;</code>
+     */
+    BATTLE_TYPE_PVP_CAMP(8),
+    /**
+     * <pre>
+     *跨服阵营战PVE
+     * </pre>
+     *
+     * <code>BATTLE_TYPE_PVE_CAMP = 9;</code>
+     */
+    BATTLE_TYPE_PVE_CAMP(9),
+    /**
+     * <pre>
+     *专业战斗的PVP
+     * </pre>
+     *
+     * <code>BATTLE_TYPE_PVP_MAJOR = 10;</code>
+     */
+    BATTLE_TYPE_PVP_MAJOR(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -1210,6 +1234,30 @@ public final class SGCommonProto {
      * <code>BATTLE_TYPE_PVE_EXPEDITION = 7;</code>
      */
     public static final int BATTLE_TYPE_PVE_EXPEDITION_VALUE = 7;
+    /**
+     * <pre>
+     *跨服阵营战PVP
+     * </pre>
+     *
+     * <code>BATTLE_TYPE_PVP_CAMP = 8;</code>
+     */
+    public static final int BATTLE_TYPE_PVP_CAMP_VALUE = 8;
+    /**
+     * <pre>
+     *跨服阵营战PVE
+     * </pre>
+     *
+     * <code>BATTLE_TYPE_PVE_CAMP = 9;</code>
+     */
+    public static final int BATTLE_TYPE_PVE_CAMP_VALUE = 9;
+    /**
+     * <pre>
+     *专业战斗的PVP
+     * </pre>
+     *
+     * <code>BATTLE_TYPE_PVP_MAJOR = 10;</code>
+     */
+    public static final int BATTLE_TYPE_PVP_MAJOR_VALUE = 10;
 
 
     public final int getNumber() {
@@ -1238,6 +1286,9 @@ public final class SGCommonProto {
         case 5: return BATTLE_TYPE_PVP_OFFICIAL_RANK;
         case 6: return BATTLE_TYPE_PVE_HERO_TEMPLE;
         case 7: return BATTLE_TYPE_PVE_EXPEDITION;
+        case 8: return BATTLE_TYPE_PVP_CAMP;
+        case 9: return BATTLE_TYPE_PVE_CAMP;
+        case 10: return BATTLE_TYPE_PVP_MAJOR;
         default: return null;
       }
     }
@@ -2028,6 +2079,7 @@ public final class SGCommonProto {
     NOTIFY_TYPE_HORN(102),
     /**
      * <pre>
+     *获得高级物品
      * </pre>
      *
      * <code>NOTIFY_TYPE_GET = 103;</code>
@@ -2082,6 +2134,7 @@ public final class SGCommonProto {
     public static final int NOTIFY_TYPE_HORN_VALUE = 102;
     /**
      * <pre>
+     *获得高级物品
      * </pre>
      *
      * <code>NOTIFY_TYPE_GET = 103;</code>
@@ -3312,6 +3365,14 @@ public final class SGCommonProto {
      * <code>GOODS_OTHER_ID_VIP_EXP = 5;</code>
      */
     GOODS_OTHER_ID_VIP_EXP(5),
+    /**
+     * <pre>
+     *要上阵的卡牌
+     * </pre>
+     *
+     * <code>GOODS_OTHER_ID_BATTLE_CARD = 6;</code>
+     */
+    GOODS_OTHER_ID_BATTLE_CARD(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -3359,6 +3420,14 @@ public final class SGCommonProto {
      * <code>GOODS_OTHER_ID_VIP_EXP = 5;</code>
      */
     public static final int GOODS_OTHER_ID_VIP_EXP_VALUE = 5;
+    /**
+     * <pre>
+     *要上阵的卡牌
+     * </pre>
+     *
+     * <code>GOODS_OTHER_ID_BATTLE_CARD = 6;</code>
+     */
+    public static final int GOODS_OTHER_ID_BATTLE_CARD_VALUE = 6;
 
 
     public final int getNumber() {
@@ -3385,6 +3454,7 @@ public final class SGCommonProto {
         case 3: return GOODS_OTHER_ID_EXP;
         case 4: return GOODS_OTHER_ID_VIP_LV;
         case 5: return GOODS_OTHER_ID_VIP_EXP;
+        case 6: return GOODS_OTHER_ID_BATTLE_CARD;
         default: return null;
       }
     }
@@ -4101,6 +4171,14 @@ public final class SGCommonProto {
      * <code>STORE_TYPE_DIAMOND = 5;</code>
      */
     STORE_TYPE_DIAMOND(5),
+    /**
+     * <pre>
+     *vip商店
+     * </pre>
+     *
+     * <code>STORE_TYPE_VIP = 6;</code>
+     */
+    STORE_TYPE_VIP(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -4148,6 +4226,14 @@ public final class SGCommonProto {
      * <code>STORE_TYPE_DIAMOND = 5;</code>
      */
     public static final int STORE_TYPE_DIAMOND_VALUE = 5;
+    /**
+     * <pre>
+     *vip商店
+     * </pre>
+     *
+     * <code>STORE_TYPE_VIP = 6;</code>
+     */
+    public static final int STORE_TYPE_VIP_VALUE = 6;
 
 
     public final int getNumber() {
@@ -4174,6 +4260,7 @@ public final class SGCommonProto {
         case 3: return STORE_TYPE_EQUIP;
         case 4: return STORE_TYPE_EXPEDITION;
         case 5: return STORE_TYPE_DIAMOND;
+        case 6: return STORE_TYPE_VIP;
         default: return null;
       }
     }
@@ -5451,6 +5538,14 @@ public final class SGCommonProto {
      * <code>RED_POINT_TYPE_EXPEDITION = 16;</code>
      */
     RED_POINT_TYPE_EXPEDITION(16),
+    /**
+     * <pre>
+     *新区活动
+     * </pre>
+     *
+     * <code>RED_POINT_TYPE_NEW_SERVER_ACTIVITY = 17;</code>
+     */
+    RED_POINT_TYPE_NEW_SERVER_ACTIVITY(17),
     UNRECOGNIZED(-1),
     ;
 
@@ -5586,6 +5681,14 @@ public final class SGCommonProto {
      * <code>RED_POINT_TYPE_EXPEDITION = 16;</code>
      */
     public static final int RED_POINT_TYPE_EXPEDITION_VALUE = 16;
+    /**
+     * <pre>
+     *新区活动
+     * </pre>
+     *
+     * <code>RED_POINT_TYPE_NEW_SERVER_ACTIVITY = 17;</code>
+     */
+    public static final int RED_POINT_TYPE_NEW_SERVER_ACTIVITY_VALUE = 17;
 
 
     public final int getNumber() {
@@ -5623,6 +5726,7 @@ public final class SGCommonProto {
         case 14: return RED_POINT_TYPE_BONUS;
         case 15: return RED_POINT_TYPE_LOGIN_BONUS;
         case 16: return RED_POINT_TYPE_EXPEDITION;
+        case 17: return RED_POINT_TYPE_NEW_SERVER_ACTIVITY;
         default: return null;
       }
     }
@@ -5857,6 +5961,22 @@ public final class SGCommonProto {
      * <code>FUND_TYPE_OPEN = 1;</code>
      */
     FUND_TYPE_OPEN(1),
+    /**
+     * <pre>
+     *新区基金
+     * </pre>
+     *
+     * <code>FUND_TYPE_NEW_SERVER = 2;</code>
+     */
+    FUND_TYPE_NEW_SERVER(2),
+    /**
+     * <pre>
+     *累计充值
+     * </pre>
+     *
+     * <code>FUND_TYPE_TOTAL_RECHARGE = 3;</code>
+     */
+    FUND_TYPE_TOTAL_RECHARGE(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -5872,6 +5992,22 @@ public final class SGCommonProto {
      * <code>FUND_TYPE_OPEN = 1;</code>
      */
     public static final int FUND_TYPE_OPEN_VALUE = 1;
+    /**
+     * <pre>
+     *新区基金
+     * </pre>
+     *
+     * <code>FUND_TYPE_NEW_SERVER = 2;</code>
+     */
+    public static final int FUND_TYPE_NEW_SERVER_VALUE = 2;
+    /**
+     * <pre>
+     *累计充值
+     * </pre>
+     *
+     * <code>FUND_TYPE_TOTAL_RECHARGE = 3;</code>
+     */
+    public static final int FUND_TYPE_TOTAL_RECHARGE_VALUE = 3;
 
 
     public final int getNumber() {
@@ -5894,6 +6030,8 @@ public final class SGCommonProto {
       switch (value) {
         case 0: return FUND_TYPE_UNKNOW;
         case 1: return FUND_TYPE_OPEN;
+        case 2: return FUND_TYPE_NEW_SERVER;
+        case 3: return FUND_TYPE_TOTAL_RECHARGE;
         default: return null;
       }
     }
@@ -6226,6 +6364,722 @@ public final class SGCommonProto {
     }
 
     // @@protoc_insertion_point(enum_scope:E_RANK_TYPE)
+  }
+
+  /**
+   * <pre>
+   *主将培养类型
+   * </pre>
+   *
+   * Protobuf enum {@code E_MASTER_TRAIN_TYPE}
+   */
+  public enum E_MASTER_TRAIN_TYPE
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>MASTER_TRAIN_TYPE_UNKNOW = 0;</code>
+     */
+    MASTER_TRAIN_TYPE_UNKNOW(0),
+    /**
+     * <pre>
+     *普通培养
+     * </pre>
+     *
+     * <code>MASTER_TRAIN_TYPE_NORMAL = 1;</code>
+     */
+    MASTER_TRAIN_TYPE_NORMAL(1),
+    /**
+     * <pre>
+     *高级培养
+     * </pre>
+     *
+     * <code>MASTER_TRAIN_TYPE_SENIOR = 2;</code>
+     */
+    MASTER_TRAIN_TYPE_SENIOR(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>MASTER_TRAIN_TYPE_UNKNOW = 0;</code>
+     */
+    public static final int MASTER_TRAIN_TYPE_UNKNOW_VALUE = 0;
+    /**
+     * <pre>
+     *普通培养
+     * </pre>
+     *
+     * <code>MASTER_TRAIN_TYPE_NORMAL = 1;</code>
+     */
+    public static final int MASTER_TRAIN_TYPE_NORMAL_VALUE = 1;
+    /**
+     * <pre>
+     *高级培养
+     * </pre>
+     *
+     * <code>MASTER_TRAIN_TYPE_SENIOR = 2;</code>
+     */
+    public static final int MASTER_TRAIN_TYPE_SENIOR_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static E_MASTER_TRAIN_TYPE valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static E_MASTER_TRAIN_TYPE forNumber(int value) {
+      switch (value) {
+        case 0: return MASTER_TRAIN_TYPE_UNKNOW;
+        case 1: return MASTER_TRAIN_TYPE_NORMAL;
+        case 2: return MASTER_TRAIN_TYPE_SENIOR;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<E_MASTER_TRAIN_TYPE>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        E_MASTER_TRAIN_TYPE> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<E_MASTER_TRAIN_TYPE>() {
+            public E_MASTER_TRAIN_TYPE findValueByNumber(int number) {
+              return E_MASTER_TRAIN_TYPE.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGCommonProto.getDescriptor().getEnumTypes().get(36);
+    }
+
+    private static final E_MASTER_TRAIN_TYPE[] VALUES = values();
+
+    public static E_MASTER_TRAIN_TYPE valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private E_MASTER_TRAIN_TYPE(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:E_MASTER_TRAIN_TYPE)
+  }
+
+  /**
+   * <pre>
+   *专业技能类型
+   * </pre>
+   *
+   * Protobuf enum {@code E_MAJOR_TYPE}
+   */
+  public enum E_MAJOR_TYPE
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>MAJOR_TYPE_UNKNOW = 0;</code>
+     */
+    MAJOR_TYPE_UNKNOW(0),
+    /**
+     * <pre>
+     *锻造
+     * </pre>
+     *
+     * <code>MAJOR_TYPE_FORGING = 1;</code>
+     */
+    MAJOR_TYPE_FORGING(1),
+    /**
+     * <pre>
+     *挖掘
+     * </pre>
+     *
+     * <code>MAJOR_TYPE_EXCAVATE = 2;</code>
+     */
+    MAJOR_TYPE_EXCAVATE(2),
+    /**
+     * <pre>
+     *采集
+     * </pre>
+     *
+     * <code>MAJOR_TYPE_COLLECT = 3;</code>
+     */
+    MAJOR_TYPE_COLLECT(3),
+    /**
+     * <pre>
+     *炼制
+     * </pre>
+     *
+     * <code>MAJOR_TYPE_REFINING = 4;</code>
+     */
+    MAJOR_TYPE_REFINING(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>MAJOR_TYPE_UNKNOW = 0;</code>
+     */
+    public static final int MAJOR_TYPE_UNKNOW_VALUE = 0;
+    /**
+     * <pre>
+     *锻造
+     * </pre>
+     *
+     * <code>MAJOR_TYPE_FORGING = 1;</code>
+     */
+    public static final int MAJOR_TYPE_FORGING_VALUE = 1;
+    /**
+     * <pre>
+     *挖掘
+     * </pre>
+     *
+     * <code>MAJOR_TYPE_EXCAVATE = 2;</code>
+     */
+    public static final int MAJOR_TYPE_EXCAVATE_VALUE = 2;
+    /**
+     * <pre>
+     *采集
+     * </pre>
+     *
+     * <code>MAJOR_TYPE_COLLECT = 3;</code>
+     */
+    public static final int MAJOR_TYPE_COLLECT_VALUE = 3;
+    /**
+     * <pre>
+     *炼制
+     * </pre>
+     *
+     * <code>MAJOR_TYPE_REFINING = 4;</code>
+     */
+    public static final int MAJOR_TYPE_REFINING_VALUE = 4;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static E_MAJOR_TYPE valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static E_MAJOR_TYPE forNumber(int value) {
+      switch (value) {
+        case 0: return MAJOR_TYPE_UNKNOW;
+        case 1: return MAJOR_TYPE_FORGING;
+        case 2: return MAJOR_TYPE_EXCAVATE;
+        case 3: return MAJOR_TYPE_COLLECT;
+        case 4: return MAJOR_TYPE_REFINING;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<E_MAJOR_TYPE>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        E_MAJOR_TYPE> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<E_MAJOR_TYPE>() {
+            public E_MAJOR_TYPE findValueByNumber(int number) {
+              return E_MAJOR_TYPE.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGCommonProto.getDescriptor().getEnumTypes().get(37);
+    }
+
+    private static final E_MAJOR_TYPE[] VALUES = values();
+
+    public static E_MAJOR_TYPE valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private E_MAJOR_TYPE(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:E_MAJOR_TYPE)
+  }
+
+  /**
+   * <pre>
+   *专业战斗类型
+   * </pre>
+   *
+   * Protobuf enum {@code E_MAJOR_BATTLE_TYPE}
+   */
+  public enum E_MAJOR_BATTLE_TYPE
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>MAJOR_BATTLE_TYPE_UNKNOW = 0;</code>
+     */
+    MAJOR_BATTLE_TYPE_UNKNOW(0),
+    /**
+     * <pre>
+     *抢夺战斗
+     * </pre>
+     *
+     * <code>MAJOR_BATTLE_TYPE_GRAB = 1;</code>
+     */
+    MAJOR_BATTLE_TYPE_GRAB(1),
+    /**
+     * <pre>
+     *复仇战斗
+     * </pre>
+     *
+     * <code>MAJOR_BATTLE_TYPE_REVENGE = 2;</code>
+     */
+    MAJOR_BATTLE_TYPE_REVENGE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>MAJOR_BATTLE_TYPE_UNKNOW = 0;</code>
+     */
+    public static final int MAJOR_BATTLE_TYPE_UNKNOW_VALUE = 0;
+    /**
+     * <pre>
+     *抢夺战斗
+     * </pre>
+     *
+     * <code>MAJOR_BATTLE_TYPE_GRAB = 1;</code>
+     */
+    public static final int MAJOR_BATTLE_TYPE_GRAB_VALUE = 1;
+    /**
+     * <pre>
+     *复仇战斗
+     * </pre>
+     *
+     * <code>MAJOR_BATTLE_TYPE_REVENGE = 2;</code>
+     */
+    public static final int MAJOR_BATTLE_TYPE_REVENGE_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static E_MAJOR_BATTLE_TYPE valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static E_MAJOR_BATTLE_TYPE forNumber(int value) {
+      switch (value) {
+        case 0: return MAJOR_BATTLE_TYPE_UNKNOW;
+        case 1: return MAJOR_BATTLE_TYPE_GRAB;
+        case 2: return MAJOR_BATTLE_TYPE_REVENGE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<E_MAJOR_BATTLE_TYPE>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        E_MAJOR_BATTLE_TYPE> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<E_MAJOR_BATTLE_TYPE>() {
+            public E_MAJOR_BATTLE_TYPE findValueByNumber(int number) {
+              return E_MAJOR_BATTLE_TYPE.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGCommonProto.getDescriptor().getEnumTypes().get(38);
+    }
+
+    private static final E_MAJOR_BATTLE_TYPE[] VALUES = values();
+
+    public static E_MAJOR_BATTLE_TYPE valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private E_MAJOR_BATTLE_TYPE(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:E_MAJOR_BATTLE_TYPE)
+  }
+
+  /**
+   * <pre>
+   *采集状态
+   * </pre>
+   *
+   * Protobuf enum {@code E_MAJOR_COLLECT_STATUS}
+   */
+  public enum E_MAJOR_COLLECT_STATUS
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>MAJOR_COLLECT_STATUS_UNKNOW = 0;</code>
+     */
+    MAJOR_COLLECT_STATUS_UNKNOW(0),
+    /**
+     * <pre>
+     *未采集
+     * </pre>
+     *
+     * <code>MAJOR_COLLECT_STATUS_UNCOLLECT = 1;</code>
+     */
+    MAJOR_COLLECT_STATUS_UNCOLLECT(1),
+    /**
+     * <pre>
+     *采集中
+     * </pre>
+     *
+     * <code>MAJOR_COLLECT_STATUS_COLLECTING = 2;</code>
+     */
+    MAJOR_COLLECT_STATUS_COLLECTING(2),
+    /**
+     * <pre>
+     *已采集未领取奖励
+     * </pre>
+     *
+     * <code>MAJOR_COLLECT_STATUS_COLLECTED = 3;</code>
+     */
+    MAJOR_COLLECT_STATUS_COLLECTED(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>MAJOR_COLLECT_STATUS_UNKNOW = 0;</code>
+     */
+    public static final int MAJOR_COLLECT_STATUS_UNKNOW_VALUE = 0;
+    /**
+     * <pre>
+     *未采集
+     * </pre>
+     *
+     * <code>MAJOR_COLLECT_STATUS_UNCOLLECT = 1;</code>
+     */
+    public static final int MAJOR_COLLECT_STATUS_UNCOLLECT_VALUE = 1;
+    /**
+     * <pre>
+     *采集中
+     * </pre>
+     *
+     * <code>MAJOR_COLLECT_STATUS_COLLECTING = 2;</code>
+     */
+    public static final int MAJOR_COLLECT_STATUS_COLLECTING_VALUE = 2;
+    /**
+     * <pre>
+     *已采集未领取奖励
+     * </pre>
+     *
+     * <code>MAJOR_COLLECT_STATUS_COLLECTED = 3;</code>
+     */
+    public static final int MAJOR_COLLECT_STATUS_COLLECTED_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static E_MAJOR_COLLECT_STATUS valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static E_MAJOR_COLLECT_STATUS forNumber(int value) {
+      switch (value) {
+        case 0: return MAJOR_COLLECT_STATUS_UNKNOW;
+        case 1: return MAJOR_COLLECT_STATUS_UNCOLLECT;
+        case 2: return MAJOR_COLLECT_STATUS_COLLECTING;
+        case 3: return MAJOR_COLLECT_STATUS_COLLECTED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<E_MAJOR_COLLECT_STATUS>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        E_MAJOR_COLLECT_STATUS> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<E_MAJOR_COLLECT_STATUS>() {
+            public E_MAJOR_COLLECT_STATUS findValueByNumber(int number) {
+              return E_MAJOR_COLLECT_STATUS.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGCommonProto.getDescriptor().getEnumTypes().get(39);
+    }
+
+    private static final E_MAJOR_COLLECT_STATUS[] VALUES = values();
+
+    public static E_MAJOR_COLLECT_STATUS valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private E_MAJOR_COLLECT_STATUS(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:E_MAJOR_COLLECT_STATUS)
+  }
+
+  /**
+   * <pre>
+   *采集类型
+   * </pre>
+   *
+   * Protobuf enum {@code E_MAJOR_COLLECT_TYPE}
+   */
+  public enum E_MAJOR_COLLECT_TYPE
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>MAJOR_COLLECT_TYPE_UNKNOW = 0;</code>
+     */
+    MAJOR_COLLECT_TYPE_UNKNOW(0),
+    /**
+     * <pre>
+     *普通采集
+     * </pre>
+     *
+     * <code>MAJOR_COLLECT_TYPE_NORMAL = 1;</code>
+     */
+    MAJOR_COLLECT_TYPE_NORMAL(1),
+    /**
+     * <pre>
+     *高级采集
+     * </pre>
+     *
+     * <code>MAJOR_COLLECT_TYPE_SENIOR = 2;</code>
+     */
+    MAJOR_COLLECT_TYPE_SENIOR(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>MAJOR_COLLECT_TYPE_UNKNOW = 0;</code>
+     */
+    public static final int MAJOR_COLLECT_TYPE_UNKNOW_VALUE = 0;
+    /**
+     * <pre>
+     *普通采集
+     * </pre>
+     *
+     * <code>MAJOR_COLLECT_TYPE_NORMAL = 1;</code>
+     */
+    public static final int MAJOR_COLLECT_TYPE_NORMAL_VALUE = 1;
+    /**
+     * <pre>
+     *高级采集
+     * </pre>
+     *
+     * <code>MAJOR_COLLECT_TYPE_SENIOR = 2;</code>
+     */
+    public static final int MAJOR_COLLECT_TYPE_SENIOR_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static E_MAJOR_COLLECT_TYPE valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static E_MAJOR_COLLECT_TYPE forNumber(int value) {
+      switch (value) {
+        case 0: return MAJOR_COLLECT_TYPE_UNKNOW;
+        case 1: return MAJOR_COLLECT_TYPE_NORMAL;
+        case 2: return MAJOR_COLLECT_TYPE_SENIOR;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<E_MAJOR_COLLECT_TYPE>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        E_MAJOR_COLLECT_TYPE> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<E_MAJOR_COLLECT_TYPE>() {
+            public E_MAJOR_COLLECT_TYPE findValueByNumber(int number) {
+              return E_MAJOR_COLLECT_TYPE.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGCommonProto.getDescriptor().getEnumTypes().get(40);
+    }
+
+    private static final E_MAJOR_COLLECT_TYPE[] VALUES = values();
+
+    public static E_MAJOR_COLLECT_TYPE valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private E_MAJOR_COLLECT_TYPE(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:E_MAJOR_COLLECT_TYPE)
   }
 
   public interface RedPointOrBuilder extends
@@ -10570,6 +11424,50 @@ public final class SGCommonProto {
      * <code>int32 lastUpLvTime = 13;</code>
      */
     int getLastUpLvTime();
+
+    /**
+     * <pre>
+     *主将培养改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+     */
+    java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject> 
+        getMasterTrainAttributesList();
+    /**
+     * <pre>
+     *主将培养改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.CommonObject getMasterTrainAttributes(int index);
+    /**
+     * <pre>
+     *主将培养改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+     */
+    int getMasterTrainAttributesCount();
+    /**
+     * <pre>
+     *主将培养改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+     */
+    java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder> 
+        getMasterTrainAttributesOrBuilderList();
+    /**
+     * <pre>
+     *主将培养改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder getMasterTrainAttributesOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code PlayerBaseInfo}
@@ -10596,6 +11494,7 @@ public final class SGCommonProto {
       uid_ = 0;
       registTime_ = 0;
       lastUpLvTime_ = 0;
+      masterTrainAttributes_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -10693,6 +11592,15 @@ public final class SGCommonProto {
               lastUpLvTime_ = input.readInt32();
               break;
             }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+                masterTrainAttributes_ = new java.util.ArrayList<com.douqu.game.core.protobuf.SGCommonProto.CommonObject>();
+                mutable_bitField0_ |= 0x00002000;
+              }
+              masterTrainAttributes_.add(
+                  input.readMessage(com.douqu.game.core.protobuf.SGCommonProto.CommonObject.parser(), extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -10701,6 +11609,9 @@ public final class SGCommonProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+          masterTrainAttributes_ = java.util.Collections.unmodifiableList(masterTrainAttributes_);
+        }
         makeExtensionsImmutable();
       }
     }
@@ -10716,6 +11627,7 @@ public final class SGCommonProto {
               com.douqu.game.core.protobuf.SGCommonProto.PlayerBaseInfo.class, com.douqu.game.core.protobuf.SGCommonProto.PlayerBaseInfo.Builder.class);
     }
 
+    private int bitField0_;
     public static final int PLAYERINDEX_FIELD_NUMBER = 1;
     private volatile java.lang.Object playerIndex_;
     /**
@@ -11012,6 +11924,61 @@ public final class SGCommonProto {
       return lastUpLvTime_;
     }
 
+    public static final int MASTERTRAINATTRIBUTES_FIELD_NUMBER = 14;
+    private java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject> masterTrainAttributes_;
+    /**
+     * <pre>
+     *主将培养改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+     */
+    public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject> getMasterTrainAttributesList() {
+      return masterTrainAttributes_;
+    }
+    /**
+     * <pre>
+     *主将培养改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+     */
+    public java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder> 
+        getMasterTrainAttributesOrBuilderList() {
+      return masterTrainAttributes_;
+    }
+    /**
+     * <pre>
+     *主将培养改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+     */
+    public int getMasterTrainAttributesCount() {
+      return masterTrainAttributes_.size();
+    }
+    /**
+     * <pre>
+     *主将培养改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.CommonObject getMasterTrainAttributes(int index) {
+      return masterTrainAttributes_.get(index);
+    }
+    /**
+     * <pre>
+     *主将培养改变的属性值
+     * </pre>
+     *
+     * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder getMasterTrainAttributesOrBuilder(
+        int index) {
+      return masterTrainAttributes_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -11062,6 +12029,9 @@ public final class SGCommonProto {
       }
       if (lastUpLvTime_ != 0) {
         output.writeInt32(13, lastUpLvTime_);
+      }
+      for (int i = 0; i < masterTrainAttributes_.size(); i++) {
+        output.writeMessage(14, masterTrainAttributes_.get(i));
       }
     }
 
@@ -11118,6 +12088,10 @@ public final class SGCommonProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(13, lastUpLvTime_);
       }
+      for (int i = 0; i < masterTrainAttributes_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, masterTrainAttributes_.get(i));
+      }
       memoizedSize = size;
       return size;
     }
@@ -11159,6 +12133,8 @@ public final class SGCommonProto {
           == other.getRegistTime());
       result = result && (getLastUpLvTime()
           == other.getLastUpLvTime());
+      result = result && getMasterTrainAttributesList()
+          .equals(other.getMasterTrainAttributesList());
       return result;
     }
 
@@ -11195,6 +12171,10 @@ public final class SGCommonProto {
       hash = (53 * hash) + getRegistTime();
       hash = (37 * hash) + LASTUPLVTIME_FIELD_NUMBER;
       hash = (53 * hash) + getLastUpLvTime();
+      if (getMasterTrainAttributesCount() > 0) {
+        hash = (37 * hash) + MASTERTRAINATTRIBUTES_FIELD_NUMBER;
+        hash = (53 * hash) + getMasterTrainAttributesList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11309,6 +12289,7 @@ public final class SGCommonProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getMasterTrainAttributesFieldBuilder();
         }
       }
       public Builder clear() {
@@ -11339,6 +12320,12 @@ public final class SGCommonProto {
 
         lastUpLvTime_ = 0;
 
+        if (masterTrainAttributesBuilder_ == null) {
+          masterTrainAttributes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00002000);
+        } else {
+          masterTrainAttributesBuilder_.clear();
+        }
         return this;
       }
 
@@ -11361,6 +12348,8 @@ public final class SGCommonProto {
 
       public com.douqu.game.core.protobuf.SGCommonProto.PlayerBaseInfo buildPartial() {
         com.douqu.game.core.protobuf.SGCommonProto.PlayerBaseInfo result = new com.douqu.game.core.protobuf.SGCommonProto.PlayerBaseInfo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.playerIndex_ = playerIndex_;
         result.nickName_ = nickName_;
         result.avatar_ = avatar_;
@@ -11374,6 +12363,16 @@ public final class SGCommonProto {
         result.uid_ = uid_;
         result.registTime_ = registTime_;
         result.lastUpLvTime_ = lastUpLvTime_;
+        if (masterTrainAttributesBuilder_ == null) {
+          if (((bitField0_ & 0x00002000) == 0x00002000)) {
+            masterTrainAttributes_ = java.util.Collections.unmodifiableList(masterTrainAttributes_);
+            bitField0_ = (bitField0_ & ~0x00002000);
+          }
+          result.masterTrainAttributes_ = masterTrainAttributes_;
+        } else {
+          result.masterTrainAttributes_ = masterTrainAttributesBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -11458,6 +12457,32 @@ public final class SGCommonProto {
         if (other.getLastUpLvTime() != 0) {
           setLastUpLvTime(other.getLastUpLvTime());
         }
+        if (masterTrainAttributesBuilder_ == null) {
+          if (!other.masterTrainAttributes_.isEmpty()) {
+            if (masterTrainAttributes_.isEmpty()) {
+              masterTrainAttributes_ = other.masterTrainAttributes_;
+              bitField0_ = (bitField0_ & ~0x00002000);
+            } else {
+              ensureMasterTrainAttributesIsMutable();
+              masterTrainAttributes_.addAll(other.masterTrainAttributes_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.masterTrainAttributes_.isEmpty()) {
+            if (masterTrainAttributesBuilder_.isEmpty()) {
+              masterTrainAttributesBuilder_.dispose();
+              masterTrainAttributesBuilder_ = null;
+              masterTrainAttributes_ = other.masterTrainAttributes_;
+              bitField0_ = (bitField0_ & ~0x00002000);
+              masterTrainAttributesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMasterTrainAttributesFieldBuilder() : null;
+            } else {
+              masterTrainAttributesBuilder_.addAllMessages(other.masterTrainAttributes_);
+            }
+          }
+        }
         onChanged();
         return this;
       }
@@ -11483,6 +12508,7 @@ public final class SGCommonProto {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object playerIndex_ = "";
       /**
@@ -12206,6 +13232,318 @@ public final class SGCommonProto {
         lastUpLvTime_ = 0;
         onChanged();
         return this;
+      }
+
+      private java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject> masterTrainAttributes_ =
+        java.util.Collections.emptyList();
+      private void ensureMasterTrainAttributesIsMutable() {
+        if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+          masterTrainAttributes_ = new java.util.ArrayList<com.douqu.game.core.protobuf.SGCommonProto.CommonObject>(masterTrainAttributes_);
+          bitField0_ |= 0x00002000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.CommonObject, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder, com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder> masterTrainAttributesBuilder_;
+
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject> getMasterTrainAttributesList() {
+        if (masterTrainAttributesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(masterTrainAttributes_);
+        } else {
+          return masterTrainAttributesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public int getMasterTrainAttributesCount() {
+        if (masterTrainAttributesBuilder_ == null) {
+          return masterTrainAttributes_.size();
+        } else {
+          return masterTrainAttributesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CommonObject getMasterTrainAttributes(int index) {
+        if (masterTrainAttributesBuilder_ == null) {
+          return masterTrainAttributes_.get(index);
+        } else {
+          return masterTrainAttributesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public Builder setMasterTrainAttributes(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CommonObject value) {
+        if (masterTrainAttributesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMasterTrainAttributesIsMutable();
+          masterTrainAttributes_.set(index, value);
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public Builder setMasterTrainAttributes(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder builderForValue) {
+        if (masterTrainAttributesBuilder_ == null) {
+          ensureMasterTrainAttributesIsMutable();
+          masterTrainAttributes_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public Builder addMasterTrainAttributes(com.douqu.game.core.protobuf.SGCommonProto.CommonObject value) {
+        if (masterTrainAttributesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMasterTrainAttributesIsMutable();
+          masterTrainAttributes_.add(value);
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public Builder addMasterTrainAttributes(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CommonObject value) {
+        if (masterTrainAttributesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMasterTrainAttributesIsMutable();
+          masterTrainAttributes_.add(index, value);
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public Builder addMasterTrainAttributes(
+          com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder builderForValue) {
+        if (masterTrainAttributesBuilder_ == null) {
+          ensureMasterTrainAttributesIsMutable();
+          masterTrainAttributes_.add(builderForValue.build());
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public Builder addMasterTrainAttributes(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder builderForValue) {
+        if (masterTrainAttributesBuilder_ == null) {
+          ensureMasterTrainAttributesIsMutable();
+          masterTrainAttributes_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public Builder addAllMasterTrainAttributes(
+          java.lang.Iterable<? extends com.douqu.game.core.protobuf.SGCommonProto.CommonObject> values) {
+        if (masterTrainAttributesBuilder_ == null) {
+          ensureMasterTrainAttributesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, masterTrainAttributes_);
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public Builder clearMasterTrainAttributes() {
+        if (masterTrainAttributesBuilder_ == null) {
+          masterTrainAttributes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00002000);
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public Builder removeMasterTrainAttributes(int index) {
+        if (masterTrainAttributesBuilder_ == null) {
+          ensureMasterTrainAttributesIsMutable();
+          masterTrainAttributes_.remove(index);
+          onChanged();
+        } else {
+          masterTrainAttributesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder getMasterTrainAttributesBuilder(
+          int index) {
+        return getMasterTrainAttributesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder getMasterTrainAttributesOrBuilder(
+          int index) {
+        if (masterTrainAttributesBuilder_ == null) {
+          return masterTrainAttributes_.get(index);  } else {
+          return masterTrainAttributesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder> 
+           getMasterTrainAttributesOrBuilderList() {
+        if (masterTrainAttributesBuilder_ != null) {
+          return masterTrainAttributesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(masterTrainAttributes_);
+        }
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder addMasterTrainAttributesBuilder() {
+        return getMasterTrainAttributesFieldBuilder().addBuilder(
+            com.douqu.game.core.protobuf.SGCommonProto.CommonObject.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder addMasterTrainAttributesBuilder(
+          int index) {
+        return getMasterTrainAttributesFieldBuilder().addBuilder(
+            index, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       *主将培养改变的属性值
+       * </pre>
+       *
+       * <code>repeated .CommonObject masterTrainAttributes = 14;</code>
+       */
+      public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder> 
+           getMasterTrainAttributesBuilderList() {
+        return getMasterTrainAttributesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.CommonObject, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder, com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder> 
+          getMasterTrainAttributesFieldBuilder() {
+        if (masterTrainAttributesBuilder_ == null) {
+          masterTrainAttributesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.douqu.game.core.protobuf.SGCommonProto.CommonObject, com.douqu.game.core.protobuf.SGCommonProto.CommonObject.Builder, com.douqu.game.core.protobuf.SGCommonProto.CommonObjectOrBuilder>(
+                  masterTrainAttributes_,
+                  ((bitField0_ & 0x00002000) == 0x00002000),
+                  getParentForChildren(),
+                  isClean());
+          masterTrainAttributes_ = null;
+        }
+        return masterTrainAttributesBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -30991,6 +32329,621 @@ public final class SGCommonProto {
 
   }
 
+  public interface GoodsObjectOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:GoodsObject)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *类型
+     * </pre>
+     *
+     * <code>int32 type = 1;</code>
+     */
+    int getType();
+
+    /**
+     * <pre>
+     *ID
+     * </pre>
+     *
+     * <code>int32 id = 2;</code>
+     */
+    int getId();
+
+    /**
+     * <pre>
+     *数量或者等级
+     * </pre>
+     *
+     * <code>int32 value = 3;</code>
+     */
+    int getValue();
+  }
+  /**
+   * Protobuf type {@code GoodsObject}
+   */
+  public  static final class GoodsObject extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:GoodsObject)
+      GoodsObjectOrBuilder {
+    // Use GoodsObject.newBuilder() to construct.
+    private GoodsObject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GoodsObject() {
+      type_ = 0;
+      id_ = 0;
+      value_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private GoodsObject(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              type_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              id_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              value_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGCommonProto.internal_static_GoodsObject_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGCommonProto.internal_static_GoodsObject_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.class, com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.Builder.class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_;
+    /**
+     * <pre>
+     *类型
+     * </pre>
+     *
+     * <code>int32 type = 1;</code>
+     */
+    public int getType() {
+      return type_;
+    }
+
+    public static final int ID_FIELD_NUMBER = 2;
+    private int id_;
+    /**
+     * <pre>
+     *ID
+     * </pre>
+     *
+     * <code>int32 id = 2;</code>
+     */
+    public int getId() {
+      return id_;
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 3;
+    private int value_;
+    /**
+     * <pre>
+     *数量或者等级
+     * </pre>
+     *
+     * <code>int32 value = 3;</code>
+     */
+    public int getValue() {
+      return value_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (type_ != 0) {
+        output.writeInt32(1, type_);
+      }
+      if (id_ != 0) {
+        output.writeInt32(2, id_);
+      }
+      if (value_ != 0) {
+        output.writeInt32(3, value_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (type_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, type_);
+      }
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, id_);
+      }
+      if (value_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, value_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGCommonProto.GoodsObject)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGCommonProto.GoodsObject other = (com.douqu.game.core.protobuf.SGCommonProto.GoodsObject) obj;
+
+      boolean result = true;
+      result = result && (getType()
+          == other.getType());
+      result = result && (getId()
+          == other.getId());
+      result = result && (getValue()
+          == other.getValue());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGCommonProto.GoodsObject parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.GoodsObject parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.GoodsObject parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.GoodsObject parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.GoodsObject parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.GoodsObject parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.GoodsObject parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.GoodsObject parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.GoodsObject parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.GoodsObject parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGCommonProto.GoodsObject prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code GoodsObject}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:GoodsObject)
+        com.douqu.game.core.protobuf.SGCommonProto.GoodsObjectOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGCommonProto.internal_static_GoodsObject_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGCommonProto.internal_static_GoodsObject_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.class, com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        type_ = 0;
+
+        id_ = 0;
+
+        value_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGCommonProto.internal_static_GoodsObject_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGCommonProto.GoodsObject getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGCommonProto.GoodsObject build() {
+        com.douqu.game.core.protobuf.SGCommonProto.GoodsObject result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGCommonProto.GoodsObject buildPartial() {
+        com.douqu.game.core.protobuf.SGCommonProto.GoodsObject result = new com.douqu.game.core.protobuf.SGCommonProto.GoodsObject(this);
+        result.type_ = type_;
+        result.id_ = id_;
+        result.value_ = value_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGCommonProto.GoodsObject) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGCommonProto.GoodsObject)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGCommonProto.GoodsObject other) {
+        if (other == com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.getDefaultInstance()) return this;
+        if (other.getType() != 0) {
+          setType(other.getType());
+        }
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (other.getValue() != 0) {
+          setValue(other.getValue());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGCommonProto.GoodsObject parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGCommonProto.GoodsObject) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int type_ ;
+      /**
+       * <pre>
+       *类型
+       * </pre>
+       *
+       * <code>int32 type = 1;</code>
+       */
+      public int getType() {
+        return type_;
+      }
+      /**
+       * <pre>
+       *类型
+       * </pre>
+       *
+       * <code>int32 type = 1;</code>
+       */
+      public Builder setType(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *类型
+       * </pre>
+       *
+       * <code>int32 type = 1;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int id_ ;
+      /**
+       * <pre>
+       *ID
+       * </pre>
+       *
+       * <code>int32 id = 2;</code>
+       */
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <pre>
+       *ID
+       * </pre>
+       *
+       * <code>int32 id = 2;</code>
+       */
+      public Builder setId(int value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *ID
+       * </pre>
+       *
+       * <code>int32 id = 2;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int value_ ;
+      /**
+       * <pre>
+       *数量或者等级
+       * </pre>
+       *
+       * <code>int32 value = 3;</code>
+       */
+      public int getValue() {
+        return value_;
+      }
+      /**
+       * <pre>
+       *数量或者等级
+       * </pre>
+       *
+       * <code>int32 value = 3;</code>
+       */
+      public Builder setValue(int value) {
+        
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *数量或者等级
+       * </pre>
+       *
+       * <code>int32 value = 3;</code>
+       */
+      public Builder clearValue() {
+        
+        value_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:GoodsObject)
+    }
+
+    // @@protoc_insertion_point(class_scope:GoodsObject)
+    private static final com.douqu.game.core.protobuf.SGCommonProto.GoodsObject DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGCommonProto.GoodsObject();
+    }
+
+    public static com.douqu.game.core.protobuf.SGCommonProto.GoodsObject getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GoodsObject>
+        PARSER = new com.google.protobuf.AbstractParser<GoodsObject>() {
+      public GoodsObject parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new GoodsObject(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GoodsObject> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GoodsObject> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGCommonProto.GoodsObject getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface BattleDataOrBuilder extends
       // @@protoc_insertion_point(interface_extends:BattleData)
       com.google.protobuf.MessageOrBuilder {
@@ -33222,6 +35175,2016 @@ public final class SGCommonProto {
     }
 
     public com.douqu.game.core.protobuf.SGCommonProto.ArenaPlayerInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CollectPlayerInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:CollectPlayerInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *名称
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     *名称
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     *战斗力
+     * </pre>
+     *
+     * <code>int32 fightingCapacity = 2;</code>
+     */
+    int getFightingCapacity();
+
+    /**
+     * <pre>
+     *主将id
+     * </pre>
+     *
+     * <code>int32 masterId = 3;</code>
+     */
+    int getMasterId();
+
+    /**
+     * <pre>
+     *阵营
+     * </pre>
+     *
+     * <code>.E_CAMP_TYPE camp = 4;</code>
+     */
+    int getCampValue();
+    /**
+     * <pre>
+     *阵营
+     * </pre>
+     *
+     * <code>.E_CAMP_TYPE camp = 4;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE getCamp();
+
+    /**
+     * <pre>
+     *玩家唯一标识
+     * </pre>
+     *
+     * <code>string objectIndex = 5;</code>
+     */
+    java.lang.String getObjectIndex();
+    /**
+     * <pre>
+     *玩家唯一标识
+     * </pre>
+     *
+     * <code>string objectIndex = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getObjectIndexBytes();
+
+    /**
+     * <pre>
+     *头像
+     * </pre>
+     *
+     * <code>string avatar = 6;</code>
+     */
+    java.lang.String getAvatar();
+    /**
+     * <pre>
+     *头像
+     * </pre>
+     *
+     * <code>string avatar = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getAvatarBytes();
+
+    /**
+     * <pre>
+     *附带物品
+     * </pre>
+     *
+     * <code>repeated .GoodsObject goods = 7;</code>
+     */
+    java.util.List<com.douqu.game.core.protobuf.SGCommonProto.GoodsObject> 
+        getGoodsList();
+    /**
+     * <pre>
+     *附带物品
+     * </pre>
+     *
+     * <code>repeated .GoodsObject goods = 7;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.GoodsObject getGoods(int index);
+    /**
+     * <pre>
+     *附带物品
+     * </pre>
+     *
+     * <code>repeated .GoodsObject goods = 7;</code>
+     */
+    int getGoodsCount();
+    /**
+     * <pre>
+     *附带物品
+     * </pre>
+     *
+     * <code>repeated .GoodsObject goods = 7;</code>
+     */
+    java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.GoodsObjectOrBuilder> 
+        getGoodsOrBuilderList();
+    /**
+     * <pre>
+     *附带物品
+     * </pre>
+     *
+     * <code>repeated .GoodsObject goods = 7;</code>
+     */
+    com.douqu.game.core.protobuf.SGCommonProto.GoodsObjectOrBuilder getGoodsOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     *复用字段1(采集中为已经抢夺次数)
+     * </pre>
+     *
+     * <code>int32 initValue1 = 8;</code>
+     */
+    int getInitValue1();
+
+    /**
+     * <pre>
+     *复用字段2(采集中为最大抢夺次数)
+     * </pre>
+     *
+     * <code>int32 initValue2 = 9;</code>
+     */
+    int getInitValue2();
+
+    /**
+     * <pre>
+     *复用字段3
+     * </pre>
+     *
+     * <code>string stringValue = 10;</code>
+     */
+    java.lang.String getStringValue();
+    /**
+     * <pre>
+     *复用字段3
+     * </pre>
+     *
+     * <code>string stringValue = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getStringValueBytes();
+  }
+  /**
+   * <pre>
+   *采集玩家信息
+   * </pre>
+   *
+   * Protobuf type {@code CollectPlayerInfo}
+   */
+  public  static final class CollectPlayerInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:CollectPlayerInfo)
+      CollectPlayerInfoOrBuilder {
+    // Use CollectPlayerInfo.newBuilder() to construct.
+    private CollectPlayerInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CollectPlayerInfo() {
+      name_ = "";
+      fightingCapacity_ = 0;
+      masterId_ = 0;
+      camp_ = 0;
+      objectIndex_ = "";
+      avatar_ = "";
+      goods_ = java.util.Collections.emptyList();
+      initValue1_ = 0;
+      initValue2_ = 0;
+      stringValue_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private CollectPlayerInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 16: {
+
+              fightingCapacity_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              masterId_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              camp_ = rawValue;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              objectIndex_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              avatar_ = s;
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                goods_ = new java.util.ArrayList<com.douqu.game.core.protobuf.SGCommonProto.GoodsObject>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              goods_.add(
+                  input.readMessage(com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.parser(), extensionRegistry));
+              break;
+            }
+            case 64: {
+
+              initValue1_ = input.readInt32();
+              break;
+            }
+            case 72: {
+
+              initValue2_ = input.readInt32();
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              stringValue_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+          goods_ = java.util.Collections.unmodifiableList(goods_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.douqu.game.core.protobuf.SGCommonProto.internal_static_CollectPlayerInfo_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.douqu.game.core.protobuf.SGCommonProto.internal_static_CollectPlayerInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo.class, com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     *名称
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *名称
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FIGHTINGCAPACITY_FIELD_NUMBER = 2;
+    private int fightingCapacity_;
+    /**
+     * <pre>
+     *战斗力
+     * </pre>
+     *
+     * <code>int32 fightingCapacity = 2;</code>
+     */
+    public int getFightingCapacity() {
+      return fightingCapacity_;
+    }
+
+    public static final int MASTERID_FIELD_NUMBER = 3;
+    private int masterId_;
+    /**
+     * <pre>
+     *主将id
+     * </pre>
+     *
+     * <code>int32 masterId = 3;</code>
+     */
+    public int getMasterId() {
+      return masterId_;
+    }
+
+    public static final int CAMP_FIELD_NUMBER = 4;
+    private int camp_;
+    /**
+     * <pre>
+     *阵营
+     * </pre>
+     *
+     * <code>.E_CAMP_TYPE camp = 4;</code>
+     */
+    public int getCampValue() {
+      return camp_;
+    }
+    /**
+     * <pre>
+     *阵营
+     * </pre>
+     *
+     * <code>.E_CAMP_TYPE camp = 4;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE getCamp() {
+      com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.valueOf(camp_);
+      return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.UNRECOGNIZED : result;
+    }
+
+    public static final int OBJECTINDEX_FIELD_NUMBER = 5;
+    private volatile java.lang.Object objectIndex_;
+    /**
+     * <pre>
+     *玩家唯一标识
+     * </pre>
+     *
+     * <code>string objectIndex = 5;</code>
+     */
+    public java.lang.String getObjectIndex() {
+      java.lang.Object ref = objectIndex_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        objectIndex_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *玩家唯一标识
+     * </pre>
+     *
+     * <code>string objectIndex = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getObjectIndexBytes() {
+      java.lang.Object ref = objectIndex_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        objectIndex_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AVATAR_FIELD_NUMBER = 6;
+    private volatile java.lang.Object avatar_;
+    /**
+     * <pre>
+     *头像
+     * </pre>
+     *
+     * <code>string avatar = 6;</code>
+     */
+    public java.lang.String getAvatar() {
+      java.lang.Object ref = avatar_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        avatar_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *头像
+     * </pre>
+     *
+     * <code>string avatar = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAvatarBytes() {
+      java.lang.Object ref = avatar_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        avatar_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GOODS_FIELD_NUMBER = 7;
+    private java.util.List<com.douqu.game.core.protobuf.SGCommonProto.GoodsObject> goods_;
+    /**
+     * <pre>
+     *附带物品
+     * </pre>
+     *
+     * <code>repeated .GoodsObject goods = 7;</code>
+     */
+    public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.GoodsObject> getGoodsList() {
+      return goods_;
+    }
+    /**
+     * <pre>
+     *附带物品
+     * </pre>
+     *
+     * <code>repeated .GoodsObject goods = 7;</code>
+     */
+    public java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.GoodsObjectOrBuilder> 
+        getGoodsOrBuilderList() {
+      return goods_;
+    }
+    /**
+     * <pre>
+     *附带物品
+     * </pre>
+     *
+     * <code>repeated .GoodsObject goods = 7;</code>
+     */
+    public int getGoodsCount() {
+      return goods_.size();
+    }
+    /**
+     * <pre>
+     *附带物品
+     * </pre>
+     *
+     * <code>repeated .GoodsObject goods = 7;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.GoodsObject getGoods(int index) {
+      return goods_.get(index);
+    }
+    /**
+     * <pre>
+     *附带物品
+     * </pre>
+     *
+     * <code>repeated .GoodsObject goods = 7;</code>
+     */
+    public com.douqu.game.core.protobuf.SGCommonProto.GoodsObjectOrBuilder getGoodsOrBuilder(
+        int index) {
+      return goods_.get(index);
+    }
+
+    public static final int INITVALUE1_FIELD_NUMBER = 8;
+    private int initValue1_;
+    /**
+     * <pre>
+     *复用字段1(采集中为已经抢夺次数)
+     * </pre>
+     *
+     * <code>int32 initValue1 = 8;</code>
+     */
+    public int getInitValue1() {
+      return initValue1_;
+    }
+
+    public static final int INITVALUE2_FIELD_NUMBER = 9;
+    private int initValue2_;
+    /**
+     * <pre>
+     *复用字段2(采集中为最大抢夺次数)
+     * </pre>
+     *
+     * <code>int32 initValue2 = 9;</code>
+     */
+    public int getInitValue2() {
+      return initValue2_;
+    }
+
+    public static final int STRINGVALUE_FIELD_NUMBER = 10;
+    private volatile java.lang.Object stringValue_;
+    /**
+     * <pre>
+     *复用字段3
+     * </pre>
+     *
+     * <code>string stringValue = 10;</code>
+     */
+    public java.lang.String getStringValue() {
+      java.lang.Object ref = stringValue_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stringValue_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *复用字段3
+     * </pre>
+     *
+     * <code>string stringValue = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStringValueBytes() {
+      java.lang.Object ref = stringValue_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stringValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (fightingCapacity_ != 0) {
+        output.writeInt32(2, fightingCapacity_);
+      }
+      if (masterId_ != 0) {
+        output.writeInt32(3, masterId_);
+      }
+      if (camp_ != com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.CAMP_TYPE_UNKNOWN.getNumber()) {
+        output.writeEnum(4, camp_);
+      }
+      if (!getObjectIndexBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, objectIndex_);
+      }
+      if (!getAvatarBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, avatar_);
+      }
+      for (int i = 0; i < goods_.size(); i++) {
+        output.writeMessage(7, goods_.get(i));
+      }
+      if (initValue1_ != 0) {
+        output.writeInt32(8, initValue1_);
+      }
+      if (initValue2_ != 0) {
+        output.writeInt32(9, initValue2_);
+      }
+      if (!getStringValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, stringValue_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (fightingCapacity_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, fightingCapacity_);
+      }
+      if (masterId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, masterId_);
+      }
+      if (camp_ != com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.CAMP_TYPE_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, camp_);
+      }
+      if (!getObjectIndexBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, objectIndex_);
+      }
+      if (!getAvatarBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, avatar_);
+      }
+      for (int i = 0; i < goods_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, goods_.get(i));
+      }
+      if (initValue1_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, initValue1_);
+      }
+      if (initValue2_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, initValue2_);
+      }
+      if (!getStringValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, stringValue_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo)) {
+        return super.equals(obj);
+      }
+      com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo other = (com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo) obj;
+
+      boolean result = true;
+      result = result && getName()
+          .equals(other.getName());
+      result = result && (getFightingCapacity()
+          == other.getFightingCapacity());
+      result = result && (getMasterId()
+          == other.getMasterId());
+      result = result && camp_ == other.camp_;
+      result = result && getObjectIndex()
+          .equals(other.getObjectIndex());
+      result = result && getAvatar()
+          .equals(other.getAvatar());
+      result = result && getGoodsList()
+          .equals(other.getGoodsList());
+      result = result && (getInitValue1()
+          == other.getInitValue1());
+      result = result && (getInitValue2()
+          == other.getInitValue2());
+      result = result && getStringValue()
+          .equals(other.getStringValue());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + FIGHTINGCAPACITY_FIELD_NUMBER;
+      hash = (53 * hash) + getFightingCapacity();
+      hash = (37 * hash) + MASTERID_FIELD_NUMBER;
+      hash = (53 * hash) + getMasterId();
+      hash = (37 * hash) + CAMP_FIELD_NUMBER;
+      hash = (53 * hash) + camp_;
+      hash = (37 * hash) + OBJECTINDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getObjectIndex().hashCode();
+      hash = (37 * hash) + AVATAR_FIELD_NUMBER;
+      hash = (53 * hash) + getAvatar().hashCode();
+      if (getGoodsCount() > 0) {
+        hash = (37 * hash) + GOODS_FIELD_NUMBER;
+        hash = (53 * hash) + getGoodsList().hashCode();
+      }
+      hash = (37 * hash) + INITVALUE1_FIELD_NUMBER;
+      hash = (53 * hash) + getInitValue1();
+      hash = (37 * hash) + INITVALUE2_FIELD_NUMBER;
+      hash = (53 * hash) + getInitValue2();
+      hash = (37 * hash) + STRINGVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getStringValue().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *采集玩家信息
+     * </pre>
+     *
+     * Protobuf type {@code CollectPlayerInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:CollectPlayerInfo)
+        com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.douqu.game.core.protobuf.SGCommonProto.internal_static_CollectPlayerInfo_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.douqu.game.core.protobuf.SGCommonProto.internal_static_CollectPlayerInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo.class, com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo.Builder.class);
+      }
+
+      // Construct using com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getGoodsFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        fightingCapacity_ = 0;
+
+        masterId_ = 0;
+
+        camp_ = 0;
+
+        objectIndex_ = "";
+
+        avatar_ = "";
+
+        if (goodsBuilder_ == null) {
+          goods_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          goodsBuilder_.clear();
+        }
+        initValue1_ = 0;
+
+        initValue2_ = 0;
+
+        stringValue_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.douqu.game.core.protobuf.SGCommonProto.internal_static_CollectPlayerInfo_descriptor;
+      }
+
+      public com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo getDefaultInstanceForType() {
+        return com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo.getDefaultInstance();
+      }
+
+      public com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo build() {
+        com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo buildPartial() {
+        com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo result = new com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.name_ = name_;
+        result.fightingCapacity_ = fightingCapacity_;
+        result.masterId_ = masterId_;
+        result.camp_ = camp_;
+        result.objectIndex_ = objectIndex_;
+        result.avatar_ = avatar_;
+        if (goodsBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+            goods_ = java.util.Collections.unmodifiableList(goods_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.goods_ = goods_;
+        } else {
+          result.goods_ = goodsBuilder_.build();
+        }
+        result.initValue1_ = initValue1_;
+        result.initValue2_ = initValue2_;
+        result.stringValue_ = stringValue_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo) {
+          return mergeFrom((com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo other) {
+        if (other == com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.getFightingCapacity() != 0) {
+          setFightingCapacity(other.getFightingCapacity());
+        }
+        if (other.getMasterId() != 0) {
+          setMasterId(other.getMasterId());
+        }
+        if (other.camp_ != 0) {
+          setCampValue(other.getCampValue());
+        }
+        if (!other.getObjectIndex().isEmpty()) {
+          objectIndex_ = other.objectIndex_;
+          onChanged();
+        }
+        if (!other.getAvatar().isEmpty()) {
+          avatar_ = other.avatar_;
+          onChanged();
+        }
+        if (goodsBuilder_ == null) {
+          if (!other.goods_.isEmpty()) {
+            if (goods_.isEmpty()) {
+              goods_ = other.goods_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureGoodsIsMutable();
+              goods_.addAll(other.goods_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.goods_.isEmpty()) {
+            if (goodsBuilder_.isEmpty()) {
+              goodsBuilder_.dispose();
+              goodsBuilder_ = null;
+              goods_ = other.goods_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              goodsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getGoodsFieldBuilder() : null;
+            } else {
+              goodsBuilder_.addAllMessages(other.goods_);
+            }
+          }
+        }
+        if (other.getInitValue1() != 0) {
+          setInitValue1(other.getInitValue1());
+        }
+        if (other.getInitValue2() != 0) {
+          setInitValue2(other.getInitValue2());
+        }
+        if (!other.getStringValue().isEmpty()) {
+          stringValue_ = other.stringValue_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       *名称
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *名称
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *名称
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *名称
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *名称
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int fightingCapacity_ ;
+      /**
+       * <pre>
+       *战斗力
+       * </pre>
+       *
+       * <code>int32 fightingCapacity = 2;</code>
+       */
+      public int getFightingCapacity() {
+        return fightingCapacity_;
+      }
+      /**
+       * <pre>
+       *战斗力
+       * </pre>
+       *
+       * <code>int32 fightingCapacity = 2;</code>
+       */
+      public Builder setFightingCapacity(int value) {
+        
+        fightingCapacity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *战斗力
+       * </pre>
+       *
+       * <code>int32 fightingCapacity = 2;</code>
+       */
+      public Builder clearFightingCapacity() {
+        
+        fightingCapacity_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int masterId_ ;
+      /**
+       * <pre>
+       *主将id
+       * </pre>
+       *
+       * <code>int32 masterId = 3;</code>
+       */
+      public int getMasterId() {
+        return masterId_;
+      }
+      /**
+       * <pre>
+       *主将id
+       * </pre>
+       *
+       * <code>int32 masterId = 3;</code>
+       */
+      public Builder setMasterId(int value) {
+        
+        masterId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *主将id
+       * </pre>
+       *
+       * <code>int32 masterId = 3;</code>
+       */
+      public Builder clearMasterId() {
+        
+        masterId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int camp_ = 0;
+      /**
+       * <pre>
+       *阵营
+       * </pre>
+       *
+       * <code>.E_CAMP_TYPE camp = 4;</code>
+       */
+      public int getCampValue() {
+        return camp_;
+      }
+      /**
+       * <pre>
+       *阵营
+       * </pre>
+       *
+       * <code>.E_CAMP_TYPE camp = 4;</code>
+       */
+      public Builder setCampValue(int value) {
+        camp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *阵营
+       * </pre>
+       *
+       * <code>.E_CAMP_TYPE camp = 4;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE getCamp() {
+        com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE result = com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.valueOf(camp_);
+        return result == null ? com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       *阵营
+       * </pre>
+       *
+       * <code>.E_CAMP_TYPE camp = 4;</code>
+       */
+      public Builder setCamp(com.douqu.game.core.protobuf.SGCommonProto.E_CAMP_TYPE value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        camp_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *阵营
+       * </pre>
+       *
+       * <code>.E_CAMP_TYPE camp = 4;</code>
+       */
+      public Builder clearCamp() {
+        
+        camp_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object objectIndex_ = "";
+      /**
+       * <pre>
+       *玩家唯一标识
+       * </pre>
+       *
+       * <code>string objectIndex = 5;</code>
+       */
+      public java.lang.String getObjectIndex() {
+        java.lang.Object ref = objectIndex_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          objectIndex_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *玩家唯一标识
+       * </pre>
+       *
+       * <code>string objectIndex = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getObjectIndexBytes() {
+        java.lang.Object ref = objectIndex_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          objectIndex_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *玩家唯一标识
+       * </pre>
+       *
+       * <code>string objectIndex = 5;</code>
+       */
+      public Builder setObjectIndex(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        objectIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *玩家唯一标识
+       * </pre>
+       *
+       * <code>string objectIndex = 5;</code>
+       */
+      public Builder clearObjectIndex() {
+        
+        objectIndex_ = getDefaultInstance().getObjectIndex();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *玩家唯一标识
+       * </pre>
+       *
+       * <code>string objectIndex = 5;</code>
+       */
+      public Builder setObjectIndexBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        objectIndex_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object avatar_ = "";
+      /**
+       * <pre>
+       *头像
+       * </pre>
+       *
+       * <code>string avatar = 6;</code>
+       */
+      public java.lang.String getAvatar() {
+        java.lang.Object ref = avatar_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          avatar_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *头像
+       * </pre>
+       *
+       * <code>string avatar = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAvatarBytes() {
+        java.lang.Object ref = avatar_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          avatar_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *头像
+       * </pre>
+       *
+       * <code>string avatar = 6;</code>
+       */
+      public Builder setAvatar(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        avatar_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *头像
+       * </pre>
+       *
+       * <code>string avatar = 6;</code>
+       */
+      public Builder clearAvatar() {
+        
+        avatar_ = getDefaultInstance().getAvatar();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *头像
+       * </pre>
+       *
+       * <code>string avatar = 6;</code>
+       */
+      public Builder setAvatarBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        avatar_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.douqu.game.core.protobuf.SGCommonProto.GoodsObject> goods_ =
+        java.util.Collections.emptyList();
+      private void ensureGoodsIsMutable() {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+          goods_ = new java.util.ArrayList<com.douqu.game.core.protobuf.SGCommonProto.GoodsObject>(goods_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.GoodsObject, com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.Builder, com.douqu.game.core.protobuf.SGCommonProto.GoodsObjectOrBuilder> goodsBuilder_;
+
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.GoodsObject> getGoodsList() {
+        if (goodsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(goods_);
+        } else {
+          return goodsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public int getGoodsCount() {
+        if (goodsBuilder_ == null) {
+          return goods_.size();
+        } else {
+          return goodsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.GoodsObject getGoods(int index) {
+        if (goodsBuilder_ == null) {
+          return goods_.get(index);
+        } else {
+          return goodsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public Builder setGoods(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.GoodsObject value) {
+        if (goodsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGoodsIsMutable();
+          goods_.set(index, value);
+          onChanged();
+        } else {
+          goodsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public Builder setGoods(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.Builder builderForValue) {
+        if (goodsBuilder_ == null) {
+          ensureGoodsIsMutable();
+          goods_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          goodsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public Builder addGoods(com.douqu.game.core.protobuf.SGCommonProto.GoodsObject value) {
+        if (goodsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGoodsIsMutable();
+          goods_.add(value);
+          onChanged();
+        } else {
+          goodsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public Builder addGoods(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.GoodsObject value) {
+        if (goodsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGoodsIsMutable();
+          goods_.add(index, value);
+          onChanged();
+        } else {
+          goodsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public Builder addGoods(
+          com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.Builder builderForValue) {
+        if (goodsBuilder_ == null) {
+          ensureGoodsIsMutable();
+          goods_.add(builderForValue.build());
+          onChanged();
+        } else {
+          goodsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public Builder addGoods(
+          int index, com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.Builder builderForValue) {
+        if (goodsBuilder_ == null) {
+          ensureGoodsIsMutable();
+          goods_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          goodsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public Builder addAllGoods(
+          java.lang.Iterable<? extends com.douqu.game.core.protobuf.SGCommonProto.GoodsObject> values) {
+        if (goodsBuilder_ == null) {
+          ensureGoodsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, goods_);
+          onChanged();
+        } else {
+          goodsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public Builder clearGoods() {
+        if (goodsBuilder_ == null) {
+          goods_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          goodsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public Builder removeGoods(int index) {
+        if (goodsBuilder_ == null) {
+          ensureGoodsIsMutable();
+          goods_.remove(index);
+          onChanged();
+        } else {
+          goodsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.Builder getGoodsBuilder(
+          int index) {
+        return getGoodsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.GoodsObjectOrBuilder getGoodsOrBuilder(
+          int index) {
+        if (goodsBuilder_ == null) {
+          return goods_.get(index);  } else {
+          return goodsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public java.util.List<? extends com.douqu.game.core.protobuf.SGCommonProto.GoodsObjectOrBuilder> 
+           getGoodsOrBuilderList() {
+        if (goodsBuilder_ != null) {
+          return goodsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(goods_);
+        }
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.Builder addGoodsBuilder() {
+        return getGoodsFieldBuilder().addBuilder(
+            com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.Builder addGoodsBuilder(
+          int index) {
+        return getGoodsFieldBuilder().addBuilder(
+            index, com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       *附带物品
+       * </pre>
+       *
+       * <code>repeated .GoodsObject goods = 7;</code>
+       */
+      public java.util.List<com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.Builder> 
+           getGoodsBuilderList() {
+        return getGoodsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.douqu.game.core.protobuf.SGCommonProto.GoodsObject, com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.Builder, com.douqu.game.core.protobuf.SGCommonProto.GoodsObjectOrBuilder> 
+          getGoodsFieldBuilder() {
+        if (goodsBuilder_ == null) {
+          goodsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.douqu.game.core.protobuf.SGCommonProto.GoodsObject, com.douqu.game.core.protobuf.SGCommonProto.GoodsObject.Builder, com.douqu.game.core.protobuf.SGCommonProto.GoodsObjectOrBuilder>(
+                  goods_,
+                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  getParentForChildren(),
+                  isClean());
+          goods_ = null;
+        }
+        return goodsBuilder_;
+      }
+
+      private int initValue1_ ;
+      /**
+       * <pre>
+       *复用字段1(采集中为已经抢夺次数)
+       * </pre>
+       *
+       * <code>int32 initValue1 = 8;</code>
+       */
+      public int getInitValue1() {
+        return initValue1_;
+      }
+      /**
+       * <pre>
+       *复用字段1(采集中为已经抢夺次数)
+       * </pre>
+       *
+       * <code>int32 initValue1 = 8;</code>
+       */
+      public Builder setInitValue1(int value) {
+        
+        initValue1_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *复用字段1(采集中为已经抢夺次数)
+       * </pre>
+       *
+       * <code>int32 initValue1 = 8;</code>
+       */
+      public Builder clearInitValue1() {
+        
+        initValue1_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int initValue2_ ;
+      /**
+       * <pre>
+       *复用字段2(采集中为最大抢夺次数)
+       * </pre>
+       *
+       * <code>int32 initValue2 = 9;</code>
+       */
+      public int getInitValue2() {
+        return initValue2_;
+      }
+      /**
+       * <pre>
+       *复用字段2(采集中为最大抢夺次数)
+       * </pre>
+       *
+       * <code>int32 initValue2 = 9;</code>
+       */
+      public Builder setInitValue2(int value) {
+        
+        initValue2_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *复用字段2(采集中为最大抢夺次数)
+       * </pre>
+       *
+       * <code>int32 initValue2 = 9;</code>
+       */
+      public Builder clearInitValue2() {
+        
+        initValue2_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object stringValue_ = "";
+      /**
+       * <pre>
+       *复用字段3
+       * </pre>
+       *
+       * <code>string stringValue = 10;</code>
+       */
+      public java.lang.String getStringValue() {
+        java.lang.Object ref = stringValue_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          stringValue_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *复用字段3
+       * </pre>
+       *
+       * <code>string stringValue = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStringValueBytes() {
+        java.lang.Object ref = stringValue_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stringValue_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *复用字段3
+       * </pre>
+       *
+       * <code>string stringValue = 10;</code>
+       */
+      public Builder setStringValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        stringValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *复用字段3
+       * </pre>
+       *
+       * <code>string stringValue = 10;</code>
+       */
+      public Builder clearStringValue() {
+        
+        stringValue_ = getDefaultInstance().getStringValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *复用字段3
+       * </pre>
+       *
+       * <code>string stringValue = 10;</code>
+       */
+      public Builder setStringValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        stringValue_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:CollectPlayerInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:CollectPlayerInfo)
+    private static final com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo();
+    }
+
+    public static com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CollectPlayerInfo>
+        PARSER = new com.google.protobuf.AbstractParser<CollectPlayerInfo>() {
+      public CollectPlayerInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CollectPlayerInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CollectPlayerInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CollectPlayerInfo> getParserForType() {
+      return PARSER;
+    }
+
+    public com.douqu.game.core.protobuf.SGCommonProto.CollectPlayerInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -38883,6 +42846,33 @@ public final class SGCommonProto {
      * <code>int32 exd = 12;</code>
      */
     int getExd();
+
+    /**
+     * <pre>
+     *物抗
+     * </pre>
+     *
+     * <code>int32 phyRes = 13;</code>
+     */
+    int getPhyRes();
+
+    /**
+     * <pre>
+     *抵挡
+     * </pre>
+     *
+     * <code>int32 punRes = 14;</code>
+     */
+    int getPunRes();
+
+    /**
+     * <pre>
+     *魔抗
+     * </pre>
+     *
+     * <code>int32 magRes = 15;</code>
+     */
+    int getMagRes();
   }
   /**
    * <pre>
@@ -38912,6 +42902,9 @@ public final class SGCommonProto {
       hit_ = 0;
       add_ = 0;
       exd_ = 0;
+      phyRes_ = 0;
+      punRes_ = 0;
+      magRes_ = 0;
     }
 
     @java.lang.Override
@@ -38997,6 +42990,21 @@ public final class SGCommonProto {
             case 96: {
 
               exd_ = input.readInt32();
+              break;
+            }
+            case 104: {
+
+              phyRes_ = input.readInt32();
+              break;
+            }
+            case 112: {
+
+              punRes_ = input.readInt32();
+              break;
+            }
+            case 120: {
+
+              magRes_ = input.readInt32();
               break;
             }
           }
@@ -39178,6 +43186,45 @@ public final class SGCommonProto {
       return exd_;
     }
 
+    public static final int PHYRES_FIELD_NUMBER = 13;
+    private int phyRes_;
+    /**
+     * <pre>
+     *物抗
+     * </pre>
+     *
+     * <code>int32 phyRes = 13;</code>
+     */
+    public int getPhyRes() {
+      return phyRes_;
+    }
+
+    public static final int PUNRES_FIELD_NUMBER = 14;
+    private int punRes_;
+    /**
+     * <pre>
+     *抵挡
+     * </pre>
+     *
+     * <code>int32 punRes = 14;</code>
+     */
+    public int getPunRes() {
+      return punRes_;
+    }
+
+    public static final int MAGRES_FIELD_NUMBER = 15;
+    private int magRes_;
+    /**
+     * <pre>
+     *魔抗
+     * </pre>
+     *
+     * <code>int32 magRes = 15;</code>
+     */
+    public int getMagRes() {
+      return magRes_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -39225,6 +43272,15 @@ public final class SGCommonProto {
       }
       if (exd_ != 0) {
         output.writeInt32(12, exd_);
+      }
+      if (phyRes_ != 0) {
+        output.writeInt32(13, phyRes_);
+      }
+      if (punRes_ != 0) {
+        output.writeInt32(14, punRes_);
+      }
+      if (magRes_ != 0) {
+        output.writeInt32(15, magRes_);
       }
     }
 
@@ -39281,6 +43337,18 @@ public final class SGCommonProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(12, exd_);
       }
+      if (phyRes_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(13, phyRes_);
+      }
+      if (punRes_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(14, punRes_);
+      }
+      if (magRes_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(15, magRes_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -39321,6 +43389,12 @@ public final class SGCommonProto {
           == other.getAdd());
       result = result && (getExd()
           == other.getExd());
+      result = result && (getPhyRes()
+          == other.getPhyRes());
+      result = result && (getPunRes()
+          == other.getPunRes());
+      result = result && (getMagRes()
+          == other.getMagRes());
       return result;
     }
 
@@ -39355,6 +43429,12 @@ public final class SGCommonProto {
       hash = (53 * hash) + getAdd();
       hash = (37 * hash) + EXD_FIELD_NUMBER;
       hash = (53 * hash) + getExd();
+      hash = (37 * hash) + PHYRES_FIELD_NUMBER;
+      hash = (53 * hash) + getPhyRes();
+      hash = (37 * hash) + PUNRES_FIELD_NUMBER;
+      hash = (53 * hash) + getPunRes();
+      hash = (37 * hash) + MAGRES_FIELD_NUMBER;
+      hash = (53 * hash) + getMagRes();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -39501,6 +43581,12 @@ public final class SGCommonProto {
 
         exd_ = 0;
 
+        phyRes_ = 0;
+
+        punRes_ = 0;
+
+        magRes_ = 0;
+
         return this;
       }
 
@@ -39535,6 +43621,9 @@ public final class SGCommonProto {
         result.hit_ = hit_;
         result.add_ = add_;
         result.exd_ = exd_;
+        result.phyRes_ = phyRes_;
+        result.punRes_ = punRes_;
+        result.magRes_ = magRes_;
         onBuilt();
         return result;
       }
@@ -39611,6 +43700,15 @@ public final class SGCommonProto {
         }
         if (other.getExd() != 0) {
           setExd(other.getExd());
+        }
+        if (other.getPhyRes() != 0) {
+          setPhyRes(other.getPhyRes());
+        }
+        if (other.getPunRes() != 0) {
+          setPunRes(other.getPunRes());
+        }
+        if (other.getMagRes() != 0) {
+          setMagRes(other.getMagRes());
         }
         onChanged();
         return this;
@@ -40090,6 +44188,120 @@ public final class SGCommonProto {
       public Builder clearExd() {
         
         exd_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int phyRes_ ;
+      /**
+       * <pre>
+       *物抗
+       * </pre>
+       *
+       * <code>int32 phyRes = 13;</code>
+       */
+      public int getPhyRes() {
+        return phyRes_;
+      }
+      /**
+       * <pre>
+       *物抗
+       * </pre>
+       *
+       * <code>int32 phyRes = 13;</code>
+       */
+      public Builder setPhyRes(int value) {
+        
+        phyRes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *物抗
+       * </pre>
+       *
+       * <code>int32 phyRes = 13;</code>
+       */
+      public Builder clearPhyRes() {
+        
+        phyRes_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int punRes_ ;
+      /**
+       * <pre>
+       *抵挡
+       * </pre>
+       *
+       * <code>int32 punRes = 14;</code>
+       */
+      public int getPunRes() {
+        return punRes_;
+      }
+      /**
+       * <pre>
+       *抵挡
+       * </pre>
+       *
+       * <code>int32 punRes = 14;</code>
+       */
+      public Builder setPunRes(int value) {
+        
+        punRes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *抵挡
+       * </pre>
+       *
+       * <code>int32 punRes = 14;</code>
+       */
+      public Builder clearPunRes() {
+        
+        punRes_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int magRes_ ;
+      /**
+       * <pre>
+       *魔抗
+       * </pre>
+       *
+       * <code>int32 magRes = 15;</code>
+       */
+      public int getMagRes() {
+        return magRes_;
+      }
+      /**
+       * <pre>
+       *魔抗
+       * </pre>
+       *
+       * <code>int32 magRes = 15;</code>
+       */
+      public Builder setMagRes(int value) {
+        
+        magRes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *魔抗
+       * </pre>
+       *
+       * <code>int32 magRes = 15;</code>
+       */
+      public Builder clearMagRes() {
+        
+        magRes_ = 0;
         onChanged();
         return this;
       }
@@ -49251,6 +53463,11 @@ public final class SGCommonProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CommonObject_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GoodsObject_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GoodsObject_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_BattleData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -49260,6 +53477,11 @@ public final class SGCommonProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ArenaPlayerInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CollectPlayerInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CollectPlayerInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_RewardInfo_descriptor;
   private static final 
@@ -49354,261 +53576,293 @@ public final class SGCommonProto {
       "\0162\016.E_BATTLE_UNIT\022\020\n\010uniqueId\030\002 \001(\005\022\020\n\010c" +
       "onfigId\030\003 \001(\005\022\016\n\006teamNo\030\004 \001(\005\022\r\n\005maxHP\030\005" +
       " \001(\005\022\n\n\002hp\030\006 \001(\005\022\021\n\003pos\030\007 \001(\0132\004.Pos\022\n\n\002l",
-      "v\030\010 \001(\005\022\014\n\004name\030\t \001(\t\"\364\001\n\016PlayerBaseInfo" +
+      "v\030\010 \001(\005\022\014\n\004name\030\t \001(\t\"\242\002\n\016PlayerBaseInfo" +
       "\022\023\n\013playerIndex\030\001 \001(\t\022\020\n\010nickName\030\002 \001(\t\022" +
       "\016\n\006avatar\030\003 \001(\t\022\n\n\002lv\030\004 \001(\005\022\r\n\005vipLv\030\005 \001" +
       "(\005\022\013\n\003exp\030\006 \001(\005\022\n\n\002fc\030\007 \001(\005\022\020\n\010masterId\030" +
       "\010 \001(\005\022\036\n\010camptype\030\t \001(\0162\014.E_CAMP_TYPE\022\016\n" +
       "\006mobile\030\n \001(\t\022\013\n\003uid\030\013 \001(\005\022\022\n\nregistTime" +
-      "\030\014 \001(\005\022\024\n\014lastUpLvTime\030\r \001(\005\"\226\001\n\004Card\022\n\n" +
-      "\002id\030\001 \001(\005\022\n\n\002lv\030\002 \001(\005\022\014\n\004star\030\003 \001(\005\022\016\n\006c" +
-      "urExp\030\004 \001(\005\022\n\n\002fc\030\005 \001(\005\022\025\n\005equip\030\006 \003(\0132\006" +
-      ".Equip\022\026\n\016activeFateList\030\007 \003(\005\022\035\n\taccess",
-      "ory\030\010 \003(\0132\n.Accessory\"\\\n\tCardGroup\022\017\n\007gr" +
-      "oupId\030\001 \001(\005\022(\n\rcardGroupType\030\002 \001(\0162\021.E_C" +
-      "ARDGROUP_TYPE\022\024\n\005cards\030\003 \003(\0132\005.Card\"$\n\007B" +
-      "agProp\022\n\n\002id\030\001 \001(\005\022\r\n\005count\030\002 \001(\005\"@\n\tMou" +
-      "thCard\022\n\n\002id\030\001 \001(\005\022\017\n\007endDays\030\002 \001(\005\022\026\n\016h" +
-      "asRewardToday\030\003 \001(\010\"\316\002\n\010BaseData\022!\n\010base" +
-      "Info\030\001 \001(\0132\017.PlayerBaseInfo\022\036\n\ncardGroup" +
-      "s\030\002 \003(\0132\n.CardGroup\022\027\n\005props\030\003 \003(\0132\010.Bag" +
-      "Prop\022\030\n\004data\030\004 \003(\0132\n.FlushData\022\037\n\ntaskDe" +
-      "tail\030\005 \001(\0132\013.TaskDetail\022\030\n\020equippedSkill",
-      "Ids\030\006 \003(\005\022\034\n\024consumeNotRemindKeys\030\007 \003(\005\022" +
-      "\037\n\027isFirstRechargeComplete\030\010 \001(\010\022!\n\031isFi" +
-      "rstRechargeGiftReward\030\t \001(\010\022\025\n\rguideProg" +
-      "ress\030\n \001(\t\022\030\n\020isLoginBonusShow\030\013 \001(\010\"Q\n\017" +
-      "PlayerMatchInfo\022!\n\010baseInfo\030\001 \001(\0132\017.Play" +
-      "erBaseInfo\022\r\n\005grade\030\002 \001(\005\022\014\n\004star\030\003 \001(\005\"" +
-      ":\n\004Army\022\027\n\005heros\030\001 \003(\0132\010.Warrior\022\031\n\007sold" +
-      "ier\030\002 \003(\0132\010.Warrior\"h\n\007Warrior\022\035\n\004type\030\001" +
-      " \001(\0162\017.E_WARRIOR_TYPE\022\021\n\twarriorID\030\002 \001(\005" +
-      "\022\r\n\005count\030\004 \001(\005\022\034\n\007initPos\030\005 \001(\0132\013.Battl",
-      "eGrid\":\n\nWarriorPos\022\031\n\007warrior\030\001 \001(\0132\010.W" +
-      "arrior\022\021\n\003pos\030\002 \001(\0132\004.Pos\"J\n\rWarriorDama" +
-      "ge\022\031\n\007warrior\030\001 \001(\0132\010.Warrior\022\016\n\006hpLost\030" +
-      "\002 \001(\005\022\016\n\006mpLost\030\003 \001(\005\"\203\001\n\014SpriteDamage\022\020" +
-      "\n\010targetId\030\001 \001(\005\022\r\n\005srcId\030\002 \001(\005\022\022\n\nsrcSk" +
-      "illId\030\003 \001(\005\022\016\n\006damage\030\004 \001(\005\022\n\n\002hp\030\005 \001(\005\022" +
-      "\"\n\ndamageType\030\006 \001(\0162\016.E_DAMAGE_TYPE\"V\n\tF" +
-      "lushData\022\033\n\004type\030\001 \001(\0162\r.E_GOODS_TYPE\022\n\n" +
-      "\002id\030\002 \001(\005\022\016\n\006change\030\003 \001(\005\022\020\n\010curValue\030\004 " +
-      "\001(\005\"x\n\007Buiding\022\036\n\004type\030\001 \001(\0162\020.E_BUILDIN",
-      "G_TYPE\022\014\n\004name\030\002 \001(\t\022\r\n\005level\030\003 \001(\005\022\026\n\016c" +
-      "reateNeedTime\030\004 \001(\005\022\030\n\020createRemainTime\030" +
-      "\005 \001(\005\"9\n\006Effect\022\n\n\002id\030\001 \001(\005\022\022\n\nremainTim" +
-      "e\030\002 \001(\002\022\017\n\007overlay\030\003 \001(\005\"(\n\nServerInfo\022\014" +
-      "\n\004host\030\001 \001(\t\022\014\n\004port\030\002 \001(\005\"<\n\017AttributeC" +
-      "hange\022\n\n\002id\030\001 \001(\005\022\016\n\006change\030\002 \001(\005\022\r\n\005val" +
-      "ue\030\003 \001(\005\"P\n\013InstanceMap\022\026\n\006levels\030\001 \003(\0132" +
-      "\006.Level\022\026\n\016reciverRewards\030\002 \003(\005\022\021\n\tchapt" +
-      "erId\030\003 \001(\005\"=\n\005Level\022\020\n\010maxStars\030\001 \001(\005\022\021\n" +
-      "\tboxReward\030\002 \001(\010\022\017\n\007levelId\030\003 \001(\005\")\n\014Com",
-      "monObject\022\n\n\002id\030\001 \001(\005\022\r\n\005value\030\002 \001(\005\"V\n\n" +
-      "BattleData\022\020\n\010battleId\030\001 \001(\t\022\023\n\013playerIn" +
-      "dex\030\002 \001(\t\022!\n\014battleServer\030\003 \001(\0132\013.Server" +
-      "Info\"\232\001\n\017ArenaPlayerInfo\022\014\n\004rank\030\001 \001(\005\022\014" +
-      "\n\004name\030\002 \001(\t\022\030\n\020fightingCapacity\030\003 \001(\005\022\020" +
-      "\n\010masterId\030\004 \001(\005\022\032\n\004camp\030\005 \001(\0162\014.E_CAMP_" +
-      "TYPE\022\023\n\013objectIndex\030\006 \001(\t\022\016\n\006avatar\030\007 \001(" +
-      "\t\"B\n\nRewardInfo\022\033\n\004type\030\001 \001(\0162\r.E_GOODS_" +
-      "TYPE\022\n\n\002id\030\002 \001(\005\022\013\n\003num\030\003 \001(\005\"\253\001\n\022Offici" +
-      "alRankObject\022\026\n\016OfficialRankId\030\001 \001(\005\022\020\n\010",
-      "position\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022\030\n\020fighting" +
-      "Capacity\030\004 \001(\005\022\023\n\013objectIndex\030\005 \001(\t\022\016\n\006a" +
-      "vatar\030\006 \001(\t\022\020\n\010masterId\030\007 \001(\005\022\014\n\004camp\030\010 " +
-      "\001(\005\"S\n\nTaskDetail\022\025\n\rcurrentDemand\030\001 \001(\005" +
-      "\022\016\n\006taskId\030\002 \001(\005\022\036\n\006status\030\003 \001(\0162\016.E_TAS" +
-      "K_STATUS\"p\n\nStoreGoods\022\017\n\007goodsId\030\001 \001(\005\022" +
-      "\020\n\010hasCount\030\002 \001(\005\022\021\n\tneedCount\030\003 \001(\005\022\r\n\005" +
-      "isBuy\030\004 \001(\010\022\035\n\005label\030\005 \001(\0162\016.E_STORE_LAB" +
-      "EL\"\037\n\005Equip\022\n\n\002id\030\001 \001(\005\022\n\n\002lv\030\002 \001(\005\"c\n\tA" +
-      "ccessory\022\n\n\002id\030\001 \001(\005\022\023\n\013intensifyLv\030\002 \001(",
-      "\005\022\014\n\004upLv\030\003 \001(\005\022\022\n\ncurrentExp\030\004 \001(\005\022\023\n\013i" +
-      "sActivated\030\005 \001(\010\"n\n\nBuffChange\022&\n\nchange" +
-      "Type\030\001 \001(\0162\022.E_BUFFCHANGE_TYPE\022\020\n\010unique" +
-      "Id\030\002 \001(\003\022\022\n\nlayerCount\030\004 \001(\005\022\022\n\nremainTi" +
-      "me\030\005 \001(\005\"\260\001\n\nMasterInfo\022\013\n\003atk\030\001 \001(\005\022\n\n\002" +
-      "hp\030\002 \001(\005\022\013\n\003def\030\003 \001(\005\022\r\n\005power\030\004 \001(\005\022\016\n\006" +
-      "wisdom\030\005 \001(\005\022\017\n\007agility\030\006 \001(\005\022\013\n\003cri\030\007 \001" +
-      "(\005\022\013\n\003rec\030\010 \001(\005\022\013\n\003eva\030\t \001(\005\022\013\n\003hit\030\n \001(" +
-      "\005\022\013\n\003add\030\013 \001(\005\022\013\n\003exd\030\014 \001(\005\"D\n\017ResolveCa" +
-      "rdInfo\022\016\n\006cardId\030\001 \001(\005\022\016\n\006isFate\030\002 \001(\010\022\021",
-      "\n\tcardLevel\030\003 \001(\005\"}\n\010Dialogue\022\017\n\007content" +
-      "\030\001 \001(\t\022\020\n\010sendTime\030\002 \001(\003\022)\n\014mailSendType" +
-      "\030\003 \001(\0162\023.E_MAIL_SENDER_TYPE\022\016\n\006avatar\030\004 " +
-      "\001(\t\022\023\n\013targetIndex\030\005 \001(\t\"\261\001\n\013PrivacyMail" +
-      "\022\025\n\rprivacyMailId\030\001 \001(\005\022\020\n\010sendTime\030\002 \001(" +
-      "\003\022\023\n\013targetIndex\030\003 \001(\t\022\024\n\014targetAvatar\030\004" +
-      " \001(\t\022\033\n\010dialogue\030\005 \003(\0132\t.Dialogue\022\016\n\006isR" +
-      "ead\030\006 \001(\010\022\017\n\007content\030\007 \001(\t\022\020\n\010nickName\030\010" +
-      " \001(\t\"\221\001\n\004Mail\022\n\n\002id\030\001 \001(\005\022\r\n\005title\030\002 \001(\t" +
-      "\022\020\n\010sendTime\030\003 \001(\003\022\016\n\006isRead\030\004 \001(\010\022\016\n\006se",
-      "nder\030\005 \001(\t\022\034\n\010extGoods\030\006 \003(\0132\n.FlushData" +
-      "\022\r\n\005isGet\030\007 \001(\010\022\017\n\007content\030\010 \001(\t\"b\n\tBlac" +
-      "kList\022\023\n\013targetIndex\030\001 \001(\t\022\024\n\014targetAvat" +
-      "ar\030\002 \001(\t\022\020\n\010nickName\030\003 \001(\t\022\014\n\004camp\030\004 \001(\005" +
-      "\022\n\n\002lv\030\005 \001(\005\"\234\001\n\023PrivacyMailResponse\022\025\n\r" +
-      "privacyMailId\030\001 \001(\005\022\020\n\010sendTime\030\002 \001(\003\022\023\n" +
-      "\013targetIndex\030\003 \001(\t\022\024\n\014targetAvatar\030\004 \001(\t" +
-      "\022\016\n\006isRead\030\005 \001(\010\022\017\n\007content\030\006 \001(\t\022\020\n\010nic" +
-      "kName\030\007 \001(\t\"\206\001\n\010RankInfo\022\014\n\004rank\030\001 \001(\005\022\014" +
-      "\n\004name\030\002 \001(\t\022\016\n\006avatar\030\003 \001(\t\022\r\n\005value\030\004 ",
-      "\001(\t\022\016\n\006master\030\005 \001(\005\022\023\n\013objectIndex\030\006 \001(\t" +
-      "\022\032\n\004camp\030\007 \001(\0162\014.E_CAMP_TYPE*k\n\022E_UNIVER" +
-      "SAL_RESULT\022\034\n\030UNIVERSAL_RESULT_UNKNOWN\020\000" +
-      "\022\034\n\030UNIVERSAL_RESULT_SUCCESS\020\001\022\031\n\025UNIVER" +
-      "SAL_RESULT_FAIL\020\002*\201\001\n\026E_UNIVERSAL_MSG_TA" +
-      "RGET\022 \n\034UNIVERSAL_MSG_TARGET_UNKNOWN\020\000\022\"" +
-      "\n\036UNIVERSAL_MSG_TARGET_REQUESTER\020\001\022!\n\035UN" +
-      "IVERSAL_MSG_TARGET_RECEIVER\020\002*\377\001\n\016E_LOGI" +
-      "N_RESULT\022\030\n\024LOGIN_RESULT_UNKNOWN\020\000\022\030\n\024LO" +
-      "GIN_RESULT_SUCCESS\020\001\022\025\n\021LOGIN_RESULT_FAI",
-      "L\020\002\022\031\n\025LOGIN_RESULT_ENREGIST\020\003\022\025\n\021LOGIN_" +
-      "RESULT_LOCK\020\004\022\035\n\031LOGIN_RESULT_TOKENEXPIR" +
-      "ED\020\005\022\027\n\023LOGIN_RESULT_BATTLE\020\006\022\034\n\030LOGIN_R" +
-      "ESULT_SERVER_FULL\020\007\022\032\n\026LOGIN_RESULT_NEED" +
-      "_WAIT\020\010*\276\002\n\017E_REGIST_RESULT\022\031\n\025REGIST_RE" +
-      "SULT_UNKNOWN\020\000\022\031\n\025REGIST_RESULT_Success\020" +
-      "\001\022\026\n\022REGIST_RESULT_Fail\020\002\022\035\n\031REGIST_RESU" +
-      "LT_IllegalName\020\003\022\036\n\032REGIST_RESULT_Avatar" +
-      "IsNull\020\004\022\034\n\030REGIST_RESULT_NameExists\020\005\022!" +
-      "\n\035REGIST_RESULT_AvatarSizeError\020\006\022\036\n\032REG",
-      "IST_RESULT_GenderIsNull\020\007\022\036\n\032REGIST_RESU" +
-      "LT_PhoneIsExist\020\010\022\035\n\031REGIST_RESULT_Forma" +
-      "tError\020\t*\202\001\n\013E_CAMP_TYPE\022\025\n\021CAMP_TYPE_UN" +
-      "KNOWN\020\000\022\026\n\022CAMP_TYPE_ALLIENCE\020\001\022\023\n\017CAMP_" +
-      "TYPE_HORDE\020\002\022\025\n\021CAMP_TYPE_SCOURGE\020\003\022\030\n\024C" +
-      "AMP_TYPE_NEUTRALITY\020\004*q\n\014E_LOGIN_TYPE\022\026\n" +
-      "\022LOGIN_TYPE_UNKNOWN\020\000\022\026\n\022LOGIN_TYPE_DEFA" +
-      "ULT\020\001\022\025\n\021LOGIN_TYPE_RELINK\020\002\022\032\n\026LOGIN_TY" +
-      "PE_BATTLE_BACK\020\003*\206\002\n\rE_BATTLE_TYPE\022\027\n\023BA" +
-      "TTLE_TYPE_UNKNOWN\020\000\022\031\n\025BATTLE_TYPE_PVP_A",
-      "RENA\020\001\022\034\n\030BATTLE_TYPE_PVP_ARENA_AI\020\002\022\034\n\030" +
-      "BATTLE_TYPE_PVE_INSTANCE\020\003\022!\n\035BATTLE_TYP" +
-      "E_PVE_OFFICIAL_RANK\020\004\022!\n\035BATTLE_TYPE_PVP" +
-      "_OFFICIAL_RANK\020\005\022\037\n\033BATTLE_TYPE_PVE_HERO" +
-      "_TEMPLE\020\006\022\036\n\032BATTLE_TYPE_PVE_EXPEDITION\020" +
-      "\007*\271\001\n\021E_USESKILL_RESULT\022\033\n\027USESKILL_RESU" +
-      "LT_UNKNOWN\020\000\022\033\n\027USESKILL_RESULT_Success\020" +
-      "\001\022\032\n\026USESKILL_RESULT_LESSHP\020\002\022\032\n\026USESKIL" +
-      "L_RESULT_LESSMP\020\003\022\030\n\024USESKILL_RESULT_INC" +
-      "D\020\004\022\030\n\024USESKILL_RESULT_FAIL\020\005*\340\001\n\016E_CHAN",
-      "NEL_TYPE\022\027\n\023CHANNEL_TYPE_UNKNOW\020\000\022\026\n\022CHA" +
-      "NNEL_TYPE_PHONE\020\001\022\027\n\023CHANNEL_TYPE_WECHAT" +
-      "\020\002\022\023\n\017CHANNEL_TYPE_QQ\020\003\022\023\n\017CHANNEL_TYPE_" +
-      "UC\020\004\022\027\n\023CHANNEL_TYPE_XIAOMI\020\005\022\024\n\020CHANNEL" +
-      "_TYPE_360\020\006\022\026\n\022CHANNEL_TYPE_QUICK\020\007\022\023\n\017C" +
-      "HANNEL_TYPE_YJ\020\010*\215\001\n\017E_SERVER_STATUS\022\030\n\024" +
-      "SERVER_STATUS_UNKNOW\020\000\022\026\n\022SERVER_STATUS_" +
-      "FULL\020\001\022\027\n\023SERVER_STATUS_CROWD\020\002\022\026\n\022SERVE" +
-      "R_STATUS_FREE\020\003\022\027\n\023SERVER_STATUS_CLOSE\020\004" +
-      "*B\n\010E_GENDER\022\022\n\016GENDER_UNKNOWN\020\000\022\017\n\013GEND",
-      "ER_MALE\020\001\022\021\n\rGENDER_FEMALE\020\002*\257\001\n\rE_NOTIF" +
-      "Y_TYPE\022\027\n\023NOTIFY_TYPE_UNKNOWN\020\000\022\022\n\016NOTIF" +
-      "Y_TYPE_GM\020e\022\024\n\020NOTIFY_TYPE_HORN\020f\022\023\n\017NOT" +
-      "IFY_TYPE_GET\020g\022\024\n\020NOTIFY_TYPE_WARN\020h\022\026\n\022" +
-      "NOTIFY_TYPE_SYSTEM\020i\022\030\n\024NOTIFY_TYPE_FUNC" +
-      "TION\020j*\221\001\n\016E_WARRIOR_TYPE\022\032\n\026WARRIOR_TYP" +
-      "E_UNDEFINED\020\000\022\025\n\021WARRIOR_TYPE_HERO\020\001\022\027\n\023" +
-      "WARRIOR_TYPE_BOWMAN\020\002\022\030\n\024WARRIOR_TYPE_CA" +
-      "VALRY\020\003\022\031\n\025WARRIOR_TYPE_INFANTRY\020\004*\300\004\n\017E" +
-      "_BUILDING_TYPE\022\033\n\027BUILDING_TYPE_UNDEFINE",
-      "D\020\000\022\030\n\024BUILDING_TYPE_CASTLE\020\001\022\025\n\021BUILDIN" +
-      "G_TYPE_GOV\020\002\022\036\n\032BUILDING_TYPE_MILITARYHA" +
-      "LL\020\003\022\025\n\021BUILDING_TYPE_PUB\020\004\022\031\n\025BUILDING_" +
-      "TYPE_COLLEGE\020\005\022\037\n\033BUILDING_TYPE_MERCENAR" +
-      "YCAMP\020\006\022\026\n\022BUILDING_TYPE_WALL\020\007\022\035\n\031BUILD" +
-      "ING_TYPE_CAVALRYCAMP\020\010\022\034\n\030BUILDING_TYPE_" +
-      "MAGICTOWER\020\t\022\034\n\030BUILDING_TYPE_SUMMONDOOR" +
-      "\020\n\022\034\n\030BUILDING_TYPE_SHOOTRANGE\020\013\022\035\n\031BUIL" +
-      "DING_TYPE_SOLDIERCAMP\020\014\022\033\n\027BUILDING_TYPE" +
-      "_DIPLOMACY\020\r\022\030\n\024BUILDING_TYPE_MARKET\020\016\022\027",
-      "\n\023BUILDING_TYPE_DEPOT\020\017\022\032\n\026BUILDING_TYPE" +
-      "_FARMLAND\020\020\022\035\n\031BUILDING_TYPE_LOGGINGCAMP" +
-      "\020\021\022\030\n\024BUILDING_TYPE_QUARRY\020\022\022\027\n\023BUILDING" +
-      "_TYPE_STOPE\020\023*\222\001\n\rE_BATTLE_UNIT\022\027\n\023BATTL" +
-      "E_UNIT_UNKNOWN\020\000\022\026\n\022BATTLE_UNIT_MASTER\020\001" +
-      "\022\027\n\023BATTLE_UNIT_SOLDIER\020\002\022\032\n\026BATTLE_UNIT" +
-      "_STATIC_NPC\020\003\022\033\n\027BATTLE_UNIT_DYNAMIC_NPC" +
-      "\020\004*\240\001\n\020E_CARDGROUP_TYPE\022\032\n\026CARDGROUP_TYP" +
-      "E_UNKNOWN\020\000\022\031\n\025CARDGROUP_TYPE_BATTLE\020\001\022\037" +
-      "\n\033CARDGROUP_TYPE_READY_BATTLE\020\002\022\030\n\024CARDG",
-      "ROUP_TYPE_SLEEP\020\003\022\032\n\026CARDGROUP_TYPE_NOTO" +
-      "WNS\020\004*\225\001\n\014E_GOODS_TYPE\022\026\n\022GOODS_TYPE_UNK" +
-      "NOWN\020\000\022\024\n\020GOODS_TYPE_PROPS\020\001\022\025\n\021GOODS_TY" +
-      "PE_ASSETS\020\002\022\024\n\020GOODS_TYPE_CARDS\020\003\022\024\n\020GOO" +
-      "DS_TYPE_EQUIP\020\004\022\024\n\020GOODS_TYPE_OTHER\020\n*\253\001" +
-      "\n\020E_GOODS_OTHER_ID\022\032\n\026GOODS_OTHER_ID_UNK" +
-      "NOWN\020\000\022\025\n\021GOODS_OTHER_ID_FC\020\001\022\025\n\021GOODS_O" +
-      "THER_ID_LV\020\002\022\026\n\022GOODS_OTHER_ID_EXP\020\003\022\031\n\025" +
-      "GOODS_OTHER_ID_VIP_LV\020\004\022\032\n\026GOODS_OTHER_I" +
-      "D_VIP_EXP\020\005*\214\001\n\013E_TASK_TYPE\022\025\n\021TASK_TYPE",
-      "_UNKNOWN\020\000\022\027\n\023TASK_TYPE_MAIN_LINE\020\001\022\031\n\025T" +
-      "ASK_TYPE_BRANCH_LINE\020\002\022\026\n\022TASK_TYPE_EVER" +
-      "YDAY\020\003\022\032\n\026TASK_TYPE_SIEGEMISSION\020\004*\236\001\n\021E" +
-      "_BUFFCHANGE_TYPE\022\033\n\027BUFFCHANGE_TYPE_UNKN" +
-      "OWN\020\000\022\027\n\023BUFFCHANGE_TYPE_ADD\020\001\022\031\n\025BUFFCH" +
-      "ANGE_TYPE_CLEAR\020\002\022\033\n\027BUFFCHANGE_TYPE_REP" +
-      "LACE\020\003\022\033\n\027BUFFCHANGE_TYPE_OVERLAY\020\004*\204\001\n\r" +
-      "E_DAMAGE_TYPE\022\027\n\023DAMAGE_TYPE_UNKNOWN\020\000\022\027" +
-      "\n\023DAMAGE_TYPE_DEFAULT\020\001\022\024\n\020DAMAGE_TYPE_M" +
-      "ISS\020\002\022\024\n\020DAMAGE_TYPE_CRIT\020\003\022\025\n\021DAMAGE_TY",
-      "PE_INVIN\020\004*v\n\rE_TASK_STATUS\022\027\n\023TASK_STAT" +
-      "US_UNKNOWN\020\000\022\030\n\024TASK_STATUS_UNDERWAY\020\001\022\027" +
-      "\n\023TASK_STATUS_ACQUIRE\020\002\022\031\n\025TASK_STATUS_U" +
-      "NCLAIMED\020\003*\234\001\n\014E_STORE_TYPE\022\026\n\022STORE_TYP" +
-      "E_UNKNOWN\020\000\022\025\n\021STORE_TYPE_GOBLIN\020\001\022\024\n\020ST" +
-      "ORE_TYPE_ARENA\020\002\022\024\n\020STORE_TYPE_EQUIP\020\003\022\031" +
-      "\n\025STORE_TYPE_EXPEDITION\020\004\022\026\n\022STORE_TYPE_" +
-      "DIAMOND\020\005*b\n\rE_STORE_LABEL\022\021\n\rLABEL_UNKN" +
-      "OWN\020\000\022\030\n\024LABEL_ALREADY_BATTLE\020\001\022\016\n\nLABEL" +
-      "_FATE\020\002\022\024\n\020LABEL_UNCOMPOUND\020\003*X\n\016E_CARD_",
-      "UP_TYPE\022\030\n\024CARD_UP_TYPE_UNKNOWN\020\000\022\025\n\021CAR" +
-      "D_UP_TYPE_ONCE\020\001\022\025\n\021CARD_UP_TYPE_MORE\020\002*" +
-      "n\n\014E_EQUIP_TYPE\022\026\n\022EQUIP_TYPE_UNKNOWN\020\000\022" +
-      "\020\n\014EQUIP_TYPE_1\020\001\022\020\n\014EQUIP_TYPE_2\020\002\022\020\n\014E" +
-      "QUIP_TYPE_3\020\003\022\020\n\014EQUIP_TYPE_4\020\004*Z\n\020E_ACC" +
-      "ESSORY_TYPE\022\032\n\026ACCESSORY_TYPE_UNKNOWN\020\000\022" +
-      "\024\n\020ACCESSORY_TYPE_1\020\001\022\024\n\020ACCESSORY_TYPE_" +
-      "2\020\002*i\n\013E_MAIL_TYPE\022\025\n\021MAIL_TYPE_UNKNOWN\020" +
-      "\000\022\024\n\020MAIL_TYPE_SYSTEM\020\001\022\025\n\021MAIL_TYPE_PRI" +
-      "VACY\020\002\022\026\n\022MAIL_TYPE_RECHARGE\020\003*n\n\022E_MAIL",
-      "_SENDER_TYPE\022\034\n\030MAIL_SENDER_TYPE_UNKNOWN" +
-      "\020\000\022\033\n\027MAIL_SENDER_TYPE_SENDER\020\001\022\035\n\031MAIL_" +
-      "SENDER_TYPE_RECEIVER\020\002*\210\001\n\032E_PRIVACY_MAI" +
-      "L_SENDER_TYPE\022\"\n\036MAIL_PRIVACY_MAIL_TYPE_" +
-      "UNKNOWN\020\000\022!\n\035MAIL_PRIVACY_MAIL_TYPE_SING" +
-      "LE\020\001\022#\n\037MAIL_PRIVACY_MAIL_TYPE_MULTIPLE\020" +
-      "\002*e\n\021E_BLACK_LIST_TYPE\022\033\n\027BLACK_LIST_TYP" +
-      "E_UNKNOWN\020\000\022\027\n\023BLACK_LIST_TYPE_ADD\020\001\022\032\n\026" +
-      "BLACK_LIST_TYPE_REMOVE\020\002*\200\004\n\020E_RED_POINT" +
-      "_TYPE\022\032\n\026RED_POINT_TYPE_UNKNOWN\020\000\022\031\n\025RED",
-      "_POINT_TYPE_MASTER\020\001\022\032\n\026RED_POINT_TYPE_L" +
-      "OTTERY\020\002\022\031\n\025RED_POINT_TYPE_LEGION\020\003\022\033\n\027R" +
-      "ED_POINT_TYPE_INSTANCE\020\004\022 \n\034RED_POINT_TY" +
-      "PE_OFFICIAL_RANK\020\005\022\030\n\024RED_POINT_TYPE_ARE" +
-      "NA\020\006\022\027\n\023RED_POINT_TYPE_TASK\020\007\022\030\n\024RED_POI" +
-      "NT_TYPE_ALTAR\020\010\022\037\n\033RED_POINT_TYPE_GOBLIN" +
-      "_STORE\020\t\022!\n\035RED_POINT_TYPE_FIRST_RECHARG" +
-      "E\020\n\022\030\n\024RED_POINT_TYPE_EMAIL\020\013\022\036\n\032RED_POI" +
-      "NT_TYPE_HERO_TEMPLE\020\014\022\033\n\027RED_POINT_TYPE_" +
-      "RECHARGE\020\r\022\030\n\024RED_POINT_TYPE_BONUS\020\016\022\036\n\032",
-      "RED_POINT_TYPE_LOGIN_BONUS\020\017\022\035\n\031RED_POIN" +
-      "T_TYPE_EXPEDITION\020\020*\251\001\n\020E_BUY_TIMES_TYPE" +
-      "\022\032\n\026BUY_TIMES_TYPE_UNKNOWN\020\000\022\030\n\024BUY_TIME" +
-      "S_TYPE_ARENA\020\001\022\036\n\032BUY_TIMES_TYPE_HERO_TE" +
-      "MPLE\020\002\022 \n\034BUY_TIMES_TYPE_OFFICIAL_RANK\020\003" +
-      "\022\035\n\031BUY_TIMES_TYPE_EXPEDITION\020\004*7\n\013E_FUN" +
-      "D_TYPE\022\024\n\020FUND_TYPE_UNKNOW\020\000\022\022\n\016FUND_TYP" +
-      "E_OPEN\020\001*Q\n\020E_COUNTDOWN_TYPE\022\031\n\025COUNTDOW" +
-      "N_TYPE_UNKNOW\020\000\022\"\n\036COUNTDOWN_TYPE_BATTLE" +
-      "_NEAR_END\020\001*\221\001\n\013E_RANK_TYPE\022\024\n\020RANK_TYPE",
-      "_UNKNOW\020\000\022\023\n\017RANK_TYPE_ARENA\020\001\022\020\n\014RANK_T" +
-      "YPE_FC\020\002\022\023\n\017RANK_TYPE_MONEY\020\003\022\026\n\022RANK_TY" +
-      "PE_INSTANCE\020\004\022\030\n\024RANK_TYPE_EXPEDITION\020\005B" +
-      "5\n\034com.douqu.game.core.protobufB\rSGCommo" +
-      "nProto\252\002\005UBaseb\006proto3"
+      "\030\014 \001(\005\022\024\n\014lastUpLvTime\030\r \001(\005\022,\n\025masterTr" +
+      "ainAttributes\030\016 \003(\0132\r.CommonObject\"\226\001\n\004C" +
+      "ard\022\n\n\002id\030\001 \001(\005\022\n\n\002lv\030\002 \001(\005\022\014\n\004star\030\003 \001(" +
+      "\005\022\016\n\006curExp\030\004 \001(\005\022\n\n\002fc\030\005 \001(\005\022\025\n\005equip\030\006",
+      " \003(\0132\006.Equip\022\026\n\016activeFateList\030\007 \003(\005\022\035\n\t" +
+      "accessory\030\010 \003(\0132\n.Accessory\"\\\n\tCardGroup" +
+      "\022\017\n\007groupId\030\001 \001(\005\022(\n\rcardGroupType\030\002 \001(\016" +
+      "2\021.E_CARDGROUP_TYPE\022\024\n\005cards\030\003 \003(\0132\005.Car" +
+      "d\"$\n\007BagProp\022\n\n\002id\030\001 \001(\005\022\r\n\005count\030\002 \001(\005\"" +
+      "@\n\tMouthCard\022\n\n\002id\030\001 \001(\005\022\017\n\007endDays\030\002 \001(" +
+      "\005\022\026\n\016hasRewardToday\030\003 \001(\010\"\316\002\n\010BaseData\022!" +
+      "\n\010baseInfo\030\001 \001(\0132\017.PlayerBaseInfo\022\036\n\ncar" +
+      "dGroups\030\002 \003(\0132\n.CardGroup\022\027\n\005props\030\003 \003(\013" +
+      "2\010.BagProp\022\030\n\004data\030\004 \003(\0132\n.FlushData\022\037\n\n",
+      "taskDetail\030\005 \001(\0132\013.TaskDetail\022\030\n\020equippe" +
+      "dSkillIds\030\006 \003(\005\022\034\n\024consumeNotRemindKeys\030" +
+      "\007 \003(\005\022\037\n\027isFirstRechargeComplete\030\010 \001(\010\022!" +
+      "\n\031isFirstRechargeGiftReward\030\t \001(\010\022\025\n\rgui" +
+      "deProgress\030\n \001(\t\022\030\n\020isLoginBonusShow\030\013 \001" +
+      "(\010\"Q\n\017PlayerMatchInfo\022!\n\010baseInfo\030\001 \001(\0132" +
+      "\017.PlayerBaseInfo\022\r\n\005grade\030\002 \001(\005\022\014\n\004star\030" +
+      "\003 \001(\005\":\n\004Army\022\027\n\005heros\030\001 \003(\0132\010.Warrior\022\031" +
+      "\n\007soldier\030\002 \003(\0132\010.Warrior\"h\n\007Warrior\022\035\n\004" +
+      "type\030\001 \001(\0162\017.E_WARRIOR_TYPE\022\021\n\twarriorID",
+      "\030\002 \001(\005\022\r\n\005count\030\004 \001(\005\022\034\n\007initPos\030\005 \001(\0132\013" +
+      ".BattleGrid\":\n\nWarriorPos\022\031\n\007warrior\030\001 \001" +
+      "(\0132\010.Warrior\022\021\n\003pos\030\002 \001(\0132\004.Pos\"J\n\rWarri" +
+      "orDamage\022\031\n\007warrior\030\001 \001(\0132\010.Warrior\022\016\n\006h" +
+      "pLost\030\002 \001(\005\022\016\n\006mpLost\030\003 \001(\005\"\203\001\n\014SpriteDa" +
+      "mage\022\020\n\010targetId\030\001 \001(\005\022\r\n\005srcId\030\002 \001(\005\022\022\n" +
+      "\nsrcSkillId\030\003 \001(\005\022\016\n\006damage\030\004 \001(\005\022\n\n\002hp\030" +
+      "\005 \001(\005\022\"\n\ndamageType\030\006 \001(\0162\016.E_DAMAGE_TYP" +
+      "E\"V\n\tFlushData\022\033\n\004type\030\001 \001(\0162\r.E_GOODS_T" +
+      "YPE\022\n\n\002id\030\002 \001(\005\022\016\n\006change\030\003 \001(\005\022\020\n\010curVa",
+      "lue\030\004 \001(\005\"x\n\007Buiding\022\036\n\004type\030\001 \001(\0162\020.E_B" +
+      "UILDING_TYPE\022\014\n\004name\030\002 \001(\t\022\r\n\005level\030\003 \001(" +
+      "\005\022\026\n\016createNeedTime\030\004 \001(\005\022\030\n\020createRemai" +
+      "nTime\030\005 \001(\005\"9\n\006Effect\022\n\n\002id\030\001 \001(\005\022\022\n\nrem" +
+      "ainTime\030\002 \001(\002\022\017\n\007overlay\030\003 \001(\005\"(\n\nServer" +
+      "Info\022\014\n\004host\030\001 \001(\t\022\014\n\004port\030\002 \001(\005\"<\n\017Attr" +
+      "ibuteChange\022\n\n\002id\030\001 \001(\005\022\016\n\006change\030\002 \001(\005\022" +
+      "\r\n\005value\030\003 \001(\005\"P\n\013InstanceMap\022\026\n\006levels\030" +
+      "\001 \003(\0132\006.Level\022\026\n\016reciverRewards\030\002 \003(\005\022\021\n" +
+      "\tchapterId\030\003 \001(\005\"=\n\005Level\022\020\n\010maxStars\030\001 ",
+      "\001(\005\022\021\n\tboxReward\030\002 \001(\010\022\017\n\007levelId\030\003 \001(\005\"" +
+      ")\n\014CommonObject\022\n\n\002id\030\001 \001(\005\022\r\n\005value\030\002 \001" +
+      "(\005\"6\n\013GoodsObject\022\014\n\004type\030\001 \001(\005\022\n\n\002id\030\002 " +
+      "\001(\005\022\r\n\005value\030\003 \001(\005\"V\n\nBattleData\022\020\n\010batt" +
+      "leId\030\001 \001(\t\022\023\n\013playerIndex\030\002 \001(\t\022!\n\014battl" +
+      "eServer\030\003 \001(\0132\013.ServerInfo\"\232\001\n\017ArenaPlay" +
+      "erInfo\022\014\n\004rank\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\030\n\020fi" +
+      "ghtingCapacity\030\003 \001(\005\022\020\n\010masterId\030\004 \001(\005\022\032" +
+      "\n\004camp\030\005 \001(\0162\014.E_CAMP_TYPE\022\023\n\013objectInde" +
+      "x\030\006 \001(\t\022\016\n\006avatar\030\007 \001(\t\"\350\001\n\021CollectPlaye",
+      "rInfo\022\014\n\004name\030\001 \001(\t\022\030\n\020fightingCapacity\030" +
+      "\002 \001(\005\022\020\n\010masterId\030\003 \001(\005\022\032\n\004camp\030\004 \001(\0162\014." +
+      "E_CAMP_TYPE\022\023\n\013objectIndex\030\005 \001(\t\022\016\n\006avat" +
+      "ar\030\006 \001(\t\022\033\n\005goods\030\007 \003(\0132\014.GoodsObject\022\022\n" +
+      "\ninitValue1\030\010 \001(\005\022\022\n\ninitValue2\030\t \001(\005\022\023\n" +
+      "\013stringValue\030\n \001(\t\"B\n\nRewardInfo\022\033\n\004type" +
+      "\030\001 \001(\0162\r.E_GOODS_TYPE\022\n\n\002id\030\002 \001(\005\022\013\n\003num" +
+      "\030\003 \001(\005\"\253\001\n\022OfficialRankObject\022\026\n\016Officia" +
+      "lRankId\030\001 \001(\005\022\020\n\010position\030\002 \001(\005\022\014\n\004name\030" +
+      "\003 \001(\t\022\030\n\020fightingCapacity\030\004 \001(\005\022\023\n\013objec",
+      "tIndex\030\005 \001(\t\022\016\n\006avatar\030\006 \001(\t\022\020\n\010masterId" +
+      "\030\007 \001(\005\022\014\n\004camp\030\010 \001(\005\"S\n\nTaskDetail\022\025\n\rcu" +
+      "rrentDemand\030\001 \001(\005\022\016\n\006taskId\030\002 \001(\005\022\036\n\006sta" +
+      "tus\030\003 \001(\0162\016.E_TASK_STATUS\"p\n\nStoreGoods\022" +
+      "\017\n\007goodsId\030\001 \001(\005\022\020\n\010hasCount\030\002 \001(\005\022\021\n\tne" +
+      "edCount\030\003 \001(\005\022\r\n\005isBuy\030\004 \001(\010\022\035\n\005label\030\005 " +
+      "\001(\0162\016.E_STORE_LABEL\"\037\n\005Equip\022\n\n\002id\030\001 \001(\005" +
+      "\022\n\n\002lv\030\002 \001(\005\"c\n\tAccessory\022\n\n\002id\030\001 \001(\005\022\023\n" +
+      "\013intensifyLv\030\002 \001(\005\022\014\n\004upLv\030\003 \001(\005\022\022\n\ncurr" +
+      "entExp\030\004 \001(\005\022\023\n\013isActivated\030\005 \001(\010\"n\n\nBuf",
+      "fChange\022&\n\nchangeType\030\001 \001(\0162\022.E_BUFFCHAN" +
+      "GE_TYPE\022\020\n\010uniqueId\030\002 \001(\003\022\022\n\nlayerCount\030" +
+      "\004 \001(\005\022\022\n\nremainTime\030\005 \001(\005\"\340\001\n\nMasterInfo" +
+      "\022\013\n\003atk\030\001 \001(\005\022\n\n\002hp\030\002 \001(\005\022\013\n\003def\030\003 \001(\005\022\r" +
+      "\n\005power\030\004 \001(\005\022\016\n\006wisdom\030\005 \001(\005\022\017\n\007agility" +
+      "\030\006 \001(\005\022\013\n\003cri\030\007 \001(\005\022\013\n\003rec\030\010 \001(\005\022\013\n\003eva\030" +
+      "\t \001(\005\022\013\n\003hit\030\n \001(\005\022\013\n\003add\030\013 \001(\005\022\013\n\003exd\030\014" +
+      " \001(\005\022\016\n\006phyRes\030\r \001(\005\022\016\n\006punRes\030\016 \001(\005\022\016\n\006" +
+      "magRes\030\017 \001(\005\"D\n\017ResolveCardInfo\022\016\n\006cardI" +
+      "d\030\001 \001(\005\022\016\n\006isFate\030\002 \001(\010\022\021\n\tcardLevel\030\003 \001",
+      "(\005\"}\n\010Dialogue\022\017\n\007content\030\001 \001(\t\022\020\n\010sendT" +
+      "ime\030\002 \001(\003\022)\n\014mailSendType\030\003 \001(\0162\023.E_MAIL" +
+      "_SENDER_TYPE\022\016\n\006avatar\030\004 \001(\t\022\023\n\013targetIn" +
+      "dex\030\005 \001(\t\"\261\001\n\013PrivacyMail\022\025\n\rprivacyMail" +
+      "Id\030\001 \001(\005\022\020\n\010sendTime\030\002 \001(\003\022\023\n\013targetInde" +
+      "x\030\003 \001(\t\022\024\n\014targetAvatar\030\004 \001(\t\022\033\n\010dialogu" +
+      "e\030\005 \003(\0132\t.Dialogue\022\016\n\006isRead\030\006 \001(\010\022\017\n\007co" +
+      "ntent\030\007 \001(\t\022\020\n\010nickName\030\010 \001(\t\"\221\001\n\004Mail\022\n" +
+      "\n\002id\030\001 \001(\005\022\r\n\005title\030\002 \001(\t\022\020\n\010sendTime\030\003 " +
+      "\001(\003\022\016\n\006isRead\030\004 \001(\010\022\016\n\006sender\030\005 \001(\t\022\034\n\010e",
+      "xtGoods\030\006 \003(\0132\n.FlushData\022\r\n\005isGet\030\007 \001(\010" +
+      "\022\017\n\007content\030\010 \001(\t\"b\n\tBlackList\022\023\n\013target" +
+      "Index\030\001 \001(\t\022\024\n\014targetAvatar\030\002 \001(\t\022\020\n\010nic" +
+      "kName\030\003 \001(\t\022\014\n\004camp\030\004 \001(\005\022\n\n\002lv\030\005 \001(\005\"\234\001" +
+      "\n\023PrivacyMailResponse\022\025\n\rprivacyMailId\030\001" +
+      " \001(\005\022\020\n\010sendTime\030\002 \001(\003\022\023\n\013targetIndex\030\003 " +
+      "\001(\t\022\024\n\014targetAvatar\030\004 \001(\t\022\016\n\006isRead\030\005 \001(" +
+      "\010\022\017\n\007content\030\006 \001(\t\022\020\n\010nickName\030\007 \001(\t\"\206\001\n" +
+      "\010RankInfo\022\014\n\004rank\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\016\n" +
+      "\006avatar\030\003 \001(\t\022\r\n\005value\030\004 \001(\t\022\016\n\006master\030\005",
+      " \001(\005\022\023\n\013objectIndex\030\006 \001(\t\022\032\n\004camp\030\007 \001(\0162" +
+      "\014.E_CAMP_TYPE*k\n\022E_UNIVERSAL_RESULT\022\034\n\030U" +
+      "NIVERSAL_RESULT_UNKNOWN\020\000\022\034\n\030UNIVERSAL_R" +
+      "ESULT_SUCCESS\020\001\022\031\n\025UNIVERSAL_RESULT_FAIL" +
+      "\020\002*\201\001\n\026E_UNIVERSAL_MSG_TARGET\022 \n\034UNIVERS" +
+      "AL_MSG_TARGET_UNKNOWN\020\000\022\"\n\036UNIVERSAL_MSG" +
+      "_TARGET_REQUESTER\020\001\022!\n\035UNIVERSAL_MSG_TAR" +
+      "GET_RECEIVER\020\002*\377\001\n\016E_LOGIN_RESULT\022\030\n\024LOG" +
+      "IN_RESULT_UNKNOWN\020\000\022\030\n\024LOGIN_RESULT_SUCC" +
+      "ESS\020\001\022\025\n\021LOGIN_RESULT_FAIL\020\002\022\031\n\025LOGIN_RE",
+      "SULT_ENREGIST\020\003\022\025\n\021LOGIN_RESULT_LOCK\020\004\022\035" +
+      "\n\031LOGIN_RESULT_TOKENEXPIRED\020\005\022\027\n\023LOGIN_R" +
+      "ESULT_BATTLE\020\006\022\034\n\030LOGIN_RESULT_SERVER_FU" +
+      "LL\020\007\022\032\n\026LOGIN_RESULT_NEED_WAIT\020\010*\276\002\n\017E_R" +
+      "EGIST_RESULT\022\031\n\025REGIST_RESULT_UNKNOWN\020\000\022" +
+      "\031\n\025REGIST_RESULT_Success\020\001\022\026\n\022REGIST_RES" +
+      "ULT_Fail\020\002\022\035\n\031REGIST_RESULT_IllegalName\020" +
+      "\003\022\036\n\032REGIST_RESULT_AvatarIsNull\020\004\022\034\n\030REG" +
+      "IST_RESULT_NameExists\020\005\022!\n\035REGIST_RESULT" +
+      "_AvatarSizeError\020\006\022\036\n\032REGIST_RESULT_Gend",
+      "erIsNull\020\007\022\036\n\032REGIST_RESULT_PhoneIsExist" +
+      "\020\010\022\035\n\031REGIST_RESULT_FormatError\020\t*\202\001\n\013E_" +
+      "CAMP_TYPE\022\025\n\021CAMP_TYPE_UNKNOWN\020\000\022\026\n\022CAMP" +
+      "_TYPE_ALLIENCE\020\001\022\023\n\017CAMP_TYPE_HORDE\020\002\022\025\n" +
+      "\021CAMP_TYPE_SCOURGE\020\003\022\030\n\024CAMP_TYPE_NEUTRA" +
+      "LITY\020\004*q\n\014E_LOGIN_TYPE\022\026\n\022LOGIN_TYPE_UNK" +
+      "NOWN\020\000\022\026\n\022LOGIN_TYPE_DEFAULT\020\001\022\025\n\021LOGIN_" +
+      "TYPE_RELINK\020\002\022\032\n\026LOGIN_TYPE_BATTLE_BACK\020" +
+      "\003*\325\002\n\rE_BATTLE_TYPE\022\027\n\023BATTLE_TYPE_UNKNO" +
+      "WN\020\000\022\031\n\025BATTLE_TYPE_PVP_ARENA\020\001\022\034\n\030BATTL",
+      "E_TYPE_PVP_ARENA_AI\020\002\022\034\n\030BATTLE_TYPE_PVE" +
+      "_INSTANCE\020\003\022!\n\035BATTLE_TYPE_PVE_OFFICIAL_" +
+      "RANK\020\004\022!\n\035BATTLE_TYPE_PVP_OFFICIAL_RANK\020" +
+      "\005\022\037\n\033BATTLE_TYPE_PVE_HERO_TEMPLE\020\006\022\036\n\032BA" +
+      "TTLE_TYPE_PVE_EXPEDITION\020\007\022\030\n\024BATTLE_TYP" +
+      "E_PVP_CAMP\020\010\022\030\n\024BATTLE_TYPE_PVE_CAMP\020\t\022\031" +
+      "\n\025BATTLE_TYPE_PVP_MAJOR\020\n*\271\001\n\021E_USESKILL" +
+      "_RESULT\022\033\n\027USESKILL_RESULT_UNKNOWN\020\000\022\033\n\027" +
+      "USESKILL_RESULT_Success\020\001\022\032\n\026USESKILL_RE" +
+      "SULT_LESSHP\020\002\022\032\n\026USESKILL_RESULT_LESSMP\020",
+      "\003\022\030\n\024USESKILL_RESULT_INCD\020\004\022\030\n\024USESKILL_" +
+      "RESULT_FAIL\020\005*\340\001\n\016E_CHANNEL_TYPE\022\027\n\023CHAN" +
+      "NEL_TYPE_UNKNOW\020\000\022\026\n\022CHANNEL_TYPE_PHONE\020" +
+      "\001\022\027\n\023CHANNEL_TYPE_WECHAT\020\002\022\023\n\017CHANNEL_TY" +
+      "PE_QQ\020\003\022\023\n\017CHANNEL_TYPE_UC\020\004\022\027\n\023CHANNEL_" +
+      "TYPE_XIAOMI\020\005\022\024\n\020CHANNEL_TYPE_360\020\006\022\026\n\022C" +
+      "HANNEL_TYPE_QUICK\020\007\022\023\n\017CHANNEL_TYPE_YJ\020\010" +
+      "*\215\001\n\017E_SERVER_STATUS\022\030\n\024SERVER_STATUS_UN" +
+      "KNOW\020\000\022\026\n\022SERVER_STATUS_FULL\020\001\022\027\n\023SERVER" +
+      "_STATUS_CROWD\020\002\022\026\n\022SERVER_STATUS_FREE\020\003\022",
+      "\027\n\023SERVER_STATUS_CLOSE\020\004*B\n\010E_GENDER\022\022\n\016" +
+      "GENDER_UNKNOWN\020\000\022\017\n\013GENDER_MALE\020\001\022\021\n\rGEN" +
+      "DER_FEMALE\020\002*\257\001\n\rE_NOTIFY_TYPE\022\027\n\023NOTIFY" +
+      "_TYPE_UNKNOWN\020\000\022\022\n\016NOTIFY_TYPE_GM\020e\022\024\n\020N" +
+      "OTIFY_TYPE_HORN\020f\022\023\n\017NOTIFY_TYPE_GET\020g\022\024" +
+      "\n\020NOTIFY_TYPE_WARN\020h\022\026\n\022NOTIFY_TYPE_SYST" +
+      "EM\020i\022\030\n\024NOTIFY_TYPE_FUNCTION\020j*\221\001\n\016E_WAR" +
+      "RIOR_TYPE\022\032\n\026WARRIOR_TYPE_UNDEFINED\020\000\022\025\n" +
+      "\021WARRIOR_TYPE_HERO\020\001\022\027\n\023WARRIOR_TYPE_BOW" +
+      "MAN\020\002\022\030\n\024WARRIOR_TYPE_CAVALRY\020\003\022\031\n\025WARRI",
+      "OR_TYPE_INFANTRY\020\004*\300\004\n\017E_BUILDING_TYPE\022\033" +
+      "\n\027BUILDING_TYPE_UNDEFINED\020\000\022\030\n\024BUILDING_" +
+      "TYPE_CASTLE\020\001\022\025\n\021BUILDING_TYPE_GOV\020\002\022\036\n\032" +
+      "BUILDING_TYPE_MILITARYHALL\020\003\022\025\n\021BUILDING" +
+      "_TYPE_PUB\020\004\022\031\n\025BUILDING_TYPE_COLLEGE\020\005\022\037" +
+      "\n\033BUILDING_TYPE_MERCENARYCAMP\020\006\022\026\n\022BUILD" +
+      "ING_TYPE_WALL\020\007\022\035\n\031BUILDING_TYPE_CAVALRY" +
+      "CAMP\020\010\022\034\n\030BUILDING_TYPE_MAGICTOWER\020\t\022\034\n\030" +
+      "BUILDING_TYPE_SUMMONDOOR\020\n\022\034\n\030BUILDING_T" +
+      "YPE_SHOOTRANGE\020\013\022\035\n\031BUILDING_TYPE_SOLDIE",
+      "RCAMP\020\014\022\033\n\027BUILDING_TYPE_DIPLOMACY\020\r\022\030\n\024" +
+      "BUILDING_TYPE_MARKET\020\016\022\027\n\023BUILDING_TYPE_" +
+      "DEPOT\020\017\022\032\n\026BUILDING_TYPE_FARMLAND\020\020\022\035\n\031B" +
+      "UILDING_TYPE_LOGGINGCAMP\020\021\022\030\n\024BUILDING_T" +
+      "YPE_QUARRY\020\022\022\027\n\023BUILDING_TYPE_STOPE\020\023*\222\001" +
+      "\n\rE_BATTLE_UNIT\022\027\n\023BATTLE_UNIT_UNKNOWN\020\000" +
+      "\022\026\n\022BATTLE_UNIT_MASTER\020\001\022\027\n\023BATTLE_UNIT_" +
+      "SOLDIER\020\002\022\032\n\026BATTLE_UNIT_STATIC_NPC\020\003\022\033\n" +
+      "\027BATTLE_UNIT_DYNAMIC_NPC\020\004*\240\001\n\020E_CARDGRO" +
+      "UP_TYPE\022\032\n\026CARDGROUP_TYPE_UNKNOWN\020\000\022\031\n\025C",
+      "ARDGROUP_TYPE_BATTLE\020\001\022\037\n\033CARDGROUP_TYPE" +
+      "_READY_BATTLE\020\002\022\030\n\024CARDGROUP_TYPE_SLEEP\020" +
+      "\003\022\032\n\026CARDGROUP_TYPE_NOTOWNS\020\004*\225\001\n\014E_GOOD" +
+      "S_TYPE\022\026\n\022GOODS_TYPE_UNKNOWN\020\000\022\024\n\020GOODS_" +
+      "TYPE_PROPS\020\001\022\025\n\021GOODS_TYPE_ASSETS\020\002\022\024\n\020G" +
+      "OODS_TYPE_CARDS\020\003\022\024\n\020GOODS_TYPE_EQUIP\020\004\022" +
+      "\024\n\020GOODS_TYPE_OTHER\020\n*\313\001\n\020E_GOODS_OTHER_" +
+      "ID\022\032\n\026GOODS_OTHER_ID_UNKNOWN\020\000\022\025\n\021GOODS_" +
+      "OTHER_ID_FC\020\001\022\025\n\021GOODS_OTHER_ID_LV\020\002\022\026\n\022" +
+      "GOODS_OTHER_ID_EXP\020\003\022\031\n\025GOODS_OTHER_ID_V",
+      "IP_LV\020\004\022\032\n\026GOODS_OTHER_ID_VIP_EXP\020\005\022\036\n\032G" +
+      "OODS_OTHER_ID_BATTLE_CARD\020\006*\214\001\n\013E_TASK_T" +
+      "YPE\022\025\n\021TASK_TYPE_UNKNOWN\020\000\022\027\n\023TASK_TYPE_" +
+      "MAIN_LINE\020\001\022\031\n\025TASK_TYPE_BRANCH_LINE\020\002\022\026" +
+      "\n\022TASK_TYPE_EVERYDAY\020\003\022\032\n\026TASK_TYPE_SIEG" +
+      "EMISSION\020\004*\236\001\n\021E_BUFFCHANGE_TYPE\022\033\n\027BUFF" +
+      "CHANGE_TYPE_UNKNOWN\020\000\022\027\n\023BUFFCHANGE_TYPE" +
+      "_ADD\020\001\022\031\n\025BUFFCHANGE_TYPE_CLEAR\020\002\022\033\n\027BUF" +
+      "FCHANGE_TYPE_REPLACE\020\003\022\033\n\027BUFFCHANGE_TYP" +
+      "E_OVERLAY\020\004*\204\001\n\rE_DAMAGE_TYPE\022\027\n\023DAMAGE_",
+      "TYPE_UNKNOWN\020\000\022\027\n\023DAMAGE_TYPE_DEFAULT\020\001\022" +
+      "\024\n\020DAMAGE_TYPE_MISS\020\002\022\024\n\020DAMAGE_TYPE_CRI" +
+      "T\020\003\022\025\n\021DAMAGE_TYPE_INVIN\020\004*v\n\rE_TASK_STA" +
+      "TUS\022\027\n\023TASK_STATUS_UNKNOWN\020\000\022\030\n\024TASK_STA" +
+      "TUS_UNDERWAY\020\001\022\027\n\023TASK_STATUS_ACQUIRE\020\002\022" +
+      "\031\n\025TASK_STATUS_UNCLAIMED\020\003*\260\001\n\014E_STORE_T" +
+      "YPE\022\026\n\022STORE_TYPE_UNKNOWN\020\000\022\025\n\021STORE_TYP" +
+      "E_GOBLIN\020\001\022\024\n\020STORE_TYPE_ARENA\020\002\022\024\n\020STOR" +
+      "E_TYPE_EQUIP\020\003\022\031\n\025STORE_TYPE_EXPEDITION\020" +
+      "\004\022\026\n\022STORE_TYPE_DIAMOND\020\005\022\022\n\016STORE_TYPE_",
+      "VIP\020\006*b\n\rE_STORE_LABEL\022\021\n\rLABEL_UNKNOWN\020" +
+      "\000\022\030\n\024LABEL_ALREADY_BATTLE\020\001\022\016\n\nLABEL_FAT" +
+      "E\020\002\022\024\n\020LABEL_UNCOMPOUND\020\003*X\n\016E_CARD_UP_T" +
+      "YPE\022\030\n\024CARD_UP_TYPE_UNKNOWN\020\000\022\025\n\021CARD_UP" +
+      "_TYPE_ONCE\020\001\022\025\n\021CARD_UP_TYPE_MORE\020\002*n\n\014E" +
+      "_EQUIP_TYPE\022\026\n\022EQUIP_TYPE_UNKNOWN\020\000\022\020\n\014E" +
+      "QUIP_TYPE_1\020\001\022\020\n\014EQUIP_TYPE_2\020\002\022\020\n\014EQUIP" +
+      "_TYPE_3\020\003\022\020\n\014EQUIP_TYPE_4\020\004*Z\n\020E_ACCESSO" +
+      "RY_TYPE\022\032\n\026ACCESSORY_TYPE_UNKNOWN\020\000\022\024\n\020A" +
+      "CCESSORY_TYPE_1\020\001\022\024\n\020ACCESSORY_TYPE_2\020\002*",
+      "i\n\013E_MAIL_TYPE\022\025\n\021MAIL_TYPE_UNKNOWN\020\000\022\024\n" +
+      "\020MAIL_TYPE_SYSTEM\020\001\022\025\n\021MAIL_TYPE_PRIVACY" +
+      "\020\002\022\026\n\022MAIL_TYPE_RECHARGE\020\003*n\n\022E_MAIL_SEN" +
+      "DER_TYPE\022\034\n\030MAIL_SENDER_TYPE_UNKNOWN\020\000\022\033" +
+      "\n\027MAIL_SENDER_TYPE_SENDER\020\001\022\035\n\031MAIL_SEND" +
+      "ER_TYPE_RECEIVER\020\002*\210\001\n\032E_PRIVACY_MAIL_SE" +
+      "NDER_TYPE\022\"\n\036MAIL_PRIVACY_MAIL_TYPE_UNKN" +
+      "OWN\020\000\022!\n\035MAIL_PRIVACY_MAIL_TYPE_SINGLE\020\001" +
+      "\022#\n\037MAIL_PRIVACY_MAIL_TYPE_MULTIPLE\020\002*e\n" +
+      "\021E_BLACK_LIST_TYPE\022\033\n\027BLACK_LIST_TYPE_UN",
+      "KNOWN\020\000\022\027\n\023BLACK_LIST_TYPE_ADD\020\001\022\032\n\026BLAC" +
+      "K_LIST_TYPE_REMOVE\020\002*\250\004\n\020E_RED_POINT_TYP" +
+      "E\022\032\n\026RED_POINT_TYPE_UNKNOWN\020\000\022\031\n\025RED_POI" +
+      "NT_TYPE_MASTER\020\001\022\032\n\026RED_POINT_TYPE_LOTTE" +
+      "RY\020\002\022\031\n\025RED_POINT_TYPE_LEGION\020\003\022\033\n\027RED_P" +
+      "OINT_TYPE_INSTANCE\020\004\022 \n\034RED_POINT_TYPE_O" +
+      "FFICIAL_RANK\020\005\022\030\n\024RED_POINT_TYPE_ARENA\020\006" +
+      "\022\027\n\023RED_POINT_TYPE_TASK\020\007\022\030\n\024RED_POINT_T" +
+      "YPE_ALTAR\020\010\022\037\n\033RED_POINT_TYPE_GOBLIN_STO" +
+      "RE\020\t\022!\n\035RED_POINT_TYPE_FIRST_RECHARGE\020\n\022",
+      "\030\n\024RED_POINT_TYPE_EMAIL\020\013\022\036\n\032RED_POINT_T" +
+      "YPE_HERO_TEMPLE\020\014\022\033\n\027RED_POINT_TYPE_RECH" +
+      "ARGE\020\r\022\030\n\024RED_POINT_TYPE_BONUS\020\016\022\036\n\032RED_" +
+      "POINT_TYPE_LOGIN_BONUS\020\017\022\035\n\031RED_POINT_TY" +
+      "PE_EXPEDITION\020\020\022&\n\"RED_POINT_TYPE_NEW_SE" +
+      "RVER_ACTIVITY\020\021*\251\001\n\020E_BUY_TIMES_TYPE\022\032\n\026" +
+      "BUY_TIMES_TYPE_UNKNOWN\020\000\022\030\n\024BUY_TIMES_TY" +
+      "PE_ARENA\020\001\022\036\n\032BUY_TIMES_TYPE_HERO_TEMPLE" +
+      "\020\002\022 \n\034BUY_TIMES_TYPE_OFFICIAL_RANK\020\003\022\035\n\031" +
+      "BUY_TIMES_TYPE_EXPEDITION\020\004*o\n\013E_FUND_TY",
+      "PE\022\024\n\020FUND_TYPE_UNKNOW\020\000\022\022\n\016FUND_TYPE_OP" +
+      "EN\020\001\022\030\n\024FUND_TYPE_NEW_SERVER\020\002\022\034\n\030FUND_T" +
+      "YPE_TOTAL_RECHARGE\020\003*Q\n\020E_COUNTDOWN_TYPE" +
+      "\022\031\n\025COUNTDOWN_TYPE_UNKNOW\020\000\022\"\n\036COUNTDOWN" +
+      "_TYPE_BATTLE_NEAR_END\020\001*\221\001\n\013E_RANK_TYPE\022" +
+      "\024\n\020RANK_TYPE_UNKNOW\020\000\022\023\n\017RANK_TYPE_ARENA" +
+      "\020\001\022\020\n\014RANK_TYPE_FC\020\002\022\023\n\017RANK_TYPE_MONEY\020" +
+      "\003\022\026\n\022RANK_TYPE_INSTANCE\020\004\022\030\n\024RANK_TYPE_E" +
+      "XPEDITION\020\005*o\n\023E_MASTER_TRAIN_TYPE\022\034\n\030MA" +
+      "STER_TRAIN_TYPE_UNKNOW\020\000\022\034\n\030MASTER_TRAIN",
+      "_TYPE_NORMAL\020\001\022\034\n\030MASTER_TRAIN_TYPE_SENI" +
+      "OR\020\002*\207\001\n\014E_MAJOR_TYPE\022\025\n\021MAJOR_TYPE_UNKN" +
+      "OW\020\000\022\026\n\022MAJOR_TYPE_FORGING\020\001\022\027\n\023MAJOR_TY" +
+      "PE_EXCAVATE\020\002\022\026\n\022MAJOR_TYPE_COLLECT\020\003\022\027\n" +
+      "\023MAJOR_TYPE_REFINING\020\004*n\n\023E_MAJOR_BATTLE" +
+      "_TYPE\022\034\n\030MAJOR_BATTLE_TYPE_UNKNOW\020\000\022\032\n\026M" +
+      "AJOR_BATTLE_TYPE_GRAB\020\001\022\035\n\031MAJOR_BATTLE_" +
+      "TYPE_REVENGE\020\002*\246\001\n\026E_MAJOR_COLLECT_STATU" +
+      "S\022\037\n\033MAJOR_COLLECT_STATUS_UNKNOW\020\000\022\"\n\036MA" +
+      "JOR_COLLECT_STATUS_UNCOLLECT\020\001\022#\n\037MAJOR_",
+      "COLLECT_STATUS_COLLECTING\020\002\022\"\n\036MAJOR_COL" +
+      "LECT_STATUS_COLLECTED\020\003*s\n\024E_MAJOR_COLLE" +
+      "CT_TYPE\022\035\n\031MAJOR_COLLECT_TYPE_UNKNOW\020\000\022\035" +
+      "\n\031MAJOR_COLLECT_TYPE_NORMAL\020\001\022\035\n\031MAJOR_C" +
+      "OLLECT_TYPE_SENIOR\020\002B5\n\034com.douqu.game.c" +
+      "ore.protobufB\rSGCommonProto\252\002\005UBaseb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -49663,7 +53917,7 @@ public final class SGCommonProto {
     internal_static_PlayerBaseInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlayerBaseInfo_descriptor,
-        new java.lang.String[] { "PlayerIndex", "NickName", "Avatar", "Lv", "VipLv", "Exp", "Fc", "MasterId", "Camptype", "Mobile", "Uid", "RegistTime", "LastUpLvTime", });
+        new java.lang.String[] { "PlayerIndex", "NickName", "Avatar", "Lv", "VipLv", "Exp", "Fc", "MasterId", "Camptype", "Mobile", "Uid", "RegistTime", "LastUpLvTime", "MasterTrainAttributes", });
     internal_static_Card_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_Card_fieldAccessorTable = new
@@ -49778,104 +54032,116 @@ public final class SGCommonProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CommonObject_descriptor,
         new java.lang.String[] { "Id", "Value", });
-    internal_static_BattleData_descriptor =
+    internal_static_GoodsObject_descriptor =
       getDescriptor().getMessageTypes().get(26);
+    internal_static_GoodsObject_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GoodsObject_descriptor,
+        new java.lang.String[] { "Type", "Id", "Value", });
+    internal_static_BattleData_descriptor =
+      getDescriptor().getMessageTypes().get(27);
     internal_static_BattleData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BattleData_descriptor,
         new java.lang.String[] { "BattleId", "PlayerIndex", "BattleServer", });
     internal_static_ArenaPlayerInfo_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_ArenaPlayerInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ArenaPlayerInfo_descriptor,
         new java.lang.String[] { "Rank", "Name", "FightingCapacity", "MasterId", "Camp", "ObjectIndex", "Avatar", });
+    internal_static_CollectPlayerInfo_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_CollectPlayerInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CollectPlayerInfo_descriptor,
+        new java.lang.String[] { "Name", "FightingCapacity", "MasterId", "Camp", "ObjectIndex", "Avatar", "Goods", "InitValue1", "InitValue2", "StringValue", });
     internal_static_RewardInfo_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_RewardInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RewardInfo_descriptor,
         new java.lang.String[] { "Type", "Id", "Num", });
     internal_static_OfficialRankObject_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_OfficialRankObject_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_OfficialRankObject_descriptor,
         new java.lang.String[] { "OfficialRankId", "Position", "Name", "FightingCapacity", "ObjectIndex", "Avatar", "MasterId", "Camp", });
     internal_static_TaskDetail_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_TaskDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TaskDetail_descriptor,
         new java.lang.String[] { "CurrentDemand", "TaskId", "Status", });
     internal_static_StoreGoods_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_StoreGoods_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_StoreGoods_descriptor,
         new java.lang.String[] { "GoodsId", "HasCount", "NeedCount", "IsBuy", "Label", });
     internal_static_Equip_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_Equip_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Equip_descriptor,
         new java.lang.String[] { "Id", "Lv", });
     internal_static_Accessory_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_Accessory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Accessory_descriptor,
         new java.lang.String[] { "Id", "IntensifyLv", "UpLv", "CurrentExp", "IsActivated", });
     internal_static_BuffChange_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_BuffChange_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BuffChange_descriptor,
         new java.lang.String[] { "ChangeType", "UniqueId", "LayerCount", "RemainTime", });
     internal_static_MasterInfo_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_MasterInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MasterInfo_descriptor,
-        new java.lang.String[] { "Atk", "Hp", "Def", "Power", "Wisdom", "Agility", "Cri", "Rec", "Eva", "Hit", "Add", "Exd", });
+        new java.lang.String[] { "Atk", "Hp", "Def", "Power", "Wisdom", "Agility", "Cri", "Rec", "Eva", "Hit", "Add", "Exd", "PhyRes", "PunRes", "MagRes", });
     internal_static_ResolveCardInfo_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_ResolveCardInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ResolveCardInfo_descriptor,
         new java.lang.String[] { "CardId", "IsFate", "CardLevel", });
     internal_static_Dialogue_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_Dialogue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Dialogue_descriptor,
         new java.lang.String[] { "Content", "SendTime", "MailSendType", "Avatar", "TargetIndex", });
     internal_static_PrivacyMail_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_PrivacyMail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PrivacyMail_descriptor,
         new java.lang.String[] { "PrivacyMailId", "SendTime", "TargetIndex", "TargetAvatar", "Dialogue", "IsRead", "Content", "NickName", });
     internal_static_Mail_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_Mail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Mail_descriptor,
         new java.lang.String[] { "Id", "Title", "SendTime", "IsRead", "Sender", "ExtGoods", "IsGet", "Content", });
     internal_static_BlackList_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_BlackList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BlackList_descriptor,
         new java.lang.String[] { "TargetIndex", "TargetAvatar", "NickName", "Camp", "Lv", });
     internal_static_PrivacyMailResponse_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_PrivacyMailResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PrivacyMailResponse_descriptor,
         new java.lang.String[] { "PrivacyMailId", "SendTime", "TargetIndex", "TargetAvatar", "IsRead", "Content", "NickName", });
     internal_static_RankInfo_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_RankInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RankInfo_descriptor,

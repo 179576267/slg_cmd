@@ -86,10 +86,19 @@ public class PlayerInfoActivity extends BaseActivity {
     public void fun2(SGPlayerProto.S2C_RankList msgInfo) {
         tvResult.setText("获取排行榜返回： \n" + msgInfo.toString());
     }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void fun2( SGPlayerProto.S2C_MasterTrain msgInfo) {
+        tvResult.setText("主将培养返回： \n" + msgInfo.toString());
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void fun2( SGPlayerProto.S2C_MasterTrainAccept msgInfo) {
+        tvResult.setText("主将培养接受： \n" + msgInfo.toString());
+    }
 
     @OnClick({R.id.btn_gm, R.id.btn_red, R.id.btn_edit_name, R.id.btn_edit_avatar, R.id.btn_change_consume_remind,
             R.id.btn_change_equip_skill, R.id.btn_base_info, R.id.btn_setting_board, R.id.btn_get_instance_challenge_times,
-    R.id.btn_get_task_list, R.id.btn_cdk, R.id.btn_rank_list})
+    R.id.btn_get_task_list, R.id.btn_cdk, R.id.btn_rank_list, R.id.btn_master_train, R.id.btn_master_train_accept})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_gm:
@@ -201,6 +210,19 @@ public class PlayerInfoActivity extends BaseActivity {
                         SendUtils.sendMsg(PlayerInfoActivity.this, SGMainProto.E_MSG_ID.MsgID_Player_RankList_VALUE, request.build().toByteArray());
                     }
                 }.show();
+                break;
+            case R.id.btn_master_train:
+                new InputTextDialog(this, "0获取上次记录， 1普通培养， 2高级培养") {
+                    @Override
+                    public void sendText(String text) {
+                        SGPlayerProto.C2S_MasterTrain.Builder request = SGPlayerProto.C2S_MasterTrain.newBuilder();
+                        request.setTrainTypeValue(Integer.valueOf(text));
+                        SendUtils.sendMsg(PlayerInfoActivity.this, SGMainProto.E_MSG_ID.MsgID_Player_MasterTrain_VALUE, request.build().toByteArray());
+                    }
+                }.show();
+                break;
+            case R.id.btn_master_train_accept:
+                SendUtils.sendMsg(PlayerInfoActivity.this, SGMainProto.E_MSG_ID.MsgID_Player_MasterTrainAccept_VALUE, null);
                 break;
             default:
                 break;

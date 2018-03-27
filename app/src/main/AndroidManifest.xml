@@ -61,6 +61,9 @@
         <activity
             android:name=".ui.AltarLotteryActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.MajorActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".ui.ForceTestActivity"
             android:screenOrientation="portrait"></activity>
         <activity android:name=".ui.MultFunctionTestActivity"

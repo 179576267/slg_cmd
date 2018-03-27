@@ -930,6 +930,15 @@ public final class SGWarProto {
      * <code>repeated int32 selfMasterSkill = 5;</code>
      */
     int getSelfMasterSkill(int index);
+
+    /**
+     * <pre>
+     *是否是真人操作对战
+     * </pre>
+     *
+     * <code>bool isRealPlayerBattle = 6;</code>
+     */
+    boolean getIsRealPlayerBattle();
   }
   /**
    * Protobuf type {@code S2C_Create}
@@ -946,6 +955,7 @@ public final class SGWarProto {
       battleType_ = 0;
       battleCardId_ = java.util.Collections.emptyList();
       selfMasterSkill_ = java.util.Collections.emptyList();
+      isRealPlayerBattle_ = false;
     }
 
     @java.lang.Override
@@ -1045,6 +1055,11 @@ public final class SGWarProto {
                 selfMasterSkill_.add(input.readInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 48: {
+
+              isRealPlayerBattle_ = input.readBool();
               break;
             }
           }
@@ -1229,6 +1244,19 @@ public final class SGWarProto {
     }
     private int selfMasterSkillMemoizedSerializedSize = -1;
 
+    public static final int ISREALPLAYERBATTLE_FIELD_NUMBER = 6;
+    private boolean isRealPlayerBattle_;
+    /**
+     * <pre>
+     *是否是真人操作对战
+     * </pre>
+     *
+     * <code>bool isRealPlayerBattle = 6;</code>
+     */
+    public boolean getIsRealPlayerBattle() {
+      return isRealPlayerBattle_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1264,6 +1292,9 @@ public final class SGWarProto {
       }
       for (int i = 0; i < selfMasterSkill_.size(); i++) {
         output.writeInt32NoTag(selfMasterSkill_.get(i));
+      }
+      if (isRealPlayerBattle_ != false) {
+        output.writeBool(6, isRealPlayerBattle_);
       }
     }
 
@@ -1312,6 +1343,10 @@ public final class SGWarProto {
         }
         selfMasterSkillMemoizedSerializedSize = dataSize;
       }
+      if (isRealPlayerBattle_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, isRealPlayerBattle_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -1343,6 +1378,8 @@ public final class SGWarProto {
           .equals(other.getBattleCardIdList());
       result = result && getSelfMasterSkillList()
           .equals(other.getSelfMasterSkillList());
+      result = result && (getIsRealPlayerBattle()
+          == other.getIsRealPlayerBattle());
       return result;
     }
 
@@ -1371,6 +1408,9 @@ public final class SGWarProto {
         hash = (37 * hash) + SELFMASTERSKILL_FIELD_NUMBER;
         hash = (53 * hash) + getSelfMasterSkillList().hashCode();
       }
+      hash = (37 * hash) + ISREALPLAYERBATTLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsRealPlayerBattle());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1507,6 +1547,8 @@ public final class SGWarProto {
         bitField0_ = (bitField0_ & ~0x00000008);
         selfMasterSkill_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000010);
+        isRealPlayerBattle_ = false;
+
         return this;
       }
 
@@ -1552,6 +1594,7 @@ public final class SGWarProto {
           bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.selfMasterSkill_ = selfMasterSkill_;
+        result.isRealPlayerBattle_ = isRealPlayerBattle_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1622,6 +1665,9 @@ public final class SGWarProto {
             selfMasterSkill_.addAll(other.selfMasterSkill_);
           }
           onChanged();
+        }
+        if (other.getIsRealPlayerBattle() != false) {
+          setIsRealPlayerBattle(other.getIsRealPlayerBattle());
         }
         onChanged();
         return this;
@@ -2184,6 +2230,44 @@ public final class SGWarProto {
       public Builder clearSelfMasterSkill() {
         selfMasterSkill_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+
+      private boolean isRealPlayerBattle_ ;
+      /**
+       * <pre>
+       *是否是真人操作对战
+       * </pre>
+       *
+       * <code>bool isRealPlayerBattle = 6;</code>
+       */
+      public boolean getIsRealPlayerBattle() {
+        return isRealPlayerBattle_;
+      }
+      /**
+       * <pre>
+       *是否是真人操作对战
+       * </pre>
+       *
+       * <code>bool isRealPlayerBattle = 6;</code>
+       */
+      public Builder setIsRealPlayerBattle(boolean value) {
+        
+        isRealPlayerBattle_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *是否是真人操作对战
+       * </pre>
+       *
+       * <code>bool isRealPlayerBattle = 6;</code>
+       */
+      public Builder clearIsRealPlayerBattle() {
+        
+        isRealPlayerBattle_ = false;
         onChanged();
         return this;
       }
@@ -22623,53 +22707,54 @@ public final class SGWarProto {
     java.lang.String[] descriptorData = {
       "\n\013SGWar.proto\032\016SGCommon.proto\"G\n\nC2S_Cre" +
       "ate\022\020\n\010battleId\030\001 \001(\t\022\023\n\013playerIndex\030\002 \001" +
-      "(\t\022\022\n\nautoBattle\030\003 \001(\010\"\243\001\n\nS2C_Create\022\"\n" +
+      "(\t\022\022\n\nautoBattle\030\003 \001(\010\"\277\001\n\nS2C_Create\022\"\n" +
       "\nbattleType\030\001 \001(\0162\016.E_BATTLE_TYPE\022 \n\013sel" +
       "ftMaster\030\002 \001(\0132\013.BattleUnit\022 \n\013otherMast" +
       "er\030\003 \001(\0132\013.BattleUnit\022\024\n\014battleCardId\030\004 " +
-      "\003(\005\022\027\n\017selfMasterSkill\030\005 \003(\005\"1\n\014C2S_ToBa" +
-      "ttle\022\016\n\006cardId\030\001 \001(\005\022\021\n\003pos\030\002 \003(\0132\004.Pos\"" +
-      "m\n\014S2C_ToBattle\022\023\n\013playerIndex\030\001 \001(\t\022\023\n\004" +
-      "card\030\002 \001(\0132\005.Card\022\034\n\007soldier\030\003 \003(\0132\013.Bat",
-      "tleUnit\022\025\n\risCardSoldier\030\004 \001(\010\"\030\n\026C2S_So" +
-      "ldierBattleStart\"n\n\026S2C_SoldierBattleSta" +
-      "rt\022\020\n\010attackId\030\001 \001(\005\022\027\n\tattackPos\030\002 \001(\0132" +
-      "\004.Pos\022\020\n\010targetId\030\003 \001(\005\022\027\n\ttargetPos\030\004 \001" +
-      "(\0132\004.Pos\";\n\rS2C_SynResult\022\017\n\007winTeam\030\001 \001" +
-      "(\005\022\014\n\004star\030\002 \001(\005\022\013\n\003key\030\003 \001(\t\"D\n\014C2S_Use" +
-      "Skill\022\017\n\007skillId\030\001 \001(\005\022\021\n\003pos\030\002 \001(\0132\004.Po" +
-      "s\022\020\n\010targetId\030\003 \003(\005\"r\n\014S2C_UseSkill\022\017\n\007s" +
-      "killId\030\001 \001(\005\022\022\n\nreleaserId\030\002 \001(\005\022\020\n\010targ" +
-      "etId\030\003 \003(\005\022\022\n\neffectTime\030\004 \001(\005\022\027\n\ttarget",
-      "Pos\030\005 \001(\0132\004.Pos\"\017\n\rC2S_AddEffect\"4\n\rS2C_" +
-      "AddEffect\022#\n\006result\030\001 \001(\0162\023.E_UNIVERSAL_" +
-      "RESULT\"2\n\020C2S_RemoveEffect\022\036\n\rremovedEff" +
-      "ect\030\001 \001(\0132\007.Effect\"7\n\020S2C_RemoveEffect\022#" +
-      "\n\006result\030\001 \001(\0162\023.E_UNIVERSAL_RESULT\"@\n\030C" +
-      "2S_UpdateEffectDuration\022\020\n\010effectId\030\001 \001(" +
-      "\005\022\022\n\nupdateTime\030\002 \001(\002\"?\n\030S2C_UpdateEffec" +
-      "tDuration\022#\n\006result\030\001 \001(\0162\023.E_UNIVERSAL_" +
-      "RESULT\"1\n\rC2S_ObjectDie\022\021\n\twarriorID\030\001 \001" +
-      "(\005\022\r\n\005count\030\002 \001(\005\"4\n\rS2C_ObjectDie\022#\n\006re",
-      "sult\030\001 \001(\0162\023.E_UNIVERSAL_RESULT\"\014\n\nC2S_S" +
-      "ynPos\"-\n\nS2C_SynPos\022\037\n\nbattleUnit\030\001 \003(\0132" +
-      "\013.BattleUnit\"\016\n\014C2S_DoDamage\"3\n\014S2C_DoDa" +
-      "mage\022#\n\014spriteDamage\030\001 \003(\0132\r.SpriteDamag" +
-      "e\"\022\n\020C2S_SoldierRoute\"L\n\020S2C_SoldierRout" +
-      "e\022\020\n\010uniqueId\030\001 \001(\005\022\023\n\005route\030\002 \003(\0132\004.Pos" +
-      "\022\021\n\tmoveSpeed\030\003 \001(\005\"\025\n\023C2S_AttributeUpda" +
-      "te\"@\n\023S2C_AttributeUpdate\022)\n\017attributeCh" +
-      "ange\030\001 \003(\0132\020.AttributeChange\"\020\n\016C2S_Read" +
-      "yStart\"\020\n\016S2C_ReadyStart\"(\n\013S2C_SynBuff\022",
-      "\031\n\004buff\030\001 \003(\0132\013.BuffChange\"G\n\020S2C_SynCou" +
-      "ntDown\022\037\n\004type\030\001 \001(\0162\021.E_COUNTDOWN_TYPE\022" +
-      "\022\n\nremainTime\030\002 \001(\005\"\017\n\rC2S_Surrender\"4\n\r" +
-      "S2C_Surrender\022#\n\006result\030\001 \001(\0162\023.E_UNIVER" +
-      "SAL_RESULT\"\037\n\016C2S_AutoBattle\022\r\n\005begin\030\001 " +
-      "\001(\010\"\037\n\016S2C_AutoBattle\022\r\n\005begin\030\001 \001(\010\"\032\n\t" +
-      "C2S_Pause\022\r\n\005begin\030\001 \001(\010\"\032\n\tS2C_Pause\022\r\n" +
-      "\005begin\030\001 \001(\010B2\n\034com.douqu.game.core.prot" +
-      "obufB\nSGWarProto\252\002\005UBaseb\006proto3"
+      "\003(\005\022\027\n\017selfMasterSkill\030\005 \003(\005\022\032\n\022isRealPl" +
+      "ayerBattle\030\006 \001(\010\"1\n\014C2S_ToBattle\022\016\n\006card" +
+      "Id\030\001 \001(\005\022\021\n\003pos\030\002 \003(\0132\004.Pos\"m\n\014S2C_ToBat" +
+      "tle\022\023\n\013playerIndex\030\001 \001(\t\022\023\n\004card\030\002 \001(\0132\005",
+      ".Card\022\034\n\007soldier\030\003 \003(\0132\013.BattleUnit\022\025\n\ri" +
+      "sCardSoldier\030\004 \001(\010\"\030\n\026C2S_SoldierBattleS" +
+      "tart\"n\n\026S2C_SoldierBattleStart\022\020\n\010attack" +
+      "Id\030\001 \001(\005\022\027\n\tattackPos\030\002 \001(\0132\004.Pos\022\020\n\010tar" +
+      "getId\030\003 \001(\005\022\027\n\ttargetPos\030\004 \001(\0132\004.Pos\";\n\r" +
+      "S2C_SynResult\022\017\n\007winTeam\030\001 \001(\005\022\014\n\004star\030\002" +
+      " \001(\005\022\013\n\003key\030\003 \001(\t\"D\n\014C2S_UseSkill\022\017\n\007ski" +
+      "llId\030\001 \001(\005\022\021\n\003pos\030\002 \001(\0132\004.Pos\022\020\n\010targetI" +
+      "d\030\003 \003(\005\"r\n\014S2C_UseSkill\022\017\n\007skillId\030\001 \001(\005" +
+      "\022\022\n\nreleaserId\030\002 \001(\005\022\020\n\010targetId\030\003 \003(\005\022\022",
+      "\n\neffectTime\030\004 \001(\005\022\027\n\ttargetPos\030\005 \001(\0132\004." +
+      "Pos\"\017\n\rC2S_AddEffect\"4\n\rS2C_AddEffect\022#\n" +
+      "\006result\030\001 \001(\0162\023.E_UNIVERSAL_RESULT\"2\n\020C2" +
+      "S_RemoveEffect\022\036\n\rremovedEffect\030\001 \001(\0132\007." +
+      "Effect\"7\n\020S2C_RemoveEffect\022#\n\006result\030\001 \001" +
+      "(\0162\023.E_UNIVERSAL_RESULT\"@\n\030C2S_UpdateEff" +
+      "ectDuration\022\020\n\010effectId\030\001 \001(\005\022\022\n\nupdateT" +
+      "ime\030\002 \001(\002\"?\n\030S2C_UpdateEffectDuration\022#\n" +
+      "\006result\030\001 \001(\0162\023.E_UNIVERSAL_RESULT\"1\n\rC2" +
+      "S_ObjectDie\022\021\n\twarriorID\030\001 \001(\005\022\r\n\005count\030",
+      "\002 \001(\005\"4\n\rS2C_ObjectDie\022#\n\006result\030\001 \001(\0162\023" +
+      ".E_UNIVERSAL_RESULT\"\014\n\nC2S_SynPos\"-\n\nS2C" +
+      "_SynPos\022\037\n\nbattleUnit\030\001 \003(\0132\013.BattleUnit" +
+      "\"\016\n\014C2S_DoDamage\"3\n\014S2C_DoDamage\022#\n\014spri" +
+      "teDamage\030\001 \003(\0132\r.SpriteDamage\"\022\n\020C2S_Sol" +
+      "dierRoute\"L\n\020S2C_SoldierRoute\022\020\n\010uniqueI" +
+      "d\030\001 \001(\005\022\023\n\005route\030\002 \003(\0132\004.Pos\022\021\n\tmoveSpee" +
+      "d\030\003 \001(\005\"\025\n\023C2S_AttributeUpdate\"@\n\023S2C_At" +
+      "tributeUpdate\022)\n\017attributeChange\030\001 \003(\0132\020" +
+      ".AttributeChange\"\020\n\016C2S_ReadyStart\"\020\n\016S2",
+      "C_ReadyStart\"(\n\013S2C_SynBuff\022\031\n\004buff\030\001 \003(" +
+      "\0132\013.BuffChange\"G\n\020S2C_SynCountDown\022\037\n\004ty" +
+      "pe\030\001 \001(\0162\021.E_COUNTDOWN_TYPE\022\022\n\nremainTim" +
+      "e\030\002 \001(\005\"\017\n\rC2S_Surrender\"4\n\rS2C_Surrende" +
+      "r\022#\n\006result\030\001 \001(\0162\023.E_UNIVERSAL_RESULT\"\037" +
+      "\n\016C2S_AutoBattle\022\r\n\005begin\030\001 \001(\010\"\037\n\016S2C_A" +
+      "utoBattle\022\r\n\005begin\030\001 \001(\010\"\032\n\tC2S_Pause\022\r\n" +
+      "\005begin\030\001 \001(\010\"\032\n\tS2C_Pause\022\r\n\005begin\030\001 \001(\010" +
+      "B2\n\034com.douqu.game.core.protobufB\nSGWarP" +
+      "roto\252\002\005UBaseb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -22695,7 +22780,7 @@ public final class SGWarProto {
     internal_static_S2C_Create_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Create_descriptor,
-        new java.lang.String[] { "BattleType", "SelftMaster", "OtherMaster", "BattleCardId", "SelfMasterSkill", });
+        new java.lang.String[] { "BattleType", "SelftMaster", "OtherMaster", "BattleCardId", "SelfMasterSkill", "IsRealPlayerBattle", });
     internal_static_C2S_ToBattle_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_C2S_ToBattle_fieldAccessorTable = new
